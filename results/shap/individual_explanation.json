@@ -1,0 +1,50 @@
+{
+  "prediction": "Phishing",
+  "confidence": 1.0,
+  "probabilities": {
+    "Legitimate": 0.0,
+    "Phishing": 1.0
+  },
+  "top_features": [
+    {
+      "feature": "URLSimilarityIndex",
+      "shap_value": 0.18
+    },
+    {
+      "feature": "LineOfCode",
+      "shap_value": 0.1
+    },
+    {
+      "feature": "IsHTTPS",
+      "shap_value": 0.063333
+    },
+    {
+      "feature": "NoOfSubDomain",
+      "shap_value": 0.006667
+    },
+    {
+      "feature": "NoOfExternalRef",
+      "shap_value": 0.0
+    },
+    {
+      "feature": "NoOfEmptyRef",
+      "shap_value": 0.0
+    },
+    {
+      "feature": "NoOfSelfRef",
+      "shap_value": 0.0
+    },
+    {
+      "feature": "NoOfJS",
+      "shap_value": 0.0
+    },
+    {
+      "feature": "Pay",
+      "shap_value": 0.0
+    },
+    {
+      "feature": "Bank",
+      "shap_value": 0.0
+    }
+  ]
+}

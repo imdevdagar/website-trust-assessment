@@ -1,0 +1,3 @@
+Model,Accuracy,Precision,Recall,F1,Macro_Precision,Macro_Recall,Macro_F1,Weighted_F1,ROC_AUC,Inference_Time,Legitimate_Precision,Legitimate_Recall,Legitimate_F1,Phishing_Precision,Phishing_Recall,Phishing_F1,Split_Type,Train_Size,Test_Size,Train_Time
+DecisionTree_standard,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.031868,1.0,1.0,1.0,1.0,1.0,1.0,standard,187989,46998,1.0474076000973582
+DecisionTree_domain_aware,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.032359,1.0,1.0,1.0,1.0,1.0,1.0,domain_aware,188276,46711,0.9258216000162065

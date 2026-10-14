@@ -1,0 +1,6 @@
+Model,Accuracy,Precision,Recall,F1,Macro_Precision,Macro_Recall,Macro_F1,Weighted_F1,ROC_AUC,Inference_Time,Legitimate_Precision,Legitimate_Recall,Legitimate_F1,Phishing_Precision,Phishing_Recall,Phishing_F1,Training_Time
+LogisticRegression,0.999915,0.999852,1.0,0.999926,0.999926,0.9999,0.999913,0.999915,1.0,0.043932,1.0,0.9998,0.9999,0.999852,1.0,0.999926,0.9993801000528038
+DecisionTree,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.05772,1.0,1.0,1.0,1.0,1.0,1.0,1.6559327999129891
+RandomForest,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.209877,1.0,1.0,1.0,1.0,1.0,1.0,13.13989429990761
+XGBoost,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.066927,1.0,1.0,1.0,1.0,1.0,1.0,1.9317649998702109
+LightGBM,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.153948,1.0,1.0,1.0,1.0,1.0,1.0,4.848822300089523

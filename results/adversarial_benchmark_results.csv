@@ -1,0 +1,8 @@
+Perturbation Vector,Attack Samples,Defended / Blocked,Detection Rate (%),Safety Net Clamps,Avg Trust Score (0-100),Evasion Success Rate (%)
+Baseline (No Attack),10,9,90.0,8,51.6,10.0
+Subdomain Dilution,10,10,100.0,10,48.0,0.0
+Benign Query Padding,10,8,80.0,8,55.6,20.0
+Deep Benign Path Padding,10,8,80.0,8,55.6,20.0
+Random Case Shuffling,10,8,80.0,8,54.6,20.0
+Hyphen Splitting,10,8,80.0,8,53.6,20.0
+Combined Multi-Vector,10,10,100.0,10,48.0,0.0

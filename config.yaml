@@ -1,0 +1,225 @@
+﻿# ============================================================
+# AI-Powered Website Trust Assessment System
+# Central Configuration File
+# ============================================================
+
+project:
+  name: "Website Trust Assessment System"
+  version: "1.0.0"
+  random_state: 42
+
+paths:
+  data_raw: "data/raw"
+  data_interim: "data/interim"
+  data_processed: "data/processed"
+  models: "models"
+  results: "results"
+  figures: "results/figures"
+  metrics: "results/metrics"
+  confusion_matrices: "results/confusion_matrices"
+  shap_outputs: "results/shap"
+  ablation: "results/ablation"
+  multiclass: "results/multiclass"
+
+datasets:
+  phishing:
+    filename: "PhiUSIIL_Phishing_URL_Dataset.csv"
+    source_dir: "../Phishing Dataset"
+    adapter: "PhiUSIILAdapter"
+  scam:
+    source_dir: "../Scam dataset"
+    adapter: "ScamFerretAdapter"
+  scam_categories:
+    - "cryptocurrency"
+    - "investment"
+    - "online_shopping_english"
+    - "online_shopping_german"
+    - "online_shopping_japanese"
+    - "technical_support"
+
+labels:
+  binary:
+    legitimate: 0
+    phishing: 1
+  multiclass:
+    legitimate: 0
+    phishing: 1
+    scam: 2
+  label_names:
+    0: "Legitimate"
+    1: "Phishing"
+    2: "Scam"
+
+splitting:
+  test_size: 0.20
+  random_state: 42
+  stratify: true
+  domain_aware: true
+  domain_test_size: 0.20
+
+models:
+  logistic_regression:
+    max_iter: 1000
+    random_state: 42
+    solver: "lbfgs"
+    multi_class: "auto"
+  decision_tree:
+    random_state: 42
+    max_depth: 20
+  random_forest:
+    n_estimators: 200
+    random_state: 42
+    n_jobs: -1
+  xgboost:
+    n_estimators: 200
+    random_state: 42
+    eval_metric: "logloss"
+  lightgbm:
+    n_estimators: 200
+    random_state: 42
+    verbose: -1
+
+confidence:
+  thresholds:
+    - 0.50
+    - 0.55
+    - 0.60
+    - 0.65
+    - 0.70
+    - 0.75
+    - 0.80
+    - 0.85
+    - 0.90
+    - 0.95
+  default_threshold: 0.70
+  abstention_label: "Needs Review"
+  confidence_bands:
+    - [0.50, 0.60]
+    - [0.60, 0.70]
+    - [0.70, 0.80]
+    - [0.80, 0.90]
+    - [0.90, 1.01]
+
+calibration:
+  method: "isotonic"
+  cv: 5
+
+shap:
+  max_samples: 1000
+  max_display: 20
+  background_samples: 100
+
+feature_groups:
+  group_a:
+    name: "URL Lexical Features"
+    features:
+      - "URLLength"
+      - "NoOfLettersInURL"
+      - "LetterRatioInURL"
+      - "NoOfDegitsInURL"
+      - "DegitRatioInURL"
+      - "NoOfEqualsInURL"
+      - "NoOfQMarkInURL"
+      - "NoOfAmpersandInURL"
+      - "NoOfOtherSpecialCharsInURL"
+      - "SpacialCharRatioInURL"
+      - "HasObfuscation"
+      - "NoOfObfuscatedChar"
+      - "ObfuscationRatio"
+  group_b:
+    name: "Domain Features"
+    features:
+      - "DomainLength"
+      - "IsDomainIP"
+      - "TLDLength"
+      - "NoOfSubDomain"
+  group_c:
+    name: "Protocol and Security Features"
+    features:
+      - "IsHTTPS"
+  group_d:
+    name: "HTML and Page Features"
+    features:
+      - "LineOfCode"
+      - "LargestLineLength"
+      - "HasTitle"
+      - "HasFavicon"
+      - "Robots"
+      - "IsResponsive"
+      - "HasDescription"
+      - "HasCopyrightInfo"
+      - "NoOfImage"
+      - "NoOfCSS"
+      - "NoOfJS"
+  group_e:
+    name: "Form and Login Features"
+    features:
+      - "HasExternalFormSubmit"
+      - "HasSubmitButton"
+      - "HasHiddenFields"
+      - "HasPasswordField"
+  group_f:
+    name: "Redirect, Reference and Resource Features"
+    features:
+      - "NoOfURLRedirect"
+      - "NoOfSelfRedirect"
+      - "NoOfPopup"
+      - "NoOfiFrame"
+      - "HasSocialNet"
+      - "Bank"
+      - "Pay"
+      - "Crypto"
+      - "NoOfSelfRef"
+      - "NoOfEmptyRef"
+      - "NoOfExternalRef"
+  group_g:
+    name: "Dataset-Specific Engineered Features"
+    features:
+      - "URLSimilarityIndex"
+      - "CharContinuationRate"
+      - "TLDLegitimateProb"
+      - "URLCharProb"
+      - "DomainTitleMatchScore"
+      - "URLTitleMatchScore"
+
+leakage_suspects:
+  - name: "FILENAME"
+    reason: "Dataset-specific file identifier"
+    decision: "REMOVE"
+  - name: "URL"
+    reason: "Raw URL string - memorization risk"
+    decision: "REMOVE"
+  - name: "Domain"
+    reason: "Raw domain string - not usable as ML feature"
+    decision: "REMOVE"
+  - name: "Title"
+    reason: "Raw page title string - text field"
+    decision: "REMOVE"
+  - name: "TLD"
+    reason: "Categorical string - TLDLength used instead"
+    decision: "REMOVE"
+  - name: "URLSimilarityIndex"
+    reason: "Dataset-collection artifact"
+    decision: "FLAG"
+  - name: "TLDLegitimateProb"
+    reason: "Pre-computed probability from reference statistics"
+    decision: "FLAG"
+  - name: "URLCharProb"
+    reason: "Pre-computed character-level probability"
+    decision: "FLAG"
+  - name: "DomainTitleMatchScore"
+    reason: "Requires live webpage fetching"
+    decision: "FLAG"
+  - name: "URLTitleMatchScore"
+    reason: "Requires live webpage fetching"
+    decision: "FLAG"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  title: "Website Trust Assessment API"
+  version: "1.0.0"
+
+streamlit:
+  title: "AI-Powered Website Trust Assessment System"
+  api_url: "http://localhost:8000"
