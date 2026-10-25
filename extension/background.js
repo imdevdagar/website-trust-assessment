@@ -28,7 +28,7 @@ function normalizeServer(raw) {
     throw new Error("The server address must use http:// or https://.");
   }
   if (!["127.0.0.1", "localhost"].includes(parsed.hostname)) {
-    throw new Error("For privacy, TrustLens Guard only connects to localhost.");
+    throw new Error("For privacy, Website Trust Assessment Guard only connects to localhost.");
   }
   return parsed.origin;
 }
@@ -199,7 +199,7 @@ async function callGuard(url, action, force) {
       if (error && error.name === "AbortError") {
         throw new Error("Assessment timed out. The site may be slow or blocking the crawler.");
       }
-      throw new Error("Could not reach the local TrustLens engine. Start it with: python -m trustlens.cli serve");
+      throw new Error("Could not reach the local assessment engine. Start it with: python -m trustlens.cli serve");
     }
     const text = await response.text();
     let payload = null;
@@ -226,25 +226,25 @@ async function callGuard(url, action, force) {
 }
 
 function badgeSpec(result) {
-  if (!result) return { text: "?", color: "#64748b", title: "TrustLens: no assessment" };
+  if (!result) return { text: "?", color: "#64748b", title: "Website Trust Assessment: no assessment" };
   if (result.verdict === "block") {
     return {
       text: "X",
       color: "#b42318",
-      title: `TrustLens: HIGH RISK ${Math.round(result.overall_risk)}/100 — ${result.headline}`,
+      title: `Website Trust Assessment: HIGH RISK ${Math.round(result.overall_risk)}/100 — ${result.headline}`,
     };
   }
   if (result.verdict === "warn") {
     return {
       text: "!",
       color: "#b54708",
-      title: `TrustLens: CAUTION ${Math.round(result.overall_risk)}/100 — ${result.headline}`,
+      title: `Website Trust Assessment: CAUTION ${Math.round(result.overall_risk)}/100 — ${result.headline}`,
     };
   }
   return {
     text: "OK",
     color: "#067647",
-    title: `TrustLens: low risk ${Math.round(result.overall_risk)}/100 — ${result.headline}`,
+    title: `Website Trust Assessment: low risk ${Math.round(result.overall_risk)}/100 — ${result.headline}`,
   };
 }
 
@@ -271,7 +271,7 @@ async function setBadge(tabId, text, color, title) {
 }
 
 async function clearBadge(tabId, title) {
-  await setBadge(tabId, "", "#64748b", title || "TrustLens Guard");
+  await setBadge(tabId, "", "#64748b", title || "Website Trust Assessment Guard");
 }
 
 function overlaySession() {
@@ -342,7 +342,7 @@ async function scanTab(tabId, options) {
       url: tab ? tab.url : "",
       error: "This page cannot be assessed.",
     });
-    await clearBadge(tabId, "TrustLens: this page cannot be assessed");
+    await clearBadge(tabId, "Website Trust Assessment: this page cannot be assessed");
     return { ok: false, error: "This page cannot be assessed." };
   }
   const existing = tabStates.get(tabId);
@@ -350,7 +350,7 @@ async function scanTab(tabId, options) {
     return { ok: true, pending: true, status: "scanning" };
   }
 
-  await setBadge(tabId, "…", "#475569", "TrustLens: scanning this page");
+  await setBadge(tabId, "…", "#475569", "Website Trust Assessment: scanning this page");
   tabStates.set(tabId, { status: "scanning", action, url: page.url });
   try {
     const result = await callGuard(page.url, action, opts.force !== false);
@@ -377,7 +377,7 @@ async function scanTab(tabId, options) {
   } catch (error) {
     const message = error && error.message ? error.message : "Assessment failed.";
     tabStates.set(tabId, { status: "error", action, url: page.url, error: message });
-    await setBadge(tabId, "?", "#64748b", "TrustLens: assessment unavailable");
+    await setBadge(tabId, "?", "#64748b", "Website Trust Assessment: assessment unavailable");
     return { ok: false, error: message };
   }
 }
@@ -385,31 +385,31 @@ async function scanTab(tabId, options) {
 async function refreshBadgeForTab(tabId, tab) {
   const settings = await getSettings();
   if (!settings.autoProtect) {
-    await clearBadge(tabId, "TrustLens: auto-protect is off");
+    await clearBadge(tabId, "Website Trust Assessment: auto-protect is off");
     return;
   }
   const page = pageInfo(tab && tab.url);
   if (!page) {
-    await clearBadge(tabId, "TrustLens: this page cannot be assessed");
+    await clearBadge(tabId, "Website Trust Assessment: this page cannot be assessed");
     return;
   }
   const cached = await getCached(page.hostname, "browse");
   if (cached) {
     await applyBadge(tabId, cached);
   } else {
-    await clearBadge(tabId, "TrustLens: page not assessed yet");
+    await clearBadge(tabId, "Website Trust Assessment: page not assessed yet");
   }
 }
 
 async function handleNavigation(tabId, tab) {
   const settings = await getSettings();
   if (!settings.autoProtect) {
-    await clearBadge(tabId, "TrustLens: auto-protect is off");
+    await clearBadge(tabId, "Website Trust Assessment: auto-protect is off");
     return;
   }
   const page = pageInfo(tab && tab.url);
   if (!page) {
-    await clearBadge(tabId, "TrustLens: this page cannot be assessed");
+    await clearBadge(tabId, "Website Trust Assessment: this page cannot be assessed");
     return;
   }
   const existing = tabStates.get(tabId);
@@ -610,16 +610,16 @@ function trustLensOverlay(payload) {
   const card = document.createElement("section");
   card.className = isBlock ? "card block" : "card";
   card.setAttribute("role", isBlock ? "alertdialog" : "alert");
-  card.setAttribute("aria-label", "TrustLens website risk warning");
+  card.setAttribute("aria-label", "Website trust risk warning");
 
   const head = document.createElement("div");
   head.className = "head";
   const logo = document.createElement("span");
   logo.className = "logo";
-  logo.textContent = "TL";
+  logo.textContent = "WT";
   const brand = document.createElement("span");
   brand.className = "brand";
-  brand.textContent = "TrustLens Guard";
+  brand.textContent = "Website Trust Assessment Guard";
   const risk = document.createElement("span");
   risk.className = "risk";
   risk.textContent = isBlock ? "High risk" : "Caution";

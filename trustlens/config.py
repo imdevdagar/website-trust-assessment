@@ -20,11 +20,11 @@ def _in_source_checkout() -> bool:
 def _user_data_root() -> Path:
     if os.name == "nt":
         base = os.getenv("LOCALAPPDATA") or os.getenv("APPDATA") or str(Path.home() / "AppData" / "Local")
-        return Path(base) / "TrustLens"
+        return Path(base) / "WebsiteTrustAssessment"
     if sys.platform == "darwin":
-        return Path.home() / "Library" / "Application Support" / "TrustLens"
+        return Path.home() / "Library" / "Application Support" / "WebsiteTrustAssessment"
     base = os.getenv("XDG_DATA_HOME") or str(Path.home() / ".local" / "share")
-    return Path(base) / "trustlens"
+    return Path(base) / "website-trust-assessment"
 
 
 def runtime_root() -> Path:

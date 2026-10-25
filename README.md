@@ -1,8 +1,8 @@
-# TrustLens
+# Website Trust Assessment System
 
 **Evidence-grounded, action-aware website trust assessment, built for local-first research.**
 
-TrustLens is a research prototype that assesses a website along four dimensions instead of returning a
+The system is a research prototype that assesses a website along four dimensions instead of returning a
 single opaque "safe/unsafe" label:
 
 | Dimension | Question it answers |
@@ -29,7 +29,7 @@ weak, the system abstains rather than inventing certainty.
 
 ## Research questions
 
-TrustLens is designed around four questions that the current literature handles unevenly:
+The system is designed around four questions that the current literature handles unevenly:
 
 1. **The padlock paradox.** How often do malicious sites present valid HTTPS, and how much does a
    padlock by itself tell a user about trust?
@@ -120,8 +120,8 @@ trustlens doctor
 the extension, the writable data directory, SQLite, Chromium, OCR, and the server port. It exits
 non-zero when a required check fails. A normal `pip install .` (without `-e`) is also supported: the
 API and dashboard are bundled in the wheel, while writable state goes to the platform user-data
-directory (`%LOCALAPPDATA%\TrustLens` on Windows). Set `TRUSTLENS_HOME` to choose another runtime
-directory. The browser extension is loaded from the source checkout.
+directory (`%LOCALAPPDATA%\WebsiteTrustAssessment` on Windows). Set
+`TRUSTLENS_HOME` to choose another runtime directory. The browser extension is loaded from the source checkout.
 
 Optional OCR:
 
@@ -151,7 +151,7 @@ assessments are served for one hour by default.
 2. Open `chrome://extensions` in Chrome or Edge.
 3. Enable **Developer mode**.
 4. Choose **Load unpacked** and select the `extension/` directory.
-5. Pin **TrustLens Guard** and open the popup on any page.
+5. Pin **Website Trust Assessment Guard** and open the popup on any page.
 
 The extension sends the current URL to `http://127.0.0.1:8000` only. It does not use a remote service.
 The server address can be changed in the extension settings, but only `127.0.0.1` and `localhost`
@@ -561,7 +561,7 @@ replaceable; no reputation API is queried at runtime.
 
 ## Safety and privacy
 
-- Page content is **data, not instructions**. TrustLens does not send raw HTML to a language model and
+- Page content is **data, not instructions**. The system does not send raw HTML to a language model and
   does not execute page-provided commands. Hidden instruction-like text is detected and reported.
 - Forms are inspected but never submitted. Passwords, card numbers, OTPs, and seed phrases are never
   entered.
@@ -632,9 +632,9 @@ described above.
 Citation details will be updated when the paper is submitted. Until then, cite the repository as:
 
 ```bibtex
-@misc{trustlens2026,
-  title  = {TrustLens: Evidence-Grounded, Action-Aware Website Trust Assessment},
-  author = {TrustLens Team},
+@misc{websiteTrustAssessment2026,
+  title  = {Website Trust Assessment System: Evidence-Grounded, Action-Aware Assessment of Web Trust},
+  author = {Website Trust Assessment Team},
   year   = {2026},
   note   = {Local-first research prototype},
 }
@@ -646,6 +646,6 @@ MIT. See [LICENSE](LICENSE).
 
 ## Acknowledgements
 
-TrustLens builds on open-source work including FastAPI, Playwright, BeautifulSoup, tldextract,
+The system builds on open-source work including FastAPI, Playwright, BeautifulSoup, tldextract,
 scikit-learn, and the public suffix list. Brand names and TLD lists are used only for local defensive
 matching; their inclusion does not imply endorsement.

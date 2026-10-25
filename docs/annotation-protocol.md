@@ -1,9 +1,9 @@
-# TrustLens annotation protocol and codebook
+# Website Trust Assessment System annotation protocol and codebook
 
 Version 1.0 — applied to the frozen 146-label set. The executed single-annotator deviation is recorded
 in §8.1; the two-person workflow below is the design that would apply if a second rater were available.
 
-This document defines how human labels are produced for TrustLens. It is written so that two
+This document defines how human labels are produced for the system. It is written so that two
 annotators working without a third party can still produce a defensible, reproducible label set. It
 also states where the two-person design is weaker than a fully independent adjudication panel and how
 that weakness is reported.
@@ -38,7 +38,7 @@ Three ordinal labels are available:
 | `suspicious` | Some evidence raises doubt, but the evidence is insufficient, conflicting, or too weak to call the site malicious. | Recent domain asking for credentials; brand-like name without clear impersonation; missing ownership or policy information; unexplained payment flow. |
 | `malicious` | Credible evidence of fraud, phishing, impersonation, malware delivery, or a deceptive transaction. | Brand impersonation plus credential collection; fake payment or gift-card demand; wallet seed-phrase request; confirmed phishing kit or feed-listed URL corroborated by the page. |
 
-The labels are intentionally coarse. TrustLens does not ask annotators to distinguish phishing,
+The labels are intentionally coarse. The system does not ask annotators to distinguish phishing,
 malware, and scam subtypes in the primary label. Subtype notes are welcome but are not part of the
 ground truth.
 
@@ -418,7 +418,7 @@ distribution of excluded samples; do not silently drop a class.
 > planned two-person design and would apply only if a second rater were available. Do not cite it as a
 > description of the executed label set.
 
-The two annotators are also the system's authors. This creates two risks: anchoring on the system's
+The two annotators are also the project's authors. This creates two risks: anchoring on the system's
 design and in-group consensus pressure. Mitigations:
 
 - the rule outputs remain hidden until labels are frozen;

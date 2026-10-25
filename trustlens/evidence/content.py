@@ -461,7 +461,7 @@ def extract(ctx: ScanContext) -> list[Evidence]:
                 code="sensitive_identifiers_requested",
                 title="Sensitive identity fields are collected",
                 detail="The page asks for identifiers such as a national ID, bank account, health, biometric, or tax "
-                "number. Confirm the organization, legal basis, and policy before submitting. Values are never stored by TrustLens.",
+                "number. Confirm the organization, legal basis, and policy before submitting. Values are never stored by the system.",
                 severity=Severity.MEDIUM,
                 risk_points=11.0,
                 confidence=0.7,

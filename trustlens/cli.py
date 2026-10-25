@@ -1,4 +1,4 @@
-"""Command-line interface for scanning, labeling, and serving TrustLens."""
+"""Command-line interface for scanning, labeling, and serving the local service."""
 
 from __future__ import annotations
 
@@ -32,7 +32,7 @@ def _parser() -> argparse.ArgumentParser:
         prog="trustlens",
         description="Evidence-grounded website trust assessment (local research prototype)",
     )
-    parser.add_argument("--version", action="version", version=f"TrustLens {ENGINE_VERSION}")
+    parser.add_argument("--version", action="version", version=f"Website Trust Assessment System {ENGINE_VERSION}")
     sub = parser.add_subparsers(dest="command", required=True)
 
     scan = sub.add_parser("scan", help="assess one URL")
@@ -740,7 +740,7 @@ def _research(args: argparse.Namespace) -> int:
                 url,
                 follow_redirects=True,
                 timeout=60.0,
-                headers={"User-Agent": "TrustLens/0.1 candidate metadata"},
+                headers={"User-Agent": "WebsiteTrustAssessment/0.1 candidate metadata"},
             )
             response.raise_for_status()
             retrieved_at = datetime.now(timezone.utc)
@@ -954,7 +954,7 @@ def _research(args: argparse.Namespace) -> int:
                     args.feed_url,
                     follow_redirects=True,
                     timeout=30.0,
-                    headers={"User-Agent": "TrustLens/0.1 candidate metadata"},
+                    headers={"User-Agent": "WebsiteTrustAssessment/0.1 candidate metadata"},
                 )
                 response.raise_for_status()
                 raw = response.content
@@ -2040,7 +2040,7 @@ def _doctor(args: argparse.Namespace) -> int:
             )
         )
     else:
-        print(f"TrustLens doctor ({ENGINE_VERSION})")
+        print(f"Website Trust Assessment System doctor ({ENGINE_VERSION})")
         for check in checks:
             print(f"  {check.status:<4}  {check.name:<20} {check.detail}")
         print()

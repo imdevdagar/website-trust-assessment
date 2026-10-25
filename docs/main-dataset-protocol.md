@@ -1,4 +1,4 @@
-# TrustLens main dataset protocol addendum
+# Website Trust Assessment System main dataset protocol addendum
 
 Version 2.2 — 2026-10-20
 
@@ -126,7 +126,7 @@ The last verified run covered all 220 collected assessments and reported `runtim
 evidence are recorded in `data/datasets/label_source_decision.json`.
 
 **Consequences for the claim in the paper.** The contribution is unchanged in kind and narrower in
-wording: TrustLens produces evidence-grounded, feature-based trust assessments, and a logistic
+wording: The system produces evidence-grounded, feature-based trust assessments, and a logistic
 regression over page, TLS, and domain-infrastructure signals separates feed-labeled malicious domains
 from benign ones better than a URL-only baseline (primary comparison: `signals` versus `url`, on
 domain-grouped test AUROC and AUPRC). The paper must state that the positive class is defined by abuse
@@ -192,7 +192,7 @@ infrastructure but is not a balanced sample of scam families.
 
 ## 4. Collection and annotation workflow
 
-Collection is local and manual. The crawler identifies itself as `TrustLens/0.1`, does not submit
+Collection is local and manual. The crawler identifies itself as `WebsiteTrustAssessment/0.1`, does not submit
 forms, does not download files, and does not execute page-provided instructions. It does not enforce
 `robots.txt`; this limitation is reported.
 

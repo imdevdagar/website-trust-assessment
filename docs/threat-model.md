@@ -1,8 +1,8 @@
-# TrustLens threat model
+# Website Trust Assessment System threat model
 
 Version 1.0 — engineering and research threat model.
 
-TrustLens deliberately visits hostile web pages and turns their content into evidence. It must treat
+The system deliberately visits hostile web pages and turns their content into evidence. It must treat
 the page, its subresources, its scripts, and its text as untrusted. This document lists the assets at
 risk, the adversaries considered, the trust boundaries, the implemented controls, and the risks that
 remain. It is a design document, not a certification.
@@ -22,7 +22,7 @@ remain. It is a design document, not a certification.
 
 **Assumptions:**
 
-- the operator controls the machine and runs TrustLens for personal research or demonstration;
+- the operator controls the machine and runs the system for personal research or demonstration;
 - the API is bound to `127.0.0.1` unless the operator explicitly changes it;
 - the operator does not scan authenticated pages or enter real credentials;
 - the browser and operating system receive security updates;
@@ -59,12 +59,12 @@ remain. It is a design document, not a certification.
 | Adversary | Capability | Primary goal |
 | --- | --- | --- |
 | Malicious website operator | Controls page content, scripts, redirects, forms, TLS configuration, and subresources. | Evade detection, impersonate a brand, collect credentials, or influence the assessment. |
-| Phishing kit / cloaking service | Serves different content to crawlers, data-centre IPs, or headless browsers. | Show benign content to TrustLens while targeting the human visitor. |
+| Phishing kit / cloaking service | Serves different content to crawlers, data-centre IPs, or headless browsers. | Show benign content to the system while targeting the human visitor. |
 | Prompt injector | Embeds instructions in visible or hidden page text, comments, metadata, or alt text. | Make an LLM or automated reviewer output a favourable verdict. |
 | Third-party script/adversary | Controls a script or iframe included by an otherwise legitimate page. | Exfiltrate data, inject content, or alter the page. |
 | Local unprivileged user | Can run processes and reach localhost on a shared machine. | Read the database, invoke the API, or tamper with labels. |
 | Network attacker | Can observe or modify traffic between the host and the target site, or DNS. | Intercept, redirect, or block collection. |
-| Dependency attacker | Compromises a Python or browser dependency. | Execute code in the TrustLens process or exfiltrate data. |
+| Dependency attacker | Compromises a Python or browser dependency. | Execute code in the assessment process or exfiltrate data. |
 | Careless operator | Exposes the API, scans private pages, or uses real credentials. | Accidental data leakage or misuse. |
 
 The design does not attempt to resist a malicious administrator or a compromised operating system.
@@ -154,7 +154,7 @@ download, opens popups, or abuses dialogs to interfere with collection.
 - bounded page settle and crawl timeouts;
 - no persistent profile reused across sites.
 
-**Residual risk:** browser zero-days and sandbox escapes. Run TrustLens on a patched system, ideally in
+**Residual risk:** browser zero-days and sandbox escapes. Run the software on a patched machine, ideally in
 a dedicated VM or non-privileged account when scanning untrusted links at scale. Do not scan pages while
 logged into sensitive accounts.
 
@@ -165,7 +165,7 @@ instructions to mark the site safe. If that text reaches a language model, it ca
 
 **Implemented controls:**
 
-- TrustLens does not send page content to an LLM. Explanations are deterministic templates over typed
+- The system does not send page content to an LLM. Explanations are deterministic templates over typed
   evidence.
 - Hidden text, comments, metadata, alt text, zero-width characters, and bidi controls are scanned for
   instruction-like patterns (`hidden_prompt_injection`, `zero_width_obfuscation`,
@@ -181,7 +181,7 @@ not implement LLM narration; enabling those settings alone does not create an LL
 
 ### 5.4 Assessment manipulation and cloaking
 
-**Threat.** The site shows TrustLens different content from what a human sees, hides adverse content,
+**Threat.** The site shows the crawler different content from what a human sees, hides adverse content,
 or fabricates trust signals to lower its risk score.
 
 **Implemented controls:**
@@ -194,7 +194,7 @@ or fabricates trust signals to lower its risk score.
 - abstention when coverage is low.
 
 **Residual risk:** cloaking is fundamentally hard to defeat from a single vantage point. A site can
-serve benign content to a headless browser or a data-centre IP. TrustLens reports what it observed and
+serve benign content to a headless browser or a data-centre IP. The system reports what it observed and
 does not claim to reconstruct the human view. Future work could compare multiple vantage points, but
 that is outside version 1.0.
 
@@ -349,7 +349,7 @@ review what is sent to it.
 
 ## 8. Responsible use
 
-- TrustLens is **advisory**. Do not use it as the sole reason to block a site, accuse an organization,
+- The system is **advisory**. Do not use it as the sole reason to block a site, accuse an organization,
   or make a financial decision.
 - A low score is not proof of safety. A high score is not proof of malice. Report confidence, coverage,
   and missing evidence alongside the verdict.
@@ -359,6 +359,6 @@ review what is sent to it.
 - Do not expose the API to the internet or a shared network without authentication and a review.
 - Do not publish screenshots or assessment records containing personal data.
 - If you find a real phishing site, report it to the relevant brand, hosting provider, or a public
-  takedown service. TrustLens is not a takedown service.
-- Security issues in TrustLens should be reported privately to the project maintainers before public
+  takedown service. The system is not a takedown service.
+- Security issues in the project should be reported privately to the project maintainers before public
   disclosure.

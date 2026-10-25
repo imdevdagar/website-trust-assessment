@@ -47,7 +47,7 @@ RECOMMENDATIONS: dict[Action, dict[RiskLevel, str]] = {
             "stay alert for credential requests, unusual payment methods, or pressure to act quickly."
         ),
         RiskLevel.UNKNOWN: (
-            "TrustLens could not collect enough reliable evidence. Treat the site as unverified until "
+            "The system could not collect enough reliable evidence. Treat the site as unverified until "
             "you can confirm who operates it."
         ),
     },
@@ -142,7 +142,7 @@ def _rationale(
 ) -> str:
     level = result.overall_level.value
     sentences = [
-        f"TrustLens combined {len(result.evidence)} evidence item(s) across four dimensions for "
+        f"The assessment combined {len(result.evidence)} evidence item(s) across four dimensions for "
         f"{action_label(action)} on {final_domain}. The action-weighted risk score is "
         f"{result.overall_risk:.0f}/100 ({level}) with {result.confidence:.0%} confidence."
     ]

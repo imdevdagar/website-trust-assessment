@@ -33,7 +33,7 @@ from .security import (
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 TrustLens/0.1"
+    "(KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 WebsiteTrustAssessment/0.1"
 )
 MAX_REDIRECTS = 5
 _MAX_SCREENSHOT_HEIGHT = 3000

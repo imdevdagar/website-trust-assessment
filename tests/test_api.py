@@ -110,7 +110,7 @@ def test_root_redirects_to_dashboard_and_dashboard_is_served(client: TestClient)
     dashboard = client.get("/dashboard")
     assert dashboard.status_code == 200
     assert dashboard.headers["content-type"].startswith("text/html")
-    assert "TrustLens" in dashboard.text
+    assert "Website Trust Assessment" in dashboard.text
 
 
 def test_assessment_flow_persists_listing_detail_feedback_and_stats(client: TestClient) -> None:
@@ -126,8 +126,8 @@ def test_assessment_flow_persists_listing_detail_feedback_and_stats(client: Test
     assert body["domain"] == "example.com"
     assert body["overall_level"] == "low"
     assert body["evidence"]
-    assert response.headers["X-TrustLens-Assessment"] == assessment_id
-    assert response.headers["X-TrustLens-Cache"] == "miss"
+    assert response.headers["X-Website-Trust-Assessment"] == assessment_id
+    assert response.headers["X-Website-Trust-Cache"] == "miss"
     assert response.headers["Cache-Control"] == "no-store"
 
     listing = client.get("/v1/assessments", params={"domain": "example.com"})

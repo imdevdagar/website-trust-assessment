@@ -1,6 +1,6 @@
 """URL normalisation and SSRF protection.
 
-TrustLens fetches untrusted URLs. Every network hop (initial request, redirects,
+The system fetches untrusted URLs. Every network hop (initial request, redirects,
 subresources, policy fetches) must pass these checks. DNS rebinding remains a
 residual risk because resolution and connection are separate operations; the
 server is intended to run locally behind an operator who supplies URLs. See

@@ -1,4 +1,4 @@
-"""FastAPI application for the local TrustLens service."""
+"""FastAPI application for the local website trust assessment service."""
 
 from __future__ import annotations
 
@@ -99,15 +99,15 @@ def create_app(cfg: Settings | None = None) -> FastAPI:
         storage.init_db()
         application.state.assessor = Assessor(config)
         application.state.rate_limiter = limiter
-        logger.info("TrustLens %s ready on %s:%s", ENGINE_VERSION, config.host, config.port)
+        logger.info("Website Trust Assessment System %s ready on %s:%s", ENGINE_VERSION, config.host, config.port)
         yield
 
     application = FastAPI(
-        title="TrustLens",
+        title="Website Trust Assessment System",
         version=ENGINE_VERSION,
         summary="Evidence-grounded, multi-dimensional website trust assessment",
         description=(
-            "Local-first research prototype. TrustLens crawls a public page, gathers security, "
+            "Local-first research prototype. The system crawls a public page, gathers security, "
             "identity, privacy, and manipulation evidence, and returns an action-aware risk "
             "profile with confidence and abstention. Scores are advisory, not verdicts."
         ),
@@ -189,8 +189,8 @@ def create_app(cfg: Settings | None = None) -> FastAPI:
             raise
         except ValueError as exc:
             raise HTTPException(status_code=400, detail=str(exc)) from exc
-        response.headers["X-TrustLens-Assessment"] = result.id
-        response.headers["X-TrustLens-Cache"] = "hit" if result.cached else "miss"
+        response.headers["X-Website-Trust-Assessment"] = result.id
+        response.headers["X-Website-Trust-Cache"] = "hit" if result.cached else "miss"
         response.headers["Cache-Control"] = "no-store"
         return SubmissionResponse.from_assessment(result)
 

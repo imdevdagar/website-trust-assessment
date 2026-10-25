@@ -254,7 +254,7 @@ def create_app(
         raise KeyError(f"unknown sample_id: {sample_id}")
 
     app = FastAPI(
-        title="TrustLens blind annotation",
+        title="Website Trust Assessment System blind annotation",
         docs_url=None,
         redoc_url=None,
         openapi_url=None,

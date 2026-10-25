@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "TrustLens Guard",
+  "name": "Website Trust Assessment Guard",
   "version": "0.1.1",
-  "description": "Local-first website trust guard. Page URLs are sent only to your own TrustLens server on localhost.",
+  "description": "Local-first website trust guard. Page URLs are sent only to your own assessment server on localhost.",
   "permissions": ["storage", "tabs", "scripting"],
   "host_permissions": [
     "http://127.0.0.1/*",
@@ -14,7 +14,7 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "TrustLens Guard",
+    "default_title": "Website Trust Assessment Guard",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon16.png",

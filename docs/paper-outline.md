@@ -1,11 +1,11 @@
 # Paper outline
 
-Working title: **TrustLens: Evidence-Grounded, Action-Aware Website Trust Assessment**
+Working title: **Website Trust Assessment System: Evidence-Grounded, Action-Aware Assessment of Web Trust**
 
 Alternative titles:
 
 - *Beyond the Padlock: Multi-Dimensional, Evidence-Grounded Website Trust Assessment*
-- *TrustLens: Auditable Website Trust Assessment with Calibrated Abstention*
+- *Website Trust Assessment System: Auditable Assessment of Web Trust with Calibrated Abstention*
 
 This outline is a writing plan, not a results claim. Every number in the manuscript must be traceable to
 a frozen dataset manifest and a run artifact. Placeholders use angle brackets.
@@ -15,7 +15,7 @@ a frozen dataset manifest and a run artifact. Placeholders use angle brackets.
 ## 1. Abstract skeleton (200–250 words)
 
 > Web users decide whether to browse, sign up, or pay on a site with little more than a padlock and an
-> opaque reputation verdict. We present **TrustLens**, a local-first system that assesses a website
+> opaque reputation verdict. We present the **Website Trust Assessment System**, a local-first tool that assesses a website
 > along four dimensions — security and fraud, identity and legitimacy, privacy and data, and
 > manipulation and deception — and returns auditable evidence rather than a single unexplained score.
 > It combines bounded page collection, transport and domain intelligence, form and content analysis,
@@ -30,7 +30,7 @@ a frozen dataset manifest and a run artifact. Placeholders use angle brackets.
 > calibration, risk–coverage, the padlock paradox (84.9% of feed-listed positives serve HTTPS, but only
 > 48.3% present a trusted chain), and a controlled 42-pair injection study in which all 40
 > hidden-channel pairs reproduce their clean baseline exactly once injection evidence is removed.
-> TrustLens is a CPU-only, no-paid-API prototype for advisory use, not a guarantee of safety.
+> The system is a CPU-only, no-paid-API prototype for advisory use, not a guarantee of safety.
 
 The numbers above are artifact-backed: dataset `feed_v2` (SHA-256 `ca677752…`), runs in
 `data/research/runs/feed_v2`, H4 in `data/research/injection_h4.json`. If any artifact is rebuilt, rerun
@@ -91,12 +91,12 @@ Organise by gap, not by a chronological list:
    Platt.
 5. Leakage and reproducibility: cite Kaufman et al., Kapoor & Narayanan.
 6. Prompt injection and LLM-integrated tools: cite Greshake et al., Perez & Ribeiro.
-7. Position TrustLens: an integrated, action-aware, auditable framework with a leakage-controlled
+7. Position the system: an integrated, action-aware, auditable framework with a leakage-controlled
    evaluation. Avoid claiming "first".
 
 End with a short gap table:
 
-| Gap | Existing practice | TrustLens response |
+| Gap | Existing practice | System response |
 | --- | --- | --- |
 | Binary verdicts | One phishing score | Four dimensions with separate evidence. |
 | Action-blind | Same threshold for browse/pay | Action-specific weights. |
@@ -114,7 +114,7 @@ End with a short gap table:
 - Summarise the full threat model in an appendix or supplementary artifact; keep the paper section
   focused on requirements that shaped the design.
 
-### 4. TrustLens design (≈2.5 pages)
+### 4. System design (≈2.5 pages)
 
 #### 4.1 Architecture
 
@@ -174,7 +174,7 @@ End with a short gap table:
   No inter-rater agreement exists and none may be claimed.
 - Agreement between the two label sources on their overlap, and what disagreement says about feed
   precision.
-- Two-person limitation: the annotators are the system authors; no independent adjudicator.
+- Two-person limitation: the annotators are the project's authors; no independent adjudicator.
 - Inclusion/exclusion and timing window; feed domains that could not be crawled are dropped, never
   recorded as benign.
 - Dataset table: domains, assessments, label counts, split counts, exclusions.

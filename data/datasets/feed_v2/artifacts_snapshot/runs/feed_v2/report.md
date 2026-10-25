@@ -1,4 +1,4 @@
-# TrustLens research run feed_v2
+# Website trust assessment research run feed_v2
 
 Generated: 2026-10-20T19:54:19.537229+00:00
 

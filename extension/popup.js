@@ -93,7 +93,7 @@ function normalizeServer(raw) {
     throw new Error("The server address must use http:// or https://.");
   }
   if (!["127.0.0.1", "localhost"].includes(parsed.hostname)) {
-    throw new Error("For privacy, TrustLens Guard only connects to localhost.");
+    throw new Error("For privacy, Website Trust Assessment Guard only connects to localhost.");
   }
   return parsed.origin;
 }

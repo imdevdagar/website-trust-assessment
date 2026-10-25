@@ -731,7 +731,7 @@ def _write_report(
     dataset_manifest: Mapping[str, Any],
 ) -> None:
     lines: list[str] = [
-        f"# TrustLens research run {results['run_id']}",
+        f"# Website trust assessment research run {results['run_id']}",
         "",
         f"Generated: {results['created_at']}",
         "",

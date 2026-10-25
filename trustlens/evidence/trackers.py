@@ -218,7 +218,7 @@ def _cookie_evidence(ctx: ScanContext) -> list[Evidence]:
             code="tracking_cookies",
             title="Known tracking cookies were set",
             detail=f"Cookie names associated with analytics or advertising were observed: {', '.join(tracking[:8])}. "
-            "Cookie values are not stored by TrustLens.",
+            "Cookie values are not stored by the system.",
             severity=Severity.LOW,
             risk_points=3.0,
             confidence=0.75,

@@ -167,7 +167,7 @@
     els.metaRole.textContent = state.meta.role ? `Annotator ${state.meta.role}` : "Annotator";
     els.metaRound.textContent = state.meta.round || "Round";
     els.metaSheet.textContent = state.meta.sheet || "";
-    document.title = `TrustLens | ${state.meta.round || "annotation"} | annotator ${state.meta.role || ""}`;
+    document.title = `Website Trust Assessment | ${state.meta.round || "annotation"} | annotator ${state.meta.role || ""}`;
     const snap = state.meta.snapshots;
     const hasCaptures = Boolean(snap && snap.sites && (snap.ok || snap.duplicate || snap.likely_blank));
     if (hasCaptures) {

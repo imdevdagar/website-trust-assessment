@@ -1,6 +1,6 @@
-# TrustLens documentation
+# Website Trust Assessment System documentation
 
-This directory contains the research and engineering documentation for TrustLens. The README in the
+This directory contains the research and engineering documentation for the system. The README in the
 repository root explains installation and day-to-day use; the documents here define the study protocol
 and the claims the project is allowed to make.
 

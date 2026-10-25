@@ -1,7 +1,7 @@
 """Infrastructure evidence: favicon and image hashes, analytics IDs, and labels.
 
 The graph is intentionally local. Domains become linked only through values
-observed by TrustLens or imported labels; shared hosting and copied images can
+observed by the system or imported labels; shared hosting and copied images can
 create legitimate overlaps, so overlaps are surfaced with an explicit caveat
 rather than treated as proof.
 """

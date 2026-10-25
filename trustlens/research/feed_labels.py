@@ -4,7 +4,7 @@ The pilot and main batches were labelled by one human annotator. That set is kep
 validity subset, and the primary ground truth becomes membership of a public abuse feed,
 captured at a recorded time. Two properties make this defensible rather than circular:
 
-* The feed is never imported into the local ``domain_labels`` store, so TrustLens cannot score a
+* The feed is never imported into the local ``domain_labels`` store, so the system cannot score a
   page using the same verdict it is later evaluated against. ``assert_no_label_leakage`` checks
   that assumption against the collected assessments instead of trusting it.
 * A feed entry is a statement about a moment in time, so every label carries the retrieval
@@ -81,7 +81,7 @@ def fetch_feed(url: str, *, name: str) -> tuple[str, dict[str, Any]]:
         url,
         follow_redirects=True,
         timeout=60.0,
-        headers={"User-Agent": "TrustLens/0.1 research labels"},
+        headers={"User-Agent": "WebsiteTrustAssessment/0.1 research labels"},
     )
     response.raise_for_status()
     retrieved_at = datetime.now(timezone.utc)
@@ -442,7 +442,7 @@ def assert_no_label_leakage(
 ) -> dict[str, Any]:
     """Check that no assessment was scored using the verdict it is about to be evaluated against.
 
-    TrustLens can attach ``known_malicious_label`` evidence from the local ``domain_labels`` store,
+    The system can attach ``known_malicious_label`` evidence from the local ``domain_labels`` store,
     which is worth 55 risk points on its own. If the evaluation feed ever reached that store, the
     model would be reading the answer, so this is asserted against the artefacts rather than assumed.
     """

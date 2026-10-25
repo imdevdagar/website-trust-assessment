@@ -1,8 +1,8 @@
-# TrustLens research plan
+# Website Trust Assessment System research plan
 
 Version 1.0 — pre-registration-style plan for the major project and paper.
 
-This document defines the research problem, the gap TrustLens addresses, the hypotheses, the study
+This document defines the research problem, the gap The system addresses, the hypotheses, the study
 design, the analysis, and the threats to validity. It is written before the human-labelled dataset is
 frozen so that the evaluation is not redesigned around observed results. Any change after the freeze
 must be recorded as a dated amendment with a reason.
@@ -37,7 +37,7 @@ depends on several different questions:
 A single score hides these distinctions. It also hides uncertainty: a site with little observable
 evidence can look "safe" simply because the crawler could not collect enough information.
 
-TrustLens asks a narrower, testable question:
+The system asks a narrower, testable question:
 
 > Can a local, CPU-only system produce a multi-dimensional, action-aware trust assessment whose
 > evidence and confidence are auditable, and can it distinguish benign from malicious sites without
@@ -59,7 +59,7 @@ similarity, and blacklist prediction. These methods are useful, but they usually
 "phishing vs legitimate" label. They do not expose separate security, identity, privacy, and
 manipulation evidence, and they do not vary the decision by the action the user is about to take.
 
-**TrustLens response:** four dimensions, action-specific weights, and evidence-level provenance rather
+**System response:** four dimensions, action-specific weights, and evidence-level provenance rather
 than a single opaque classifier.
 
 ### G2. The padlock is treated as a trust signal
@@ -69,7 +69,7 @@ users often read a lock or "secure" label as a broader trust judgment. Phishing 
 certificates. The literature often measures certificate features as one classifier input but rarely
 reports how much of a user's trust decision is explained by the padlock alone.
 
-**TrustLens response:** HTTPS is one evidence item; the padlock paradox is measured descriptively in the
+**System response:** HTTPS is one evidence item; the padlock paradox is measured descriptively in the
 collected sample, and an HTTPS-only baseline is reported so its limits are visible.
 
 ### G3. Privacy and manipulation are measured separately
@@ -79,7 +79,7 @@ from phishing detection. A user-facing trust tool should connect "this page may 
 "this page tracks you aggressively" and "this page pressures you", without collapsing them into one
 undifferentiated risk number.
 
-**TrustLens response:** privacy and manipulation are first-class dimensions with their own evidence,
+**System response:** privacy and manipulation are first-class dimensions with their own evidence,
 coverage, and confidence, while the overall score remains action-aware.
 
 ### G4. Explanations are often post-hoc, not evidence-grounded
@@ -89,7 +89,7 @@ observation with provenance. A phishing warning that says "the model gave 0.93" 
 learn from, or audit. Calibration and selective prediction are also rarely reported together in
 phishing detection, even though both matter for a warning that is allowed to say "unknown".
 
-**TrustLens response:** every score decomposes into typed evidence cards, confidence, coverage, and
+**System response:** every score decomposes into typed evidence cards, confidence, coverage, and
 missing-evidence notes; calibration and risk-coverage are part of the evaluation protocol.
 
 ### G5. Leakage and split design inflate reported performance
@@ -99,7 +99,7 @@ reputation shortcut or memorise a domain that appears in both train and test. Th
 reproducibility problem in machine learning for science, and it is especially acute for web security,
 where labels and features can come from the same blocklist.
 
-**TrustLens response:** label evidence and its derivatives are excluded; splits are grouped by
+**System response:** label evidence and its derivatives are excluded; splits are grouped by
 registrable domain; the test set is frozen; dataset and run hashes are recorded.
 
 ### G6. Hostile page content and LLM-assisted explanations
@@ -108,7 +108,7 @@ Indirect prompt injection shows that untrusted text can redirect an LLM that pro
 that sends raw page HTML to an LLM creates a new attack surface: the page can try to talk its way into a
 favourable verdict. Explainability must be isolated from instruction-following.
 
-**TrustLens response:** the current scoring path has no LLM. Hidden instruction-like content is detected
+**System response:** the current scoring path has no LLM. Hidden instruction-like content is detected
 and surfaced. A future LLM narration experiment must pass structured evidence, not raw HTML, and must be
 evaluated separately.
 
@@ -309,7 +309,7 @@ For the dataset:
 5. **Artifact contribution.** Code, protocol, model card, dataset datasheet, manifests, and run reports
    that another pair of students can reproduce.
 
-The paper should not claim that TrustLens is a deployed security product or that its labels are
+The paper should not claim that The system is a deployed security product or that its labels are
 ground truth.
 
 ---
@@ -395,7 +395,7 @@ paper's artifact appendix should state the hardware and runtime.
 - Do not name and shame small sites from a false positive. Report aggregate results and use the system
   as advisory.
 - Do not release an evasion toolkit. Publish defensive detection logic and features responsibly.
-- Security vulnerabilities in TrustLens follow private disclosure before publication.
+- Security vulnerabilities in the system follow private disclosure before publication.
 - The optional user study must include a debrief, a clear explanation that the system can be wrong, and
   a way to withdraw.
 

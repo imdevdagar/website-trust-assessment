@@ -52,8 +52,8 @@ trustlens doctor
 ```
 
 A non-editable install stores the database, screenshots, and models in the platform user-data
-directory (`%LOCALAPPDATA%\TrustLens` on Windows, `~/Library/Application Support/TrustLens` on macOS,
-`$XDG_DATA_HOME/trustlens` on Linux). Set `TRUSTLENS_HOME` to override it. The extension remains in the
+directory (`%LOCALAPPDATA%\WebsiteTrustAssessment` on Windows, `~/Library/Application Support/WebsiteTrustAssessment` on macOS,
+`$XDG_DATA_HOME/website-trust-assessment` on Linux). Set `TRUSTLENS_HOME` to override it. The extension remains in the
 source checkout's `extension/` directory.
 
 ## 3. Isolated demo state
@@ -91,7 +91,7 @@ demo, stop the server and delete only that directory. Do not delete `data/`.
    trustlens stats
    ```
 5. **Extension (1 min).** Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**,
-   and select `extension/`. Pin TrustLens Guard, open `https://example.com`, and open the popup. Show
+   and select `extension/`. Pin Website Trust Assessment Guard, open `https://example.com`, and open the popup. Show
    the verdict, the evidence summary, and the localhost-only server setting.
 6. **Evaluation evidence (30 s, optional).** Open `data/research/runs/feed_v2/report.md` and state one
    result only: the shipped rule engine is at chance against feed membership (AUROC 0.519 on the test

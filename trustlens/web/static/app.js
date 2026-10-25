@@ -191,7 +191,7 @@
         headers: { Accept: "application/json", ...(headers || {}) },
       });
     } catch (error) {
-      throw new Error("Could not reach the local TrustLens engine. Is the server running?");
+      throw new Error("Could not reach the local assessment engine. Is the server running?");
     }
     const type = response.headers.get("content-type") || "";
     let payload;
@@ -228,11 +228,11 @@
     try {
       const health = await request("/health");
       setStatus(true, "Local engine online");
-      dom.apiStatus.title = `TrustLens engine ${health.version} is running on this machine`;
+      dom.apiStatus.title = `Assessment engine ${health.version} is running on this machine`;
       dom.footerVersion.textContent = `v${health.version}`;
     } catch (error) {
       setStatus(false, "Local engine offline");
-      dom.apiStatus.title = "The local TrustLens engine is not reachable";
+      dom.apiStatus.title = "The local assessment engine is not reachable";
     }
   }
 
@@ -258,7 +258,7 @@
       hostname.endsWith(".local") ||
       hostname.endsWith(".internal")
     ) {
-      throw new Error("Local and private addresses are not assessed by TrustLens.");
+      throw new Error("Local and private addresses are not assessed by the system.");
     }
     if (!hostname.includes(".") && !hostname.startsWith("[")) {
       throw new Error("Enter a full domain name, for example example.com.");
@@ -327,7 +327,7 @@
       .then((data) => {
         clearError();
         renderAssessment(data);
-        document.title = `${data.domain} — TrustLens`;
+        document.title = `${data.domain} — Website Trust Assessment`;
         refreshSidebar();
       })
       .catch((error) => {
@@ -717,7 +717,7 @@
 
     const note = el("textarea", "feedback-note");
     note.maxLength = 1000;
-    note.placeholder = "Optional note: what did TrustLens get right or wrong?";
+    note.placeholder = "Optional note: what did the system get right or wrong?";
     note.setAttribute("aria-label", "Optional feedback note");
     panel.append(note);
 
@@ -852,7 +852,7 @@
     try {
       const data = await request(`/v1/assessments/${encodeURIComponent(id)}`);
       renderAssessment(data);
-      document.title = `${data.domain} — TrustLens`;
+      document.title = `${data.domain} — Website Trust Assessment`;
       try {
         document.getElementById("results").scrollIntoView({ behavior: "smooth", block: "start" });
       } catch (error) {

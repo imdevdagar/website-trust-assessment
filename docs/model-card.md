@@ -1,4 +1,4 @@
-# TrustLens model card
+# Website Trust Assessment System model card
 
 Version 1.2 — 2026-10-21. Covers the deterministic runtime engine and the research model artifacts
 evaluated on dataset `feed_v2`.
@@ -27,7 +27,7 @@ remains the rule engine; the learned models are evaluation artifacts (section 4.
 
 | Item | Value |
 | --- | --- |
-| Name | TrustLens website trust assessment |
+| Name | Website Trust Assessment System |
 | Runtime version | `0.1.1-rules` |
 | Runtime decision logic | Deterministic evidence aggregation with action weights, confidence, coverage, abstention, and severity/label floors |
 | Research candidates | Rule engine baseline; L2 logistic regression; HistGradientBoosting classifier |
@@ -273,7 +273,7 @@ is a request for caution, not a clean bill of health.
    transparency signals. The interface must show the evidence and avoid categorical accusations.
 10. **Prompt injection.** No LLM is in the current scoring path; hidden instruction-like content is
     detected. Any future LLM integration needs a new threat review.
-11. **No malware execution.** TrustLens observes page behaviour and downloads indicators; it does not
+11. **No malware execution.** The system observes page behaviour and downloads indicators; it does not
     execute payloads or scan files.
 12. **No guarantee of safety.** A low risk score means the collected evidence did not show a material
     adverse signal; it is not proof.

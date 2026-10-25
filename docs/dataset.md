@@ -1,4 +1,4 @@
-# TrustLens dataset datasheet
+# Website Trust Assessment System dataset datasheet
 
 Version 1.1 — 2026-10-21. Describes the frozen `feed_v2` dataset. Composition numbers come from
 `data/datasets/feed_v2/manifest.json`; the dataset SHA-256 is recorded there and in the run artifacts.
@@ -15,7 +15,7 @@ public websites**, not a random sample of the web and not a measurement of phish
 website assessment can distinguish benign from malicious sites under a protocol that controls for
 label leakage, domain overlap, and test-set reuse.
 
-**Who created it?** Two final-year Computer Science students (the TrustLens team). The human labels are
+**Who created it?** Two final-year Computer Science students (the project team). The human labels are
 author-produced by a single annotator; the primary evaluation labels come from public abuse feeds, with
 the provenance rules in section 4.2. See [annotation-protocol.md](annotation-protocol.md) and
 [main-dataset-protocol.md](main-dataset-protocol.md) for the limits of that process.
@@ -153,7 +153,7 @@ class is very small, the dataset is underpowered regardless of the total sample 
 6. Build the dataset with explicit labels, leakage checks, and a fixed seed.
 7. Archive the dataset JSONL, CSV, manifest, label file, configuration, code version, and hashes.
 
-Collection is local and manual. The crawler identifies itself with a `TrustLens/0.1` user-agent and
+Collection is local and manual. The crawler identifies itself with a `WebsiteTrustAssessment/0.1` user-agent and
 does not submit forms, download files, or execute page-provided instructions. It does not currently
 enforce `robots.txt`; only public pages are collected for research, and the limitation is reported.
 
@@ -243,7 +243,7 @@ Each line is one sample:
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `assessment_id` | string | TrustLens assessment identifier. |
+| `assessment_id` | string | Assessment identifier. |
 | `url` | string | Original submitted URL. |
 | `normalized_url` | string | Canonical URL used by the crawler. |
 | `final_url` | string | URL after redirects. |
