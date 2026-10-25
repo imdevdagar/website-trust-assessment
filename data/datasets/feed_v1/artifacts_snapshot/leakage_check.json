@@ -1,0 +1,9 @@
+{
+  "assessments": 825,
+  "feed_domains_in_runtime_store": [],
+  "leaked_assessments": 0,
+  "leaked_examples": [],
+  "passed": true,
+  "runtime_label_store_rows": 0,
+  "unreadable_rows": 84
+}

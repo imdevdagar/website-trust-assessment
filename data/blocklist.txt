@@ -1,0 +1,9 @@
+# One domain (or full URL) per line. Lines starting with # are ignored.
+# Import with: python -m scripts.import_blocklist data/blocklist.txt --source manual
+#
+# Do not commit production blocklists containing personal data. Import public
+# feeds (OpenPhish, PhishTank exports) into the local SQLite database instead.
+#
+# Example:
+# login-secure-example.com
+# https://another-example.test/verify

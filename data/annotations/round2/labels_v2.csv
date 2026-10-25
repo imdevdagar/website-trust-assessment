@@ -1,0 +1,34 @@
+sample_id,domain,url,assessment_id,label,confidence,source,annotator_a,annotator_b,note
+s_286bde0a8b,textfiles.com,https://www.textfiles.com/,533447a4c57e470aa3b5a21c98eddc37,suspicious,0.4,single_annotator,suspicious,,"it doesnt open but seems legit; amended to suspicious: page unreachable and no decisive evidence (codebook 2.2, 3.2)"
+s_2b4bc65664,craigslist.org,https://www.craigslist.org/area/delhi,ab9088e73dd74d87b2f3fc9aa4754080,suspicious,1.0,single_annotator,suspicious,,looks fake to me
+s_2ba1a345a8,emaycartabogados.com,https://emaycartabogados.com/cgibin/docu.html,444182586e004015b9a9f705b18fa95d,malicious,1.0,single_annotator,malicious,,warning from browser
+s_3f918c483d,traveltoitalynow.net,https://traveltoitalynow.net/pages/e7d81f2a-673c-45e8-8262-2361b636b7aa/ab8c449a362f6e9fa9ffa952620eba0664a59847946a3bad47791bb5f0e545b755daaa76c7c8ec4cca90be4eea76011b04563cc6805cbe580f0f9cf29110646d,be145eb46f8445d5bc276b14a9b709f0,malicious,1.0,single_annotator,malicious,,warning from browser
+s_42edf63bff,sauv.info,http://www.sauv.info/Roundcube.zip,8c541128cb494fffa02855d81996e74a,suspicious,1.0,single_annotator,suspicious,,page isnt working
+s_43cef2abde,mozilla.org,https://www.mozilla.org/en-US/,039aac952a7c49658834011c830cc531,benign,1.0,single_annotator,benign,,
+s_45a17b5ec8,example.com,https://example.com/,e4441cd7e8594a1dbfaec5275b55d6f3,suspicious,1.0,single_annotator,suspicious,,no info on website
+s_4fe3d3523b,neverssl.com,http://astoundinginnergoodlove.neverssl.com/online/,080ae0519a3a418abb7fd508cf88d0f2,suspicious,0.85,single_annotator,suspicious,,doesnt seem genuine
+s_5bcc5cafc0,roblox.com.bz,https://roblox.com.bz/communities/2426392765/,7c0a4bc9d9c041aebeb493a76b37fc01,malicious,1.0,single_annotator,malicious,,browser gave warning for suspision
+s_6a00330eb0,target.com,https://www.target.com/,24031d01fa0944b4b67c88b21cbf98c7,benign,1.0,single_annotator,benign,,
+s_8cc2ed86d7,nkseo.com,https://nkseo.com/,83cf61a1416b409a87884d4466a113c4,malicious,1.0,single_annotator,malicious,,received warning from the browser
+s_9afcaae487,icrc.org,https://www.icrc.org/en,c610dbd3066e4d7eacc415d4ff443342,benign,1.0,single_annotator,benign,,
+s_a31fb7a213,bet73095.com,https://bet73095.com/promo,f6ddedf9f1db4fe3bd5de87bef2b0edd,suspicious,1.0,single_annotator,suspicious,,connection not secure
+s_a6043f46c1,cdc.gov,https://www.cdc.gov/index.html,453b9d2008264675b44455d2a2bd1504,benign,1.0,single_annotator,benign,,
+s_b5ac52bfc1,ikea.com,https://www.ikea.com/,5c8e861a5fe944abafb9fb9df7ced9c5,benign,1.0,single_annotator,benign,,
+s_b5c2b02c5b,authentication.ms,https://authentication.ms/E.VWPb4muR_4I,5ac28aaee37544aaa6fbcf8615bad7cd,malicious,1.0,single_annotator,malicious,,looks fake clearly
+s_b7f9123cae,dropbox.com,https://www.dropbox.com/login,fe9f75bcc9884ff29e2c24af715cead8,benign,1.0,single_annotator,benign,,
+s_b9b4037294,nationalgeographic.com,https://www.nationalgeographic.com/,d3be4c0242b842e6bcc4249e481b4fa2,benign,1.0,single_annotator,benign,,
+s_bcd9c98f82,dfnvjdfnvdjnfvdjfvdndfjvn.com,https://www.dfnvjdfnvdjnfvdjfvdndfjvn.com/,99a5b9d7644c4c5a89268f36a2f38e52,malicious,1.0,single_annotator,malicious,,dangerous site warning from browser
+s_ca2d697b9f,sorrisokidsfamily.com.br,https://sorrisokidsfamily.com.br/wp-fonts/we/,6064e965c52a40108793dea8b2542ded,malicious,1.0,single_annotator,malicious,,dangerous site warning
+s_ca43b35407,isro.gov.in,https://www.isro.gov.in/,899afedc2ef741b19c4f905a7c56ca46,benign,1.0,single_annotator,benign,,
+s_d272267bf3,canva.com,https://www.canva.com/en_in/login/,d896d200c72f42318512aaf793955457,benign,1.0,single_annotator,benign,,
+s_d27eb7820c,khanacademy.org,https://www.khanacademy.org/,eca593db25614acd85d011e2a8f7e915,benign,1.0,single_annotator,benign,,
+s_d6e010e6a2,shopeemypartner.com,https://shopeemypartner.com/home,f64df7fbc7de4b409280d0f711f9078a,malicious,1.0,single_annotator,malicious,,warning from browser
+s_ded33deefd,abcgil.com,https://abcgil.com/EN/owa/,a0394e758c4c45c9b9b05472d3b0b252,malicious,1.0,single_annotator,malicious,,warning from browser
+s_df23253874,doctorpizzaband.com,http://doctorpizzaband.com/wp-content/uploads/aynqxts/wsdqmoc/dpgqmbx/clickon/pasific.html,dc9f4660040547fca8d796fa84eb3671,malicious,1.0,single_annotator,malicious,,fake
+s_e56b14fb78,portlandleathergoods.com,https://www.portlandleathergoods.com/,3ada662a19ab40a9b0d82cc43b297884,benign,0.9,single_annotator,benign,,
+s_e61c4b0421,www-mfacebook.com.vn,http://www-mfacebook.com.vn/9x8q1ays3gb,bad3546570694054bbdfb72354e7c219,suspicious,0.4,single_annotator,suspicious,,site not found; amended to suspicious: feed match alone and no live evidence (codebook 2.2)
+s_e6c2c3ecb4,mikespastry.com,https://www.mikespastry.com/,a30cd566f1c749108386e7fc4a89cb26,benign,1.0,single_annotator,benign,,
+s_e756c9441e,roblox.com.pt,https://www.roblox.com.pt/users/499080194713/profile,c5f2e8cfe3fb44e7ad42a27dad4c659d,suspicious,1.0,single_annotator,suspicious,,connection not private
+s_f1a6075cc7,internalserviceslinks.com,https://internalserviceslinks.com/,2bdd82616daa4c8786941a76fd89f0e2,benign,0.85,single_annotator,benign,,
+s_f4df72f412,ledgerupdate.org,https://www.ledgerupdate.org/front,8a3a1fbc5eea4f62926e0c08b8b94ed6,malicious,1.0,single_annotator,malicious,,warning from my browser
+s_f6d25cd287,ledger.net.cn,https://ledger.net.cn/download/,374970cea88a431690fa9c4de68883d8,malicious,1.0,single_annotator,malicious,,warning from browser

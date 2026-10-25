@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.pytest-tmp/
+.ruff_cache/
+build/
+dist/
+
+# Runtime artifacts
+data/trustlens.db
+data/trustlens.db-*
+data/screenshots/*
+!data/screenshots/.gitkeep
+data/annotations/*.csv
+data/annotations/*.jsonl
+data/exports/
+models/*.json
+models/*.ubj
+models/*.joblib
+*.log
+.tmp-ptest/
+
+# Coordinator-only annotation blinding keys
+key.json
+
+# Raw third-party feed snapshots (redistribution restricted)
+data/labels/feed/snapshots/
+data/labels/feed/churn/snapshots/
+
+# Unfinalized academic drafts (placeholders not yet filled)
+report/
+paper/manuscript.md
+
+# Environment
+.env
+.env.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Node (dashboard/extensions do not need a build step, kept for future tooling)
+node_modules/

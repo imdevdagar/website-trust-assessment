@@ -1,0 +1,272 @@
+{
+  "anchor": {
+    "cv_mean_roc_auc": 0.965287,
+    "difference": 0.007464,
+    "learning_curve_full_auroc": 0.972751,
+    "run": "data\\research\\runs\\feed_v2\\run.json"
+  },
+  "curves": {
+    "hgb": {
+      "domains": 578,
+      "feature_group": "hybrid",
+      "folds": 5,
+      "gain_from_half_to_full": 0.004889,
+      "model": "hgb",
+      "points": [
+        {
+          "auroc": {
+            "ci": [
+              0.909691,
+              0.937774
+            ],
+            "mean": 0.92229,
+            "sd": 0.009647
+          },
+          "average_precision": {
+            "ci": [
+              0.921901,
+              0.958713
+            ],
+            "mean": 0.945218,
+            "sd": 0.012402
+          },
+          "fraction": 0.1,
+          "n_train_domains_mean": 46.2,
+          "n_train_samples_mean": 46.4,
+          "repeats_completed": 10
+        },
+        {
+          "auroc": {
+            "ci": [
+              0.960982,
+              0.979953
+            ],
+            "mean": 0.969406,
+            "sd": 0.006174
+          },
+          "average_precision": {
+            "ci": [
+              0.976306,
+              0.988191
+            ],
+            "mean": 0.982243,
+            "sd": 0.003716
+          },
+          "fraction": 0.25,
+          "n_train_domains_mean": 115.6,
+          "n_train_samples_mean": 116.0,
+          "repeats_completed": 10
+        },
+        {
+          "auroc": {
+            "ci": [
+              0.981106,
+              0.990674
+            ],
+            "mean": 0.985308,
+            "sd": 0.003341
+          },
+          "average_precision": {
+            "ci": [
+              0.988984,
+              0.99469
+            ],
+            "mean": 0.991541,
+            "sd": 0.00212
+          },
+          "fraction": 0.5,
+          "n_train_domains_mean": 230.8,
+          "n_train_samples_mean": 231.9,
+          "repeats_completed": 10
+        },
+        {
+          "auroc": {
+            "ci": [
+              0.985961,
+              0.990739
+            ],
+            "mean": 0.988814,
+            "sd": 0.001464
+          },
+          "average_precision": {
+            "ci": [
+              0.991952,
+              0.994463
+            ],
+            "mean": 0.993731,
+            "sd": 0.000884
+          },
+          "fraction": 0.75,
+          "n_train_domains_mean": 346.8,
+          "n_train_samples_mean": 348.6,
+          "repeats_completed": 10
+        },
+        {
+          "auroc": {
+            "ci": [
+              0.988168,
+              0.991792
+            ],
+            "mean": 0.990197,
+            "sd": 0.001252
+          },
+          "average_precision": {
+            "ci": [
+              0.993661,
+              0.995645
+            ],
+            "mean": 0.994706,
+            "sd": 0.000724
+          },
+          "fraction": 1.0,
+          "n_train_domains_mean": 462.4,
+          "n_train_samples_mean": 464.8,
+          "repeats_completed": 10
+        }
+      ],
+      "protocol": "train-only domain-grouped cross-validation; the test split is never scored",
+      "repeats": 10,
+      "samples": 581,
+      "seed": 42
+    },
+    "logistic": {
+      "domains": 578,
+      "feature_group": "hybrid",
+      "folds": 5,
+      "gain_from_half_to_full": 0.008866,
+      "model": "logistic",
+      "points": [
+        {
+          "auroc": {
+            "ci": [
+              0.881987,
+              0.933926
+            ],
+            "mean": 0.906795,
+            "sd": 0.016242
+          },
+          "average_precision": {
+            "ci": [
+              0.895132,
+              0.953448
+            ],
+            "mean": 0.929014,
+            "sd": 0.018435
+          },
+          "fraction": 0.1,
+          "n_train_domains_mean": 46.1,
+          "n_train_samples_mean": 46.4,
+          "repeats_completed": 20
+        },
+        {
+          "auroc": {
+            "ci": [
+              0.93527,
+              0.959772
+            ],
+            "mean": 0.947768,
+            "sd": 0.006815
+          },
+          "average_precision": {
+            "ci": [
+              0.939528,
+              0.976119
+            ],
+            "mean": 0.960451,
+            "sd": 0.010713
+          },
+          "fraction": 0.25,
+          "n_train_domains_mean": 115.5,
+          "n_train_samples_mean": 116.0,
+          "repeats_completed": 20
+        },
+        {
+          "auroc": {
+            "ci": [
+              0.955857,
+              0.976315
+            ],
+            "mean": 0.963885,
+            "sd": 0.00671
+          },
+          "average_precision": {
+            "ci": [
+              0.961808,
+              0.985415
+            ],
+            "mean": 0.974018,
+            "sd": 0.007443
+          },
+          "fraction": 0.5,
+          "n_train_domains_mean": 230.8,
+          "n_train_samples_mean": 231.8,
+          "repeats_completed": 20
+        },
+        {
+          "auroc": {
+            "ci": [
+              0.96194,
+              0.977331
+            ],
+            "mean": 0.969147,
+            "sd": 0.005113
+          },
+          "average_precision": {
+            "ci": [
+              0.966485,
+              0.985935
+            ],
+            "mean": 0.977383,
+            "sd": 0.005814
+          },
+          "fraction": 0.75,
+          "n_train_domains_mean": 346.9,
+          "n_train_samples_mean": 348.7,
+          "repeats_completed": 20
+        },
+        {
+          "auroc": {
+            "ci": [
+              0.964905,
+              0.979919
+            ],
+            "mean": 0.972751,
+            "sd": 0.004577
+          },
+          "average_precision": {
+            "ci": [
+              0.968742,
+              0.985407
+            ],
+            "mean": 0.979418,
+            "sd": 0.004857
+          },
+          "fraction": 1.0,
+          "n_train_domains_mean": 462.4,
+          "n_train_samples_mean": 464.8,
+          "repeats_completed": 20
+        }
+      ],
+      "protocol": "train-only domain-grouped cross-validation; the test split is never scored",
+      "repeats": 20,
+      "samples": 581,
+      "seed": 42
+    }
+  },
+  "dataset": "data\\datasets\\feed_v2\\dataset.jsonl",
+  "dataset_sha256": "ca6777520f435271b756079308b7526638c339f3571881f4574cb29928ff1ae2",
+  "feature_schema_version": 3,
+  "fractions": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "note": "Train-only: domain-grouped cross-validation inside the training split; validation and test are never scored. Fractions are shares of the domains available to a fold, and 1.0 reproduces ordinary grouped cross-validation.",
+  "train": {
+    "domains": 578,
+    "positives": 348,
+    "samples": 581
+  }
+}

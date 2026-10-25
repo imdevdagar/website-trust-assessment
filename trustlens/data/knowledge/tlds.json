@@ -1,0 +1,31 @@
+{
+  "version": "2026.10",
+  "note": "Weak contextual signals only. A suspicious TLD is never sufficient to flag a site on its own.",
+  "suspicious_tlds": [
+    "tk", "ml", "ga", "cf", "gq", "xyz", "top", "club", "live", "online",
+    "site", "click", "link", "work", "cam", "rest", "fit", "buzz", "icu",
+    "cyou", "sbs", "cfd", "monster", "quest", "lol", "autos", "bonds",
+    "beauty", "hair", "makeup", "skin", "kim", "country", "stream",
+    "download", "review", "loan", "win", "bid", "trade", "date", "faith",
+    "racing", "account", "science", "party", "gdn", "men", "ren", "mom",
+    "uno", "ooo", "zip", "mov", "su", "cc"
+  ],
+  "free_subdomain_providers": [
+    "github.io", "gitlab.io", "netlify.app", "vercel.app", "pages.dev",
+    "workers.dev", "web.app", "firebaseapp.com", "blogspot.com",
+    "wixsite.com", "weebly.com", "wordpress.com", "tumblr.com",
+    "myshopify.com", "glitch.me", "herokuapp.com", "onrender.com",
+    "railway.app", "fly.dev", "ngrok-free.app", "trycloudflare.com",
+    "replit.app", "repl.co", "codesandbox.io", "stackblitz.io"
+  ],
+  "url_shorteners": [
+    "bit.ly", "tinyurl.com", "t.co", "goo.gl", "ow.ly", "is.gd",
+    "buff.ly", "rebrand.ly", "cutt.ly", "shorturl.at", "rb.gy",
+    "tiny.cc", "lnkd.in", "t.ly", "shorte.st", "adf.ly"
+  ],
+  "file_hosts": [
+    "pastebin.com", "rentry.co", "telegra.ph", "ghostbin.com",
+    "controlc.com", "justpaste.it", "mega.nz", "mediafire.com",
+    "drive.google.com", "dropbox.com", "anonfiles.com"
+  ]
+}

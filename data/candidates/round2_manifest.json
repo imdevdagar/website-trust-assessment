@@ -1,0 +1,119 @@
+{
+  "created_at": "2026-10-20T08:45:18.393296+00:00",
+  "curated_source": {
+    "accepted": 24,
+    "domains_matching_round1": 0,
+    "excluded_round1": 0,
+    "path": "data\\candidates\\round2_curated.csv",
+    "rows": 24,
+    "sha256": "ddc15fb1e5ce952dcbc6bf4142147f4859e003a14fbf1dff3ea7bc621c2eead0",
+    "skipped": {}
+  },
+  "domains": [
+    "abcgil.com",
+    "authentication.ms",
+    "authofflog.com",
+    "bet73095.com",
+    "canva.com",
+    "cdc.gov",
+    "craigslist.org",
+    "dfnvjdfnvdjnfvdjfvdndfjvn.com",
+    "doctorpizzaband.com",
+    "dropbox.com",
+    "elektro-zeilberger.lol",
+    "emaycartabogados.com",
+    "example.com",
+    "icrc.org",
+    "ikea.com",
+    "internalserviceslinks.com",
+    "isro.gov.in",
+    "khanacademy.org",
+    "lcloud-dispositivo-apple.us",
+    "ledger.net.cn",
+    "ledgerupdate.org",
+    "mikespastry.com",
+    "mozilla.org",
+    "nationalgeographic.com",
+    "neverssl.com",
+    "nkseo.com",
+    "portlandleathergoods.com",
+    "roblox.com.bz",
+    "roblox.com.pt",
+    "sauv.info",
+    "shopeemypartner.com",
+    "sorrisokidsfamily.com.br",
+    "target.com",
+    "textfiles.com",
+    "traveltoitalynow.net",
+    "www-mfacebook.com.vn"
+  ],
+  "domains_total": 36,
+  "feed": {
+    "bytes": 15389,
+    "fetch_mode": "local_file",
+    "final_url": "https://openphish.com/feed.txt",
+    "http_date": "",
+    "lines": 300,
+    "rejected": {
+      "shared_or_multitenant_domain": 159
+    },
+    "retrieved_at": "2026-10-20T08:45:18.276416+00:00",
+    "sha256": "ed5d9bfbadfb27f4b135c58aae535b4fffdbee68cad4c2dafba9a36aa6b66d60",
+    "snapshot_file": ".pytest-tmp\\round2_feed_snapshot.txt",
+    "source": "OpenPhish public feed",
+    "source_date": "2026-10-20",
+    "unique_usable_domains": 105,
+    "url": "https://openphish.com/feed.txt"
+  },
+  "name": "mixed-calibration",
+  "outputs": {
+    "pilot": {
+      "path": "data\\candidates\\round2.csv",
+      "rows": 36,
+      "sha256": "c839099fce9a314cb71e646735e7f07aabfb1937a898d9a14dbe0500d408fb07"
+    },
+    "reserve": {
+      "path": "data\\candidates\\round2_reserve.csv",
+      "rows": 28,
+      "sha256": "6d1f30d1682ec7bbb626b70880b58c1bf526feeb054a22df4933358b42095eb5"
+    }
+  },
+  "pilot_source": {
+    "domains_excluded": 36,
+    "path": "data\\candidates\\pilot.csv",
+    "sha256": "b804a9b9530de0e7e14428ee913c96df2bad776bc3db45a78e741cb6761613e0"
+  },
+  "reserve": {
+    "ambiguous": 4,
+    "benign_control": 4,
+    "scam_feed": 20
+  },
+  "round": "round2",
+  "safety": {
+    "candidate_pages_fetched": false,
+    "explicit_confirmation_required": true,
+    "feed_metadata_only": true,
+    "gate_value": "malicious_page_requires_explicit_confirmation",
+    "gated_selected": 20,
+    "gated_stratum": "scam_feed",
+    "note": "Building this manifest did not open any candidate page. Collection of scam_feed rows is blocked by the batch safety gate until the team explicitly confirms and passes --allow-gated."
+  },
+  "schema_version": 1,
+  "seed": 11,
+  "selected": {
+    "ambiguous": 8,
+    "benign_control": 8,
+    "scam_feed": 20
+  },
+  "selection": {
+    "ambiguous": 8,
+    "benign_control": 8,
+    "scam_feed": 20
+  },
+  "strata": {
+    "ambiguous": "Boundary cases: login-only, legacy, small-business, and placeholder pages.",
+    "benign_control": "Established organisations selected to exercise the benign boundary. The stratum name is a sampling frame, not a preassigned label.",
+    "scam_feed": "Public feed candidates. Membership is candidate discovery, not a label; all rows are gated."
+  },
+  "unit": "registrable_domain"
+}

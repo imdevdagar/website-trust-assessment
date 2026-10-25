@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "feature_schema_version": 3,
+  "created_at": "2026-10-20T20:00:04.478428+00:00",
+  "seed": 42,
+  "ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "include_suspicious": false,
+  "allow_leakage": false,
+  "per_domain_limit": 5,
+  "actions": "all",
+  "samples": 757,
+  "domains": 753,
+  "labels": {
+    "malicious": 497,
+    "benign": 260
+  },
+  "targets": {
+    "1": 497,
+    "0": 260
+  },
+  "splits": {
+    "train": {
+      "samples": 530,
+      "domains": 527,
+      "labels": {
+        "malicious": 347,
+        "benign": 183
+      },
+      "targets": {
+        "1": 347,
+        "0": 183
+      }
+    },
+    "val": {
+      "samples": 114,
+      "domains": 114,
+      "labels": {
+        "malicious": 75,
+        "benign": 39
+      },
+      "targets": {
+        "1": 75,
+        "0": 39
+      }
+    },
+    "test": {
+      "samples": 113,
+      "domains": 112,
+      "labels": {
+        "malicious": 75,
+        "benign": 38
+      },
+      "targets": {
+        "1": 75,
+        "0": 38
+      }
+    }
+  },
+  "exclusions": {
+    "missing_label": 81
+  },
+  "exclusion_examples": {
+    "missing_label": [
+      "101fl88.com",
+      "11ctch.com",
+      "12371.cn",
+      "1punrewudx.com",
+      "aauw.org",
+      "acfun.cn",
+      "adskeeper.com",
+      "afrinic.net",
+      "aig.com",
+      "aizenway.cn",
+      "antagus.de",
+      "antenna.gr",
+      "aok.de",
+      "artisteer.com",
+      "aruba.com",
+      "ascensus.com",
+      "asfinag.at",
+      "ashleyfurniture.com",
+      "auntymaza.pw",
+      "auschwitz.org"
+    ]
+  },
+  "duplicates_removed": 0,
+  "warnings": [
+    "91 assessment row(s) could not be parsed and were skipped"
+  ],
+  "assessment_source": "jsonl:data/exports/feed/batch_01.jsonl,data/exports/feed/batch_02.jsonl,data/exports/feed/batch_03.jsonl,data/exports/feed/batch_04.jsonl,data/exports/feed/batch_05.jsonl,data/exports/feed/batch_06.jsonl,data/exports/feed/batch_07.jsonl,data/exports/main/batch_01.jsonl,data/exports/main/batch_03.jsonl,data/exports/main/batch_04.jsonl,data/exports/main/reserve.jsonl",
+  "label_source": {
+    "path": "data\\labels\\feed\\eval_labels_no_batch_02.csv",
+    "sha256": "51a08842c2d12d36f68802b8931e6725765e98eea66c944a04f84853c6bbb19a",
+    "rows": 753,
+    "imported_domains": 753,
+    "skipped": 0,
+    "conflicts": [],
+    "conflict_count": 0,
+    "labels": {
+      "malicious": 496,
+      "benign": 257
+    }
+  },
+  "feature_names": [
+    "url_https",
+    "url_length_log",
+    "url_host_length_log",
+    "url_path_length_log",
+    "url_query_length_log",
+    "url_path_depth",
+    "url_query_params",
+    "url_host_labels",
+    "url_hyphens",
+    "url_dots",
+    "url_digits_log",
+    "url_digit_ratio",
+    "url_host_digit_ratio",
+    "url_special_log",
+    "url_host_entropy",
+    "url_has_port",
+    "url_has_at",
+    "url_has_punycode",
+    "url_is_ip",
+    "url_risky_tokens",
+    "url_encoded_redirect",
+    "page_available",
+    "http_ok",
+    "redirected",
+    "has_login_form",
+    "has_payment_form",
+    "page_forms_log",
+    "page_password_fields",
+    "page_links_log",
+    "page_scripts_log",
+    "page_iframes",
+    "page_images_log",
+    "page_network_log",
+    "page_cookies_log",
+    "page_hidden_elements_log",
+    "domain_age_log",
+    "domain_age_unknown",
+    "tls_trusted",
+    "tls_days_remaining_log",
+    "has_mx",
+    "spf_record",
+    "dmarc_record",
+    "tracker_total_log",
+    "tracker_third_party_log",
+    "trust_link_privacy",
+    "trust_link_terms",
+    "trust_link_contact",
+    "official_domain",
+    "prompt_injection_detected",
+    "text_zero_width_log",
+    "ocr_image_heavy",
+    "screenshot_available",
+    "overall_rule_risk",
+    "overall_confidence",
+    "evidence_count_log",
+    "missing_evidence_count",
+    "security_score",
+    "security_confidence",
+    "security_coverage",
+    "security_abstained",
+    "security_evidence_count",
+    "security_risk_points",
+    "security_trust_points",
+    "identity_score",
+    "identity_confidence",
+    "identity_coverage",
+    "identity_abstained",
+    "identity_evidence_count",
+    "identity_risk_points",
+    "identity_trust_points",
+    "privacy_score",
+    "privacy_confidence",
+    "privacy_coverage",
+    "privacy_abstained",
+    "privacy_evidence_count",
+    "privacy_risk_points",
+    "privacy_trust_points",
+    "manipulation_score",
+    "manipulation_confidence",
+    "manipulation_coverage",
+    "manipulation_abstained",
+    "manipulation_evidence_count",
+    "manipulation_risk_points",
+    "manipulation_trust_points",
+    "risk_low_count",
+    "risk_medium_count",
+    "risk_high_count",
+    "risk_critical_count",
+    "flag_unencrypted_http",
+    "flag_ip_literal_host",
+    "flag_punycode_host",
+    "flag_suspicious_tld",
+    "flag_brand_subdomain_impersonation",
+    "flag_brand_action_domain",
+    "flag_typosquatting_domain",
+    "flag_password_form_http",
+    "flag_cross_origin_login",
+    "flag_tls_certificate_invalid",
+    "flag_hidden_prompt_injection",
+    "flag_executable_download",
+    "flag_remote_access_request",
+    "flag_gift_card_payment",
+    "flag_seed_phrase_request",
+    "flag_no_consent_controls",
+    "flag_tracker_session_replay",
+    "flag_privacy_policy_missing",
+    "flag_free_subdomain_host",
+    "flag_file_host_destination",
+    "flag_cross_domain_redirect",
+    "flag_guaranteed_return_lure",
+    "flag_advance_fee_lure",
+    "flag_direct_upi_payment",
+    "flag_direct_bank_transfer",
+    "flag_messaging_only_contact",
+    "flag_ocr_guaranteed_return",
+    "flag_ocr_upi_payment"
+  ],
+  "feature_groups": {
+    "url": 21,
+    "signals": 80,
+    "rule": 36,
+    "hybrid": 116
+  },
+  "files": {
+    "dataset_jsonl": {
+      "path": "dataset.jsonl",
+      "sha256": "445a911f2fbe17182ffa3536e2b9bfa1d567a27340dc0bd6e4a0a49299cb0b41",
+      "bytes": 2925776
+    },
+    "dataset_csv": {
+      "path": "dataset.csv",
+      "sha256": "83f9a7906365a754e35f1ce149cf11e5d6bea322dc2647667eac7044321a05d5",
+      "bytes": 686708
+    }
+  }
+}

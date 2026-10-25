@@ -1,0 +1,127 @@
+{
+  "version": "2026.10",
+  "note": "Text heuristics for consumer-manipulation signals. Patterns are case-insensitive regexes. Confidence is deliberately below 1 because text alone cannot establish intent.",
+  "patterns": [
+    {
+      "code": "scarcity_low_stock",
+      "category": "scarcity",
+      "title": "Artificial scarcity language",
+      "description": "The page claims limited stock or availability. This can be honest, but repeated scarcity pressure is a common dark pattern.",
+      "patterns": ["\\bonly\\s+\\d{1,3}\\s+(left|remaining|available)\\b", "\\b(almost|nearly)\\s+gone\\b", "\\bselling\\s+(fast|out)\\b", "\\bwhile\\s+stocks?\\s+last\\b", "\\b(limited|low)\\s+stock\\b", "\\bonly\\s+few\\s+left\\b"],
+      "severity": "low",
+      "risk_points": 4.0,
+      "confidence": 0.5,
+      "tags": ["dark_pattern", "scarcity"]
+    },
+    {
+      "code": "urgency_countdown",
+      "category": "urgency",
+      "title": "Time-pressure language",
+      "description": "The page uses countdown-style deadlines to pressure an immediate decision.",
+      "patterns": ["\\b(offer|deal|sale)\\s+ends?\\b", "\\bexpires?\\s+in\\b", "\\blimited[\\s-]+time\\b", "\\btoday\\s+only\\b", "\\bflash\\s+sale\\b", "\\bends?\\s+(tonight|today|soon)\\b", "\\blast\\s+chance\\b", "\\bhurry\\b"],
+      "severity": "low",
+      "risk_points": 4.0,
+      "confidence": 0.5,
+      "tags": ["dark_pattern", "urgency"]
+    },
+    {
+      "code": "social_pressure",
+      "category": "social_proof",
+      "title": "Live social-pressure claims",
+      "description": "Claims about other users' recent activity are used to create social pressure and may be fabricated.",
+      "patterns": ["\\b\\d{1,4}[\\s,]*people\\s+(are\\s+)?(viewing|bought|purchased|looking)\\b", "\\bsomeone\\s+just\\s+(bought|purchased|ordered)\\b", "\\b\\d{1,4}\\s+(others?|people)\\s+(are|is)\\s+(currently\\s+)?(viewing|shopping)\\b", "\\btrending\\s+now\\b"],
+      "severity": "info",
+      "risk_points": 2.0,
+      "confidence": 0.4,
+      "tags": ["dark_pattern", "social_proof"]
+    },
+    {
+      "code": "confirmshaming",
+      "category": "confirmshaming",
+      "title": "Shaming decline language",
+      "description": "The decline option is worded to guilt or embarrass the user into accepting.",
+      "patterns": ["\\bno,?\\s+(thanks|thank you)[,.]?\\s*i\\s+(don'?t|do not)\\s+(want|need|care|like)\\b", "\\bi\\s+(prefer|like)\\s+to\\s+(stay|remain)\\s+(uninformed|uninformed|in\\s+the\\s+dark)\\b", "\\bi\\s+(don'?t|do not)\\s+(like|want)\\s+(saving|to\\s+save)\\b", "\\bno\\s+thanks,?\\s*i\\s+(hate|dislike)\\s+(saving|deals?|money)\\b", "\\bare\\s+you\\s+sure\\s+you\\s+want\\s+to\\s+(miss|give\\s+up)\\b"],
+      "severity": "medium",
+      "risk_points": 6.0,
+      "confidence": 0.7,
+      "tags": ["dark_pattern", "confirmshaming"]
+    },
+    {
+      "code": "forced_continuity",
+      "category": "forced_continuity",
+      "title": "Recurring-charge language",
+      "description": "The page references automatic renewal or recurring billing. Check that this is disclosed before payment, not only in fine print.",
+      "patterns": ["\\bauto[\\s-]?renew(s|al|ing)?\\b", "\\bautomatically\\s+renews?\\b", "\\brecurring\\s+(charge|billing|payment)\\b", "\\bsubscription\\s+renews?\\b", "\\bbilled\\s+(every|monthly|annually|yearly)\\b", "\\bcharged\\s+(every|monthly|annually)\\b"],
+      "severity": "low",
+      "risk_points": 4.0,
+      "confidence": 0.55,
+      "tags": ["dark_pattern", "subscription"]
+    },
+    {
+      "code": "hidden_costs",
+      "category": "hidden_costs",
+      "title": "Late-stage fee language",
+      "description": "The page mentions service, processing, or convenience fees that may be added after the advertised price.",
+      "patterns": ["\\b(service|processing|convenience|platform|booking|resort|admin)\\s+fee\\b", "\\badditional\\s+(fees|charges)\\b", "\\btaxes\\s+and\\s+fees\\b", "\\bfees?\\s+(calculated|added)\\s+at\\s+checkout\\b"],
+      "severity": "low",
+      "risk_points": 4.0,
+      "confidence": 0.45,
+      "tags": ["dark_pattern", "hidden_costs"]
+    },
+    {
+      "code": "obstructed_cancellation",
+      "category": "obstruction",
+      "title": "Cancellation or refund barriers",
+      "description": "The page makes cancellation or refunds unusually difficult, or states that payments are non-refundable.",
+      "patterns": ["\\bcancel(lation)?\\s+(by|via|only\\s+by)\\s+(calling|phone|mail|email)\\b", "\\bcall\\s+to\\s+cancel\\b", "\\bno\\s+refunds?\\b", "\\ball\\s+sales\\s+(are\\s+)?final\\b", "\\bnon[\\s-]?refundable\\b", "\\bcancell?ation\\s+fee\\b"],
+      "severity": "medium",
+      "risk_points": 5.0,
+      "confidence": 0.55,
+      "tags": ["dark_pattern", "obstruction"]
+    },
+    {
+      "code": "unverified_authority",
+      "category": "authority",
+      "title": "Unverifiable authority claims",
+      "description": "The page asserts awards, partnerships, or guarantees that are not linked to verifiable evidence.",
+      "patterns": ["\\bas\\s+(seen|featured)\\s+(on|in)\\b", "\\bofficial\\s+(partner|partnered)\\b", "\\baward[\\s-]winning\\b", "\\b100%\\s+(guaranteed|secure|safe|risk[\\s-]free)\\b", "\\brisk[\\s-]free\\b", "\\btrusted\\s+by\\s+(millions|thousands)\\b"],
+      "severity": "info",
+      "risk_points": 3.0,
+      "confidence": 0.45,
+      "tags": ["dark_pattern", "authority"]
+    },
+    {
+      "code": "fear_pressure",
+      "category": "fear",
+      "title": "Threat-and-deadline pressure",
+      "description": "Threatening language about account loss or legal action is combined with a demand for immediate action.",
+      "patterns": ["\\b(your\\s+)?account\\s+(will\\s+be|has\\s+been)\\s+(suspended|locked|closed|limited)\\b", "\\bimmediate\\s+action\\s+(is\\s+)?required\\b", "\\bfailure\\s+to\\s+(comply|respond|verify)\\b", "\\bwithin\\s+24\\s+hours?\\b", "\\bunusual\\s+(activity|sign[\\s-]?in)\\b"],
+      "severity": "medium",
+      "risk_points": 6.0,
+      "confidence": 0.55,
+      "tags": ["dark_pattern", "fear", "social_engineering"]
+    },
+    {
+      "code": "fake_social_proof_badge",
+      "category": "authority",
+      "title": "Self-asserted trust badges",
+      "description": "The page displays trust seals or security badges. Seals are easily copied and are weak evidence of legitimacy.",
+      "patterns": ["\\bnorton\\s+(secured|shopping\\s+guarantee)\\b", "\\bmcafee\\s+secure\\b", "\\bverified\\s+by\\s+(visa|mastercard|paypal)\\b", "\\bssl\\s+secured\\b", "\\b100%\\s+secure\\s+checkout\\b", "\\bbbb\\s+accredited\\b"],
+      "severity": "info",
+      "risk_points": 2.0,
+      "confidence": 0.4,
+      "tags": ["trust_seal", "weak_signal"]
+    },
+    {
+      "code": "opt_out_friction",
+      "category": "privacy_choice",
+      "title": "Friction around opt-out",
+      "description": "Opting out of marketing or data sharing is framed as costly or unusual.",
+      "patterns": ["\\bto\\s+opt[\\s-]?out,?\\s+(call|write|mail|email)\\b", "\\bopt[\\s-]?out\\s+fee\\b", "\\bno\\s+way\\s+to\\s+opt[\\s-]?out\\b", "\\bby\\s+(using|continuing\\s+to\\s+use)\\s+this\\s+(site|service),?\\s+you\\s+(agree|consent)\\b"],
+      "severity": "low",
+      "risk_points": 3.0,
+      "confidence": 0.5,
+      "tags": ["dark_pattern", "privacy_choice"]
+    }
+  ]
+}

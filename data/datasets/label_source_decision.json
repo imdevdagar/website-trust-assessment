@@ -1,0 +1,342 @@
+{
+  "crawl_plan": {
+    "batches": [
+      {
+        "batch": "feed_batch_01",
+        "domains": 100,
+        "file": "data\\candidates\\feed_batch_01.csv",
+        "sha256": "c57e4efe0933e5807d9b07803b944fdd02ee7553de878bef77af1a6bddbb2141"
+      },
+      {
+        "batch": "feed_batch_02",
+        "domains": 100,
+        "file": "data\\candidates\\feed_batch_02.csv",
+        "sha256": "e584fd9fc0b055b562c9bbd9e47be4aac597b72c5bf734edf35036499bbdb371"
+      },
+      {
+        "batch": "feed_batch_03",
+        "domains": 100,
+        "file": "data\\candidates\\feed_batch_03.csv",
+        "sha256": "9675b7b144d704c989b6489a53a12ac46621cbf3cae54bd1ad92c8c405ac894f"
+      },
+      {
+        "batch": "feed_batch_04",
+        "domains": 100,
+        "file": "data\\candidates\\feed_batch_04.csv",
+        "sha256": "4935e78c05f529345b781a99f49e78ccc65193b7b9ee2e04f98f3a66c0202a91"
+      },
+      {
+        "batch": "feed_batch_05",
+        "domains": 32,
+        "file": "data\\candidates\\feed_batch_05.csv",
+        "sha256": "e3a08279395ce6bc6b1e48ae51440da21cbafa7e6eeb86e29f34395a23491b86"
+      },
+      {
+        "batch": "feed_remaining/batch_01",
+        "domains": 100,
+        "file": "data\\candidates\\feed_remaining\\feed_batch_01.csv",
+        "sha256": "e6b4d992b5227c1b780e86415d526f557ce79d502806f144dd03f3db5660b7ef"
+      },
+      {
+        "batch": "feed_remaining/batch_02",
+        "domains": 17,
+        "file": "data\\candidates\\feed_remaining\\feed_batch_02.csv",
+        "sha256": "d481ed4f8f759d276752ea569efdebdfc6aab3c9fc1d39f5d1bb18983ab4c008"
+      }
+    ],
+    "commands": [
+      "trustlens research feed-candidates --labels data/labels/feed/labels.csv --out-dir data/candidates --seed 42",
+      "trustlens research feed-candidates --labels data/labels/feed/labels_not_yet_planned.csv --out-dir data/candidates/feed_remaining --seed 43"
+    ],
+    "domains": 549,
+    "gate_on_every_row": "malicious_page_requires_explicit_confirmation",
+    "opens_no_pages": true,
+    "payload_urls_replaced_by_domain_root": 304
+  },
+  "created_at": "2026-10-20T14:35:23.101065+00:00",
+  "dataset_build": {
+    "artifact": "data/datasets/feed_v2",
+    "artifacts_snapshot": "data/datasets/feed_v2/artifacts_snapshot/",
+    "built_at": "2026-10-20T19:54:07.660828+00:00",
+    "class_counts": {
+      "benign": 333,
+      "malicious": 497
+    },
+    "domains": 826,
+    "error_analysis": "data/research/error_analysis_feed_v2.json",
+    "feed_crawl": {
+      "collected_domains": 908,
+      "derived_label_classes": {
+        "benign": 330,
+        "malicious": 496
+      },
+      "derived_labels": 826,
+      "feed_domains_without_an_assessment": 50,
+      "human_labelled_domains_withheld": 82,
+      "planned_domains": 549
+    },
+    "gate_compliance": "data/research/gate_compliance.json",
+    "headline_metrics": {
+      "histgb_hybrid_test_auroc": 0.991,
+      "https_share_of_labelled_positives": 0.8491,
+      "logistic_hybrid_test_auroc": 0.986,
+      "risk_coverage_50_engine_accuracy": 0.451613,
+      "risk_coverage_50_logistic_accuracy": 0.983871,
+      "rule_engine_all_labelled_auroc": 0.513,
+      "rule_engine_escalated_benign": 2,
+      "rule_engine_platt_fitted": false,
+      "rule_engine_positive_bands": {
+        "critical": 0,
+        "high": 5,
+        "low": 244,
+        "medium": 248
+      },
+      "rule_engine_test_auroc": 0.519,
+      "rule_recall_at_high_or_critical_over_labelled_positives": 0.0101,
+      "rule_recall_at_medium_or_above_over_labelled_positives": 0.5091,
+      "run": "data/research/runs/feed_v2/report.md"
+    },
+    "label_domains": {
+      "benign": 330,
+      "malicious": 496
+    },
+    "leakage_check": {
+      "artifact": "data/labels/feed/leakage_check.json",
+      "assessments": 912,
+      "leaked_assessments": 0,
+      "passed": true,
+      "runtime_label_store_rows": 0,
+      "unreadable_rows": 107,
+      "unreadable_rows_note": "every skipped row carries only {url, error}, i.e. a crawl that never produced an assessment"
+    },
+    "previous_build": {
+      "artifact": "data/datasets/feed_v1",
+      "class_counts": {
+        "benign": 248,
+        "malicious": 495
+      },
+      "domains": 742,
+      "note": "pre-growth build, retained; the same conclusions hold and its cited artifacts are snapshotted",
+      "rule_engine_test_auroc": 0.501,
+      "samples": 743
+    },
+    "profile": "data/research/profile_feed_v2.json",
+    "samples": 830,
+    "sensitivity_runs": {
+      "negative_pool_without_main_batch_02": {
+        "artifact": "data/datasets/feed_v2_no_batch_02",
+        "histgb_hybrid_test_auroc": 0.978,
+        "logistic_hybrid_test_auroc": 0.978,
+        "purpose": "measures amendment 3 (reusing main batch 02 assessments as derived negatives); removing it drops 73 benign labels",
+        "rule_engine_all_labelled_auroc": 0.517,
+        "rule_engine_test_auroc": 0.675614,
+        "run": "data/research/runs/feed_v2_no_batch_02/report.md"
+      },
+      "seed_43": {
+        "artifact": "data/datasets/feed_v2_s43",
+        "histgb_hybrid_test_auroc": 0.997,
+        "logistic_hybrid_test_auroc": 0.982,
+        "rule_engine_all_labelled_auroc": 0.513,
+        "rule_engine_platt_fitted": true,
+        "run": "data/research/runs/feed_v2_s43/report.md"
+      }
+    },
+    "split_domains": {
+      "test": 123,
+      "train": 578,
+      "val": 125
+    },
+    "split_seed": 42,
+    "splits": {
+      "test": 123,
+      "train": 581,
+      "val": 126
+    }
+  },
+  "decided_by": "user",
+  "decision_date": "2026-10-20",
+  "decisions": [
+    "Primary evaluation ground truth is public abuse-feed membership; human labels become a validity subset.",
+    "Main batch 02 labeling is dropped; batch 01 stays frozen.",
+    "Amendment 3 (2026-10-20): the benign class is feed absence over the safe main strata, so main batch 02's already-collected assessments re-enter as derived negatives and main batches 03-04 are collected for the same purpose. No new human labeling. Reverses the narrower reading of the batch 02 drop and is flagged for the user to confirm."
+  ],
+  "dropped": {
+    "main_batch_02": {
+      "assessed_domains": 74,
+      "collection_failures": 16,
+      "crawl_rows": 90,
+      "disposition": "labeling dropped; assessments reused as feed-absence derived negatives (amendment 3)",
+      "frozen_label_sheet": false,
+      "reason": "labelling them would have required human inspection the team cannot perform, and they were not drawn as feed candidates"
+    }
+  },
+  "feed_label_churn": {
+    "artifacts": {
+      "human_subset_recheck": "data/labels/feed/churn/human_vs_feed_t2.json",
+      "report": "data/labels/feed/churn/churn_report.json",
+      "script": "scripts/feed_churn.py",
+      "second_label_set": "data/labels/feed/churn/labels_t2.csv",
+      "second_manifest": "data/labels/feed/churn/labels_t2.json",
+      "second_snapshots": "data/labels/feed/churn/snapshots"
+    },
+    "assessed_positive_domains": 496,
+    "assessed_positives_still_listed": 488,
+    "assessed_positives_still_listed_share": 0.9839,
+    "derived_benign_domains": 330,
+    "derived_benign_now_listed": 0,
+    "dropped": 9,
+    "human_malicious_still_listed": 1,
+    "interval_hours": 4.43,
+    "measured_at": "2026-10-20T20:15:00.733203+00:00",
+    "newly_listed": 11,
+    "primary_domains": 549,
+    "raw_feed_digests_changed": {
+      "openphish_public_feed": false,
+      "urlhaus_public_feed": true
+    },
+    "reading": "Feed membership is a statement about one retrieval time. Over 4.43 hours the primary label set held on 98.4% of domains, 488 of the 496 evaluation positives stayed listed, none of the 330 derived negatives became listed, and the human/feed overlap did not move. The primary frozen labels.csv was not touched; the second retrieval is a separate artifact.",
+    "retained": 540,
+    "retained_share": 0.9836,
+    "rule": "the churn check writes only under data/labels/feed/churn/ and never re-labels the primary set",
+    "scope_note": "the report is re-run against eval_labels.csv whenever the evaluation label file changes; the retrieval pair and its interval do not change"
+  },
+  "human_feed_cross_check": {
+    "artifact": "data/labels/feed/human_vs_feed.json",
+    "cohens_kappa_interpretable": false,
+    "disagreements": [
+      "roblox.com.pt",
+      "textfiles.com",
+      "www-mfacebook.com.vn"
+    ],
+    "human_domains": 146,
+    "human_malicious_domains": 13,
+    "human_malicious_still_in_feed": 1,
+    "overlap": 4
+  },
+  "leakage_control": {
+    "dataset_builder_flag": "research dataset --allow-leakage stays off",
+    "feed_imported_to_runtime_domain_labels": false,
+    "last_check": {
+      "artifact": "data/labels/feed/leakage_check.json",
+      "assessments": 220,
+      "leaked_assessments": 0,
+      "passed": true,
+      "runtime_label_store_rows": 0
+    },
+    "rule": "the feed label CSV must never be passed to `import-labels`"
+  },
+  "name": "trustlens-primary-label-source-decision",
+  "negative_pool": {
+    "excluded": "data/exports/main/batch_01.jsonl - those 77 domains carry frozen human labels and receive no derived label",
+    "probe_result_2026-10-20": "142 derived rows, 66 malicious / 76 benign, from batch 01 feed crawl plus main batches 01-02",
+    "protocol": "docs/main-dataset-protocol.md section 4.3",
+    "rule": "a domain sampled from the safe main strata and absent from both feeds at retrieval time is benign; the same rule as section 2.2, no human label involved",
+    "selection_bias_note": "domains were drawn from the pre-registered main manifest, not chosen for looking clean",
+    "sources": [
+      "data/exports/main/batch_02.jsonl (74 domains, never labelled)",
+      "data/candidates/main_batch_03.csv (90, ungated)",
+      "data/candidates/main_batch_04.csv (90, ungated)"
+    ]
+  },
+  "outstanding_gate": {
+    "approval": {
+      "granted_at": "2026-10-20T14:44:21.176188+00:00",
+      "granted_at_full_scope": "2026-10-20T15:01:35.051581+00:00",
+      "granted_by": "user",
+      "scope": "all 7 feed batches (549 domains); batch 01 approved first as a pilot, batches 02-07 approved after its interim yield",
+      "via": "explicit choice 'Pilot batch 01 only' when asked to approve a machine crawl of the feed-labeled domains",
+      "via_full_scope": "explicit choice 'Approve the remaining 6 batches' (449 domains) after the pilot batch reported 45 rows, 5 unreachable, 2 of 40 scored high"
+    },
+    "item": "live crawl of feed-labeled malicious candidates",
+    "note": "the Round 2 approval covered 20 pilot candidates only and is spent",
+    "plan": "data/candidates/feed_manifest.json",
+    "status": "approved"
+  },
+  "primary_label_source": {
+    "artifacts": {
+      "labels": "data/labels/feed/labels.csv",
+      "labels_sha256": "2ce4c98d45e2deffcee8d15d18e32c23a1e50baf08154f06ae54373274f63bc3",
+      "manifest": "data/labels/feed/labels.json",
+      "manifest_sha256": "95b7b47ac43494ff88ff58191b951142af49e76cf279fa216d58ea46038868c0",
+      "raw_snapshots": "data/labels/feed/snapshots"
+    },
+    "derived_at_dataset_time": {
+      "command": "trustlens research feed-eval-labels",
+      "drops": "a feed domain with no assessment is dropped, never benign",
+      "never_derives": "domains with a frozen human label; feed absence would convert a human-confirmed positive into a silent negative",
+      "rule": "collected domain in a feed -> malicious; absent from both feeds -> benign"
+    },
+    "excluded_domains_requested": 0,
+    "freshness_window_days": 7,
+    "kind": "public_abuse_feed_membership",
+    "label_granularity": "registrable_domain",
+    "labeled_domains": 549,
+    "negative_label": "benign",
+    "negative_meaning": "not present in either feed at retrieval time; absence is weak evidence",
+    "per_source": {
+      "openphish_public_feed": {
+        "accepted_entries": 111,
+        "age_state": "unknown_age",
+        "retrieved_at": "",
+        "sha256": "cad59a85b51703ef28b89f2647792301d9dffb241f1d4853511e5d5e47f317a5",
+        "snapshot_file": "data\\labels\\feed\\snapshots\\openphish_cad59a85b517.txt",
+        "url": "https://openphish.com/feed.txt"
+      },
+      "urlhaus_public_feed": {
+        "accepted_entries": 20327,
+        "age_state": "unknown_age",
+        "retrieved_at": "",
+        "sha256": "c7657e83213ac319313f80f5f62ee58d30bcb0844ead3998567b2e9832eb3ff1",
+        "snapshot_file": "data\\labels\\feed\\snapshots\\urlhaus_c7657e83213a.csv",
+        "url": "https://urlhaus.abuse.ch/downloads/csv_online/"
+      }
+    },
+    "positive_label": "malicious",
+    "rejections": {
+      "openphish_public_feed: shared_or_multitenant_domain": 189,
+      "urlhaus_public_feed: IP-literal candidates are outside the domain sample": 2301,
+      "urlhaus_public_feed: Non-standard ports are not crawled": 2299,
+      "urlhaus_public_feed: path appears to contain an email address": 1,
+      "urlhaus_public_feed: shared_or_multitenant_domain": 3031
+    },
+    "sources": [
+      "openphish_public_feed",
+      "urlhaus_public_feed"
+    ],
+    "supersedes": {
+      "artifact": "data/labels/feed/superseded/labels_excluded_main_432.csv",
+      "domains": 432,
+      "reason": "the first build excluded every main.csv candidate domain, a rule inherited from the human-labelling design that discarded 117 valid feed members"
+    }
+  },
+  "protocol": "docs/main-dataset-protocol.md sections 2.2, 4.1-4.3 and 7.2 (addendum version 2.2)",
+  "reproducibility_check": {
+    "command": "trustlens research feed-labels --openphish-file <snapshot> --urlhaus-file <snapshot> --exclude-domains data/candidates/main.csv",
+    "note": "openphish feed bytes were unchanged between the two retrievals on 2026-10-20; URLhaus gained 6 rows and still resolved to the same 432 domains",
+    "result": "rebuilding offline from the saved raw feed snapshots reproduced the same 432 labeled domains",
+    "verified_at": "2026-10-20T14:35:23.102701+00:00"
+  },
+  "schema_version": 1,
+  "updated_at": "2026-10-20T20:15:38.123138+00:00",
+  "validity_subset": {
+    "annotators": 1,
+    "batches": {
+      "main_batch_01": {
+        "domains": 77,
+        "double_annotated": false
+      },
+      "pilot_round_1": {
+        "domains": 36,
+        "double_annotated": true
+      },
+      "round_2": {
+        "domains": 33,
+        "double_annotated": false
+      }
+    },
+    "domains": 146,
+    "inter_rater_reliability": "not computable; single annotator",
+    "kind": "frozen_human_labels",
+    "status": "frozen, untouched, never merged into the feed label column"
+  }
+}

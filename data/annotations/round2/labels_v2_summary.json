@@ -1,0 +1,15 @@
+{
+  "total_annotated": 33,
+  "consensus_count": 33,
+  "unresolved_count": 0,
+  "sources": {
+    "single_annotator": 33
+  },
+  "labels": {
+    "suspicious": 8,
+    "malicious": 12,
+    "benign": 13
+  },
+  "adjudications_supplied": 0,
+  "created_at": "2026-10-20T14:00:34.127713+00:00"
+}

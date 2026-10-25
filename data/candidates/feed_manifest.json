@@ -1,0 +1,50 @@
+{
+  "approval": "not approved; each batch needs fresh explicit confirmation before collection",
+  "batch_size": 100,
+  "batches": [
+    {
+      "batch": 1,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data\\candidates\\feed_batch_01.csv",
+      "sha256": "c57e4efe0933e5807d9b07803b944fdd02ee7553de878bef77af1a6bddbb2141"
+    },
+    {
+      "batch": 2,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data\\candidates\\feed_batch_02.csv",
+      "sha256": "e584fd9fc0b055b562c9bbd9e47be4aac597b72c5bf734edf35036499bbdb371"
+    },
+    {
+      "batch": 3,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data\\candidates\\feed_batch_03.csv",
+      "sha256": "9675b7b144d704c989b6489a53a12ac46621cbf3cae54bd1ad92c8c405ac894f"
+    },
+    {
+      "batch": 4,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data\\candidates\\feed_batch_04.csv",
+      "sha256": "4935e78c05f529345b781a99f49e78ccc65193b7b9ee2e04f98f3a66c0202a91"
+    },
+    {
+      "batch": 5,
+      "candidates": 32,
+      "domains": 32,
+      "file": "data\\candidates\\feed_batch_05.csv",
+      "sha256": "e3a08279395ce6bc6b1e48ae51440da21cbafa7e6eeb86e29f34395a23491b86"
+    }
+  ],
+  "candidates": 432,
+  "collection_gate": "malicious_page_requires_explicit_confirmation",
+  "created_at": "2026-10-20T14:39:12.609700+00:00",
+  "domains": 432,
+  "labels_file": "data\\labels\\feed\\labels.csv",
+  "labels_sha256": "c22b8ded0b683fd786a1010d3f74ab3952f13352925c3ac3fa917ae03abb3ee6",
+  "payload_urls_replaced_by_domain_root": 294,
+  "schema_version": 1,
+  "seed": 42
+}

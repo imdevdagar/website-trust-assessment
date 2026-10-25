@@ -1,0 +1,68 @@
+{
+  "cohens_kappa_interpretable": false,
+  "cohens_kappa_on_overlap": 0.0,
+  "expected_agreement_on_overlap": 0.25,
+  "feed_domains": 549,
+  "human_domains": 146,
+  "human_label_by_feed_membership": {
+    "benign": {
+      "in_feed": 0,
+      "not_in_feed": 103
+    },
+    "malicious": {
+      "in_feed": 1,
+      "not_in_feed": 12
+    },
+    "suspicious": {
+      "in_feed": 3,
+      "not_in_feed": 27
+    }
+  },
+  "human_malicious_still_in_feed": {
+    "human_malicious_domains": 13,
+    "meaning": "how much of the human-identified positive class the feeds still carry at retrieval time; the rest is taken down, repaired, or never reported",
+    "share": 0.0769,
+    "still_listed": 1
+  },
+  "human_not_malicious_but_feed_malicious": [
+    {
+      "batches": [
+        "annotator_a_v2_20261020T111826Z"
+      ],
+      "domain": "roblox.com.pt",
+      "feed": "openphish_public_feed@2026-10-20",
+      "human_labels": [
+        "suspicious"
+      ]
+    },
+    {
+      "batches": [
+        "annotator_a_v2_20261020T111826Z"
+      ],
+      "domain": "textfiles.com",
+      "feed": "urlhaus_public_feed@2026-10-20",
+      "human_labels": [
+        "suspicious"
+      ]
+    },
+    {
+      "batches": [
+        "annotator_a_v2_20261020T111826Z"
+      ],
+      "domain": "www-mfacebook.com.vn",
+      "feed": "openphish_public_feed@2026-10-20",
+      "human_labels": [
+        "suspicious"
+      ]
+    }
+  ],
+  "observed_agreement_on_overlap": 0.25,
+  "overlap": 4,
+  "overlap_domains": [
+    "ledgerupdate.org",
+    "roblox.com.pt",
+    "textfiles.com",
+    "www-mfacebook.com.vn"
+  ],
+  "reading": "Feed membership and a human verdict are different statements. The overlap is small because pilot and main candidates were excluded when the label set was built, so this table measures source agreement, not label correctness."
+}

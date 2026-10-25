@@ -1,0 +1,78 @@
+sample_id,domain,url,assessment_id,label,confidence,source,annotator_a,annotator_b,note
+s_00b5866181,duckdns.org,http://duckdns.org/,8baf515bce364a55b83850292eba0d0e,suspicious,0.75,single_annotator,suspicious,,site takes time to load
+s_0ecdd2e605,aruba.com,https://www.aruba.com/,e461300b624d41dbb77a40fbd4dc9df0,benign,0.95,single_annotator,benign,,
+s_1a0ef33c67,ciodive.com,https://www.ciodive.com/,48096494de964c1780d46cd4b47d2c8d,benign,1.0,single_annotator,benign,,
+s_1a3d6d878f,ads-tracking.com,http://ads-tracking.com/,4fa2a83ce6a743528c9d633214683dfa,suspicious,0.95,single_annotator,suspicious,,network not secure
+s_1cfb60c632,cbsnews.com,https://www.cbsnews.com/,0da99374b6fe422fa3106d8626619ac4,benign,1.0,single_annotator,benign,,
+s_233d08ca7f,cngold.org,http://cngold.org/,613d511bde804aaa99048df6a51f15e3,benign,0.75,single_annotator,benign,,
+s_235df2454f,ashleyfurniture.com,https://www.ashleyfurniture.com/,47da0240a29c458bbfda3543edad9264,benign,0.95,single_annotator,benign,,
+s_2594ba39f3,autotrader.com,http://autotrader.com/,ce10fb1425dd4d5cacc910af8b807475,suspicious,0.65,single_annotator,suspicious,,access denied
+s_2668b47fb3,adskeeper.com,https://www.adskeeper.com/,15fa99a960294b87a140627f27c26944,benign,0.95,single_annotator,benign,,
+s_26a217f08e,ascensus.com,https://www.ascensus.com/,583170dcec734691915712a9b473889d,benign,0.95,single_annotator,benign,,
+s_27343bab81,conn3ct.space,http://conn3ct.space/,b609fbdae0b047aa86b8331305965c90,suspicious,1.0,single_annotator,suspicious,,unable to reach the website
+s_2bced0e3ad,aizenway.cn,http://aizenway.cn/,b8b0fae5f8cd46a3b7defe18bb107438,suspicious,1.0,single_annotator,suspicious,,unable to load the website
+s_3055a6e3fd,acfun.cn,https://www.acfun.cn/,9f647f128a1244ac9ed9249a6e0545ec,benign,0.8,single_annotator,benign,,
+s_33ea0141d9,brandsly.com,http://brandsly.com/,c8bd63afd6df42d491cc099d31db2f08,benign,0.9,single_annotator,benign,,
+s_3afb1f3c17,ebay-kleinanzeigen.de,http://ebay-kleinanzeigen.de/,aed85a6522ee4a1099f527a49de72dca,suspicious,0.95,single_annotator,suspicious,,nothing to see
+s_3e19f2dcea,chocopinglate.org,http://chocopinglate.org/,1e3e266ebe0b4c72a578cc633e2c7731,benign,0.55,single_annotator,benign,,
+s_3f5f6b1bb7,bytello.com,https://www.bytello.com/,a0dacae06cb042ea90753d6da286b0f3,benign,0.95,single_annotator,benign,,
+s_3fe1db9c1c,climateactiontracker.org,https://climateactiontracker.org/,85d4eddf88fa423b9873ddbb58c760e4,benign,0.95,single_annotator,benign,,
+s_46c116ebb0,1abzar.com,http://1abzar.com/,29f441f18ae04678bccfa752421c11be,benign,0.85,single_annotator,benign,,
+s_479615936c,artisteer.com,https://artisteer.com/,671f07ac9aab40dfb40be3f9ccc90ce8,benign,1.0,single_annotator,benign,,
+s_483263e6e3,2kdb.net,https://2kdb.net/,15072c554d0f4fc78ed9ac7552f56c30,benign,0.85,single_annotator,benign,,
+s_4bbed54279,aknamed.com,https://www.aknamed.com/,51e6397d1912454098c869966e6a4f39,benign,0.9,single_annotator,benign,,
+s_4e27928145,correiodopovo.com.br,https://www.correiodopovo.com.br/,2da1ad2a42654aed8d8721f3d1e6bfcd,benign,0.95,single_annotator,benign,,
+s_505869c710,boldcasinospace.com,https://boldcasinospace.com/,48143f25b0be4e56b897267f22e7fb01,benign,0.95,single_annotator,benign,,
+s_5348854632,bycs.de,https://www.bycs.de/index.html,58aa11ce04cd487c9c9c1156ea887887,benign,1.0,single_annotator,benign,,
+s_546cd8f899,1punrewudx.com,http://1punrewudx.com/,2972c6ac47824f22af62aa11b31ae1b9,suspicious,0.85,single_annotator,suspicious,,site took too long to respond
+s_5583dafbb6,baf.id,https://www.baf.id/,42442e5ef6f3498690b6c8e38f85c718,benign,0.95,single_annotator,benign,,
+s_56c16b40e6,base.org,https://www.base.org/,e2db446cbd6c4e9c8e7dcbc7052e32bd,benign,0.95,single_annotator,benign,,
+s_57a86c58c1,rithum.com,https://www.rithum.com/,27452b9d5ab2420fa99db7ff09217a12,benign,0.95,single_annotator,benign,,
+s_5c00b2d39f,antenna.gr,http://antenna.gr/,1ca35b9ebc5e442bb6b59fc81e39450d,suspicious,0.95,single_annotator,suspicious,,site cant be reached
+s_5e0337858f,fitnur.com,https://fitnur.com/alooytv,616cfd9ae1424eba9b6a47c799f00c90,suspicious,0.95,single_annotator,suspicious,,it has links leading to different sites
+s_5e6a182de2,afrinic.net,https://afrinic.net/,0b275e86a1b646ba9707d9f6ce3b8c2f,benign,1.0,single_annotator,benign,,
+s_60496d0c7f,climatecentral.org,https://www.climatecentral.org/,4c6e3d352a144ba6806a5d6c7bf65b13,benign,1.0,single_annotator,benign,,
+s_64df30fd03,bubume.com,https://bubume.com/,e05caa9ed80f482d8cd7dce2b4f71e19,suspicious,0.95,single_annotator,suspicious,,seems suspicious
+s_66e7411aa3,consumer-withdrawal.eu,https://www.consumer-withdrawal.eu/en,b068f48b18554a47b02b9a4f9ccc69ac,benign,0.95,single_annotator,benign,,
+s_6c1fa5ff22,888slot-official.asia,http://888slot-official.asia/,ab947baf62674ccea9881f2dedf26eb6,suspicious,0.95,single_annotator,suspicious,,unable to access
+s_6ca0b0d4e3,codns.com,http://www.codns.com/intro.php,4c2260264020440ab3f58fb5211cc2da,benign,0.8,single_annotator,benign,,
+s_6d149ba9ec,123chat.jp,https://123chat.jp/,0bae17c3ec1d4409964e0db6341e168e,benign,0.8,single_annotator,benign,,
+s_6d317acc09,api.no,https://admin.api.no/api-portal/,0b5911e982f5432698d6095b769c34e5,benign,0.95,single_annotator,benign,,
+s_6d74cc3da1,auschwitz.org,https://www.auschwitz.org/,6a4c28e3cdc342a8b518769e105b7ef4,benign,0.95,single_annotator,benign,,
+s_6ef79a8c25,cnmsn.net,http://cnmsn.net/,1779a82f702944ce9fe58c6a80198ac7,suspicious,1.0,single_annotator,suspicious,,unable to load site
+s_76104eb116,bloko.gr,http://bloko.gr/,3522ab5ad5fd49f79af8b2503b2f7281,suspicious,0.95,single_annotator,suspicious,,unable to access
+s_7b685e7cbd,bilyoner.com,https://www.bilyoner.com/,89ec2332df534bd6b4962fb4b47c7a8c,benign,0.8,single_annotator,benign,,
+s_7b84bcb890,aauw.org,https://www.aauw.org/,c221eb1b9a7e40a2bf73ae01d551e338,benign,0.95,single_annotator,benign,,
+s_7d8511d664,asfinag.at,https://asfinag.at/,888cb20aa63945039127fc5dcda481a1,suspicious,1.0,single_annotator,suspicious,,error code 403
+s_8284515071,3n.com.pl,https://3n.com.pl/,d036c59af8a44806b46a4cdfa04cf14b,suspicious,0.9,single_annotator,suspicious,,unable to access
+s_854e253e22,11ctch.com,http://11ctch.com/,8c5cccc77b854357815bbe3728376a83,benign,0.65,single_annotator,benign,,not much information
+s_8ae6c795b0,catcountry1073.com,https://catcountry1073.com/,dfa68770fbff44248ac546cccc165a1d,benign,0.95,single_annotator,benign,,
+s_8e10b4742b,bitstarz.com,https://bitstarz.com/,d25b7ab2607e45b4ab41c66f9953027b,benign,0.9,single_annotator,benign,,
+s_9293c460ae,bettercampus.com,http://bettercampus.com/,cfb6af3a1458467bb9d4f912cdb90fee,benign,0.95,single_annotator,benign,,
+s_937b4aef20,dpbosss.net.in,http://dpbosss.net.in/,03129de17ec84d0d98cf468d07fdfe70,benign,0.6,single_annotator,benign,,site was taking time to load
+s_9a5970afdd,12371.cn,http://www.12371.cn/,eb3ce4f18a354f2da35f08d57e5e7fe7,suspicious,0.75,single_annotator,suspicious,,not secure
+s_a73eb041a7,aberdeenshire.gov.uk,https://aberdeenshire.gov.uk/,1bb635148f4e47168ce60ea77a250206,benign,1.0,single_annotator,benign,,
+s_ad4e2fffd8,aifaceswapper.io,https://aifaceswapper.io/,a6c835facfdd43b5971a2abc1e63ed91,benign,1.0,single_annotator,benign,,
+s_aea047baac,1984.hosting,https://1984.hosting/,eebead65a3ab4db6bd952a19765cc2ae,benign,0.95,single_annotator,benign,,
+s_b08e702a4a,eamobile.com,http://eamobile.com/,32239f1cabb94502a16a150c26a50501,benign,0.55,single_annotator,benign,,
+s_b26ec794f2,cccgoe.de,https://cccgoe.de/,d2b56ba5a2fd4d91a48f84fcf4096e10,benign,0.95,single_annotator,benign,,
+s_b3d9542f7d,carrier.com,https://www.carrier.com/truck-trailer/en/eu/,453d599a748d4cd8bee914d8ca2ac932,benign,1.0,single_annotator,benign,,
+s_b6a7ef5014,claveunica.gob.cl,https://claveunica.gob.cl/,fa69abe838cb41208a08748840e70e8b,benign,1.0,single_annotator,benign,,
+s_ba13f04f7b,beautyjunkies.de,https://www.beautyjunkies.de/,f69f23e755134dcf88c60179e3edbae8,suspicious,0.95,single_annotator,suspicious,,page not found
+s_baaa000377,aig.com,https://www.aig.com/home,74052a43ddda4d079ab27ad1503340b5,benign,1.0,single_annotator,benign,,
+s_bdb95de3fb,aok.de,https://www.aok.de/pk/,1630cfa33bbe4ea981894c81d8b9b974,benign,0.85,single_annotator,benign,,site not found
+s_c1de18bbd9,cartoonporn.pro,http://cartoonporn.pro/,53ec709e71af45dd9dbb8018e1427ae8,benign,0.95,single_annotator,benign,,
+s_c683982fa9,antagus.de,https://www.antagus.de/,8805144a86d344769b24d71a2f282e24,suspicious,0.95,single_annotator,suspicious,,seems like scam
+s_c934c4e508,disney.com,https://www.disney.com/,2709202eb34d496d95ae6064dc4bc07e,benign,0.65,single_annotator,benign,,site reloads by itself repeatedly
+s_cc2e821296,bramasacscadi.com,http://bramasacscadi.com/,8952c85bee6b41ca910989dc48ce7a4c,malicious,1.0,single_annotator,malicious,,got a scam warning on my browser
+s_cdb57bbe89,cnhcjt.com,http://cnhcjt.com/,6b1dcd56806e47c8b1627ba5599dfc26,benign,0.5,single_annotator,benign,,not secure
+s_d47f90ce98,5599.by,http://5599.by/,69c5c9e79826482589b0bced044bd2a9,suspicious,0.95,single_annotator,suspicious,,unable to load
+s_de5d6e12a9,apu-bookmarks.win,https://www.apu-bookmarks.win/,162b03078bbf4f9380822cb48285e090,benign,0.95,single_annotator,benign,,
+s_e066047020,avrora.ua,http://avrora.ua/,1f8c1cac14464c60abcd1860d0ead97d,suspicious,0.95,single_annotator,suspicious,,unable to open it
+s_e3925c3ae0,bookmate.com,http://bookmate.com/,b06211cfb08641b48aedd272b4c4ced7,benign,0.95,single_annotator,benign,,
+s_ee5f38a929,cyclingweekly.com,https://www.cyclingweekly.com/,f46e6e012f2f4b7cbe5940305680da3a,benign,1.0,single_annotator,benign,,
+s_eed53b1c49,bcb.gov.br,http://bcb.gov.br/,d803b267052846c3b48c0b4b4a98a91e,suspicious,0.95,single_annotator,suspicious,,page not found
+s_f2170ebf51,auntymaza.pw,http://auntymaza.pw/,0efefcffca634949919a3341b5f540d7,benign,0.8,single_annotator,benign,,
+s_f4c7098d94,101fl88.com,http://101fl88.com/,19336848e17b4d7a99be517c4cf97e34,benign,0.9,single_annotator,benign,,
+s_f686aae528,angernn.com,https://angernn.com/,a5fde96fa771411eb181cd168e8902e7,benign,0.95,single_annotator,benign,,
+s_f6999515b3,1sextube.com,https://1sextube.com/,ae4c732715c34c43baaa98f795e5572c,suspicious,1.0,single_annotator,suspicious,,there were multiple pop ups on the website

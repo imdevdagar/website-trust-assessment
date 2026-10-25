@@ -1,0 +1,242 @@
+{
+  "gated_collection": "malicious_page_requires_explicit_confirmation",
+  "meaning": "scored_by_gate counts assessments per candidate gate. For an ungated run the gated count must be zero: it is the evidence that no page was opened beyond the approved scope. scope_ok confirms that every scored export row came from this candidate file.",
+  "pairs": [
+    {
+      "candidate_rows_by_gate": {
+        "standard": 90
+      },
+      "candidates": "data\\candidates\\main_batch_01.csv",
+      "error_rows_by_gate": {
+        "standard": 13
+      },
+      "exports": "data\\exports\\main\\batch_01.jsonl",
+      "gated_rows_scored": 0,
+      "launched_without_allow_gated": true,
+      "passed": true,
+      "rows_not_in_this_candidate_file": 0,
+      "scope_ok": true,
+      "scope_violations": [],
+      "scored_by_gate": {
+        "standard": 77
+      }
+    },
+    {
+      "candidate_rows_by_gate": {
+        "standard": 90
+      },
+      "candidates": "data\\candidates\\main_batch_02.csv",
+      "error_rows_by_gate": {
+        "standard": 16
+      },
+      "exports": "data\\exports\\main\\batch_02.jsonl",
+      "gated_rows_scored": 0,
+      "launched_without_allow_gated": true,
+      "passed": true,
+      "rows_not_in_this_candidate_file": 0,
+      "scope_ok": true,
+      "scope_violations": [],
+      "scored_by_gate": {
+        "standard": 74
+      }
+    },
+    {
+      "candidate_rows_by_gate": {
+        "standard": 90
+      },
+      "candidates": "data\\candidates\\main_batch_03.csv",
+      "error_rows_by_gate": {
+        "standard": 11
+      },
+      "exports": "data\\exports\\main\\batch_03.jsonl",
+      "gated_rows_scored": 0,
+      "launched_without_allow_gated": true,
+      "passed": true,
+      "rows_not_in_this_candidate_file": 0,
+      "scope_ok": true,
+      "scope_violations": [],
+      "scored_by_gate": {
+        "standard": 79
+      }
+    },
+    {
+      "candidate_rows_by_gate": {
+        "standard": 90
+      },
+      "candidates": "data\\candidates\\main_batch_04.csv",
+      "error_rows_by_gate": {
+        "standard": 11
+      },
+      "exports": "data\\exports\\main\\batch_04.jsonl",
+      "gated_rows_scored": 0,
+      "launched_without_allow_gated": true,
+      "passed": true,
+      "rows_not_in_this_candidate_file": 0,
+      "scope_ok": true,
+      "scope_violations": [],
+      "scored_by_gate": {
+        "standard": 79
+      }
+    },
+    {
+      "candidate_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 50,
+        "standard": 110
+      },
+      "candidates": "data\\candidates\\main_reserve.csv",
+      "error_rows_by_gate": {
+        "standard": 24
+      },
+      "exports": "data\\exports\\main\\reserve.jsonl",
+      "gated_rows_scored": 0,
+      "launched_without_allow_gated": true,
+      "passed": true,
+      "rows_not_in_this_candidate_file": 0,
+      "scope_ok": true,
+      "scope_violations": [],
+      "scored_by_gate": {
+        "standard": 86
+      }
+    },
+    {
+      "approval_scope": "gated crawl covered by the recorded approval",
+      "candidate_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 100
+      },
+      "candidates": "data\\candidates\\feed_batch_01.csv",
+      "error_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 12
+      },
+      "exports": "data\\exports\\feed\\batch_01.jsonl",
+      "gated_rows_scored": 88,
+      "launched_without_allow_gated": false,
+      "passed": true,
+      "rows_not_in_this_candidate_file": 0,
+      "scope_ok": true,
+      "scope_violations": [],
+      "scored_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 88
+      }
+    },
+    {
+      "approval_scope": "gated crawl covered by the recorded approval",
+      "candidate_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 100
+      },
+      "candidates": "data\\candidates\\feed_batch_02.csv",
+      "error_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 7
+      },
+      "exports": "data\\exports\\feed\\batch_02.jsonl",
+      "gated_rows_scored": 93,
+      "launched_without_allow_gated": false,
+      "passed": true,
+      "rows_not_in_this_candidate_file": 0,
+      "scope_ok": true,
+      "scope_violations": [],
+      "scored_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 93
+      }
+    },
+    {
+      "approval_scope": "gated crawl covered by the recorded approval",
+      "candidate_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 100
+      },
+      "candidates": "data\\candidates\\feed_batch_03.csv",
+      "error_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 4
+      },
+      "exports": "data\\exports\\feed\\batch_03.jsonl",
+      "gated_rows_scored": 96,
+      "launched_without_allow_gated": false,
+      "passed": true,
+      "rows_not_in_this_candidate_file": 0,
+      "scope_ok": true,
+      "scope_violations": [],
+      "scored_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 96
+      }
+    },
+    {
+      "approval_scope": "gated crawl covered by the recorded approval",
+      "candidate_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 100
+      },
+      "candidates": "data\\candidates\\feed_batch_04.csv",
+      "error_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 4
+      },
+      "exports": "data\\exports\\feed\\batch_04.jsonl",
+      "gated_rows_scored": 96,
+      "launched_without_allow_gated": false,
+      "passed": true,
+      "rows_not_in_this_candidate_file": 0,
+      "scope_ok": true,
+      "scope_violations": [],
+      "scored_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 96
+      }
+    },
+    {
+      "approval_scope": "gated crawl covered by the recorded approval",
+      "candidate_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 32
+      },
+      "candidates": "data\\candidates\\feed_batch_05.csv",
+      "error_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 1
+      },
+      "exports": "data\\exports\\feed\\batch_05.jsonl",
+      "gated_rows_scored": 31,
+      "launched_without_allow_gated": false,
+      "passed": true,
+      "rows_not_in_this_candidate_file": 0,
+      "scope_ok": true,
+      "scope_violations": [],
+      "scored_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 31
+      }
+    },
+    {
+      "approval_scope": "gated crawl covered by the recorded approval",
+      "candidate_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 100
+      },
+      "candidates": "data\\candidates\\feed_remaining\\feed_batch_01.csv",
+      "error_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 4
+      },
+      "exports": "data\\exports\\feed\\batch_06.jsonl",
+      "gated_rows_scored": 96,
+      "launched_without_allow_gated": false,
+      "passed": true,
+      "rows_not_in_this_candidate_file": 0,
+      "scope_ok": true,
+      "scope_violations": [],
+      "scored_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 96
+      }
+    },
+    {
+      "approval_scope": "gated crawl covered by the recorded approval",
+      "candidate_rows_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 17
+      },
+      "candidates": "data\\candidates\\feed_remaining\\feed_batch_02.csv",
+      "error_rows_by_gate": {},
+      "exports": "data\\exports\\feed\\batch_07.jsonl",
+      "gated_rows_scored": 17,
+      "launched_without_allow_gated": false,
+      "passed": true,
+      "rows_not_in_this_candidate_file": 0,
+      "scope_ok": true,
+      "scope_violations": [],
+      "scored_by_gate": {
+        "malicious_page_requires_explicit_confirmation": 17
+      }
+    }
+  ],
+  "passed": true,
+  "schema_version": 1
+}

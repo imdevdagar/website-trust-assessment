@@ -1,0 +1,78 @@
+sample_id,url,domain,label,confidence,notes
+s_f2170ebf51,http://auntymaza.pw/,auntymaza.pw,benign,0.80,
+s_cc2e821296,http://bramasacscadi.com/,bramasacscadi.com,malicious,1.00,got a scam warning on my browser
+s_483263e6e3,https://2kdb.net/,2kdb.net,benign,0.85,
+s_26a217f08e,https://www.ascensus.com/,ascensus.com,benign,0.95,
+s_e3925c3ae0,http://bookmate.com/,bookmate.com,benign,0.95,
+s_e066047020,http://avrora.ua/,avrora.ua,suspicious,0.95,unable to open it
+s_64df30fd03,https://bubume.com/,bubume.com,suspicious,0.95,seems suspicious
+s_1a3d6d878f,http://ads-tracking.com/,ads-tracking.com,suspicious,0.95,network not secure
+s_ba13f04f7b,https://www.beautyjunkies.de/,beautyjunkies.de,suspicious,0.95,page not found
+s_eed53b1c49,http://bcb.gov.br/,bcb.gov.br,suspicious,0.95,page not found
+s_0ecdd2e605,https://www.aruba.com/,aruba.com,benign,0.95,
+s_b26ec794f2,https://cccgoe.de/,cccgoe.de,benign,0.95,
+s_60496d0c7f,https://www.climatecentral.org/,climatecentral.org,benign,1.00,
+s_27343bab81,http://conn3ct.space/,conn3ct.space,suspicious,1.00,unable to reach the website
+s_b3d9542f7d,https://www.carrier.com/truck-trailer/en/eu/,carrier.com,benign,1.00,
+s_f6999515b3,https://1sextube.com/,1sextube.com,suspicious,1.00,there were multiple pop ups on the website
+s_b6a7ef5014,https://claveunica.gob.cl/,claveunica.gob.cl,benign,1.00,
+s_bdb95de3fb,https://www.aok.de/pk/,aok.de,benign,0.85,site not found
+s_1a0ef33c67,https://www.ciodive.com/,ciodive.com,benign,1.00,
+s_ad4e2fffd8,https://aifaceswapper.io/,aifaceswapper.io,benign,1.00,
+s_6ef79a8c25,http://cnmsn.net/,cnmsn.net,suspicious,1.00,unable to load site
+s_baaa000377,https://www.aig.com/home,aig.com,benign,1.00,
+s_2bced0e3ad,http://aizenway.cn/,aizenway.cn,suspicious,1.00,unable to load the website
+s_1cfb60c632,https://www.cbsnews.com/,cbsnews.com,benign,1.00,
+s_5348854632,https://www.bycs.de/index.html,bycs.de,benign,1.00,
+s_b08e702a4a,http://eamobile.com/,eamobile.com,benign,0.55,
+s_3e19f2dcea,http://chocopinglate.org/,chocopinglate.org,benign,0.55,
+s_6ca0b0d4e3,http://www.codns.com/intro.php,codns.com,benign,0.80,
+s_7b685e7cbd,https://www.bilyoner.com/,bilyoner.com,benign,0.80,
+s_3f5f6b1bb7,https://www.bytello.com/,bytello.com,benign,0.95,
+s_c683982fa9,https://www.antagus.de/,antagus.de,suspicious,0.95,seems like scam
+s_9a5970afdd,http://www.12371.cn/,12371.cn,suspicious,0.75,not secure
+s_2668b47fb3,https://www.adskeeper.com/,adskeeper.com,benign,0.95,
+s_c1de18bbd9,http://cartoonporn.pro/,cartoonporn.pro,benign,0.95,
+s_f686aae528,https://angernn.com/,angernn.com,benign,0.95,
+s_3fe1db9c1c,https://climateactiontracker.org/,climateactiontracker.org,benign,0.95,
+s_5c00b2d39f,http://antenna.gr/,antenna.gr,suspicious,0.95,site cant be reached
+s_46c116ebb0,http://1abzar.com/,1abzar.com,benign,0.85,
+s_546cd8f899,http://1punrewudx.com/,1punrewudx.com,suspicious,0.85,site took too long to respond
+s_8e10b4742b,https://bitstarz.com/,bitstarz.com,benign,0.90,
+s_c934c4e508,https://www.disney.com/,disney.com,benign,0.65,site reloads by itself repeatedly
+s_8284515071,https://3n.com.pl/,3n.com.pl,suspicious,0.90,unable to access
+s_33ea0141d9,http://brandsly.com/,brandsly.com,benign,0.90,
+s_4bbed54279,https://www.aknamed.com/,aknamed.com,benign,0.90,
+s_cdb57bbe89,http://cnhcjt.com/,cnhcjt.com,benign,0.50,not secure
+s_66e7411aa3,https://www.consumer-withdrawal.eu/en,consumer-withdrawal.eu,benign,0.95,
+s_d47f90ce98,http://5599.by/,5599.by,suspicious,0.95,unable to load
+s_f4c7098d94,http://101fl88.com/,101fl88.com,benign,0.90,
+s_937b4aef20,http://dpbosss.net.in/,dpbosss.net.in,benign,0.60,site was taking time to load
+s_5583dafbb6,https://www.baf.id/,baf.id,benign,0.95,
+s_00b5866181,http://duckdns.org/,duckdns.org,suspicious,0.75,site takes time to load
+s_233d08ca7f,http://cngold.org/,cngold.org,benign,0.75,
+s_6d317acc09,https://admin.api.no/api-portal/,api.no,benign,0.95,
+s_6d74cc3da1,https://www.auschwitz.org/,auschwitz.org,benign,0.95,
+s_76104eb116,http://bloko.gr/,bloko.gr,suspicious,0.95,unable to access
+s_9293c460ae,http://bettercampus.com/,bettercampus.com,benign,0.95,
+s_505869c710,https://boldcasinospace.com/,boldcasinospace.com,benign,0.95,
+s_7b84bcb890,https://www.aauw.org/,aauw.org,benign,0.95,
+s_3afb1f3c17,http://ebay-kleinanzeigen.de/,ebay-kleinanzeigen.de,suspicious,0.95,nothing to see
+s_854e253e22,http://11ctch.com/,11ctch.com,benign,0.65,not much information
+s_56c16b40e6,https://www.base.org/,base.org,benign,0.95,
+s_235df2454f,https://www.ashleyfurniture.com/,ashleyfurniture.com,benign,0.95,
+s_57a86c58c1,https://www.rithum.com/,rithum.com,benign,0.95,
+s_de5d6e12a9,https://www.apu-bookmarks.win/,apu-bookmarks.win,benign,0.95,
+s_4e27928145,https://www.correiodopovo.com.br/,correiodopovo.com.br,benign,0.95,
+s_5e0337858f,https://fitnur.com/alooytv,fitnur.com,suspicious,0.95,it has links leading to different sites
+s_aea047baac,https://1984.hosting/,1984.hosting,benign,0.95,
+s_8ae6c795b0,https://catcountry1073.com/,catcountry1073.com,benign,0.95,
+s_6c1fa5ff22,http://888slot-official.asia/,888slot-official.asia,suspicious,0.95,unable to access
+s_ee5f38a929,https://www.cyclingweekly.com/,cyclingweekly.com,benign,1.00,
+s_a73eb041a7,https://aberdeenshire.gov.uk/,aberdeenshire.gov.uk,benign,1.00,
+s_5e6a182de2,https://afrinic.net/,afrinic.net,benign,1.00,
+s_479615936c,https://artisteer.com/,artisteer.com,benign,1.00,
+s_7d8511d664,https://asfinag.at/,asfinag.at,suspicious,1.00,error code 403
+s_2594ba39f3,http://autotrader.com/,autotrader.com,suspicious,0.65,access denied
+s_6d149ba9ec,https://123chat.jp/,123chat.jp,benign,0.80,
+s_3055a6e3fd,https://www.acfun.cn/,acfun.cn,benign,0.80,

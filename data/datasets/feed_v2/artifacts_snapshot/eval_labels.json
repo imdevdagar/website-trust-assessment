@@ -1,0 +1,50 @@
+{
+  "assessment_files": [
+    "data\\exports\\feed\\batch_01.jsonl",
+    "data\\exports\\feed\\batch_02.jsonl",
+    "data\\exports\\feed\\batch_03.jsonl",
+    "data\\exports\\feed\\batch_04.jsonl",
+    "data\\exports\\feed\\batch_05.jsonl",
+    "data\\exports\\feed\\batch_06.jsonl",
+    "data\\exports\\feed\\batch_07.jsonl",
+    "data\\exports\\main\\batch_01.jsonl",
+    "data\\exports\\main\\batch_02.jsonl",
+    "data\\exports\\main\\batch_03.jsonl",
+    "data\\exports\\main\\batch_04.jsonl",
+    "data\\exports\\main\\reserve.jsonl"
+  ],
+  "benign_meaning": "absent from both feeds at retrieval time, not verified trustworthy",
+  "collected_domains": 908,
+  "created_at": "2026-10-20T19:52:49+00:00",
+  "derived_rows": 826,
+  "excluded_human_labelled_domains": 82,
+  "excluded_human_labelled_examples": [
+    "101fl88.com",
+    "11ctch.com",
+    "12371.cn",
+    "123chat.jp",
+    "1984.hosting",
+    "1abzar.com",
+    "1punrewudx.com",
+    "1sextube.com",
+    "2kdb.net",
+    "3n.com.pl",
+    "5599.by",
+    "888slot-official.asia",
+    "aauw.org",
+    "aberdeenshire.gov.uk",
+    "acfun.cn",
+    "ads-tracking.com",
+    "adskeeper.com",
+    "afrinic.net",
+    "aifaceswapper.io",
+    "aig.com"
+  ],
+  "feed_domains_without_an_assessment": 50,
+  "feed_domains_without_an_assessment_note": "these are dropped, never labelled benign; a feed domain that cannot be assessed is not evidence of anything",
+  "labels": {
+    "benign": 330,
+    "malicious": 496
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,58 @@
+{
+  "batches": [
+    {
+      "batch": "01",
+      "domains": 90,
+      "gated": 0,
+      "path": "data/candidates/main_batch_01.csv",
+      "sha256": "b142a43ea5c6dd0f78448c7076152217640a026c8960526ee0cc2d7a5905fcb3",
+      "strata": {
+        "established": 65,
+        "tail": 25
+      }
+    },
+    {
+      "batch": "02",
+      "domains": 90,
+      "gated": 0,
+      "path": "data/candidates/main_batch_02.csv",
+      "sha256": "2c4e5b2f792a3ecc98147160c56f46d7e96e36bf3375245c1e3eb2ae92756fd1",
+      "strata": {
+        "established": 65,
+        "tail": 25
+      }
+    },
+    {
+      "batch": "03",
+      "domains": 90,
+      "gated": 0,
+      "path": "data/candidates/main_batch_03.csv",
+      "sha256": "8183db5a6dae82abeb65913c05b159492b3433f8199f736f3ced2b646c09915c",
+      "strata": {
+        "established": 65,
+        "tail": 25
+      }
+    },
+    {
+      "batch": "04",
+      "domains": 90,
+      "gated": 0,
+      "path": "data/candidates/main_batch_04.csv",
+      "sha256": "010ec228a1aa1a4790f58a7bcf59400b6a87db8a549309d7f7d99e1ee8b616eb",
+      "strata": {
+        "established": 65,
+        "tail": 25
+      }
+    }
+  ],
+  "created_at": "2026-10-20T12:02:45.744839+00:00",
+  "note": "Safe-stratum batches only. Gated scam_feed rows are not included and are not approved for collection.",
+  "source_candidates": {
+    "path": "data/candidates/main.csv",
+    "sha256": "dcf1c77fb171a9e087bb4dd0c0a45f788d6af70f5dfc4505bea3b7246175bba9"
+  },
+  "source_manifest": {
+    "path": "data/candidates/main_manifest.json",
+    "sha256": "ce654d1273a5d41da7a60e9ee0f518e1c709cfb2879bb24aa3cd725d2dd48d2c"
+  }
+}

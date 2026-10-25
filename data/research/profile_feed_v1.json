@@ -1,0 +1,98 @@
+{
+  "all": {
+    "https_share": 0.8385,
+    "max_rule_risk": 0.68,
+    "mean_rule_risk": 0.1985,
+    "n": 743,
+    "recall_at_high_or_critical": 0.0094,
+    "recall_at_medium_or_above": 0.4092,
+    "rule_bands": {
+      "critical": 0,
+      "high": 7,
+      "low": 439,
+      "medium": 297
+    },
+    "tls_trusted_share": 0.6191
+  },
+  "benign": {
+    "https_share": 0.8145,
+    "max_rule_risk": 0.68,
+    "mean_rule_risk": 0.1369,
+    "n": 248,
+    "recall_at_high_or_critical": 0.0081,
+    "recall_at_medium_or_above": 0.2097,
+    "rule_bands": {
+      "critical": 0,
+      "high": 2,
+      "low": 196,
+      "medium": 50
+    },
+    "tls_trusted_share": 0.8952
+  },
+  "dataset": "data\\datasets\\feed_v1\\dataset.jsonl",
+  "domains": 742,
+  "injection_surface": {
+    "assessments_in_dataset_scope": 745,
+    "codes": {
+      "hidden_iframe": {
+        "domains": 127,
+        "malicious_domains": 40,
+        "occurrences": 128,
+        "share_of_labelled_positives": 0.0808
+      },
+      "hidden_prompt_injection": {
+        "domains": 6,
+        "malicious_domains": 5,
+        "occurrences": 6,
+        "share_of_labelled_positives": 0.0101
+      }
+    },
+    "dataset_domains": 742,
+    "note": "prevalence of the surface only; detection and attack-success claims come from the controlled set"
+  },
+  "labels": {
+    "benign": 248,
+    "malicious": 495
+  },
+  "malicious": {
+    "https_share": 0.8505,
+    "max_rule_risk": 0.68,
+    "mean_rule_risk": 0.2294,
+    "n": 495,
+    "recall_at_high_or_critical": 0.0101,
+    "recall_at_medium_or_above": 0.5091,
+    "rule_bands": {
+      "critical": 0,
+      "high": 5,
+      "low": 243,
+      "medium": 247
+    },
+    "tls_trusted_share": 0.4808
+  },
+  "rule_engine_auc": {
+    "all_labelled": 0.522,
+    "test": 0.501,
+    "train": 0.524,
+    "val": 0.538
+  },
+  "rule_engine_escalation": {
+    "false_alarms_on_benign": 2,
+    "missed": 490,
+    "positives": 495
+  },
+  "samples": 743,
+  "splits": {
+    "test": {
+      "benign": 37,
+      "malicious": 74
+    },
+    "train": {
+      "benign": 173,
+      "malicious": 347
+    },
+    "val": {
+      "benign": 38,
+      "malicious": 74
+    }
+  }
+}

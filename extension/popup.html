@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TrustLens Guard</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <circle cx="10.5" cy="10.5" r="5.4" fill="none" stroke="currentColor" stroke-width="2.1"></circle>
+            <path d="M14.6 14.6 19.4 19.4" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"></path>
+            <circle cx="10.5" cy="10.5" r="1.7" fill="currentColor"></circle>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>TrustLens</strong>
+          <span>Guard</span>
+        </span>
+      </div>
+      <span class="local-pill" id="local-pill" title="All assessments run on your own computer">
+        <span class="local-dot" aria-hidden="true"></span>
+        Local only
+      </span>
+    </header>
+
+    <main class="popup-main">
+      <section class="site-card" aria-labelledby="site-label">
+        <span class="site-avatar" id="site-avatar" aria-hidden="true">?</span>
+        <div class="site-copy">
+          <p class="eyebrow" id="site-label">Current page</p>
+          <h1 id="site-domain">Reading page</h1>
+          <p class="site-url" id="site-url">Connecting to the local guard</p>
+        </div>
+        <span class="cache-chip" id="cache-chip" hidden>Cached</span>
+      </section>
+
+      <div class="state-region" id="state-region" aria-live="polite"></div>
+
+      <div class="action-block" id="action-block">
+        <label class="action-label" for="action-select">I am about to</label>
+        <span class="select-wrap">
+          <select id="action-select">
+            <option value="browse">Just browse this site</option>
+            <option value="signup">Create an account</option>
+            <option value="purchase">Make a purchase</option>
+          </select>
+        </span>
+      </div>
+
+      <button class="primary-button" id="scan-button" type="button">
+        <span class="button-label">Assess this page</span>
+        <span class="button-spinner" aria-hidden="true"></span>
+      </button>
+      <p class="action-error" id="action-error" role="alert" hidden></p>
+
+      <details class="settings" id="settings">
+        <summary>
+          <span>Guard settings</span>
+          <span class="settings-hint" id="settings-hint">Auto-protect on</span>
+        </summary>
+        <div class="settings-body">
+          <label class="setting-row">
+            <span class="setting-copy">
+              <strong>Auto-protect</strong>
+              <small>Assess every site when its page finishes loading.</small>
+            </span>
+            <input class="switch-input" id="auto-protect" type="checkbox">
+          </label>
+          <label class="setting-row">
+            <span class="setting-copy">
+              <strong>Warning overlay</strong>
+              <small>Show an on-page warning for risky results.</small>
+            </span>
+            <input class="switch-input" id="show-overlay" type="checkbox">
+          </label>
+          <div class="server-field">
+            <label for="server-url">Local engine address</label>
+            <div class="server-row">
+              <input id="server-url" type="text" spellcheck="false" autocomplete="off" placeholder="http://127.0.0.1:8000">
+              <button class="secondary-button" id="save-server" type="button">Save</button>
+            </div>
+            <p class="settings-note" id="settings-note" role="status"></p>
+          </div>
+        </div>
+      </details>
+    </main>
+
+    <footer class="popup-footer">
+      <button class="link-button" id="open-dashboard" type="button">Open full assessment</button>
+      <p>Page URLs go only to the TrustLens server on this machine.</p>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

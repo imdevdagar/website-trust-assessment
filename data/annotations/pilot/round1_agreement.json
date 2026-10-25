@@ -1,0 +1,36 @@
+{
+  "n_overlap": 36,
+  "n_a_only": 0,
+  "n_b_only": 0,
+  "observed_agreement": 1.0,
+  "expected_agreement": 1.0,
+  "cohen_kappa": null,
+  "cohen_kappa_linear": null,
+  "cohen_kappa_quadratic": null,
+  "confusion_matrix": {
+    "labels": [
+      "benign",
+      "suspicious",
+      "malicious"
+    ],
+    "rows_annotator_a": {
+      "benign": {
+        "benign": 36,
+        "suspicious": 0,
+        "malicious": 0
+      },
+      "suspicious": {
+        "benign": 0,
+        "suspicious": 0,
+        "malicious": 0
+      },
+      "malicious": {
+        "benign": 0,
+        "suspicious": 0,
+        "malicious": 0
+      }
+    }
+  },
+  "disagreements": [],
+  "interpretation": "not estimable"
+}

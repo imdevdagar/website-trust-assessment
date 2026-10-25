@@ -1,0 +1,2119 @@
+{
+  "protocol": "docs/research-plan.md#h4--instruction-like-content-can-be-isolated-from-the-verdict",
+  "generated_at": "2026-10-20T21:16:51+00:00",
+  "action": "browse",
+  "scoring_path": {
+    "page_parse": "trustlens.crawler.parse_html_page (production static path)",
+    "extractors": [
+      "url_features",
+      "http_headers",
+      "content",
+      "trackers",
+      "dark_patterns",
+      "injection"
+    ],
+    "network_enrichment": false,
+    "scope_note": "Absolute scores are not comparable with live assessments: domain intelligence, link-following policy checks and visual analysis are excluded so that two variants of one fixture differ only in their bytes. Every claim below is a within-pair comparison."
+  },
+  "corpus": {
+    "root": "data\\injection_fixtures",
+    "cases": 42,
+    "injection_cases": 26,
+    "negative_cases": 16,
+    "adversarial_negative_cases": 5,
+    "channels": [
+      "comment",
+      "hidden_aria",
+      "hidden_attr",
+      "hidden_display",
+      "hidden_display+comment",
+      "hidden_visibility",
+      "iframe_title",
+      "image_alt",
+      "meta_keywords",
+      "visible_block"
+    ]
+  },
+  "detection": {
+    "definition": "predicted positive when the assessment carries ['encoded_instruction_blob', 'hidden_prompt_injection']",
+    "all": {
+      "cases": 42,
+      "confusion": {
+        "tp": 23,
+        "fp": 1,
+        "fn": 3,
+        "tn": 15
+      },
+      "precision": 0.9583,
+      "recall": 0.8846,
+      "f1": 0.92
+    },
+    "counting_obfuscation_traces_as_detections": {
+      "cases": 42,
+      "confusion": {
+        "tp": 26,
+        "fp": 1,
+        "fn": 0,
+        "tn": 15
+      },
+      "precision": 0.963,
+      "recall": 1.0,
+      "f1": 0.9811
+    },
+    "excluding_adversarial_negatives": {
+      "cases": 37,
+      "confusion": {
+        "tp": 23,
+        "fp": 0,
+        "fn": 3,
+        "tn": 11
+      },
+      "precision": 1.0,
+      "recall": 0.8846,
+      "f1": 0.9388
+    },
+    "adversarial_negatives_only": {
+      "cases": 5,
+      "confusion": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "tn": 4
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "by_channel": {
+      "hidden_display": {
+        "positives": 9,
+        "detected": 7,
+        "recall": 0.7778
+      },
+      "comment": {
+        "positives": 4,
+        "detected": 4,
+        "recall": 1.0
+      },
+      "meta_keywords": {
+        "positives": 3,
+        "detected": 3,
+        "recall": 1.0
+      },
+      "hidden_aria": {
+        "positives": 4,
+        "detected": 3,
+        "recall": 0.75
+      },
+      "image_alt": {
+        "positives": 2,
+        "detected": 2,
+        "recall": 1.0
+      },
+      "hidden_visibility": {
+        "positives": 1,
+        "detected": 1,
+        "recall": 1.0
+      },
+      "iframe_title": {
+        "positives": 1,
+        "detected": 1,
+        "recall": 1.0
+      },
+      "hidden_attr": {
+        "positives": 1,
+        "detected": 1,
+        "recall": 1.0
+      },
+      "hidden_display+comment": {
+        "positives": 1,
+        "detected": 1,
+        "recall": 1.0
+      },
+      "visible_block": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      }
+    },
+    "by_family": {
+      "instruction_override": {
+        "positives": 3,
+        "detected": 3,
+        "recall": 1.0
+      },
+      "role_override": {
+        "positives": 2,
+        "detected": 2,
+        "recall": 1.0
+      },
+      "system_prompt_reference": {
+        "positives": 2,
+        "detected": 2,
+        "recall": 1.0
+      },
+      "verdict_control": {
+        "positives": 2,
+        "detected": 2,
+        "recall": 1.0
+      },
+      "warning_suppression": {
+        "positives": 2,
+        "detected": 2,
+        "recall": 1.0
+      },
+      "tool_execution": {
+        "positives": 1,
+        "detected": 1,
+        "recall": 1.0
+      },
+      "agent_directive": {
+        "positives": 2,
+        "detected": 2,
+        "recall": 1.0
+      },
+      "prompt_exfiltration": {
+        "positives": 1,
+        "detected": 1,
+        "recall": 1.0
+      },
+      "trustlens_targeting": {
+        "positives": 2,
+        "detected": 2,
+        "recall": 1.0
+      },
+      "encoded_command": {
+        "positives": 1,
+        "detected": 1,
+        "recall": 1.0
+      },
+      "base64_only": {
+        "positives": 2,
+        "detected": 2,
+        "recall": 1.0
+      },
+      "multi_pattern": {
+        "positives": 3,
+        "detected": 3,
+        "recall": 1.0
+      },
+      "zero_width": {
+        "positives": 2,
+        "detected": 0,
+        "recall": 0.0
+      },
+      "bidi_keyword": {
+        "positives": 1,
+        "detected": 0,
+        "recall": 0.0
+      },
+      "legit_accordion": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_decorative": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_print": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_tab": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_dev_comment": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_seo_meta": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_api_prose": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_base64_state": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_rtl_bidi": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_emoji_zwj": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "visible_injection_prose": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_consent": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_image_alt": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_iframe_title": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_brand_meta": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      },
+      "legit_dev_comment_meta": {
+        "positives": 0,
+        "detected": 0,
+        "recall": null
+      }
+    },
+    "missed_but_traced": 3,
+    "false_positives": [
+      {
+        "id": "n06",
+        "family": "legit_seo_meta",
+        "channel": "meta_keywords",
+        "patterns": [
+          "system_prompt_reference"
+        ],
+        "difficulty": "adversarial_negative"
+      }
+    ],
+    "misses": [
+      {
+        "id": "p23",
+        "family": "zero_width",
+        "channel": "hidden_display",
+        "subtype": "obfuscated",
+        "trace": true,
+        "deobfuscated_patterns": [
+          "instruction_override",
+          "verdict_control"
+        ]
+      },
+      {
+        "id": "p24",
+        "family": "zero_width",
+        "channel": "hidden_aria",
+        "subtype": "obfuscated",
+        "trace": true,
+        "deobfuscated_patterns": [
+          "instruction_override",
+          "verdict_control"
+        ]
+      },
+      {
+        "id": "p25",
+        "family": "bidi_keyword",
+        "channel": "hidden_display",
+        "subtype": "obfuscated",
+        "trace": true,
+        "deobfuscated_patterns": []
+      }
+    ]
+  },
+  "obfuscation_counterfactual": {
+    "cases": 3,
+    "detected_as_is": 0,
+    "detectable_after_stripping_obfuscation": 2,
+    "note": "Keyword matching is fragile to zero-width and bidi obfuscation: normalising the hidden channels before matching would recover these cases, which quantifies the gap rather than hiding it."
+  },
+  "score_invariance": {
+    "comparable_pairs": 40,
+    "exact_evidence_delta_within_allowlist": 40,
+    "exact_score_match_after_removal": 40,
+    "max_abs_risk_delta_after_removal": 0.0,
+    "verdict_flips_after_removal": 0,
+    "definition": "For each hidden-channel pair, re-score the injected page after dropping the injection-related evidence codes ['bidi_control_spoofing', 'encoded_instruction_blob', 'hidden_prompt_injection', 'zero_width_obfuscation'] and compare with the baseline page. Exact invariance means identical overall risk, identical per-dimension scores and the same guard verdict, so the only thing a hidden instruction changed is the evidence recorded about it.",
+    "allowlist": [
+      "bidi_control_spoofing",
+      "encoded_instruction_blob",
+      "hidden_prompt_injection",
+      "zero_width_obfuscation"
+    ],
+    "hidden_channel_evidence_changes_outside_allowlist": [],
+    "visible_slot_evidence_changes": []
+  },
+  "injection_contribution": {
+    "cases_with_contribution": 27,
+    "median_overall_risk_points": 37.6,
+    "mean_overall_risk_points": 24.952,
+    "max_overall_risk_points": 40.5,
+    "max_evidence_risk_points_on_any_case": 27.0,
+    "verdict_changes": {
+      "allow->allow": 25,
+      "allow->warn": 17
+    },
+    "level_changes": {
+      "low->low": 25,
+      "low->medium": 17
+    },
+    "levels_after_injection": {
+      "low": 25,
+      "medium": 17
+    },
+    "cases_escalated_to_block": 0,
+    "cases_verdict_relaxed_to_allow": 0,
+    "floors_introduced_by_injection": 17,
+    "note": "The overall jump can exceed the evidence risk points because a HIGH-severity finding also applies a score floor. Both are documented, neither is the instruction being followed.",
+    "guard_verdict_flips_attributable_to_injection": [
+      {
+        "id": "p01",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p02",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p03",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p04",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p05",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p08",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p09",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p10",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p11",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p15",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p16",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p17",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p19",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p20",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p21",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p22",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      },
+      {
+        "id": "p26",
+        "from": "allow",
+        "to": "warn",
+        "level_from": "low",
+        "level_to": "medium"
+      }
+    ]
+  },
+  "baseline_profile": {
+    "mean_overall_risk": 3.7,
+    "levels": {
+      "low": 42
+    },
+    "verdicts": {
+      "allow": 42
+    }
+  },
+  "obedience_check": {
+    "definition": "If the engine obeyed the injected instruction, hidden text would raise trust points or lower risk. Both must be impossible.",
+    "max_trust_point_gain_from_any_fixture": 0.0,
+    "cases_reduced_in_overall_risk": 0,
+    "cases_moved_to_a_lower_risk_level": 0
+  },
+  "rows": [
+    {
+      "id": "p01",
+      "family": "instruction_override",
+      "channel": "hidden_display",
+      "body": "shop",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "instruction_override"
+      ],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 24.0,
+      "detector_confidence": 0.85,
+      "base_risk": 3.9,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 3.9,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 38.1,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p02",
+      "family": "instruction_override",
+      "channel": "comment",
+      "body": "news",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "instruction_override"
+      ],
+      "channels_seen": [
+        "html_comment"
+      ],
+      "risk_points": 24.0,
+      "detector_confidence": 0.85,
+      "base_risk": 4.6,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 4.6,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 37.4,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p03",
+      "family": "instruction_override",
+      "channel": "meta_keywords",
+      "body": "docs",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "instruction_override"
+      ],
+      "channels_seen": [
+        "metadata"
+      ],
+      "risk_points": 24.0,
+      "detector_confidence": 0.85,
+      "base_risk": 4.4,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 4.4,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 37.6,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p04",
+      "family": "role_override",
+      "channel": "hidden_aria",
+      "body": "login",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "role_override"
+      ],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 20.0,
+      "detector_confidence": 0.85,
+      "base_risk": 1.5,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 1.5,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 40.5,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p05",
+      "family": "role_override",
+      "channel": "image_alt",
+      "body": "shop",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "role_override"
+      ],
+      "channels_seen": [
+        "image_alt"
+      ],
+      "risk_points": 20.0,
+      "detector_confidence": 0.85,
+      "base_risk": 3.9,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 3.9,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 38.1,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p06",
+      "family": "system_prompt_reference",
+      "channel": "hidden_visibility",
+      "body": "news",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "system_prompt_reference"
+      ],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 12.0,
+      "detector_confidence": 0.7,
+      "base_risk": 4.6,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 6.7,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.6,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 2.1,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p07",
+      "family": "system_prompt_reference",
+      "channel": "comment",
+      "body": "docs",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "system_prompt_reference"
+      ],
+      "channels_seen": [
+        "html_comment"
+      ],
+      "risk_points": 12.0,
+      "detector_confidence": 0.7,
+      "base_risk": 4.4,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 6.5,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.4,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 2.1,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p08",
+      "family": "verdict_control",
+      "channel": "hidden_display",
+      "body": "payment",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "verdict_control"
+      ],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 24.0,
+      "detector_confidence": 0.85,
+      "base_risk": 3.1,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 3.1,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 38.9,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p09",
+      "family": "verdict_control",
+      "channel": "iframe_title",
+      "body": "news",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "verdict_control"
+      ],
+      "channels_seen": [
+        "iframe_title"
+      ],
+      "risk_points": 24.0,
+      "detector_confidence": 0.85,
+      "base_risk": 4.6,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 4.6,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 37.4,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p10",
+      "family": "warning_suppression",
+      "channel": "hidden_attr",
+      "body": "login",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "warning_suppression"
+      ],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 22.0,
+      "detector_confidence": 0.85,
+      "base_risk": 1.5,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 1.5,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 40.5,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p11",
+      "family": "warning_suppression",
+      "channel": "comment",
+      "body": "shop",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "warning_suppression"
+      ],
+      "channels_seen": [
+        "html_comment"
+      ],
+      "risk_points": 22.0,
+      "detector_confidence": 0.85,
+      "base_risk": 3.9,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 3.9,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 38.1,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p12",
+      "family": "tool_execution",
+      "channel": "hidden_display",
+      "body": "docs",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "tool_execution"
+      ],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 12.0,
+      "detector_confidence": 0.7,
+      "base_risk": 4.4,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 6.5,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.4,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 2.1,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p13",
+      "family": "agent_directive",
+      "channel": "image_alt",
+      "body": "news",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "agent_directive"
+      ],
+      "channels_seen": [
+        "image_alt"
+      ],
+      "risk_points": 12.0,
+      "detector_confidence": 0.7,
+      "base_risk": 4.6,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 6.7,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.6,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 2.1,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p14",
+      "family": "agent_directive",
+      "channel": "meta_keywords",
+      "body": "shop",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "agent_directive"
+      ],
+      "channels_seen": [
+        "metadata"
+      ],
+      "risk_points": 12.0,
+      "detector_confidence": 0.7,
+      "base_risk": 3.9,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 6.0,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 3.9,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 2.1,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p15",
+      "family": "prompt_exfiltration",
+      "channel": "hidden_aria",
+      "body": "payment",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "role_override",
+        "system_prompt_reference",
+        "prompt_exfiltration"
+      ],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 23.0,
+      "detector_confidence": 0.85,
+      "base_risk": 3.1,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 3.1,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 38.9,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p16",
+      "family": "trustlens_targeting",
+      "channel": "hidden_display",
+      "body": "login",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "trustlens_targeting"
+      ],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 26.0,
+      "detector_confidence": 0.85,
+      "base_risk": 1.5,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 1.5,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 40.5,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p17",
+      "family": "trustlens_targeting",
+      "channel": "comment",
+      "body": "shop",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "trustlens_targeting"
+      ],
+      "channels_seen": [
+        "html_comment"
+      ],
+      "risk_points": 26.0,
+      "detector_confidence": 0.85,
+      "base_risk": 3.9,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 3.9,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 38.1,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p18",
+      "family": "encoded_command",
+      "channel": "hidden_display",
+      "body": "docs",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "encoded_command"
+      ],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 12.0,
+      "detector_confidence": 0.7,
+      "base_risk": 4.4,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 6.5,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.4,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 2.1,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p19",
+      "family": "base64_only",
+      "channel": "hidden_display",
+      "body": "shop",
+      "truth": "injection",
+      "subtype": "encoded",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "encoded_instruction_blob"
+      ],
+      "patterns": [],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 25.0,
+      "detector_confidence": 0.8,
+      "base_risk": 3.9,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 3.9,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 38.1,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p20",
+      "family": "base64_only",
+      "channel": "meta_keywords",
+      "body": "payment",
+      "truth": "injection",
+      "subtype": "encoded",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "encoded_instruction_blob"
+      ],
+      "patterns": [],
+      "channels_seen": [
+        "metadata"
+      ],
+      "risk_points": 25.0,
+      "detector_confidence": 0.8,
+      "base_risk": 3.1,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 3.1,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 38.9,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p21",
+      "family": "multi_pattern",
+      "channel": "hidden_aria",
+      "body": "news",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "instruction_override",
+        "role_override",
+        "verdict_control",
+        "warning_suppression"
+      ],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 27.0,
+      "detector_confidence": 0.85,
+      "base_risk": 4.6,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 4.6,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 37.4,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p22",
+      "family": "multi_pattern",
+      "channel": "hidden_display+comment",
+      "body": "payment",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "instruction_override",
+        "role_override",
+        "verdict_control",
+        "warning_suppression"
+      ],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 27.0,
+      "detector_confidence": 0.85,
+      "base_risk": 3.1,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 3.1,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 38.9,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p23",
+      "family": "zero_width",
+      "channel": "hidden_display",
+      "body": "shop",
+      "truth": "injection",
+      "subtype": "obfuscated",
+      "difficulty": "straightforward",
+      "predicted_injection": false,
+      "obfuscation_trace": true,
+      "detected_codes": [
+        "zero_width_obfuscation"
+      ],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 6.0,
+      "detector_confidence": 0.65,
+      "base_risk": 3.9,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 4.9,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 3.9,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 1.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": [
+        "instruction_override",
+        "verdict_control"
+      ]
+    },
+    {
+      "id": "p24",
+      "family": "zero_width",
+      "channel": "hidden_aria",
+      "body": "login",
+      "truth": "injection",
+      "subtype": "obfuscated",
+      "difficulty": "straightforward",
+      "predicted_injection": false,
+      "obfuscation_trace": true,
+      "detected_codes": [
+        "zero_width_obfuscation"
+      ],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 6.0,
+      "detector_confidence": 0.65,
+      "base_risk": 1.5,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 2.3,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 1.5,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.8,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": [
+        "instruction_override",
+        "verdict_control"
+      ]
+    },
+    {
+      "id": "p25",
+      "family": "bidi_keyword",
+      "channel": "hidden_display",
+      "body": "news",
+      "truth": "injection",
+      "subtype": "obfuscated",
+      "difficulty": "straightforward",
+      "predicted_injection": false,
+      "obfuscation_trace": true,
+      "detected_codes": [
+        "bidi_control_spoofing"
+      ],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 13.0,
+      "detector_confidence": 0.7,
+      "base_risk": 4.6,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 6.8,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.6,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 2.2,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "p26",
+      "family": "multi_pattern",
+      "channel": "hidden_display",
+      "body": "docs",
+      "truth": "injection",
+      "subtype": "keyword",
+      "difficulty": "straightforward",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "instruction_override",
+        "role_override",
+        "verdict_control",
+        "warning_suppression",
+        "tool_execution"
+      ],
+      "channels_seen": [
+        "hidden_text"
+      ],
+      "risk_points": 27.0,
+      "detector_confidence": 0.85,
+      "base_risk": 4.4,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 42.0,
+      "inj_level": "medium",
+      "inj_verdict": "warn",
+      "stripped_risk": 4.4,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [
+        "high_evidence"
+      ],
+      "score_delta_from_injection": 37.6,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n01",
+      "family": "legit_accordion",
+      "channel": "hidden_display",
+      "body": "shop",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "keyword",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 3.9,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 3.9,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 3.9,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n02",
+      "family": "legit_decorative",
+      "channel": "hidden_aria",
+      "body": "login",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "keyword",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 1.5,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 1.5,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 1.5,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n03",
+      "family": "legit_print",
+      "channel": "hidden_attr",
+      "body": "payment",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "keyword",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 3.1,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 3.1,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 3.1,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n04",
+      "family": "legit_tab",
+      "channel": "hidden_visibility",
+      "body": "docs",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "keyword",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 4.4,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 4.4,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.4,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n05",
+      "family": "legit_dev_comment",
+      "channel": "comment",
+      "body": "shop",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "keyword",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 3.9,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 3.9,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 3.9,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n06",
+      "family": "legit_seo_meta",
+      "channel": "meta_keywords",
+      "body": "docs",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "adversarial_negative",
+      "predicted_injection": true,
+      "obfuscation_trace": false,
+      "detected_codes": [
+        "hidden_prompt_injection"
+      ],
+      "patterns": [
+        "system_prompt_reference"
+      ],
+      "channels_seen": [
+        "metadata"
+      ],
+      "risk_points": 12.0,
+      "detector_confidence": 0.7,
+      "base_risk": 4.4,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 6.5,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.4,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 2.1,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n07",
+      "family": "legit_api_prose",
+      "channel": "hidden_display",
+      "body": "docs",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "adversarial_negative",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 4.4,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 4.4,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.4,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n08",
+      "family": "legit_base64_state",
+      "channel": "hidden_display",
+      "body": "payment",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "adversarial_negative",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 3.1,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 3.1,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 3.1,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n09",
+      "family": "legit_rtl_bidi",
+      "channel": "hidden_display",
+      "body": "rtl_news",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "keyword",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 4.6,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 4.6,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.6,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n10",
+      "family": "legit_emoji_zwj",
+      "channel": "visible_block",
+      "body": "shop",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "keyword",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 3.9,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 3.9,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 3.9,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n11",
+      "family": "visible_injection_prose",
+      "channel": "visible_block",
+      "body": "docs",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "keyword",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 4.4,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 4.4,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.4,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n12",
+      "family": "legit_consent",
+      "channel": "hidden_display",
+      "body": "news",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "adversarial_negative",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 4.6,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 4.6,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.6,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n13",
+      "family": "legit_image_alt",
+      "channel": "image_alt",
+      "body": "shop",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "keyword",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 3.9,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 3.9,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 3.9,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n14",
+      "family": "legit_iframe_title",
+      "channel": "iframe_title",
+      "body": "news",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "keyword",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 4.6,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 4.6,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 4.6,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n15",
+      "family": "legit_brand_meta",
+      "channel": "meta_keywords",
+      "body": "shop",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "keyword",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 3.9,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 3.9,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 3.9,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    },
+    {
+      "id": "n16",
+      "family": "legit_dev_comment_meta",
+      "channel": "meta_keywords",
+      "body": "login",
+      "truth": "none",
+      "subtype": "benign",
+      "difficulty": "adversarial_negative",
+      "predicted_injection": false,
+      "obfuscation_trace": false,
+      "detected_codes": [],
+      "patterns": [],
+      "channels_seen": [],
+      "risk_points": 0,
+      "detector_confidence": null,
+      "base_risk": 1.5,
+      "base_level": "low",
+      "base_verdict": "allow",
+      "inj_risk": 1.5,
+      "inj_level": "low",
+      "inj_verdict": "allow",
+      "stripped_risk": 1.5,
+      "stripped_level": "low",
+      "stripped_verdict": "allow",
+      "floors_before": [],
+      "floors_after": [],
+      "score_delta_from_injection": 0.0,
+      "residual_delta_after_removal": 0.0,
+      "evidence_added_outside_allowlist": [],
+      "evidence_removed": [],
+      "dimension_deltas_after_removal": {},
+      "deobfuscated_patterns": []
+    }
+  ],
+  "limitations": [
+    "Fixtures are locally authored, so they measure the detector, not real-world prevalence.",
+    "Scoring excludes network enrichment, so absolute levels are lower than live assessments.",
+    "The natural prevalence of hidden injection content in the crawled corpus is measured separately in data/research/profile_feed_v2.json."
+  ],
+  "gate": {
+    "all_pairs_score_invariant": true,
+    "all_evidence_deltas_within_allowlist": true,
+    "no_residual_risk_delta": true,
+    "no_verdict_change_after_removal": true,
+    "no_hidden_leak_into_other_evidence": true,
+    "no_trust_gain_from_hidden_text": true,
+    "no_risk_reduction_from_hidden_text": true,
+    "no_verdict_relaxed_to_allow": true
+  },
+  "passed": true
+}

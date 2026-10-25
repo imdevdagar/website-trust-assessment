@@ -1,0 +1,860 @@
+{
+  "generated_at": "2026-10-20T19:06:44+05:30",
+  "schema_version": 1,
+  "protocol": {
+    "document": "docs/main-dataset-protocol.md",
+    "label_source": "single_annotator_a",
+    "double_annotation_fraction": 0.0,
+    "inter_rater_reliability": "not_available",
+    "annotation_window_hours": 48
+  },
+  "targets": {
+    "usable_domains_min": 400,
+    "selected_total": 500,
+    "selected_by_stratum": {
+      "established": 260,
+      "scam_feed": 140,
+      "tail": 100
+    },
+    "reserve_by_stratum": {
+      "established": 80,
+      "scam_feed": 50,
+      "tail": 30
+    },
+    "safe_selected": 360,
+    "gated_selected": 140
+  },
+  "progress": {
+    "batches_defined": 4,
+    "batches_collected": 2,
+    "batches_queued": 2,
+    "batches_frozen": 1,
+    "candidates_in_batches": 360,
+    "assessments_collected": 151,
+    "collection_failures": 29,
+    "cross_domain_redirects": 14,
+    "no_evidence": 3,
+    "sites_queued": 151,
+    "sites_annotated": 77,
+    "sites_pending": 74,
+    "labels_by_class": {
+      "benign": 54,
+      "suspicious": 22,
+      "malicious": 1
+    },
+    "usable_now": 77,
+    "usable_target_shortfall": 183
+  },
+  "gated_collection": {
+    "stratum": "scam_feed",
+    "selected": 140,
+    "status": "not_approved_for_main",
+    "requires_fresh_approval": true,
+    "approval_note": "The Round 2 gated approval is spent. Collecting main scam_feed rows needs a new explicit approval and a dedicated browser profile.",
+    "collected_rows": 0
+  },
+  "reserve_policy": {
+    "reserve_domains": 160,
+    "rule": "Reserve replacements are only allowed before the batch's annotator A sheet is frozen, and every substitution is recorded here.",
+    "used": []
+  },
+  "batches": [
+    {
+      "batch": "01",
+      "candidates": {
+        "path": "data/candidates/main_batch_01.csv",
+        "sha256": "b142a43ea5c6dd0f78448c7076152217640a026c8960526ee0cc2d7a5905fcb3",
+        "recorded_sha256": "b142a43ea5c6dd0f78448c7076152217640a026c8960526ee0cc2d7a5905fcb3",
+        "sha256_mismatch": false,
+        "domains": 90,
+        "strata": {
+          "established": 65,
+          "tail": 25
+        },
+        "gated": 0
+      },
+      "collection": {
+        "export": "batch_01.jsonl",
+        "exists": true,
+        "sha256": "c217a62b306cad1031b68cca3b3ecab14611b1f2b74786fa44fdec7ee361c198",
+        "rows": 90,
+        "assessments": 77,
+        "domains": [
+          "101fl88.com",
+          "11ctch.com",
+          "12371.cn",
+          "123chat.jp",
+          "1984.hosting",
+          "1abzar.com",
+          "1punrewudx.com",
+          "1sextube.com",
+          "2kdb.net",
+          "3n.com.pl",
+          "5599.by",
+          "888slot-official.asia",
+          "aauw.org",
+          "aberdeenshire.gov.uk",
+          "acfun.cn",
+          "ads-tracking.com",
+          "adskeeper.com",
+          "afrinic.net",
+          "aifaceswapper.io",
+          "aig.com",
+          "aizenway.cn",
+          "aknamed.com",
+          "angernn.com",
+          "antagus.de",
+          "antenna.gr",
+          "aok.de",
+          "api.no",
+          "apu-bookmarks.win",
+          "artisteer.com",
+          "aruba.com",
+          "ascensus.com",
+          "asfinag.at",
+          "ashleyfurniture.com",
+          "auntymaza.pw",
+          "auschwitz.org",
+          "autotrader.com",
+          "avrora.ua",
+          "baf.id",
+          "base.org",
+          "bcb.gov.br",
+          "beautyjunkies.de",
+          "bettercampus.com",
+          "bilyoner.com",
+          "bitstarz.com",
+          "bloko.gr",
+          "boldcasinospace.com",
+          "bookmate.com",
+          "bramasacscadi.com",
+          "brandsly.com",
+          "bubume.com",
+          "bycs.de",
+          "bytello.com",
+          "carrier.com",
+          "cartoonporn.pro",
+          "catcountry1073.com",
+          "cbsnews.com",
+          "cccgoe.de",
+          "chocopinglate.org",
+          "ciodive.com",
+          "claveunica.gob.cl",
+          "climateactiontracker.org",
+          "climatecentral.org",
+          "cngold.org",
+          "cnhcjt.com",
+          "cnmsn.net",
+          "codns.com",
+          "conn3ct.space",
+          "consumer-withdrawal.eu",
+          "correiodopovo.com.br",
+          "cyclingweekly.com",
+          "disney.com",
+          "dpbosss.net.in",
+          "duckdns.org",
+          "eamobile.com",
+          "ebay-kleinanzeigen.de",
+          "fitnur.com",
+          "rithum.com"
+        ],
+        "levels": {
+          "high": 1,
+          "low": 45,
+          "medium": 28,
+          "unknown": 3
+        },
+        "failures": [
+          {
+            "url": "http://25411222.com/",
+            "domain": "25411222.com",
+            "error": "Could not resolve hostname: 25411222.com"
+          },
+          {
+            "url": "http://adplsr.com/",
+            "domain": "adplsr.com",
+            "error": "Could not resolve hostname: adplsr.com"
+          },
+          {
+            "url": "http://agrohold.ru/",
+            "domain": "agrohold.ru",
+            "error": "Could not resolve hostname: agrohold.ru"
+          },
+          {
+            "url": "http://akamaihd.net/",
+            "domain": "akamaihd.net",
+            "error": "Could not resolve hostname: akamaihd.net"
+          },
+          {
+            "url": "http://albygsr.cn/",
+            "domain": "albygsr.cn",
+            "error": "Could not resolve hostname: albygsr.cn"
+          },
+          {
+            "url": "http://astralweb.tech/",
+            "domain": "astralweb.tech",
+            "error": "Could not resolve hostname: astralweb.tech"
+          },
+          {
+            "url": "http://awsdns-05.net/",
+            "domain": "awsdns-05.net",
+            "error": "Could not resolve hostname: awsdns-05.net"
+          },
+          {
+            "url": "http://awsdns-34.com/",
+            "domain": "awsdns-34.com",
+            "error": "Could not resolve hostname: awsdns-34.com"
+          },
+          {
+            "url": "http://awsdns-cn-48.biz/",
+            "domain": "awsdns-cn-48.biz",
+            "error": "Could not resolve hostname: awsdns-cn-48.biz"
+          },
+          {
+            "url": "http://ctobsnssdk.com/",
+            "domain": "ctobsnssdk.com",
+            "error": "Could not resolve hostname: ctobsnssdk.com"
+          },
+          {
+            "url": "http://disqometer.com/",
+            "domain": "disqometer.com",
+            "error": "Could not resolve hostname: disqometer.com"
+          },
+          {
+            "url": "http://dti.gov.ph/",
+            "domain": "dti.gov.ph",
+            "error": "Could not resolve hostname: dti.gov.ph"
+          },
+          {
+            "url": "http://echosat.net/",
+            "domain": "echosat.net",
+            "error": "Could not resolve hostname: echosat.net"
+          }
+        ],
+        "redirects": [
+          {
+            "requested_domain": "carriertransicold.eu",
+            "url": "http://carriertransicold.eu/",
+            "final_domain": "carrier.com",
+            "final_url": "https://www.carrier.com/truck-trailer/en/eu/"
+          },
+          {
+            "requested_domain": "codns.net",
+            "url": "http://codns.net/",
+            "final_domain": "codns.com",
+            "final_url": "http://www.codns.com/intro.php"
+          },
+          {
+            "requested_domain": "blip.tv",
+            "url": "http://blip.tv/",
+            "final_domain": "disney.com",
+            "final_url": "https://www.disney.com/"
+          },
+          {
+            "requested_domain": "alooytv15.xyz",
+            "url": "http://alooytv15.xyz/",
+            "final_domain": "fitnur.com",
+            "final_url": "https://fitnur.com/alooytv"
+          },
+          {
+            "requested_domain": "channeladvisor.com",
+            "url": "http://channeladvisor.com/",
+            "final_domain": "rithum.com",
+            "final_url": "https://www.rithum.com/"
+          }
+        ],
+        "no_evidence": [
+          "aizenway.cn",
+          "chocopinglate.org",
+          "cngold.org"
+        ],
+        "collected_at": "2026-10-20T12:22:22.597887+00:00",
+        "unreadable_rows": 0
+      },
+      "annotation": {
+        "queue_exists": true,
+        "single_annotator": true,
+        "sample_count": 77,
+        "sheet_rows": 77,
+        "annotated": 77,
+        "pending": 0,
+        "by_label": {
+          "benign": 54,
+          "suspicious": 22,
+          "malicious": 1
+        },
+        "complete": true,
+        "frozen": true,
+        "freeze": {
+          "role": "a",
+          "archive": "annotator_a_20261020T133255Z.csv",
+          "sha256": "7450a97ef8c02a02a793d6d7a5d6f9c9a8c193e725c5b410168ad97d6320cfb0",
+          "frozen_at": "2026-10-20T13:32:55.676472+00:00",
+          "annotated": 77,
+          "expected": 77
+        }
+      },
+      "annotation_window": {
+        "assessable": true,
+        "elapsed_hours": 1.18,
+        "within_window": true,
+        "window_hours": 48
+      },
+      "next_action": "complete"
+    },
+    {
+      "batch": "02",
+      "candidates": {
+        "path": "data/candidates/main_batch_02.csv",
+        "sha256": "2c4e5b2f792a3ecc98147160c56f46d7e96e36bf3375245c1e3eb2ae92756fd1",
+        "recorded_sha256": "2c4e5b2f792a3ecc98147160c56f46d7e96e36bf3375245c1e3eb2ae92756fd1",
+        "sha256_mismatch": false,
+        "domains": 90,
+        "strata": {
+          "established": 65,
+          "tail": 25
+        },
+        "gated": 0
+      },
+      "collection": {
+        "export": "batch_02.jsonl",
+        "exists": true,
+        "sha256": "b24072443f6aa617bb2d0f67e96128a8bef00ec42a93f16674c25dd4a0020a77",
+        "rows": 90,
+        "assessments": 74,
+        "domains": [
+          "apple.com",
+          "audiense.com",
+          "contact-msk.ru",
+          "d-tv.tv",
+          "dailymorningupdate.com",
+          "de-soft.com",
+          "debergenske.no",
+          "diarioevolucion.com.mx",
+          "elasticrates.site",
+          "electrive.com",
+          "elliottelectronicsupply.com",
+          "endpoints.news",
+          "epsa.gov.my",
+          "espn.in",
+          "etuovi.com",
+          "eutelia.it",
+          "evoskairo.com",
+          "exlibrisgroup.com",
+          "famfamfam.com",
+          "fancygamestudio.com",
+          "faphouse2.com",
+          "fgirl.ch",
+          "fhvfd.com",
+          "finerfilters.co.uk",
+          "fintel.io",
+          "flic.kr",
+          "flypobeda.ru",
+          "fmgsuite.com",
+          "fnal.gov",
+          "foreverpirates.co",
+          "gazi.edu.tr",
+          "giaimasohoc.net",
+          "goibibo.com",
+          "grc.com",
+          "gre.ac.uk",
+          "heute.at",
+          "historyireland.com",
+          "hivestreaming.com",
+          "hns.family",
+          "honda.com",
+          "hone.gg",
+          "hotelsoftokyo.com",
+          "href.li",
+          "hsbc.com.hk",
+          "hydrawise.com",
+          "ibruce.info",
+          "ikon-gallery.org",
+          "immobilienscout24.de",
+          "inet.co.th",
+          "inez.com",
+          "issuu.com",
+          "jable.tv",
+          "jalwav.com",
+          "jedsilverman.com",
+          "jivo.ru",
+          "judicialwatch.org",
+          "jwplyr.com",
+          "jyshengqifz.cn",
+          "kamusolar.com",
+          "kgc.edu.vn",
+          "kiddyjoy.rs",
+          "kompas.com",
+          "korean.go.kr",
+          "krungthai.com",
+          "ktvu.com",
+          "kuruma-ex.jp",
+          "ldmnq.com",
+          "lendgo.com",
+          "lightboxcdn.com",
+          "likee.video",
+          "liqu.id",
+          "locum.ru",
+          "lumen.com",
+          "mainad.com"
+        ],
+        "levels": {
+          "high": 1,
+          "low": 58,
+          "medium": 15
+        },
+        "failures": [
+          {
+            "url": "http://cvqplssl.com/",
+            "domain": "cvqplssl.com",
+            "error": "Could not resolve hostname: cvqplssl.com"
+          },
+          {
+            "url": "http://edge.apple/",
+            "domain": "edge.apple",
+            "error": "Could not resolve hostname: edge.apple"
+          },
+          {
+            "url": "http://elsdetai.com/",
+            "domain": "elsdetai.com",
+            "error": "Could not resolve hostname: elsdetai.com"
+          },
+          {
+            "url": "http://fazenda.mg.gov.br/",
+            "domain": "fazenda.mg.gov.br",
+            "error": "Could not resolve hostname: fazenda.mg.gov.br"
+          },
+          {
+            "url": "http://fn-pz.com/",
+            "domain": "fn-pz.com",
+            "error": "Could not resolve hostname: fn-pz.com"
+          },
+          {
+            "url": "http://g-p-static.com/",
+            "domain": "g-p-static.com",
+            "error": "Could not resolve hostname: g-p-static.com"
+          },
+          {
+            "url": "http://gismeteo.st/",
+            "domain": "gismeteo.st",
+            "error": "Could not resolve hostname: gismeteo.st"
+          },
+          {
+            "url": "http://grammarlyaws.com/",
+            "domain": "grammarlyaws.com",
+            "error": "Could not resolve hostname: grammarlyaws.com"
+          },
+          {
+            "url": "http://hingeaws.net/",
+            "domain": "hingeaws.net",
+            "error": "Could not resolve hostname: hingeaws.net"
+          },
+          {
+            "url": "http://iegcom.com/",
+            "domain": "iegcom.com",
+            "error": "Could not resolve hostname: iegcom.com"
+          },
+          {
+            "url": "http://ihost.com/",
+            "domain": "ihost.com",
+            "error": "Could not resolve hostname: ihost.com"
+          },
+          {
+            "url": "http://iot320.com/",
+            "domain": "iot320.com",
+            "error": "Could not resolve hostname: iot320.com"
+          },
+          {
+            "url": "http://iteldrive.com/",
+            "domain": "iteldrive.com",
+            "error": "Could not resolve hostname: iteldrive.com"
+          },
+          {
+            "url": "http://jljlptt.net.cn/",
+            "domain": "jljlptt.net.cn",
+            "error": "Could not resolve hostname: jljlptt.net.cn"
+          },
+          {
+            "url": "http://koikeya-online.jp/",
+            "domain": "koikeya-online.jp",
+            "error": "Could not resolve hostname: koikeya-online.jp"
+          },
+          {
+            "url": "http://lovetrue.co.uk/",
+            "domain": "lovetrue.co.uk",
+            "error": "Could not resolve hostname: lovetrue.co.uk"
+          }
+        ],
+        "redirects": [
+          {
+            "requested_domain": "icloud-content.com",
+            "url": "http://icloud-content.com/",
+            "final_domain": "apple.com",
+            "final_url": "https://developer.apple.com/icloud/"
+          },
+          {
+            "requested_domain": "getelevar.com",
+            "url": "http://getelevar.com/",
+            "final_domain": "audiense.com",
+            "final_url": "https://www.audiense.com/products/audiense-online/"
+          },
+          {
+            "requested_domain": "espn.com.br",
+            "url": "http://espn.com.br/",
+            "final_domain": "espn.in",
+            "final_url": "https://www.espn.in/"
+          },
+          {
+            "requested_domain": "evospulse.com",
+            "url": "http://evospulse.com/",
+            "final_domain": "evoskairo.com",
+            "final_url": "https://evoskairo.com/"
+          },
+          {
+            "requested_domain": "fhway.live",
+            "url": "http://fhway.live/",
+            "final_domain": "faphouse2.com",
+            "final_url": "https://faphouse2.com/"
+          },
+          {
+            "requested_domain": "jalwaz.io",
+            "url": "http://jalwaz.io/",
+            "final_domain": "jalwav.com",
+            "final_url": "https://jalwav.com/"
+          },
+          {
+            "requested_domain": "kmp.im",
+            "url": "http://kmp.im/",
+            "final_domain": "kompas.com",
+            "final_url": "https://www.kompas.com/"
+          },
+          {
+            "requested_domain": "level3.net",
+            "url": "http://level3.net/",
+            "final_domain": "lumen.com",
+            "final_url": "https://www.lumen.com/en-us/about/legal.html"
+          },
+          {
+            "requested_domain": "mainadv.com",
+            "url": "http://mainadv.com/",
+            "final_domain": "mainad.com",
+            "final_url": "https://www.mainad.com/"
+          }
+        ],
+        "no_evidence": [],
+        "collected_at": "2026-10-20T12:55:07.765705+00:00",
+        "unreadable_rows": 0
+      },
+      "annotation": {
+        "queue_exists": true,
+        "single_annotator": true,
+        "sample_count": 74,
+        "sheet_rows": 74,
+        "annotated": 0,
+        "pending": 74,
+        "by_label": {
+          "benign": 0,
+          "suspicious": 0,
+          "malicious": 0
+        },
+        "complete": false,
+        "frozen": false,
+        "freeze": null
+      },
+      "annotation_window": {
+        "assessable": false,
+        "reason": "collection or freeze timestamp missing"
+      },
+      "next_action": "label"
+    },
+    {
+      "batch": "03",
+      "candidates": {
+        "path": "data/candidates/main_batch_03.csv",
+        "sha256": "8183db5a6dae82abeb65913c05b159492b3433f8199f736f3ced2b646c09915c",
+        "recorded_sha256": "8183db5a6dae82abeb65913c05b159492b3433f8199f736f3ced2b646c09915c",
+        "sha256_mismatch": false,
+        "domains": 90,
+        "strata": {
+          "established": 65,
+          "tail": 25
+        },
+        "gated": 0
+      },
+      "collection": {
+        "export": "batch_03.jsonl",
+        "exists": false,
+        "rows": 0,
+        "assessments": 0,
+        "domains": [],
+        "failures": [],
+        "redirects": [],
+        "no_evidence": [],
+        "levels": {},
+        "collected_at": ""
+      },
+      "annotation": {
+        "queue_exists": false,
+        "single_annotator": false,
+        "sample_count": null,
+        "sheet_rows": 0,
+        "annotated": 0,
+        "pending": 0,
+        "by_label": {
+          "benign": 0,
+          "suspicious": 0,
+          "malicious": 0
+        },
+        "complete": false,
+        "frozen": false,
+        "freeze": null
+      },
+      "annotation_window": {
+        "assessable": false,
+        "reason": "collection or freeze timestamp missing"
+      },
+      "next_action": "collect"
+    },
+    {
+      "batch": "04",
+      "candidates": {
+        "path": "data/candidates/main_batch_04.csv",
+        "sha256": "010ec228a1aa1a4790f58a7bcf59400b6a87db8a549309d7f7d99e1ee8b616eb",
+        "recorded_sha256": "010ec228a1aa1a4790f58a7bcf59400b6a87db8a549309d7f7d99e1ee8b616eb",
+        "sha256_mismatch": false,
+        "domains": 90,
+        "strata": {
+          "established": 65,
+          "tail": 25
+        },
+        "gated": 0
+      },
+      "collection": {
+        "export": "batch_04.jsonl",
+        "exists": false,
+        "rows": 0,
+        "assessments": 0,
+        "domains": [],
+        "failures": [],
+        "redirects": [],
+        "no_evidence": [],
+        "levels": {},
+        "collected_at": ""
+      },
+      "annotation": {
+        "queue_exists": false,
+        "single_annotator": false,
+        "sample_count": null,
+        "sheet_rows": 0,
+        "annotated": 0,
+        "pending": 0,
+        "by_label": {
+          "benign": 0,
+          "suspicious": 0,
+          "malicious": 0
+        },
+        "complete": false,
+        "frozen": false,
+        "freeze": null
+      },
+      "annotation_window": {
+        "assessable": false,
+        "reason": "collection or freeze timestamp missing"
+      },
+      "next_action": "collect"
+    }
+  ],
+  "integrity_checks": [
+    {
+      "id": "batch_domains_unique",
+      "description": "No registrable domain appears in more than one batch file.",
+      "ok": true,
+      "detail": {
+        "duplicates": []
+      }
+    },
+    {
+      "id": "batch_domains_are_selected",
+      "description": "Every batch domain is part of the selected main manifest.",
+      "ok": true,
+      "detail": {
+        "outside_selected": []
+      }
+    },
+    {
+      "id": "safe_batches_have_no_gated_rows",
+      "description": "Batch files built for standard collection contain no gated rows.",
+      "ok": true,
+      "detail": {
+        "gated_rows": 0
+      }
+    },
+    {
+      "id": "reserve_disjoint_from_selected",
+      "description": "Reserve domains never overlap the selected domains.",
+      "ok": true,
+      "detail": {
+        "overlap": []
+      }
+    },
+    {
+      "id": "batch_hashes_match_manifest",
+      "description": "Recomputed batch CSV digests match main_batches.json.",
+      "ok": true,
+      "detail": {
+        "mismatches": []
+      }
+    },
+    {
+      "id": "sheet_matches_collection_batch_01",
+      "description": "Batch 01 sheet domains are exactly the collected domains, each either a batch candidate or a recorded redirect landing domain.",
+      "ok": true,
+      "detail": {
+        "sheet_minus_collected": [],
+        "collected_minus_sheet": [],
+        "unexplained_domains": []
+      }
+    },
+    {
+      "id": "no_collapsed_domains_batch_01",
+      "description": "Batch 01 queue has one row per collected assessment, so no two candidates collapsed onto the same registrable domain.",
+      "ok": true,
+      "detail": {
+        "sheet_rows": 77,
+        "assessments": 77
+      }
+    },
+    {
+      "id": "sheet_matches_collection_batch_02",
+      "description": "Batch 02 sheet domains are exactly the collected domains, each either a batch candidate or a recorded redirect landing domain.",
+      "ok": true,
+      "detail": {
+        "sheet_minus_collected": [],
+        "collected_minus_sheet": [],
+        "unexplained_domains": []
+      }
+    },
+    {
+      "id": "no_collapsed_domains_batch_02",
+      "description": "Batch 02 queue has one row per collected assessment, so no two candidates collapsed onto the same registrable domain.",
+      "ok": true,
+      "detail": {
+        "sheet_rows": 74,
+        "assessments": 74
+      }
+    },
+    {
+      "id": "cross_domain_redirects_recorded",
+      "description": "Assessments whose live page sits on a different registrable domain than the candidate are listed so the queue substitution is auditable.",
+      "ok": true,
+      "informational": true,
+      "detail": {
+        "redirects": [
+          {
+            "requested_domain": "carriertransicold.eu",
+            "url": "http://carriertransicold.eu/",
+            "final_domain": "carrier.com",
+            "final_url": "https://www.carrier.com/truck-trailer/en/eu/",
+            "batch": "01"
+          },
+          {
+            "requested_domain": "codns.net",
+            "url": "http://codns.net/",
+            "final_domain": "codns.com",
+            "final_url": "http://www.codns.com/intro.php",
+            "batch": "01"
+          },
+          {
+            "requested_domain": "blip.tv",
+            "url": "http://blip.tv/",
+            "final_domain": "disney.com",
+            "final_url": "https://www.disney.com/",
+            "batch": "01"
+          },
+          {
+            "requested_domain": "alooytv15.xyz",
+            "url": "http://alooytv15.xyz/",
+            "final_domain": "fitnur.com",
+            "final_url": "https://fitnur.com/alooytv",
+            "batch": "01"
+          },
+          {
+            "requested_domain": "channeladvisor.com",
+            "url": "http://channeladvisor.com/",
+            "final_domain": "rithum.com",
+            "final_url": "https://www.rithum.com/",
+            "batch": "01"
+          },
+          {
+            "requested_domain": "icloud-content.com",
+            "url": "http://icloud-content.com/",
+            "final_domain": "apple.com",
+            "final_url": "https://developer.apple.com/icloud/",
+            "batch": "02"
+          },
+          {
+            "requested_domain": "getelevar.com",
+            "url": "http://getelevar.com/",
+            "final_domain": "audiense.com",
+            "final_url": "https://www.audiense.com/products/audiense-online/",
+            "batch": "02"
+          },
+          {
+            "requested_domain": "espn.com.br",
+            "url": "http://espn.com.br/",
+            "final_domain": "espn.in",
+            "final_url": "https://www.espn.in/",
+            "batch": "02"
+          },
+          {
+            "requested_domain": "evospulse.com",
+            "url": "http://evospulse.com/",
+            "final_domain": "evoskairo.com",
+            "final_url": "https://evoskairo.com/",
+            "batch": "02"
+          },
+          {
+            "requested_domain": "fhway.live",
+            "url": "http://fhway.live/",
+            "final_domain": "faphouse2.com",
+            "final_url": "https://faphouse2.com/",
+            "batch": "02"
+          },
+          {
+            "requested_domain": "jalwaz.io",
+            "url": "http://jalwaz.io/",
+            "final_domain": "jalwav.com",
+            "final_url": "https://jalwav.com/",
+            "batch": "02"
+          },
+          {
+            "requested_domain": "kmp.im",
+            "url": "http://kmp.im/",
+            "final_domain": "kompas.com",
+            "final_url": "https://www.kompas.com/",
+            "batch": "02"
+          },
+          {
+            "requested_domain": "level3.net",
+            "url": "http://level3.net/",
+            "final_domain": "lumen.com",
+            "final_url": "https://www.lumen.com/en-us/about/legal.html",
+            "batch": "02"
+          },
+          {
+            "requested_domain": "mainadv.com",
+            "url": "http://mainadv.com/",
+            "final_domain": "mainad.com",
+            "final_url": "https://www.mainad.com/",
+            "batch": "02"
+          }
+        ]
+      }
+    }
+  ],
+  "blocked_on": [
+    "Batches 02-04 collection, annotation, and freeze.",
+    "Fresh explicit approval before any gated scam_feed collection.",
+    "Delayed blind 15% intra-rater audit after frozen labels and a 7-day delay."
+  ]
+}

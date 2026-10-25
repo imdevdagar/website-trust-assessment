@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "feature_schema_version": 3,
+  "created_at": "2026-10-20T14:01:02.164860+00:00",
+  "seed": 42,
+  "ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "include_suspicious": false,
+  "allow_leakage": false,
+  "per_domain_limit": 5,
+  "actions": "all",
+  "samples": 54,
+  "domains": 54,
+  "labels": {
+    "benign": 53,
+    "malicious": 1
+  },
+  "targets": {
+    "0": 53,
+    "1": 1
+  },
+  "splits": {
+    "train": {
+      "samples": 38,
+      "domains": 38,
+      "labels": {
+        "benign": 37,
+        "malicious": 1
+      },
+      "targets": {
+        "0": 37,
+        "1": 1
+      }
+    },
+    "val": {
+      "samples": 8,
+      "domains": 8,
+      "labels": {
+        "benign": 8
+      },
+      "targets": {
+        "0": 8
+      }
+    },
+    "test": {
+      "samples": 8,
+      "domains": 8,
+      "labels": {
+        "benign": 8
+      },
+      "targets": {
+        "0": 8
+      }
+    }
+  },
+  "exclusions": {
+    "annotator_did_not_inspect": 14,
+    "excluded_suspicious": 9
+  },
+  "exclusion_examples": {
+    "annotator_did_not_inspect": [
+      "aizenway.cn",
+      "asfinag.at",
+      "autotrader.com",
+      "avrora.ua",
+      "beautyjunkies.de",
+      "cnmsn.net",
+      "conn3ct.space",
+      "dpbosss.net.in",
+      "duckdns.org",
+      "ebay-kleinanzeigen.de",
+      "3n.com.pl",
+      "5599.by",
+      "888slot-official.asia",
+      "bloko.gr"
+    ],
+    "excluded_suspicious": [
+      "12371.cn",
+      "1punrewudx.com",
+      "antagus.de",
+      "antenna.gr",
+      "bcb.gov.br",
+      "bubume.com",
+      "1sextube.com",
+      "ads-tracking.com",
+      "fitnur.com"
+    ]
+  },
+  "duplicates_removed": 0,
+  "warnings": [
+    "13 assessment row(s) could not be parsed and were skipped",
+    "14 domain(s) are excluded because the annotator recorded a failed load rather than an observation: non_inspections.csv=14",
+    "val split has fewer than 20 samples",
+    "val split contains a single class",
+    "test split has fewer than 20 samples",
+    "test split contains a single class",
+    "suspicious labels were excluded; rerun with --include-suspicious for a sensitivity check",
+    "domains whose annotator note recorded a failed load were excluded as not inspectable, not as a trust judgement"
+  ],
+  "assessment_source": "jsonl:data/exports/main/batch_01.jsonl",
+  "label_source": {
+    "path": "data\\annotations\\main\\batch_01\\labels.csv",
+    "sha256": "494ab3e6f60283b6de7100ed5a201b0836831d59d89bdada0d386f21252b8565",
+    "rows": 77,
+    "imported_domains": 77,
+    "skipped": 0,
+    "conflicts": [],
+    "conflict_count": 0,
+    "labels": {
+      "suspicious": 22,
+      "benign": 54,
+      "malicious": 1
+    }
+  },
+  "feature_names": [
+    "url_https",
+    "url_length_log",
+    "url_host_length_log",
+    "url_path_length_log",
+    "url_query_length_log",
+    "url_path_depth",
+    "url_query_params",
+    "url_host_labels",
+    "url_hyphens",
+    "url_dots",
+    "url_digits_log",
+    "url_digit_ratio",
+    "url_host_digit_ratio",
+    "url_special_log",
+    "url_host_entropy",
+    "url_has_port",
+    "url_has_at",
+    "url_has_punycode",
+    "url_is_ip",
+    "url_risky_tokens",
+    "url_encoded_redirect",
+    "page_available",
+    "http_ok",
+    "redirected",
+    "has_login_form",
+    "has_payment_form",
+    "page_forms_log",
+    "page_password_fields",
+    "page_links_log",
+    "page_scripts_log",
+    "page_iframes",
+    "page_images_log",
+    "page_network_log",
+    "page_cookies_log",
+    "page_hidden_elements_log",
+    "domain_age_log",
+    "domain_age_unknown",
+    "tls_trusted",
+    "tls_days_remaining_log",
+    "has_mx",
+    "spf_record",
+    "dmarc_record",
+    "tracker_total_log",
+    "tracker_third_party_log",
+    "trust_link_privacy",
+    "trust_link_terms",
+    "trust_link_contact",
+    "official_domain",
+    "prompt_injection_detected",
+    "text_zero_width_log",
+    "ocr_image_heavy",
+    "screenshot_available",
+    "overall_rule_risk",
+    "overall_confidence",
+    "evidence_count_log",
+    "missing_evidence_count",
+    "security_score",
+    "security_confidence",
+    "security_coverage",
+    "security_abstained",
+    "security_evidence_count",
+    "security_risk_points",
+    "security_trust_points",
+    "identity_score",
+    "identity_confidence",
+    "identity_coverage",
+    "identity_abstained",
+    "identity_evidence_count",
+    "identity_risk_points",
+    "identity_trust_points",
+    "privacy_score",
+    "privacy_confidence",
+    "privacy_coverage",
+    "privacy_abstained",
+    "privacy_evidence_count",
+    "privacy_risk_points",
+    "privacy_trust_points",
+    "manipulation_score",
+    "manipulation_confidence",
+    "manipulation_coverage",
+    "manipulation_abstained",
+    "manipulation_evidence_count",
+    "manipulation_risk_points",
+    "manipulation_trust_points",
+    "risk_low_count",
+    "risk_medium_count",
+    "risk_high_count",
+    "risk_critical_count",
+    "flag_unencrypted_http",
+    "flag_ip_literal_host",
+    "flag_punycode_host",
+    "flag_suspicious_tld",
+    "flag_brand_subdomain_impersonation",
+    "flag_brand_action_domain",
+    "flag_typosquatting_domain",
+    "flag_password_form_http",
+    "flag_cross_origin_login",
+    "flag_tls_certificate_invalid",
+    "flag_hidden_prompt_injection",
+    "flag_executable_download",
+    "flag_remote_access_request",
+    "flag_gift_card_payment",
+    "flag_seed_phrase_request",
+    "flag_no_consent_controls",
+    "flag_tracker_session_replay",
+    "flag_privacy_policy_missing",
+    "flag_free_subdomain_host",
+    "flag_file_host_destination",
+    "flag_cross_domain_redirect",
+    "flag_guaranteed_return_lure",
+    "flag_advance_fee_lure",
+    "flag_direct_upi_payment",
+    "flag_direct_bank_transfer",
+    "flag_messaging_only_contact",
+    "flag_ocr_guaranteed_return",
+    "flag_ocr_upi_payment"
+  ],
+  "feature_groups": {
+    "url": 21,
+    "signals": 80,
+    "rule": 36,
+    "hybrid": 116
+  },
+  "files": {
+    "dataset_jsonl": {
+      "path": "dataset.jsonl",
+      "sha256": "6f33e1a06b2a836ca60146e4c42cf8bf3ba1929abcc56e12b09dd09d64d7364c",
+      "bytes": 208679
+    },
+    "dataset_csv": {
+      "path": "dataset.csv",
+      "sha256": "2f8362cd6094e9e4b4777cb51657f505f13ea0ce8214878b53cee4cb71ba4c45",
+      "bytes": 51194
+    }
+  }
+}

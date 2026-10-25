@@ -1,0 +1,29 @@
+{
+  "approval": "not approved; each batch needs fresh explicit confirmation before collection",
+  "batch_size": 100,
+  "batches": [
+    {
+      "batch": 1,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data\\candidates\\feed_remaining\\feed_batch_01.csv",
+      "sha256": "e6b4d992b5227c1b780e86415d526f557ce79d502806f144dd03f3db5660b7ef"
+    },
+    {
+      "batch": 2,
+      "candidates": 17,
+      "domains": 17,
+      "file": "data\\candidates\\feed_remaining\\feed_batch_02.csv",
+      "sha256": "d481ed4f8f759d276752ea569efdebdfc6aab3c9fc1d39f5d1bb18983ab4c008"
+    }
+  ],
+  "candidates": 117,
+  "collection_gate": "malicious_page_requires_explicit_confirmation",
+  "created_at": "2026-10-20T14:59:17.243719+00:00",
+  "domains": 117,
+  "labels_file": "data\\labels\\feed\\labels_not_yet_planned.csv",
+  "labels_sha256": "11e47df4df135f670cfda871968c82d5586c5f3d91da6c70b5549343586f7906",
+  "payload_urls_replaced_by_domain_root": 10,
+  "schema_version": 1,
+  "seed": 43
+}

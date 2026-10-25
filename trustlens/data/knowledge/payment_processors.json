@@ -1,0 +1,26 @@
+{
+  "version": "2026.10",
+  "note": "Known payment processor and checkout hosts. Presence lowers impersonation risk for card forms but does not prove a merchant is honest.",
+  "processors": [
+    {"name": "Stripe", "domains": ["stripe.com", "stripe.network"]},
+    {"name": "PayPal", "domains": ["paypal.com", "paypalobjects.com"]},
+    {"name": "Razorpay", "domains": ["razorpay.com"]},
+    {"name": "Cashfree", "domains": ["cashfree.com"]},
+    {"name": "PayU", "domains": ["payu.in", "payu.com"]},
+    {"name": "Instamojo", "domains": ["instamojo.com"]},
+    {"name": "CCAvenue", "domains": ["ccavenue.com"]},
+    {"name": "Shopify Payments", "domains": ["shopify.com", "shopifypayments.com"]},
+    {"name": "Braintree", "domains": ["braintreepayments.com", "braintreegateway.com"]},
+    {"name": "Adyen", "domains": ["adyen.com"]},
+    {"name": "Authorize.net", "domains": ["authorize.net"]},
+    {"name": "Square", "domains": ["squareup.com", "square.com"]},
+    {"name": "Klarna", "domains": ["klarna.com"]},
+    {"name": "Afterpay", "domains": ["afterpay.com"]},
+    {"name": "Affirm", "domains": ["affirm.com"]},
+    {"name": "Paddle", "domains": ["paddle.com"]},
+    {"name": "Lemon Squeezy", "domains": ["lemonsqueezy.com"]},
+    {"name": "2Checkout", "domains": ["2checkout.com"]},
+    {"name": "Worldpay", "domains": ["worldpay.com"]},
+    {"name": "Checkout.com", "domains": ["checkout.com"]}
+  ]
+}

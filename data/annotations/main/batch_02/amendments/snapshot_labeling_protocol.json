@@ -1,0 +1,47 @@
+{
+  "amends": "docs/annotation-protocol.md section 3.4 (new); step 3 of the batch workflow in docs/main-dataset-protocol.md",
+  "batch_01_note": "Batch 01 was frozen before this feature existed and was labelled by live browsing; it is reported that way.",
+  "batches": {
+    "01": {
+      "duplicate": 0,
+      "export": "data\\exports\\main\\batch_01.jsonl",
+      "export_sha256": "c217a62b306cad1031b68cca3b3ecab14611b1f2b74786fa44fdec7ee361c198",
+      "likely_blank": 11,
+      "missing": 3,
+      "ok": 63,
+      "sheet": "data\\annotations\\main\\batch_01\\annotator_a.csv",
+      "sites": 77,
+      "suspect_snapshots": 11,
+      "usable_snapshots": 63
+    },
+    "02": {
+      "duplicate": 0,
+      "export": "data\\exports\\main\\batch_02.jsonl",
+      "export_sha256": "b24072443f6aa617bb2d0f67e96128a8bef00ec42a93f16674c25dd4a0020a77",
+      "likely_blank": 8,
+      "missing": 0,
+      "ok": 66,
+      "sheet": "data\\annotations\\main\\batch_02\\annotator_a.csv",
+      "sites": 74,
+      "suspect_snapshots": 8,
+      "usable_snapshots": 66
+    }
+  },
+  "blank_rule": "a capture of 8192 bytes or less is flagged suspect whether or not it repeats; rendered 1365x1000 pages in these batches run 250-290 KB median",
+  "changes_labels": false,
+  "created_at": "2026-10-20T13:57:30+00:00",
+  "invariants": [
+    "The snapshot panel exposes availability, state, byte size and duplicate count only. No risk score, risk level, evidence code, stratum, or coordinator-key field reaches the form.",
+    "A capture is addressable only through a sample_id present in that annotator sheet, and the route requires the annotation token.",
+    "The unit of annotation stays the registrable domain as a visitor meets it; blank, shared, or missing captures must be opened live or recorded as a failed load under section 3.3.",
+    "Labels remain human-produced. The crawler image is a display of the page, not a verdict."
+  ],
+  "prepared_by": "assistant; tooling only. The assistant supplies no labels and reads no label authorship.",
+  "reason": "The annotator can review a page but cannot review several hundred sites one live tab at a time at acceptable cost. The captured viewport is the same page the assessment was built from, so it shortens the assessment-to-annotation distance rather than widening it.",
+  "record_id": "main_snapshot_labeling_protocol",
+  "reporting": "The paper states the share of labels made from captures versus live browsing, and that a viewport screenshot under-covers pages whose intent appears only below the fold, in forms, or on deeper paths.",
+  "schema_version": 1,
+  "summary": "Labels may be produced from the page the crawler captured for the queued URL, shown inside the blinded labeling form, instead of opening every domain in a live tab.",
+  "type": "protocol_amendment",
+  "verification": "tests/test_snapshot_labeling.py asserts no decision field or screenshot path appears in the sheet payload and that captures are only reachable through assigned sample_ids."
+}

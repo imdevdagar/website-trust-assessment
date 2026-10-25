@@ -1,0 +1,329 @@
+{
+  "id": "02cf929bbe0b43e2b6226a1ca0b1acf1",
+  "url": "https://example.com",
+  "normalized_url": "https://example.com/",
+  "final_url": "https://example.com/",
+  "domain": "example.com",
+  "action": "browse",
+  "overall_risk": 2.2,
+  "overall_level": "low",
+  "confidence": 0.77,
+  "calibrated_probability": null,
+  "recommendation": "No significant risk signals appeared in the evidence checked. That is not a guarantee: stay alert for credential requests, unusual payment methods, or pressure to act quickly.",
+  "headline": "No significant risk signals in the evidence checked",
+  "rationale": "TrustLens combined 5 evidence item(s) across four dimensions for browsing on example.com. The action-weighted risk score is 2/100 (low) with 77% confidence. Strongest concerns: Security & Fraud: Several browser hardening headers are missing (+8); Privacy & Data: No privacy-policy link found (+2). Positive signals: Domain has an established registration history; No advertising, session-replay, or fingerprinting requests observed. Trust signals are deliberately weak and do not cancel serious findings. Unavailable evidence: No privacy-policy link was found on the main page. This lowers confidence and can hide problems. Automated checks are advisory: a site can show different content to different visitors, and a low score is not a guarantee that a site is safe.",
+  "dimensions": {
+    "security": {
+      "dimension": "security",
+      "label": "Security & Fraud",
+      "risk_score": 4.8,
+      "risk_level": "low",
+      "confidence": 0.74,
+      "coverage": 1.0,
+      "applicable": true,
+      "abstained": false,
+      "summary": "Security & Fraud score 5/100 (low). Primary signals: Several browser hardening headers are missing.",
+      "evidence_ids": [
+        "ev_sec_01",
+        "ev_sec_02"
+      ],
+      "calibrated_probability": null
+    },
+    "identity": {
+      "dimension": "identity",
+      "label": "Identity & Legitimacy",
+      "risk_score": 0.0,
+      "risk_level": "low",
+      "confidence": 0.787,
+      "coverage": 0.95,
+      "applicable": true,
+      "abstained": false,
+      "summary": "Identity & Legitimacy: no adverse findings; 1 positive signal(s) observed.",
+      "evidence_ids": [
+        "ev_idn_01"
+      ],
+      "calibrated_probability": null
+    },
+    "privacy": {
+      "dimension": "privacy",
+      "label": "Privacy & Data",
+      "risk_score": 0.3,
+      "risk_level": "low",
+      "confidence": 0.611,
+      "coverage": 0.75,
+      "applicable": true,
+      "abstained": false,
+      "summary": "Privacy & Data score 0/100 (low). Primary signals: No privacy-policy link found.",
+      "evidence_ids": [
+        "ev_pri_01",
+        "ev_pri_02"
+      ],
+      "calibrated_probability": null
+    },
+    "manipulation": {
+      "dimension": "manipulation",
+      "label": "Manipulation & Deception",
+      "risk_score": 0.0,
+      "risk_level": "low",
+      "confidence": 0.55,
+      "coverage": 1.0,
+      "applicable": true,
+      "abstained": false,
+      "summary": "Manipulation & Deception: no adverse findings in the evidence collected.",
+      "evidence_ids": [],
+      "calibrated_probability": null
+    }
+  },
+  "evidence": [
+    {
+      "id": "ev_sec_01",
+      "dimension": "security",
+      "code": "weak_security_headers",
+      "title": "Several browser hardening headers are missing",
+      "detail": "The response omits Strict-Transport-Security (HSTS), Content-Security-Policy, clickjacking protection (X-Frame-Options / frame-ancestors), X-Content-Type-Options, Referrer-Policy, Permissions-Policy. These headers reduce impact of content injection, clickjacking, and referrer leakage. Their absence is common and does not prove malicious intent.",
+      "severity": "low",
+      "risk_points": 8.0,
+      "trust_points": 0.0,
+      "confidence": 0.6,
+      "source": "headers",
+      "observed_at": "2026-10-20T06:46:41.207896Z",
+      "provenance": {
+        "missing": [
+          "Strict-Transport-Security (HSTS)",
+          "Content-Security-Policy",
+          "clickjacking protection (X-Frame-Options / frame-ancestors)",
+          "X-Content-Type-Options",
+          "Referrer-Policy",
+          "Permissions-Policy"
+        ],
+        "server": "cloudflare"
+      },
+      "tags": [
+        "headers",
+        "hygiene",
+        "weak_signal"
+      ]
+    },
+    {
+      "id": "ev_sec_02",
+      "dimension": "security",
+      "code": "tls_certificate_valid",
+      "title": "TLS certificate is valid (weak positive signal)",
+      "detail": "The HTTPS certificate chains to a public CA and matches this hostname. Issuer: SSL Corporation. Expires in 66 days. A certificate only proves control of the connection; it does not prove the operator is honest, so it is not counted as trust.",
+      "severity": "info",
+      "risk_points": 0.0,
+      "trust_points": 0.0,
+      "confidence": 0.95,
+      "source": "tls",
+      "observed_at": "2026-10-20T06:46:41.286570Z",
+      "provenance": {
+        "issuer": "SSL Corporation",
+        "subject": "example.com",
+        "days_remaining": 66,
+        "fingerprint_sha256": "85ca6ab068e9bcce88b6c4aa3c47f7d17228134a457f870d3800e6223a0df07a"
+      },
+      "tags": [
+        "tls",
+        "padlock_paradox",
+        "weak_signal"
+      ]
+    },
+    {
+      "id": "ev_idn_01",
+      "dimension": "identity",
+      "code": "established_domain",
+      "title": "Domain has an established registration history",
+      "detail": "The domain is about 31.2 years old (created 1995-08-14T04:00:00Z, registrar: RESERVED-Internet Assigned Numbers Authority). Age is a weak positive signal: aged domains can be compromised or reused.",
+      "severity": "info",
+      "risk_points": 0.0,
+      "trust_points": 2.0,
+      "confidence": 0.7,
+      "source": "rdap",
+      "observed_at": "2026-10-20T06:46:41.286442Z",
+      "provenance": {
+        "age_days": 11390,
+        "created_at": "1995-08-14T04:00:00Z",
+        "registrar": "RESERVED-Internet Assigned Numbers Authority"
+      },
+      "tags": [
+        "domain_age",
+        "weak_trust"
+      ]
+    },
+    {
+      "id": "ev_pri_01",
+      "dimension": "privacy",
+      "code": "privacy_policy_missing",
+      "title": "No privacy-policy link found",
+      "detail": "No link to a privacy policy was visible on the main page. This is a low-severity transparency gap for an informational page.",
+      "severity": "info",
+      "risk_points": 2.0,
+      "trust_points": 0.0,
+      "confidence": 0.6,
+      "source": "page",
+      "observed_at": "2026-10-20T06:46:41.246576Z",
+      "provenance": {
+        "links_scanned": 1,
+        "form_count": 0,
+        "transactional": false
+      },
+      "tags": [
+        "privacy",
+        "transparency",
+        "policy_missing"
+      ]
+    },
+    {
+      "id": "ev_pri_02",
+      "dimension": "privacy",
+      "code": "no_high_impact_trackers",
+      "title": "No advertising, session-replay, or fingerprinting requests observed",
+      "detail": "Only low-impact or functional third parties were visible during this load. Scripts can load conditionally, so this is a weak positive signal.",
+      "severity": "info",
+      "risk_points": 0.0,
+      "trust_points": 2.0,
+      "confidence": 0.45,
+      "source": "page",
+      "observed_at": "2026-10-20T06:46:41.241144Z",
+      "provenance": {
+        "categories": []
+      },
+      "tags": [
+        "privacy",
+        "weak_trust"
+      ]
+    }
+  ],
+  "missing_evidence": [
+    "No privacy-policy link was found on the main page"
+  ],
+  "coverage": {
+    "security": 1.0,
+    "identity": 0.95,
+    "privacy": 0.75,
+    "manipulation": 1.0
+  },
+  "meta": {
+    "engine_version": "0.1.0-rules",
+    "duration_ms": 4001,
+    "requested_url": "https://example.com/",
+    "final_url": "https://example.com/",
+    "redirected": false,
+    "crawl_engine": "playwright",
+    "http_status": 200,
+    "blocked_requests": 0,
+    "page_fingerprint": {
+      "engine": "playwright",
+      "status": 200,
+      "title": "Example Domain",
+      "final_url": "https://example.com/",
+      "forms": 0,
+      "password_fields": 0,
+      "checkboxes": 0,
+      "links": 1,
+      "scripts": 1,
+      "iframes": 0,
+      "images": 0,
+      "network_requests": 2,
+      "cookies": 0,
+      "hidden_elements": 0,
+      "screenshot": true,
+      "blocked_requests": 0
+    },
+    "sources": {
+      "url": true,
+      "headers": true,
+      "page": true,
+      "network": true,
+      "hidden_content": true,
+      "privacy_policy": false,
+      "rdap": true,
+      "dns": true,
+      "tls": true,
+      "ocr": true,
+      "infrastructure_graph": true
+    },
+    "notes": {
+      "has_login_form": false,
+      "has_payment_form": false,
+      "official_domain": false,
+      "trust_links": {
+        "privacy": false,
+        "terms": false,
+        "contact": true,
+        "about": false,
+        "returns": false
+      },
+      "trackers": {
+        "total": 0,
+        "third_party": 0,
+        "categories": {},
+        "names": []
+      },
+      "text_obfuscation": {
+        "zero_width": 0,
+        "zero_width_words": 0,
+        "bidi": 0
+      },
+      "prompt_injection": {
+        "detected": false,
+        "patterns": [],
+        "channels": [],
+        "encoded_blob": false,
+        "zero_width": 0,
+        "bidi_controls": 0
+      },
+      "domain_intel": {
+        "domain": "example.com",
+        "age_days": 11390,
+        "registrar": "RESERVED-Internet Assigned Numbers Authority",
+        "created_at": "1995-08-14T04:00:00Z",
+        "expires_at": "2027-08-13T04:00:00Z",
+        "nameservers": [
+          "elliott.ns.cloudflare.com",
+          "hera.ns.cloudflare.com"
+        ],
+        "has_mx": true,
+        "spf": true,
+        "dmarc": true,
+        "tls_issuer": "SSL Corporation",
+        "tls_trusted": true,
+        "tls_days_remaining": 66,
+        "tls_fingerprint": "85ca6ab068e9bcce88b6c4aa3c47f7d17228134a457f870d3800e6223a0df07a"
+      },
+      "ocr": {
+        "characters": 900,
+        "signals": [],
+        "image_heavy": false
+      },
+      "infrastructure": {
+        "cert_fingerprint": true,
+        "favicon_hashes": 0,
+        "image_hashes": 0,
+        "analytics_ids": [],
+        "nameservers": [
+          "elliott.ns.cloudflare.com",
+          "hera.ns.cloudflare.com"
+        ],
+        "registrar": "RESERVED-Internet Assigned Numbers Authority",
+        "neighbor_count": 0,
+        "matched_on": [],
+        "known_label": null
+      }
+    },
+    "floors": [],
+    "action_weights": {
+      "security": 0.45,
+      "identity": 0.2,
+      "privacy": 0.15,
+      "manipulation": 0.2
+    },
+    "errors": {},
+    "page_errors": [],
+    "calibration": null,
+    "screenshot_file": "scan_7edbf401bdaf400180dfb2999959aaf5.png"
+  },
+  "screenshot_url": "/screenshots/scan_7edbf401bdaf400180dfb2999959aaf5.png",
+  "created_at": "2026-10-20T06:46:41.790136Z",
+  "cached": false
+}

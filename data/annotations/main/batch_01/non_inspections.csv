@@ -1,0 +1,15 @@
+sample_id,domain,label,confidence,annotator_note,classification,transport_status,transport_detail,final_url,triage_generated_at
+s_2bced0e3ad,aizenway.cn,suspicious,1.00,unable to load the website,no_response,,ReadTimeout: timed out,,2026-10-20T13:24:09+00:00
+s_6ef79a8c25,cnmsn.net,suspicious,1.00,unable to load site,no_response,,ConnectTimeout: timed out,,2026-10-20T13:24:09+00:00
+s_27343bab81,conn3ct.space,suspicious,1.00,unable to reach the website,no_response,,ConnectTimeout: timed out,,2026-10-20T13:24:09+00:00
+s_937b4aef20,dpbosss.net.in,benign,0.60,site was taking time to load,no_response,,ConnectTimeout: timed out,,2026-10-20T13:24:09+00:00
+s_00b5866181,duckdns.org,suspicious,0.75,site takes time to load,no_response,,ConnectTimeout: timed out,,2026-10-20T13:24:09+00:00
+s_8284515071,3n.com.pl,suspicious,0.90,unable to access,server_refusal,403,,https://3n.com.pl/,2026-10-20T13:24:09+00:00
+s_d47f90ce98,5599.by,suspicious,0.95,unable to load,server_refusal,423,,https://5599.by/,2026-10-20T13:24:09+00:00
+s_6c1fa5ff22,888slot-official.asia,suspicious,0.95,unable to access,server_refusal,403,,https://888slot-official.asia/,2026-10-20T13:24:09+00:00
+s_7d8511d664,asfinag.at,suspicious,1.00,error code 403,server_refusal,403,,https://asfinag.at/,2026-10-20T13:24:09+00:00
+s_2594ba39f3,autotrader.com,suspicious,0.65,access denied,server_refusal,403,,https://autotrader.com/,2026-10-20T13:24:09+00:00
+s_e066047020,avrora.ua,suspicious,0.95,unable to open it,server_refusal,403,,https://avrora.ua/,2026-10-20T13:24:09+00:00
+s_ba13f04f7b,beautyjunkies.de,suspicious,0.95,page not found,server_refusal,403,,https://www.beautyjunkies.de/,2026-10-20T13:24:09+00:00
+s_76104eb116,bloko.gr,suspicious,0.95,unable to access,server_refusal,403,,https://bloko.gr/,2026-10-20T13:24:09+00:00
+s_3afb1f3c17,ebay-kleinanzeigen.de,suspicious,0.95,nothing to see,server_refusal,403,,https://ebay-kleinanzeigen.de/,2026-10-20T13:24:09+00:00

@@ -1,0 +1,49 @@
+{
+  "amendment_freeze_record": {
+    "path": "data/annotations/round2/frozen/annotator_a_v2_20261020T111826Z.freeze.json",
+    "sha256": "75d1fc8cfa713fde09b7ddff2339ee316fac6447101c8f3b073124176ecca0c4"
+  },
+  "amendment_frozen_archive": {
+    "path": "data/annotations/round2/frozen/annotator_a_v2_20261020T111826Z.csv",
+    "sha256": "e446f453c89ca678b989dfc377af0fe11fc8743b97a17ac349f0330157ca17b2"
+  },
+  "amendment_id": "round2_a_amendment_01",
+  "annotator": "a",
+  "approved_by": "User instruction 'do what would be correct' on 2026-10-20",
+  "codebook_references": [
+    "docs/annotation-protocol.md section 2.2",
+    "docs/annotation-protocol.md section 3.2"
+  ],
+  "corrected_sheet": "data/annotations/round2/annotator_a_v2.csv",
+  "corrected_sheet_sha256": "e446f453c89ca678b989dfc377af0fe11fc8743b97a17ac349f0330157ca17b2",
+  "created_at": "2026-10-20T11:17:09.270481+00:00",
+  "independent_adjudication": false,
+  "prepared_by": "assistant under user delegation; not independent adjudication",
+  "reason": "Codebook-compliance correction for two unreachable-page labels",
+  "records": [
+    {
+      "new_confidence": "0.40",
+      "new_label": "suspicious",
+      "new_notes": "it doesnt open but seems legit; amended to suspicious: page unreachable and no decisive evidence (codebook 2.2, 3.2)",
+      "original_confidence": "1.00",
+      "original_label": "benign",
+      "original_notes": "it doesnt open but seems legit",
+      "rationale": "The live page could not be inspected. Codebook 2.2 requires suspicious for an unreachable site unless the supplied evidence is independently decisive; codebook 3.2 says not to guess benign when the page could not be inspected.",
+      "sample_id": "s_286bde0a8b"
+    },
+    {
+      "new_confidence": "0.40",
+      "new_label": "suspicious",
+      "new_notes": "site not found; amended to suspicious: feed match alone and no live evidence (codebook 2.2)",
+      "original_confidence": "1.00",
+      "original_label": "malicious",
+      "original_notes": "site not found",
+      "rationale": "Feed membership is not sufficient for malicious, and the note records only that the site was not found. Codebook 2.2 requires suspicious when an unreachable feed match lacks independently decisive evidence.",
+      "sample_id": "s_e61c4b0421"
+    }
+  ],
+  "round": 2,
+  "schema_version": 1,
+  "source_archive": "data/annotations/round2/frozen/annotator_a_20261020T104418Z.csv",
+  "source_sha256": "92ad8e40e2cb54528f58bebb12e65bb27d157c69ac2b6fd893ff4b6aeafbba3f"
+}

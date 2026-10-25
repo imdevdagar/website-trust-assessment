@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "record_id": "main_batch_01_non_inspections",
+  "created_at": "2026-10-20T13:33:26+00:00",
+  "batch": "01",
+  "annotator": "a",
+  "type": "analysis_exclusion_record",
+  "changes_labels": false,
+  "purpose": "Mark rows whose annotator note records a failed load rather than an observation, so they are excluded from the primary binary task and the suspicious sensitivity analysis and reported as a reachability limitation.",
+  "prepared_by": "assistant; mechanical transport triage, no trust judgement",
+  "approved_by": "User instruction to re-attempt group A and then freeze batch 1",
+  "method": {
+    "triage_file": "data/annotations/main/batch_01/reachability_triage.json",
+    "triage_sha256": "d12f4e85a7ee2066cf78ff075252184c8e07c01a7a951ed858c4cd2bd358bdcc",
+    "scope": "DNS, TCP, TLS and HTTP status only; no page content was read",
+    "classes": {
+      "server_refusal": "HTTP [403, 423, 451] from the live server",
+      "no_response": "connection or read timeout, no HTTP response"
+    }
+  },
+  "frozen_sheet": {
+    "archive": "annotator_a_20261020T133255Z.csv",
+    "archive_sha256": "7450a97ef8c02a02a793d6d7a5d6f9c9a8c193e725c5b410168ad97d6320cfb0",
+    "record": "data/annotations/main/batch_01/frozen/annotator_a_20261020T133255Z.freeze.json",
+    "record_sha256": "5d62add7f16ed2284fb581770f87514c136c26cfe4b3331b78ee3fbf25cee8e8",
+    "frozen_at": "2026-10-20T13:32:55.676472+00:00"
+  },
+  "counts": {
+    "labelled_sites": 77,
+    "flagged_for_triage": 22,
+    "non_inspectable": 14,
+    "by_classification": {
+      "no_response": 5,
+      "server_refusal": 9
+    },
+    "by_label": {
+      "benign": 1,
+      "suspicious": 13
+    }
+  },
+  "excluded_domains": [
+    "3n.com.pl",
+    "5599.by",
+    "888slot-official.asia",
+    "aizenway.cn",
+    "asfinag.at",
+    "autotrader.com",
+    "avrora.ua",
+    "beautyjunkies.de",
+    "bloko.gr",
+    "cnmsn.net",
+    "conn3ct.space",
+    "dpbosss.net.in",
+    "duckdns.org",
+    "ebay-kleinanzeigen.de"
+  ],
+  "rows": [
+    {
+      "sample_id": "s_2bced0e3ad",
+      "domain": "aizenway.cn",
+      "label": "suspicious",
+      "confidence": "1.00",
+      "annotator_note": "unable to load the website",
+      "classification": "no_response",
+      "transport_status": "",
+      "transport_detail": "ReadTimeout: timed out",
+      "final_url": "",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_6ef79a8c25",
+      "domain": "cnmsn.net",
+      "label": "suspicious",
+      "confidence": "1.00",
+      "annotator_note": "unable to load site",
+      "classification": "no_response",
+      "transport_status": "",
+      "transport_detail": "ConnectTimeout: timed out",
+      "final_url": "",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_27343bab81",
+      "domain": "conn3ct.space",
+      "label": "suspicious",
+      "confidence": "1.00",
+      "annotator_note": "unable to reach the website",
+      "classification": "no_response",
+      "transport_status": "",
+      "transport_detail": "ConnectTimeout: timed out",
+      "final_url": "",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_937b4aef20",
+      "domain": "dpbosss.net.in",
+      "label": "benign",
+      "confidence": "0.60",
+      "annotator_note": "site was taking time to load",
+      "classification": "no_response",
+      "transport_status": "",
+      "transport_detail": "ConnectTimeout: timed out",
+      "final_url": "",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_00b5866181",
+      "domain": "duckdns.org",
+      "label": "suspicious",
+      "confidence": "0.75",
+      "annotator_note": "site takes time to load",
+      "classification": "no_response",
+      "transport_status": "",
+      "transport_detail": "ConnectTimeout: timed out",
+      "final_url": "",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_8284515071",
+      "domain": "3n.com.pl",
+      "label": "suspicious",
+      "confidence": "0.90",
+      "annotator_note": "unable to access",
+      "classification": "server_refusal",
+      "transport_status": 403,
+      "transport_detail": "",
+      "final_url": "https://3n.com.pl/",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_d47f90ce98",
+      "domain": "5599.by",
+      "label": "suspicious",
+      "confidence": "0.95",
+      "annotator_note": "unable to load",
+      "classification": "server_refusal",
+      "transport_status": 423,
+      "transport_detail": "",
+      "final_url": "https://5599.by/",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_6c1fa5ff22",
+      "domain": "888slot-official.asia",
+      "label": "suspicious",
+      "confidence": "0.95",
+      "annotator_note": "unable to access",
+      "classification": "server_refusal",
+      "transport_status": 403,
+      "transport_detail": "",
+      "final_url": "https://888slot-official.asia/",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_7d8511d664",
+      "domain": "asfinag.at",
+      "label": "suspicious",
+      "confidence": "1.00",
+      "annotator_note": "error code 403",
+      "classification": "server_refusal",
+      "transport_status": 403,
+      "transport_detail": "",
+      "final_url": "https://asfinag.at/",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_2594ba39f3",
+      "domain": "autotrader.com",
+      "label": "suspicious",
+      "confidence": "0.65",
+      "annotator_note": "access denied",
+      "classification": "server_refusal",
+      "transport_status": 403,
+      "transport_detail": "",
+      "final_url": "https://autotrader.com/",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_e066047020",
+      "domain": "avrora.ua",
+      "label": "suspicious",
+      "confidence": "0.95",
+      "annotator_note": "unable to open it",
+      "classification": "server_refusal",
+      "transport_status": 403,
+      "transport_detail": "",
+      "final_url": "https://avrora.ua/",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_ba13f04f7b",
+      "domain": "beautyjunkies.de",
+      "label": "suspicious",
+      "confidence": "0.95",
+      "annotator_note": "page not found",
+      "classification": "server_refusal",
+      "transport_status": 403,
+      "transport_detail": "",
+      "final_url": "https://www.beautyjunkies.de/",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_76104eb116",
+      "domain": "bloko.gr",
+      "label": "suspicious",
+      "confidence": "0.95",
+      "annotator_note": "unable to access",
+      "classification": "server_refusal",
+      "transport_status": 403,
+      "transport_detail": "",
+      "final_url": "https://bloko.gr/",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    },
+    {
+      "sample_id": "s_3afb1f3c17",
+      "domain": "ebay-kleinanzeigen.de",
+      "label": "suspicious",
+      "confidence": "0.95",
+      "annotator_note": "nothing to see",
+      "classification": "server_refusal",
+      "transport_status": 403,
+      "transport_detail": "",
+      "final_url": "https://ebay-kleinanzeigen.de/",
+      "triage_generated_at": "2026-10-20T13:24:09+00:00"
+    }
+  ]
+}

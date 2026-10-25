@@ -1,0 +1,152 @@
+{
+  "all": {
+    "https_share": 0.8309,
+    "max_rule_risk": 0.68,
+    "mean_rule_risk": 0.1996,
+    "n": 757,
+    "recall_at_high_or_critical": 0.0079,
+    "recall_at_medium_or_above": 0.4122,
+    "rule_bands": {
+      "critical": 0,
+      "high": 6,
+      "low": 445,
+      "medium": 306
+    },
+    "tls_trusted_share": 0.6169
+  },
+  "benign": {
+    "https_share": 0.7962,
+    "max_rule_risk": 0.68,
+    "mean_rule_risk": 0.1425,
+    "n": 260,
+    "recall_at_high_or_critical": 0.0038,
+    "recall_at_medium_or_above": 0.2269,
+    "rule_bands": {
+      "critical": 0,
+      "high": 1,
+      "low": 201,
+      "medium": 58
+    },
+    "tls_trusted_share": 0.8731
+  },
+  "dataset": "data\\datasets\\feed_v2_no_batch_02\\dataset.jsonl",
+  "domains": 753,
+  "injection_surface": {
+    "assessments_in_dataset_scope": 757,
+    "codes": {
+      "hidden_iframe": {
+        "domains": 137,
+        "malicious_domains": 41,
+        "occurrences": 138,
+        "share_of_labelled_positives": 0.0827
+      },
+      "hidden_prompt_injection": {
+        "domains": 7,
+        "malicious_domains": 5,
+        "occurrences": 7,
+        "share_of_labelled_positives": 0.0101
+      }
+    },
+    "dataset_domains": 753,
+    "note": "prevalence of the surface only; detection and attack-success claims come from the controlled set"
+  },
+  "labels": {
+    "benign": 260,
+    "malicious": 497
+  },
+  "malicious": {
+    "https_share": 0.8491,
+    "max_rule_risk": 0.68,
+    "mean_rule_risk": 0.2294,
+    "n": 497,
+    "recall_at_high_or_critical": 0.0101,
+    "recall_at_medium_or_above": 0.5091,
+    "rule_bands": {
+      "critical": 0,
+      "high": 5,
+      "low": 244,
+      "medium": 248
+    },
+    "tls_trusted_share": 0.4829
+  },
+  "rule_engine_auc": {
+    "all_labelled": 0.517,
+    "test": 0.676,
+    "train": 0.493,
+    "val": 0.46
+  },
+  "rule_engine_escalation": {
+    "false_alarms_on_benign": 1,
+    "missed": 492,
+    "positives": 497
+  },
+  "samples": 757,
+  "splits": {
+    "test": {
+      "benign": 38,
+      "malicious": 75
+    },
+    "train": {
+      "benign": 183,
+      "malicious": 347
+    },
+    "val": {
+      "benign": 39,
+      "malicious": 75
+    }
+  },
+  "transport_rule_baselines": {
+    "bootstrap": {
+      "interval": "percentile 95%",
+      "resamples": 1000,
+      "seed": 42,
+      "unit": "registrable domain"
+    },
+    "note": "https_only is the pre-registered padlock baseline; https_and_trusted_chain is descriptive and was not pre-registered. Both are fixed rules, not trained models.",
+    "rules": {
+      "https_and_trusted_chain": {
+        "auroc": 0.722,
+        "auroc_ci": [
+          0.627,
+          0.799
+        ],
+        "confusion": {
+          "fn": 22,
+          "fp": 10,
+          "tn": 28,
+          "tp": 53
+        },
+        "f1": 0.768,
+        "f1_ci": [
+          0.683,
+          0.836
+        ],
+        "n": 113,
+        "precision": 0.841,
+        "recall": 0.707
+      },
+      "https_only": {
+        "auroc": 0.475,
+        "auroc_ci": [
+          0.399,
+          0.551
+        ],
+        "confusion": {
+          "fn": 61,
+          "fp": 9,
+          "tn": 29,
+          "tp": 14
+        },
+        "f1": 0.286,
+        "f1_ci": [
+          0.17,
+          0.396
+        ],
+        "n": 113,
+        "precision": 0.609,
+        "recall": 0.187
+      }
+    },
+    "split": "test"
+  }
+}

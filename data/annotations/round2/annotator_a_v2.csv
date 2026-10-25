@@ -1,0 +1,34 @@
+sample_id,url,domain,label,confidence,notes
+s_4fe3d3523b,http://astoundinginnergoodlove.neverssl.com/online/,neverssl.com,suspicious,0.85,doesnt seem genuine
+s_f1a6075cc7,https://internalserviceslinks.com/,internalserviceslinks.com,benign,0.85,
+s_e56b14fb78,https://www.portlandleathergoods.com/,portlandleathergoods.com,benign,0.90,
+s_b5c2b02c5b,https://authentication.ms/E.VWPb4muR_4I,authentication.ms,malicious,1.00,looks fake clearly
+s_5bcc5cafc0,https://roblox.com.bz/communities/2426392765/,roblox.com.bz,malicious,1.00,browser gave warning for suspision
+s_e61c4b0421,http://www-mfacebook.com.vn/9x8q1ays3gb,www-mfacebook.com.vn,suspicious,0.40,site not found; amended to suspicious: feed match alone and no live evidence (codebook 2.2)
+s_8cc2ed86d7,https://nkseo.com/,nkseo.com,malicious,1.00,received warning from the browser
+s_df23253874,http://doctorpizzaband.com/wp-content/uploads/aynqxts/wsdqmoc/dpgqmbx/clickon/pasific.html,doctorpizzaband.com,malicious,1.00,fake
+s_42edf63bff,http://www.sauv.info/Roundcube.zip,sauv.info,suspicious,1.00,page isnt working
+s_f4df72f412,https://www.ledgerupdate.org/front,ledgerupdate.org,malicious,1.00,warning from my browser
+s_ded33deefd,https://abcgil.com/EN/owa/,abcgil.com,malicious,1.00,warning from browser
+s_45a17b5ec8,https://example.com/,example.com,suspicious,1.00,no info on website
+s_9afcaae487,https://www.icrc.org/en,icrc.org,benign,1.00,
+s_b5ac52bfc1,https://www.ikea.com/,ikea.com,benign,1.00,
+s_b7f9123cae,https://www.dropbox.com/login,dropbox.com,benign,1.00,
+s_a31fb7a213,https://bet73095.com/promo,bet73095.com,suspicious,1.00,connection not secure
+s_a6043f46c1,https://www.cdc.gov/index.html,cdc.gov,benign,1.00,
+s_2ba1a345a8,https://emaycartabogados.com/cgibin/docu.html,emaycartabogados.com,malicious,1.00,warning from browser
+s_286bde0a8b,https://www.textfiles.com/,textfiles.com,suspicious,0.40,"it doesnt open but seems legit; amended to suspicious: page unreachable and no decisive evidence (codebook 2.2, 3.2)"
+s_d272267bf3,https://www.canva.com/en_in/login/,canva.com,benign,1.00,
+s_e756c9441e,https://www.roblox.com.pt/users/499080194713/profile,roblox.com.pt,suspicious,1.00,connection not private
+s_43cef2abde,https://www.mozilla.org/en-US/,mozilla.org,benign,1.00,
+s_b9b4037294,https://www.nationalgeographic.com/,nationalgeographic.com,benign,1.00,
+s_d27eb7820c,https://www.khanacademy.org/,khanacademy.org,benign,1.00,
+s_3f918c483d,https://traveltoitalynow.net/pages/e7d81f2a-673c-45e8-8262-2361b636b7aa/ab8c449a362f6e9fa9ffa952620eba0664a59847946a3bad47791bb5f0e545b755daaa76c7c8ec4cca90be4eea76011b04563cc6805cbe580f0f9cf29110646d,traveltoitalynow.net,malicious,1.00,warning from browser
+s_2b4bc65664,https://www.craigslist.org/area/delhi,craigslist.org,suspicious,1.00,looks fake to me
+s_bcd9c98f82,https://www.dfnvjdfnvdjnfvdjfvdndfjvn.com/,dfnvjdfnvdjnfvdjfvdndfjvn.com,malicious,1.00,dangerous site warning from browser
+s_e6c2c3ecb4,https://www.mikespastry.com/,mikespastry.com,benign,1.00,
+s_d6e010e6a2,https://shopeemypartner.com/home,shopeemypartner.com,malicious,1.00,warning from browser
+s_f6d25cd287,https://ledger.net.cn/download/,ledger.net.cn,malicious,1.00,warning from browser
+s_ca43b35407,https://www.isro.gov.in/,isro.gov.in,benign,1.00,
+s_6a00330eb0,https://www.target.com/,target.com,benign,1.00,
+s_ca2d697b9f,https://sorrisokidsfamily.com.br/wp-fonts/we/,sorrisokidsfamily.com.br,malicious,1.00,dangerous site warning

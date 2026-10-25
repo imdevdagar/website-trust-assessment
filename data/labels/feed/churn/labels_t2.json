@@ -1,0 +1,54 @@
+{
+  "created_at": "2026-10-20T19:23:22+00:00",
+  "excluded_domains_requested": 0,
+  "label": "malicious",
+  "labeled_domains": 551,
+  "multi_feed_domains": 0,
+  "outputs": {
+    "labels": "data\\labels\\feed\\churn\\labels_t2.csv"
+  },
+  "policy": {
+    "feed_never_imported_to_runtime": "the feed must not be loaded into the local domain_labels store",
+    "label_meaning": "membership of a public abuse feed at retrieval time, not a human trust judgement",
+    "leakage_check": "assert_no_label_leakage must pass on every assessment used as a sample",
+    "positive_class_mix": "OpenPhish reports phishing; URLhaus reports malware distribution",
+    "unreachable_pages": "a feed domain that cannot be assessed is dropped, never labelled benign"
+  },
+  "rejection_total": 7870,
+  "rejections": {
+    "openphish_public_feed: shared_or_multitenant_domain": 189,
+    "urlhaus_public_feed: IP-literal candidates are outside the domain sample": 2326,
+    "urlhaus_public_feed: Non-standard ports are not crawled": 2303,
+    "urlhaus_public_feed: path appears to contain an email address": 1,
+    "urlhaus_public_feed: shared_or_multitenant_domain": 3051
+  },
+  "schema_version": 1,
+  "sources": {
+    "openphish_public_feed": {
+      "accepted_entries": 111,
+      "age_hours": 0.0,
+      "age_state": "fresh",
+      "lines": 300,
+      "max_age_days": 7,
+      "retrieved_at": "2026-10-20T19:23:11+00:00",
+      "sha256": "cad59a85b51703ef28b89f2647792301d9dffb241f1d4853511e5d5e47f317a5",
+      "snapshot_file": "data\\labels\\feed\\churn\\snapshots\\openphish_cad59a85b517.txt",
+      "source_date": "2026-10-20",
+      "url": "https://openphish.com/feed.txt"
+    },
+    "urlhaus_public_feed": {
+      "accepted_entries": 20320,
+      "age_hours": 0.0,
+      "age_state": "fresh",
+      "lines": 28001,
+      "max_age_days": 7,
+      "retrieved_at": "2026-10-20T19:23:13+00:00",
+      "sha256": "3b8b03e95f2c8c71707b3d972cae609331078c5ad78ad72dff40cd98da455e03",
+      "snapshot_file": "data\\labels\\feed\\churn\\snapshots\\urlhaus_3b8b03e95f2c.csv",
+      "source_date": "2026-10-20",
+      "url": "https://urlhaus.abuse.ch/downloads/csv_online/"
+    }
+  },
+  "stale_sources": [],
+  "warnings": []
+}

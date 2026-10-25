@@ -1,0 +1,81 @@
+{
+  "by_source": {
+    "openphish_public_feed": {
+      "primary_domains": 78,
+      "retained": 78,
+      "retained_share": 1.0,
+      "second_domains": 78
+    },
+    "urlhaus_public_feed": {
+      "primary_domains": 472,
+      "retained": 462,
+      "retained_share": 0.9788,
+      "second_domains": 473
+    }
+  },
+  "collected_assessments": {
+    "assessed_feed_positive_domains": 496,
+    "derived_benign_domains": 330,
+    "derived_benign_now_listed": 0,
+    "derived_benign_now_listed_domains": [],
+    "meaning": "share of the domains the primary evaluation labelled positive that a later retrieval still lists; the rest had already been delisted. derived_benign_now_listed counts negatives that a feed has since reported, i.e. how far the 'absent means benign' assumption decays.",
+    "no_longer_listed": 8,
+    "still_listed": 488,
+    "still_listed_share": 0.9839
+  },
+  "measured_at": "2026-10-20T20:15:00.733203+00:00",
+  "name": "trustlens-feed-label-churn",
+  "overall": {
+    "dropped": 9,
+    "dropped_domains": [
+      "2345.com",
+      "adubuildersco.com",
+      "aqiu6.com",
+      "cid.gov.so",
+      "fdstat.vip",
+      "horno-rafelet.es",
+      "htdentshop.com",
+      "pccw-hkt.com",
+      "zongheng.com"
+    ],
+    "dropped_share": 0.0164,
+    "newly_listed": 11,
+    "newly_listed_domains": [
+      "altamoorgoods.com",
+      "donutclients.top",
+      "fucktermedfir.st",
+      "hobobot.net",
+      "huduntech.com",
+      "innovspora.co.zw",
+      "intelli-sys.co.zw",
+      "om-stock.com",
+      "ps-ps.cc",
+      "qqfarmer.com.cn",
+      "syncacc.pro"
+    ],
+    "newly_listed_share_of_primary": 0.02,
+    "primary_domains": 549,
+    "retained": 540,
+    "retained_share": 0.9836,
+    "second_domains": 551
+  },
+  "primary_labels": {
+    "domains": 549,
+    "file": "data\\labels\\feed\\labels.csv"
+  },
+  "provenance": {
+    "interval_hours": 4.43,
+    "primary_created_at": "2026-10-20T14:57:28+00:00",
+    "raw_feed_digests_changed": {
+      "openphish_public_feed": false,
+      "urlhaus_public_feed": true
+    },
+    "second_created_at": "2026-10-20T19:23:22+00:00"
+  },
+  "reading": "A feed label asserts membership at one retrieval time. This report quantifies how much of that membership survives to a later retrieval; it is not a re-label or a correction of the frozen set.",
+  "schema_version": 1,
+  "second_labels": {
+    "domains": 551,
+    "file": "data\\labels\\feed\\churn\\labels_t2.csv"
+  }
+}

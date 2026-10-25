@@ -1,0 +1,334 @@
+{
+  "amendment": {
+    "amendment_id": "round2_a_amendment_01",
+    "independent_adjudication": false,
+    "note": "Corrections were prepared by the assistant under the user's instruction and are not independent adjudication.",
+    "path": "data/annotations/round2/amendments/round2_a_amendment_01.json",
+    "sha256": "5baa885dc4e2d26ce4f08f894d98e54c2552e60987c7e29d90f3d8f909a39ec4"
+  },
+  "amendment_effects": {
+    "label_distribution_change": {
+      "after": {
+        "benign": 13,
+        "malicious": 12,
+        "suspicious": 8
+      },
+      "before": {
+        "benign": 14,
+        "malicious": 13,
+        "suspicious": 6
+      }
+    },
+    "primary_binary_change": {
+      "after": {
+        "at_high_or_critical": {
+          "accuracy": 0.52,
+          "f1": null,
+          "fn": 12,
+          "fp": 0,
+          "precision": null,
+          "recall": 0.0,
+          "tn": 13,
+          "tp": 0
+        },
+        "at_medium_or_higher": {
+          "accuracy": 0.72,
+          "f1": 0.5882,
+          "fn": 7,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.4167,
+          "tn": 13,
+          "tp": 5
+        },
+        "auc_overall_risk": 0.7276,
+        "auc_rule_risk": 0.7276,
+        "n": 25,
+        "n_negative": 13,
+        "n_positive": 12
+      },
+      "before": {
+        "at_high_or_critical": {
+          "accuracy": 0.5185,
+          "f1": null,
+          "fn": 13,
+          "fp": 0,
+          "precision": null,
+          "recall": 0.0,
+          "tn": 14,
+          "tp": 0
+        },
+        "at_medium_or_higher": {
+          "accuracy": 0.7407,
+          "f1": 0.6316,
+          "fn": 7,
+          "fp": 0,
+          "precision": 1.0,
+          "recall": 0.4615,
+          "tn": 14,
+          "tp": 6
+        },
+        "auc_overall_risk": 0.7665,
+        "auc_rule_risk": 0.7665,
+        "excluded": "suspicious",
+        "n": 27,
+        "n_negative": 14,
+        "n_positive": 13,
+        "negative": "benign",
+        "positive": "malicious"
+      }
+    },
+    "records": [
+      {
+        "new_confidence": "0.40",
+        "new_label": "suspicious",
+        "new_notes": "it doesnt open but seems legit; amended to suspicious: page unreachable and no decisive evidence (codebook 2.2, 3.2)",
+        "original_confidence": "1.00",
+        "original_label": "benign",
+        "original_notes": "it doesnt open but seems legit",
+        "rationale": "The live page could not be inspected. Codebook 2.2 requires suspicious for an unreachable site unless the supplied evidence is independently decisive; codebook 3.2 says not to guess benign when the page could not be inspected.",
+        "sample_id": "s_286bde0a8b"
+      },
+      {
+        "new_confidence": "0.40",
+        "new_label": "suspicious",
+        "new_notes": "site not found; amended to suspicious: feed match alone and no live evidence (codebook 2.2)",
+        "original_confidence": "1.00",
+        "original_label": "malicious",
+        "original_notes": "site not found",
+        "rationale": "Feed membership is not sufficient for malicious, and the note records only that the site was not found. Codebook 2.2 requires suspicious when an unreachable feed match lacks independently decisive evidence.",
+        "sample_id": "s_e61c4b0421"
+      }
+    ]
+  },
+  "annotation_status": "single_annotator_after_amendment",
+  "confidence": {
+    "by_label": {
+      "benign": {
+        "max": 1.0,
+        "mean": 0.9808,
+        "min": 0.85,
+        "n": 13
+      },
+      "malicious": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0,
+        "n": 12
+      },
+      "suspicious": {
+        "max": 1.0,
+        "mean": 0.8313,
+        "min": 0.4,
+        "n": 8
+      }
+    },
+    "overall": {
+      "max": 1.0,
+      "mean": 0.9515,
+      "median": 1.0,
+      "min": 0.4,
+      "n": 33
+    }
+  },
+  "coordinator_key": {
+    "path": "data/annotations/round2/key.json",
+    "sha256": "d3902f16b5e73f9aff2b6501cf0af08f51711afa982aee9143ffcbb2bcbb3b7e"
+  },
+  "generated_at": "2026-10-20T11:21:12.306066+00:00",
+  "inter_annotator_agreement": {
+    "annotator_b": "blank_unavailable",
+    "n_overlap": 33,
+    "reason": "No independent annotator B labels exist. The user explicitly chose single-annotator continuation; kappa and a confusion matrix of agreement cannot be computed.",
+    "status": "not_computable"
+  },
+  "label_distribution": {
+    "by_stratum": {
+      "ambiguous": {
+        "labels": {
+          "benign": 4,
+          "malicious": 0,
+          "suspicious": 4
+        },
+        "n": 8
+      },
+      "benign_control": {
+        "labels": {
+          "benign": 8,
+          "malicious": 0,
+          "suspicious": 0
+        },
+        "n": 8
+      },
+      "scam_feed": {
+        "labels": {
+          "benign": 1,
+          "malicious": 12,
+          "suspicious": 4
+        },
+        "n": 17
+      }
+    },
+    "overall": {
+      "benign": 13,
+      "malicious": 12,
+      "suspicious": 8
+    }
+  },
+  "limitations": [
+    "Single annotator for Round 2; no inter-annotator agreement or independent adjudication is possible.",
+    "The pilot calibration gate (observed agreement >= 0.80 and QWK >= 0.70 in each round) is not met.",
+    "The two corrections were a codebook-compliance amendment, not an independent second-rater decision.",
+    "All 12 malicious labels are scam-feed candidates whose notes are short; most cite a browser warning, so the labels lean on an external security tool rather than independently observed page evidence.",
+    "No high or critical rule-level predictions occur in this pilot, so threshold calibration cannot be validated at the high/critical boundary."
+  ],
+  "n_sites": 33,
+  "notes": {
+    "nonempty": 20,
+    "terms": {
+      "browser_or_warning": 10,
+      "unreachable_or_broken": 3
+    }
+  },
+  "pre_amendment_analysis": {
+    "label_distribution_overall": {
+      "benign": 14,
+      "malicious": 13,
+      "suspicious": 6
+    },
+    "path": "data/annotations/round2/round2_single_annotator_analysis.json",
+    "primary_binary": {
+      "at_high_or_critical": {
+        "accuracy": 0.5185,
+        "f1": null,
+        "fn": 13,
+        "fp": 0,
+        "precision": null,
+        "recall": 0.0,
+        "tn": 14,
+        "tp": 0
+      },
+      "at_medium_or_higher": {
+        "accuracy": 0.7407,
+        "f1": 0.6316,
+        "fn": 7,
+        "fp": 0,
+        "precision": 1.0,
+        "recall": 0.4615,
+        "tn": 14,
+        "tp": 6
+      },
+      "auc_overall_risk": 0.7665,
+      "auc_rule_risk": 0.7665,
+      "excluded": "suspicious",
+      "n": 27,
+      "n_negative": 14,
+      "n_positive": 13,
+      "negative": "benign",
+      "positive": "malicious"
+    },
+    "sha256": "346e86ea2a49bce6c9b646d6bcb157d733ee1b32c745ea41b757e3e53d540a01"
+  },
+  "round": 2,
+  "rule_engine_alignment": {
+    "note": "No site in this pilot received a high or critical rule level. All 12 human-malicious sites after amendment scored low or medium, so the high/critical threshold has zero recall despite a moderate ranking AUC.",
+    "overall_level_by_human_label": {
+      "critical": {
+        "benign": 0,
+        "malicious": 0,
+        "suspicious": 0
+      },
+      "high": {
+        "benign": 0,
+        "malicious": 0,
+        "suspicious": 1
+      },
+      "low": {
+        "benign": 13,
+        "malicious": 7,
+        "suspicious": 3
+      },
+      "medium": {
+        "benign": 0,
+        "malicious": 5,
+        "suspicious": 4
+      }
+    },
+    "primary_binary": {
+      "at_high_or_critical": {
+        "accuracy": 0.52,
+        "f1": null,
+        "fn": 12,
+        "fp": 0,
+        "precision": null,
+        "recall": 0.0,
+        "tn": 13,
+        "tp": 0
+      },
+      "at_medium_or_higher": {
+        "accuracy": 0.72,
+        "f1": 0.5882,
+        "fn": 7,
+        "fp": 0,
+        "precision": 1.0,
+        "recall": 0.4167,
+        "tn": 13,
+        "tp": 5
+      },
+      "auc_overall_risk": 0.7276,
+      "auc_rule_risk": 0.7276,
+      "n": 25,
+      "n_negative": 13,
+      "n_positive": 12
+    },
+    "risk_by_label": {
+      "benign": {
+        "n": 13,
+        "overall_mean": 4.4231,
+        "overall_median": 4.2,
+        "rule_mean": 4.4231,
+        "rule_median": 4.2
+      },
+      "malicious": {
+        "n": 12,
+        "overall_mean": 20.15,
+        "overall_median": 6.4,
+        "rule_mean": 20.15,
+        "rule_median": 6.4
+      },
+      "suspicious": {
+        "n": 8,
+        "overall_mean": 28.45,
+        "overall_median": 42.0,
+        "rule_mean": 28.45,
+        "rule_median": 42.0
+      }
+    },
+    "rule_level_by_human_label": {
+      "critical": {
+        "benign": 0,
+        "malicious": 0,
+        "suspicious": 0
+      },
+      "high": {
+        "benign": 0,
+        "malicious": 0,
+        "suspicious": 1
+      },
+      "low": {
+        "benign": 13,
+        "malicious": 7,
+        "suspicious": 3
+      },
+      "medium": {
+        "benign": 0,
+        "malicious": 5,
+        "suspicious": 4
+      }
+    }
+  },
+  "source_sheet": {
+    "path": "data/annotations/round2/frozen/annotator_a_v2_20261020T111826Z.csv",
+    "sha256": "e446f453c89ca678b989dfc377af0fe11fc8743b97a17ac349f0330157ca17b2"
+  }
+}

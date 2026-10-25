@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-10-20T10:14:48.225673+00:00",
+  "role": "a",
+  "source_sheet": "annotator_a.csv",
+  "archive": "annotator_a_20261020T101448Z.csv",
+  "sha256": "b4d83082a4aec73b1abdd224c5cfb054a2127b322223906895a89c229334f807",
+  "bytes": 2540,
+  "expected": 36,
+  "annotated": 36,
+  "labels": {
+    "benign": 36
+  },
+  "key_file": "key.json",
+  "key_sha256": "f440a9c8959356b002d84bbd5aca92649f982d82d04239648f11a307dbdbfddb"
+}

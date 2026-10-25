@@ -1,0 +1,5324 @@
+{
+  "category_definitions": {
+    "brand_claim_mismatch": "the page claims a brand that the registrable domain does not own",
+    "credential_form_present": "a login or password form is on the page",
+    "cross_domain_redirect": "the visit left the submitted registrable domain",
+    "domain_age_unknown": "registration age could not be resolved, removing the oldest-legitimacy signal",
+    "email_authentication_missing": "the domain publishes no SPF/DMARC posture for its mail",
+    "established_host_appearance": "the capture shows an old, policy-bearing, conventionally structured site \u2014 the shape a payload hosted on a legitimate vendor looks like",
+    "feed_reported_url_on_established_host": "derived: a feed reported a URL on this domain while the domain itself presents as an established site, so the label and the observable unit disagree",
+    "file_host_or_payload_path": "the URL points at a hosted file or downloadable payload rather than a site",
+    "hidden_iframe_present": "an iframe hidden from the rendered view was in the DOM",
+    "hidden_prompt_injection": "hidden text carrying instruction-like content was detected, i.e. the injection surface itself",
+    "media_only_page": "the visible content is mostly images, so text-based signals cannot fire",
+    "no_email_configuration": "the domain publishes no MX records, typical of short-lived campaign hosts",
+    "no_single_mechanism": "the capture shows none of the listed mechanisms; the error is not explicable from the recorded evidence",
+    "payment_or_lure_language": "the page asks for a direct transfer, gift cards, UPI, or promises a return",
+    "remote_access_or_credential_request": "the page asks for remote access, a seed phrase or a credential-shaped action",
+    "shared_or_free_hosting": "the site sits on a suspicious TLD, a deep subdomain or an IP-literal host",
+    "thin_capture_low_evidence": "the crawler recorded almost no evidence at all",
+    "third_party_or_tracker_surface": "advertising, analytics, session-replay or large third-party footprint on the page",
+    "tls_absent_or_invalid": "served over plain HTTP or with an invalid certificate chain",
+    "unreachable_at_capture": "the capture did not return a usable page, so most signals are absent",
+    "unsafe_delivery_mechanics": "mixed content, missing security headers, obfuscated script or unsafe form targets",
+    "unverified_authority_claim": "the page invokes an official or authority-adjacent identity the domain cannot verify"
+  },
+  "dataset": "data/datasets/feed_v1/dataset.jsonl",
+  "models": {
+    "hybrid": {
+      "artifact": "models\\research\\logistic_hybrid.json",
+      "categories_by_kind": {
+        "false_negative": {
+          "established_host_appearance": 3,
+          "feed_reported_url_on_established_host": 3,
+          "hidden_iframe_present": 3,
+          "remote_access_or_credential_request": 1,
+          "third_party_or_tracker_surface": 3,
+          "unsafe_delivery_mechanics": 2,
+          "unverified_authority_claim": 1
+        },
+        "false_positive": {
+          "cross_domain_redirect": 1,
+          "domain_age_unknown": 1,
+          "email_authentication_missing": 4,
+          "established_host_appearance": 5,
+          "no_email_configuration": 2,
+          "thin_capture_low_evidence": 2,
+          "third_party_or_tracker_surface": 2,
+          "tls_absent_or_invalid": 4,
+          "unreachable_at_capture": 5,
+          "unsafe_delivery_mechanics": 6
+        }
+      },
+      "category_counts": {
+        "cross_domain_redirect": 1,
+        "domain_age_unknown": 1,
+        "email_authentication_missing": 4,
+        "established_host_appearance": 8,
+        "feed_reported_url_on_established_host": 3,
+        "hidden_iframe_present": 3,
+        "no_email_configuration": 2,
+        "remote_access_or_credential_request": 1,
+        "thin_capture_low_evidence": 2,
+        "third_party_or_tracker_surface": 5,
+        "tls_absent_or_invalid": 4,
+        "unreachable_at_capture": 5,
+        "unsafe_delivery_mechanics": 8,
+        "unverified_authority_claim": 1
+      },
+      "confusion_reported_by_artifact": {
+        "fn": 3,
+        "fp": 9,
+        "tn": 28,
+        "tp": 71
+      },
+      "confusion_reproduced": {
+        "fn": 3,
+        "fp": 9,
+        "n": 111,
+        "tn": 28,
+        "tp": 71
+      },
+      "error_count": 12,
+      "errors": [
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "rollingvideogames.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.2582,
+          "raw_probability": 0.0729,
+          "rule_level": "low",
+          "rule_risk": 0.063,
+          "top_contributions": [
+            {
+              "contribution": 5.4718735503086355,
+              "feature": "url_length_log",
+              "value": 3.5553480614894135
+            },
+            {
+              "contribution": 3.5062867301,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 3.0518574473,
+              "feature": "privacy_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 3.0331065685,
+              "feature": "identity_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": -6.813961969199999,
+              "feature": "risk_medium_count",
+              "value": 3.0
+            },
+            {
+              "contribution": -4.4539629832,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -3.7042938057125,
+              "feature": "overall_confidence",
+              "value": 0.793
+            },
+            {
+              "contribution": -3.1573711212720004,
+              "feature": "privacy_confidence",
+              "value": 0.795
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "gomlab.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.085,
+          "raw_probability": 0.0165,
+          "rule_level": "low",
+          "rule_risk": 0.087,
+          "top_contributions": [
+            {
+              "contribution": 4.891197259728477,
+              "feature": "url_length_log",
+              "value": 3.1780538303479458
+            },
+            {
+              "contribution": 3.5062867301,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 3.0518574473,
+              "feature": "privacy_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 3.0331065685,
+              "feature": "identity_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": -6.813961969199999,
+              "feature": "risk_medium_count",
+              "value": 3.0
+            },
+            {
+              "contribution": -4.4539629832,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -4.1703433964,
+              "feature": "security_evidence_count",
+              "value": 4.0
+            },
+            {
+              "contribution": -3.7510062118375003,
+              "feature": "overall_confidence",
+              "value": 0.803
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics",
+            "unverified_authority_claim",
+            "remote_access_or_credential_request",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "screenconnect.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.0038,
+          "raw_probability": 0.0004,
+          "rule_level": "low",
+          "rule_risk": 0.166,
+          "top_contributions": [
+            {
+              "contribution": 5.285092607346262,
+              "feature": "url_length_log",
+              "value": 3.4339872044851463
+            },
+            {
+              "contribution": 3.5062867301,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 3.1949732690999997,
+              "feature": "risk_low_count",
+              "value": 9.0
+            },
+            {
+              "contribution": 3.0518574473,
+              "feature": "privacy_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": -6.813961969199999,
+              "feature": "risk_medium_count",
+              "value": 3.0
+            },
+            {
+              "contribution": -5.2129292455,
+              "feature": "security_evidence_count",
+              "value": 5.0
+            },
+            {
+              "contribution": -4.4539629832,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -3.8350885428624997,
+              "feature": "overall_confidence",
+              "value": 0.821
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "no_email_configuration",
+            "domain_age_unknown",
+            "tls_absent_or_invalid",
+            "unsafe_delivery_mechanics",
+            "thin_capture_low_evidence",
+            "cross_domain_redirect"
+          ],
+          "domain": "benign-03c716902d",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.9735,
+          "raw_probability": 0.9481,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 6.110494650042522,
+              "feature": "url_length_log",
+              "value": 3.970291913552122
+            },
+            {
+              "contribution": 3.5062867301,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.9780218673447476,
+              "feature": "url_path_length_log",
+              "value": 3.332204510175204
+            },
+            {
+              "contribution": 2.9004520702,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": -7.0858416792,
+              "feature": "flag_cross_domain_redirect",
+              "value": 1.0
+            },
+            {
+              "contribution": -4.4539629832,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -3.6248827153,
+              "feature": "overall_confidence",
+              "value": 0.776
+            },
+            {
+              "contribution": -3.1277575473,
+              "feature": "security_evidence_count",
+              "value": 3.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "no_email_configuration",
+            "tls_absent_or_invalid",
+            "third_party_or_tracker_surface"
+          ],
+          "domain": "benign-8c4ed9c107",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.8418,
+          "raw_probability": 0.6562,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 4.891197259728477,
+              "feature": "url_length_log",
+              "value": 3.1780538303479458
+            },
+            {
+              "contribution": 3.5062867301,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.881451240075,
+              "feature": "identity_coverage",
+              "value": 0.95
+            },
+            {
+              "contribution": 2.8228965478,
+              "feature": "page_available",
+              "value": 1.0
+            },
+            {
+              "contribution": -3.86778722715,
+              "feature": "overall_confidence",
+              "value": 0.828
+            },
+            {
+              "contribution": -2.9231194135781,
+              "feature": "security_confidence",
+              "value": 0.967
+            },
+            {
+              "contribution": -2.5894414730432,
+              "feature": "privacy_confidence",
+              "value": 0.652
+            },
+            {
+              "contribution": -2.1788884046,
+              "feature": "flag_unencrypted_http",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": false
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "tls_absent_or_invalid",
+            "email_authentication_missing"
+          ],
+          "domain": "benign-6570724e11",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.6694,
+          "raw_probability": 0.3815,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 4.5316513297573175,
+              "feature": "url_length_log",
+              "value": 2.9444389791664403
+            },
+            {
+              "contribution": 3.5062867301,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.881451240075,
+              "feature": "identity_coverage",
+              "value": 0.95
+            },
+            {
+              "contribution": 2.8228965478,
+              "feature": "page_available",
+              "value": 1.0
+            },
+            {
+              "contribution": -3.8818009489875,
+              "feature": "overall_confidence",
+              "value": 0.831
+            },
+            {
+              "contribution": -2.8656848025564,
+              "feature": "security_confidence",
+              "value": 0.948
+            },
+            {
+              "contribution": -2.4266084969776,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            },
+            {
+              "contribution": -2.2713206564,
+              "feature": "risk_medium_count",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": false
+          }
+        },
+        {
+          "categories": [
+            "tls_absent_or_invalid",
+            "established_host_appearance",
+            "email_authentication_missing"
+          ],
+          "domain": "benign-b84f595bc4",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5594,
+          "raw_probability": 0.2632,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 4.448438942983695,
+              "feature": "url_length_log",
+              "value": 2.8903717578961645
+            },
+            {
+              "contribution": 3.5062867301,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.8228965478,
+              "feature": "page_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.578140583225,
+              "feature": "identity_coverage",
+              "value": 0.85
+            },
+            {
+              "contribution": -3.6809376026500003,
+              "feature": "overall_confidence",
+              "value": 0.788
+            },
+            {
+              "contribution": -2.7054724665485,
+              "feature": "security_confidence",
+              "value": 0.895
+            },
+            {
+              "contribution": -2.4266084969776,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            },
+            {
+              "contribution": -2.1788884046,
+              "feature": "flag_unencrypted_http",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": false
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics",
+            "thin_capture_low_evidence"
+          ],
+          "domain": "benign-e154660f9f",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5525,
+          "raw_probability": 0.257,
+          "rule_level": "low",
+          "rule_risk": 0.040999999999999995,
+          "top_contributions": [
+            {
+              "contribution": 5.072471741533566,
+              "feature": "url_length_log",
+              "value": 3.295836866004329
+            },
+            {
+              "contribution": 3.5062867301,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.9004520702,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.881451240075,
+              "feature": "identity_coverage",
+              "value": 0.95
+            },
+            {
+              "contribution": -4.4539629832,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -3.6202114746875003,
+              "feature": "overall_confidence",
+              "value": 0.775
+            },
+            {
+              "contribution": -3.1277575473,
+              "feature": "security_evidence_count",
+              "value": 3.0
+            },
+            {
+              "contribution": -2.4266084969776,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-377d25ee44",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5177,
+          "raw_probability": 0.2269,
+          "rule_level": "low",
+          "rule_risk": 0.055,
+          "top_contributions": [
+            {
+              "contribution": 5.128443518919064,
+              "feature": "url_length_log",
+              "value": 3.332204510175204
+            },
+            {
+              "contribution": 3.5062867301,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.9004520702,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.881451240075,
+              "feature": "identity_coverage",
+              "value": 0.95
+            },
+            {
+              "contribution": -4.5426413128,
+              "feature": "risk_medium_count",
+              "value": 2.0
+            },
+            {
+              "contribution": -4.4539629832,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -4.1703433964,
+              "feature": "security_evidence_count",
+              "value": 4.0
+            },
+            {
+              "contribution": -3.6902800838750003,
+              "feature": "overall_confidence",
+              "value": 0.79
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "unsafe_delivery_mechanics",
+            "email_authentication_missing"
+          ],
+          "domain": "benign-b25a8e7926",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.4982,
+          "raw_probability": 0.2113,
+          "rule_level": "low",
+          "rule_risk": 0.051,
+          "top_contributions": [
+            {
+              "contribution": 5.072471741533566,
+              "feature": "url_length_log",
+              "value": 3.295836866004329
+            },
+            {
+              "contribution": 3.5062867301,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.9004520702,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.881451240075,
+              "feature": "identity_coverage",
+              "value": 0.95
+            },
+            {
+              "contribution": -4.4539629832,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -4.1703433964,
+              "feature": "security_evidence_count",
+              "value": 4.0
+            },
+            {
+              "contribution": -3.522115421825,
+              "feature": "overall_confidence",
+              "value": 0.754
+            },
+            {
+              "contribution": -2.4266084969776,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "established_host_appearance",
+            "unsafe_delivery_mechanics",
+            "email_authentication_missing"
+          ],
+          "domain": "benign-d77dcf6b5a",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.4862,
+          "raw_probability": 0.2021,
+          "rule_level": "low",
+          "rule_risk": 0.049,
+          "top_contributions": [
+            {
+              "contribution": 5.014387329291013,
+              "feature": "url_length_log",
+              "value": 3.258096538021482
+            },
+            {
+              "contribution": 3.5062867301,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.9004520702,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.881451240075,
+              "feature": "identity_coverage",
+              "value": 0.95
+            },
+            {
+              "contribution": -4.4539629832,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -4.1703433964,
+              "feature": "security_evidence_count",
+              "value": 4.0
+            },
+            {
+              "contribution": -3.60619775285,
+              "feature": "overall_confidence",
+              "value": 0.772
+            },
+            {
+              "contribution": -2.4266084969776,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-a8f24dcb7b",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.4653,
+          "raw_probability": 0.1868,
+          "rule_level": "low",
+          "rule_risk": 0.021,
+          "top_contributions": [
+            {
+              "contribution": 5.072471741533566,
+              "feature": "url_length_log",
+              "value": 3.295836866004329
+            },
+            {
+              "contribution": 3.5062867301,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.9004520702,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.881451240075,
+              "feature": "identity_coverage",
+              "value": 0.95
+            },
+            {
+              "contribution": -4.4539629832,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -3.64356767775,
+              "feature": "overall_confidence",
+              "value": 0.78
+            },
+            {
+              "contribution": -2.4266084969776,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            },
+            {
+              "contribution": -2.3336589320396,
+              "feature": "security_confidence",
+              "value": 0.772
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        }
+      ],
+      "feature_group": "hybrid",
+      "reproduction_matches": {
+        "fn": true,
+        "fp": true,
+        "tn": true,
+        "tp": true
+      },
+      "test_samples": 111,
+      "threshold": 0.44669
+    },
+    "rule": {
+      "artifact": "models\\research\\logistic_rule.json",
+      "categories_by_kind": {
+        "false_negative": {
+          "credential_form_present": 1,
+          "domain_age_unknown": 2,
+          "email_authentication_missing": 2,
+          "established_host_appearance": 6,
+          "feed_reported_url_on_established_host": 6,
+          "hidden_iframe_present": 3,
+          "no_email_configuration": 2,
+          "remote_access_or_credential_request": 1,
+          "thin_capture_low_evidence": 1,
+          "third_party_or_tracker_surface": 4,
+          "tls_absent_or_invalid": 1,
+          "unreachable_at_capture": 1,
+          "unsafe_delivery_mechanics": 5,
+          "unverified_authority_claim": 1
+        },
+        "false_positive": {
+          "brand_claim_mismatch": 1,
+          "cross_domain_redirect": 2,
+          "domain_age_unknown": 1,
+          "email_authentication_missing": 3,
+          "established_host_appearance": 4,
+          "no_email_configuration": 2,
+          "thin_capture_low_evidence": 3,
+          "third_party_or_tracker_surface": 1,
+          "tls_absent_or_invalid": 6,
+          "unreachable_at_capture": 4,
+          "unsafe_delivery_mechanics": 1
+        }
+      },
+      "category_counts": {
+        "brand_claim_mismatch": 1,
+        "credential_form_present": 1,
+        "cross_domain_redirect": 2,
+        "domain_age_unknown": 3,
+        "email_authentication_missing": 5,
+        "established_host_appearance": 10,
+        "feed_reported_url_on_established_host": 6,
+        "hidden_iframe_present": 3,
+        "no_email_configuration": 4,
+        "remote_access_or_credential_request": 1,
+        "thin_capture_low_evidence": 4,
+        "third_party_or_tracker_surface": 5,
+        "tls_absent_or_invalid": 7,
+        "unreachable_at_capture": 5,
+        "unsafe_delivery_mechanics": 6,
+        "unverified_authority_claim": 1
+      },
+      "confusion_reported_by_artifact": {
+        "fn": 8,
+        "fp": 7,
+        "tn": 30,
+        "tp": 66
+      },
+      "confusion_reproduced": {
+        "fn": 8,
+        "fp": 7,
+        "n": 111,
+        "tn": 30,
+        "tp": 66
+      },
+      "error_count": 15,
+      "errors": [
+        {
+          "categories": [
+            "credential_form_present",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics",
+            "email_authentication_missing",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "backupso.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.5715,
+          "raw_probability": 0.4706,
+          "rule_level": "low",
+          "rule_risk": 0.042,
+          "top_contributions": [
+            {
+              "contribution": 4.784933804365,
+              "feature": "manipulation_confidence",
+              "value": 0.55
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 3.7047918058991,
+              "feature": "identity_confidence",
+              "value": 0.707
+            },
+            {
+              "contribution": 2.953299491175,
+              "feature": "privacy_coverage",
+              "value": 0.75
+            },
+            {
+              "contribution": -11.2301495863956,
+              "feature": "overall_confidence",
+              "value": 0.756
+            },
+            {
+              "contribution": -5.512654990017,
+              "feature": "privacy_confidence",
+              "value": 0.63
+            },
+            {
+              "contribution": -2.8032441086,
+              "feature": "risk_medium_count",
+              "value": 1.0
+            },
+            {
+              "contribution": -2.3012185346125,
+              "feature": "security_confidence",
+              "value": 0.725
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "no_email_configuration",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "tmcksa.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.5552,
+          "raw_probability": 0.4581,
+          "rule_level": "low",
+          "rule_risk": 0.052000000000000005,
+          "top_contributions": [
+            {
+              "contribution": 4.784933804365,
+              "feature": "manipulation_confidence",
+              "value": 0.55
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 4.1240044572031005,
+              "feature": "identity_confidence",
+              "value": 0.787
+            },
+            {
+              "contribution": 2.953299491175,
+              "feature": "privacy_coverage",
+              "value": 0.75
+            },
+            {
+              "contribution": -11.3489871481564,
+              "feature": "overall_confidence",
+              "value": 0.764
+            },
+            {
+              "contribution": -5.3464003157149,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            },
+            {
+              "contribution": -2.8032441086,
+              "feature": "risk_medium_count",
+              "value": 1.0
+            },
+            {
+              "contribution": -2.2885221564905,
+              "feature": "security_confidence",
+              "value": 0.721
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "domain_age_unknown",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "atw.hu",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.3556,
+          "raw_probability": 0.3133,
+          "rule_level": "low",
+          "rule_risk": 0.049,
+          "top_contributions": [
+            {
+              "contribution": 4.784933804365,
+              "feature": "manipulation_confidence",
+              "value": 0.55
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.953299491175,
+              "feature": "privacy_coverage",
+              "value": 0.75
+            },
+            {
+              "contribution": 1.8759766145854,
+              "feature": "identity_confidence",
+              "value": 0.358
+            },
+            {
+              "contribution": -10.413141349290099,
+              "feature": "overall_confidence",
+              "value": 0.701
+            },
+            {
+              "contribution": -5.958917536827901,
+              "feature": "privacy_confidence",
+              "value": 0.681
+            },
+            {
+              "contribution": -2.5251676412,
+              "feature": "security_evidence_count",
+              "value": 4.0
+            },
+            {
+              "contribution": -2.3647004252225,
+              "feature": "security_confidence",
+              "value": 0.745
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "tls_absent_or_invalid",
+            "established_host_appearance",
+            "email_authentication_missing",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "hotelhungry.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.2521,
+          "raw_probability": 0.2392,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 6.019204321879999,
+              "feature": "security_risk_points",
+              "value": 0.29
+            },
+            {
+              "contribution": 4.784933804365,
+              "feature": "manipulation_confidence",
+              "value": 0.55
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 4.1240044572031005,
+              "feature": "identity_confidence",
+              "value": 0.787
+            },
+            {
+              "contribution": -12.1511406900418,
+              "feature": "overall_confidence",
+              "value": 0.818
+            },
+            {
+              "contribution": -5.3464003157149,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            },
+            {
+              "contribution": -2.8344664157365003,
+              "feature": "security_confidence",
+              "value": 0.893
+            },
+            {
+              "contribution": -2.8032441086,
+              "feature": "risk_medium_count",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": false
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "no_email_configuration",
+            "domain_age_unknown",
+            "thin_capture_low_evidence"
+          ],
+          "domain": "bt.cn",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.2193,
+          "raw_probability": 0.215,
+          "rule_level": "low",
+          "rule_risk": 0.0,
+          "top_contributions": [
+            {
+              "contribution": 2.6161382005,
+              "feature": "identity_abstained",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.8598025217,
+              "feature": "security_abstained",
+              "value": 1.0
+            },
+            {
+              "contribution": 0.4148078983,
+              "feature": "manipulation_abstained",
+              "value": 1.0
+            },
+            {
+              "contribution": 0.1185511204,
+              "feature": "missing_evidence_count",
+              "value": 1.0
+            },
+            {
+              "contribution": -10.3588752202,
+              "feature": "privacy_abstained",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "rollingvideogames.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.0729,
+          "raw_probability": 0.0948,
+          "rule_level": "low",
+          "rule_risk": 0.063,
+          "top_contributions": [
+            {
+              "contribution": 5.8375721350197,
+              "feature": "privacy_risk_points",
+              "value": 0.3035
+            },
+            {
+              "contribution": 4.784933804365,
+              "feature": "manipulation_confidence",
+              "value": 0.55
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 4.2183273037465,
+              "feature": "identity_confidence",
+              "value": 0.805
+            },
+            {
+              "contribution": -11.779773309539301,
+              "feature": "overall_confidence",
+              "value": 0.793
+            },
+            {
+              "contribution": -8.4097323258,
+              "feature": "risk_medium_count",
+              "value": 3.0
+            },
+            {
+              "contribution": -6.956445582640501,
+              "feature": "privacy_confidence",
+              "value": 0.795
+            },
+            {
+              "contribution": -2.638703544,
+              "feature": "risk_low_count",
+              "value": 8.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "gomlab.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.0568,
+          "raw_probability": 0.0788,
+          "rule_level": "low",
+          "rule_risk": 0.087,
+          "top_contributions": [
+            {
+              "contribution": 6.0491480608359,
+              "feature": "privacy_risk_points",
+              "value": 0.3145
+            },
+            {
+              "contribution": 4.784933804365,
+              "feature": "manipulation_confidence",
+              "value": 0.55
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 4.2183273037465,
+              "feature": "identity_confidence",
+              "value": 0.805
+            },
+            {
+              "contribution": -11.9283202617403,
+              "feature": "overall_confidence",
+              "value": 0.803
+            },
+            {
+              "contribution": -8.4097323258,
+              "feature": "risk_medium_count",
+              "value": 3.0
+            },
+            {
+              "contribution": -7.2277032091333995,
+              "feature": "privacy_confidence",
+              "value": 0.826
+            },
+            {
+              "contribution": -2.5251676412,
+              "feature": "security_evidence_count",
+              "value": 4.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics",
+            "unverified_authority_claim",
+            "remote_access_or_credential_request",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "screenconnect.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.0356,
+          "raw_probability": 0.0558,
+          "rule_level": "low",
+          "rule_risk": 0.166,
+          "top_contributions": [
+            {
+              "contribution": 5.707866167300001,
+              "feature": "security_risk_points",
+              "value": 0.275
+            },
+            {
+              "contribution": 5.5940226112849,
+              "feature": "manipulation_confidence",
+              "value": 0.643
+            },
+            {
+              "contribution": 5.5394424213696,
+              "feature": "privacy_risk_points",
+              "value": 0.288
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": -12.195704775702099,
+              "feature": "overall_confidence",
+              "value": 0.821
+            },
+            {
+              "contribution": -8.4097323258,
+              "feature": "risk_medium_count",
+              "value": 3.0
+            },
+            {
+              "contribution": -7.008947058735901,
+              "feature": "privacy_confidence",
+              "value": 0.801
+            },
+            {
+              "contribution": -3.1564595515,
+              "feature": "security_evidence_count",
+              "value": 5.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "no_email_configuration",
+            "domain_age_unknown",
+            "tls_absent_or_invalid",
+            "unsafe_delivery_mechanics",
+            "thin_capture_low_evidence",
+            "cross_domain_redirect"
+          ],
+          "domain": "benign-03c716902d",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.892,
+          "raw_probability": 0.7791,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 8.842003590072,
+              "feature": "security_risk_points",
+              "value": 0.426
+            },
+            {
+              "contribution": 4.784933804365,
+              "feature": "manipulation_confidence",
+              "value": 0.55
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.953299491175,
+              "feature": "privacy_coverage",
+              "value": 0.75
+            },
+            {
+              "contribution": -11.5272434907976,
+              "feature": "overall_confidence",
+              "value": 0.776
+            },
+            {
+              "contribution": -5.3464003157149,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            },
+            {
+              "contribution": -2.9233410625905,
+              "feature": "security_confidence",
+              "value": 0.921
+            },
+            {
+              "contribution": -2.8032441086,
+              "feature": "risk_medium_count",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "established_host_appearance",
+            "email_authentication_missing",
+            "thin_capture_low_evidence",
+            "cross_domain_redirect"
+          ],
+          "domain": "benign-86ada3fec7",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.8846,
+          "raw_probability": 0.7693,
+          "rule_level": "low",
+          "rule_risk": 0.008,
+          "top_contributions": [
+            {
+              "contribution": 3.8279470434919998,
+              "feature": "manipulation_confidence",
+              "value": 0.44
+            },
+            {
+              "contribution": 3.7543841248,
+              "feature": "manipulation_coverage",
+              "value": 0.8
+            },
+            {
+              "contribution": 3.7257524384643,
+              "feature": "identity_confidence",
+              "value": 0.711
+            },
+            {
+              "contribution": 2.559526225685,
+              "feature": "privacy_coverage",
+              "value": 0.65
+            },
+            {
+              "contribution": -9.9080817118067,
+              "feature": "overall_confidence",
+              "value": 0.667
+            },
+            {
+              "contribution": -5.040141705158399,
+              "feature": "privacy_confidence",
+              "value": 0.576
+            },
+            {
+              "contribution": -1.9774608925015,
+              "feature": "security_confidence",
+              "value": 0.623
+            },
+            {
+              "contribution": -1.2625838206,
+              "feature": "security_evidence_count",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "tls_absent_or_invalid",
+            "established_host_appearance",
+            "email_authentication_missing"
+          ],
+          "domain": "benign-b84f595bc4",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.8734,
+          "raw_probability": 0.7547,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 4.784933804365,
+              "feature": "manipulation_confidence",
+              "value": 0.55
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 4.649316441728,
+              "feature": "security_risk_points",
+              "value": 0.22399999999999998
+            },
+            {
+              "contribution": 3.9405989222576,
+              "feature": "identity_confidence",
+              "value": 0.752
+            },
+            {
+              "contribution": -11.7054998334388,
+              "feature": "overall_confidence",
+              "value": 0.788
+            },
+            {
+              "contribution": -5.3464003157149,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            },
+            {
+              "contribution": -2.8408146047975,
+              "feature": "security_confidence",
+              "value": 0.895
+            },
+            {
+              "contribution": -2.6086053268,
+              "feature": "risk_high_count",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": false
+          }
+        },
+        {
+          "categories": [
+            "tls_absent_or_invalid",
+            "established_host_appearance"
+          ],
+          "domain": "benign-90b8857683",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.8211,
+          "raw_probability": 0.6934,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 4.784933804365,
+              "feature": "manipulation_confidence",
+              "value": 0.55
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 4.337978287147999,
+              "feature": "security_risk_points",
+              "value": 0.209
+            },
+            {
+              "contribution": 4.1240044572031005,
+              "feature": "identity_confidence",
+              "value": 0.787
+            },
+            {
+              "contribution": -12.5076533753242,
+              "feature": "overall_confidence",
+              "value": 0.842
+            },
+            {
+              "contribution": -5.3464003157149,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            },
+            {
+              "contribution": -3.0693494109935,
+              "feature": "security_confidence",
+              "value": 0.967
+            },
+            {
+              "contribution": -2.6086053268,
+              "feature": "risk_high_count",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": false
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "tls_absent_or_invalid",
+            "email_authentication_missing"
+          ],
+          "domain": "benign-6570724e11",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.7829,
+          "raw_probability": 0.6534,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 4.784933804365,
+              "feature": "manipulation_confidence",
+              "value": 0.55
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 4.649316441728,
+              "feature": "security_risk_points",
+              "value": 0.22399999999999998
+            },
+            {
+              "contribution": 3.9563193966815002,
+              "feature": "identity_confidence",
+              "value": 0.755
+            },
+            {
+              "contribution": -12.3442517279031,
+              "feature": "overall_confidence",
+              "value": 0.831
+            },
+            {
+              "contribution": -5.3464003157149,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            },
+            {
+              "contribution": -3.009041614914,
+              "feature": "security_confidence",
+              "value": 0.948
+            },
+            {
+              "contribution": -2.8032441086,
+              "feature": "risk_medium_count",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": false
+          }
+        },
+        {
+          "categories": [
+            "no_email_configuration",
+            "tls_absent_or_invalid",
+            "third_party_or_tracker_surface"
+          ],
+          "domain": "benign-8c4ed9c107",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.7711,
+          "raw_probability": 0.6416,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 4.784933804365,
+              "feature": "manipulation_confidence",
+              "value": 0.55
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 4.337978287147999,
+              "feature": "security_risk_points",
+              "value": 0.209
+            },
+            {
+              "contribution": 3.4427838988341004,
+              "feature": "identity_confidence",
+              "value": 0.657
+            },
+            {
+              "contribution": -12.2996876422428,
+              "feature": "overall_confidence",
+              "value": 0.828
+            },
+            {
+              "contribution": -5.7051604023668006,
+              "feature": "privacy_confidence",
+              "value": 0.652
+            },
+            {
+              "contribution": -3.0693494109935,
+              "feature": "security_confidence",
+              "value": 0.967
+            },
+            {
+              "contribution": -2.6086053268,
+              "feature": "risk_high_count",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": false
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "tls_absent_or_invalid",
+            "established_host_appearance",
+            "brand_claim_mismatch",
+            "thin_capture_low_evidence"
+          ],
+          "domain": "benign-4139d600ea",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.6478,
+          "raw_probability": 0.5312,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 4.784933804365,
+              "feature": "manipulation_confidence",
+              "value": 0.55
+            },
+            {
+              "contribution": 4.692980156,
+              "feature": "manipulation_coverage",
+              "value": 1.0
+            },
+            {
+              "contribution": 4.337978287147999,
+              "feature": "security_risk_points",
+              "value": 0.209
+            },
+            {
+              "contribution": 4.1240044572031005,
+              "feature": "identity_confidence",
+              "value": 0.787
+            },
+            {
+              "contribution": -12.5076533753242,
+              "feature": "overall_confidence",
+              "value": 0.842
+            },
+            {
+              "contribution": -5.3464003157149,
+              "feature": "privacy_confidence",
+              "value": 0.611
+            },
+            {
+              "contribution": -3.0693494109935,
+              "feature": "security_confidence",
+              "value": 0.967
+            },
+            {
+              "contribution": -2.8032441086,
+              "feature": "risk_medium_count",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": false
+          }
+        }
+      ],
+      "feature_group": "rule",
+      "reproduction_matches": {
+        "fn": true,
+        "fp": true,
+        "tn": true,
+        "tp": true
+      },
+      "test_samples": 111,
+      "threshold": 0.596022
+    },
+    "signals": {
+      "artifact": "models\\research\\logistic_signals.json",
+      "categories_by_kind": {
+        "false_negative": {
+          "domain_age_unknown": 1,
+          "established_host_appearance": 3,
+          "feed_reported_url_on_established_host": 3,
+          "hidden_iframe_present": 3,
+          "no_email_configuration": 1,
+          "remote_access_or_credential_request": 1,
+          "thin_capture_low_evidence": 1,
+          "third_party_or_tracker_surface": 3,
+          "unreachable_at_capture": 1,
+          "unsafe_delivery_mechanics": 2,
+          "unverified_authority_claim": 1
+        },
+        "false_positive": {
+          "credential_form_present": 1,
+          "cross_domain_redirect": 1,
+          "domain_age_unknown": 1,
+          "established_host_appearance": 3,
+          "hidden_iframe_present": 2,
+          "no_email_configuration": 2,
+          "thin_capture_low_evidence": 2,
+          "third_party_or_tracker_surface": 1,
+          "tls_absent_or_invalid": 1,
+          "unreachable_at_capture": 1,
+          "unsafe_delivery_mechanics": 4
+        }
+      },
+      "category_counts": {
+        "credential_form_present": 1,
+        "cross_domain_redirect": 1,
+        "domain_age_unknown": 2,
+        "established_host_appearance": 6,
+        "feed_reported_url_on_established_host": 3,
+        "hidden_iframe_present": 5,
+        "no_email_configuration": 3,
+        "remote_access_or_credential_request": 1,
+        "thin_capture_low_evidence": 3,
+        "third_party_or_tracker_surface": 4,
+        "tls_absent_or_invalid": 1,
+        "unreachable_at_capture": 2,
+        "unsafe_delivery_mechanics": 6,
+        "unverified_authority_claim": 1
+      },
+      "confusion_reported_by_artifact": {
+        "fn": 4,
+        "fp": 4,
+        "tn": 33,
+        "tp": 70
+      },
+      "confusion_reproduced": {
+        "fn": 4,
+        "fp": 4,
+        "n": 111,
+        "tn": 33,
+        "tp": 70
+      },
+      "error_count": 8,
+      "errors": [
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "no_email_configuration",
+            "domain_age_unknown",
+            "thin_capture_low_evidence"
+          ],
+          "domain": "bt.cn",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.4791,
+          "raw_probability": 0.2348,
+          "rule_level": "low",
+          "rule_risk": 0.0,
+          "top_contributions": [
+            {
+              "contribution": 4.084679427282882,
+              "feature": "url_length_log",
+              "value": 2.70805020110221
+            },
+            {
+              "contribution": 3.2688283657,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.40032339855772,
+              "feature": "url_host_entropy",
+              "value": 2.3219
+            },
+            {
+              "contribution": 1.1235133806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -3.0384815582,
+              "feature": "domain_age_unknown",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "rollingvideogames.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.3553,
+          "raw_probability": 0.1267,
+          "rule_level": "low",
+          "rule_risk": 0.063,
+          "top_contributions": [
+            {
+              "contribution": 5.362698622678805,
+              "feature": "url_length_log",
+              "value": 3.5553480614894135
+            },
+            {
+              "contribution": 3.2688283657,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.2818052364198,
+              "feature": "url_host_entropy",
+              "value": 3.7835
+            },
+            {
+              "contribution": 2.0331930161,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": -6.5704234769,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -2.1642346139774493,
+              "feature": "domain_age_log",
+              "value": 8.729073550451737
+            },
+            {
+              "contribution": -1.860273276358034,
+              "feature": "tracker_total_log",
+              "value": 2.0794415416798357
+            },
+            {
+              "contribution": -1.4740423209534497,
+              "feature": "tracker_third_party_log",
+              "value": 2.0794415416798357
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics",
+            "unverified_authority_claim",
+            "remote_access_or_credential_request",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "screenconnect.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.0365,
+          "raw_probability": 0.0029,
+          "rule_level": "low",
+          "rule_risk": 0.166,
+          "top_contributions": [
+            {
+              "contribution": 5.179644336727612,
+              "feature": "url_length_log",
+              "value": 3.4339872044851463
+            },
+            {
+              "contribution": 3.2688283657,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.0331930161,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.8946793526460801,
+              "feature": "url_host_entropy",
+              "value": 3.1416
+            },
+            {
+              "contribution": -6.5704234769,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -2.2291292992882146,
+              "feature": "domain_age_log",
+              "value": 8.990815266184685
+            },
+            {
+              "contribution": -2.145162730512994,
+              "feature": "tracker_total_log",
+              "value": 2.3978952727983707
+            },
+            {
+              "contribution": -1.6997828707719573,
+              "feature": "tracker_third_party_log",
+              "value": 2.3978952727983707
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "gomlab.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.0256,
+          "raw_probability": 0.0017,
+          "rule_level": "low",
+          "rule_risk": 0.087,
+          "top_contributions": [
+            {
+              "contribution": 4.793607996755841,
+              "feature": "url_length_log",
+              "value": 3.1780538303479458
+            },
+            {
+              "contribution": 3.2688283657,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.0331930161,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.8328622423690801,
+              "feature": "url_host_entropy",
+              "value": 3.0391
+            },
+            {
+              "contribution": -6.5704234769,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -2.1896459527743173,
+              "feature": "domain_age_log",
+              "value": 8.831565879121063
+            },
+            {
+              "contribution": -2.059898020300639,
+              "feature": "tracker_total_log",
+              "value": 2.302585092994046
+            },
+            {
+              "contribution": -2.0587260156647385,
+              "feature": "text_zero_width_log",
+              "value": 1.791759469228055
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "no_email_configuration",
+            "domain_age_unknown",
+            "tls_absent_or_invalid",
+            "unsafe_delivery_mechanics",
+            "thin_capture_low_evidence",
+            "cross_domain_redirect"
+          ],
+          "domain": "benign-03c716902d",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.9661,
+          "raw_probability": 0.9789,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 5.988577941794901,
+              "feature": "url_length_log",
+              "value": 3.970291913552122
+            },
+            {
+              "contribution": 3.6886406199507724,
+              "feature": "url_path_length_log",
+              "value": 3.332204510175204
+            },
+            {
+              "contribution": 3.2688283657,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.320291133,
+              "feature": "flag_tls_certificate_invalid",
+              "value": 1.0
+            },
+            {
+              "contribution": -6.5704234769,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -5.6593115422,
+              "feature": "flag_cross_domain_redirect",
+              "value": 1.0
+            },
+            {
+              "contribution": -3.0384815582,
+              "feature": "domain_age_unknown",
+              "value": 1.0
+            },
+            {
+              "contribution": -0.5049907099469448,
+              "feature": "tls_days_remaining_log",
+              "value": 3.6888794541139363
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-fec6cae180",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.7349,
+          "raw_probability": 0.6063,
+          "rule_level": "low",
+          "rule_risk": 0.065,
+          "top_contributions": [
+            {
+              "contribution": 5.3189753580710875,
+              "feature": "url_length_log",
+              "value": 3.5263605246161616
+            },
+            {
+              "contribution": 3.2688283657,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.8393144415832388,
+              "feature": "url_path_length_log",
+              "value": 2.5649493574615367
+            },
+            {
+              "contribution": 2.2316881450635204,
+              "feature": "url_host_entropy",
+              "value": 3.7004
+            },
+            {
+              "contribution": -6.5704234769,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -2.240682845482752,
+              "feature": "domain_age_log",
+              "value": 9.03741453682259
+            },
+            {
+              "contribution": -0.9839326684,
+              "feature": "spf_record",
+              "value": 1.0
+            },
+            {
+              "contribution": -0.9828211280403896,
+              "feature": "tracker_total_log",
+              "value": 1.0986122886681098
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "credential_form_present",
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-3ccbd6ceee",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.7285,
+          "raw_probability": 0.5948,
+          "rule_level": "low",
+          "rule_risk": 0.09,
+          "top_contributions": [
+            {
+              "contribution": 5.130185905471498,
+              "feature": "url_length_log",
+              "value": 3.4011973816621555
+            },
+            {
+              "contribution": 3.2688283657,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.9808846643,
+              "feature": "has_login_form",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.1388117062083203,
+              "feature": "url_host_entropy",
+              "value": 3.5464
+            },
+            {
+              "contribution": -6.5704234769,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -2.265963874489275,
+              "feature": "domain_age_log",
+              "value": 9.13938128303569
+            },
+            {
+              "contribution": -1.860273276358034,
+              "feature": "tracker_total_log",
+              "value": 2.0794415416798357
+            },
+            {
+              "contribution": -1.4740423209534497,
+              "feature": "tracker_third_party_log",
+              "value": 2.0794415416798357
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "no_email_configuration",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics",
+            "thin_capture_low_evidence"
+          ],
+          "domain": "benign-b639d79bee",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.7112,
+          "raw_probability": 0.5642,
+          "rule_level": "low",
+          "rule_risk": 0.026000000000000002,
+          "top_contributions": [
+            {
+              "contribution": 5.227532390943074,
+              "feature": "url_length_log",
+              "value": 3.4657359027997265
+            },
+            {
+              "contribution": 3.2688283657,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 2.05841930816028,
+              "feature": "url_host_entropy",
+              "value": 3.4131
+            },
+            {
+              "contribution": 2.0331930161,
+              "feature": "screenshot_available",
+              "value": 1.0
+            },
+            {
+              "contribution": -6.5704234769,
+              "feature": "redirected",
+              "value": 1.0
+            },
+            {
+              "contribution": -1.9486161843667007,
+              "feature": "domain_age_log",
+              "value": 7.859413154693583
+            },
+            {
+              "contribution": -0.6219562569435798,
+              "feature": "tls_days_remaining_log",
+              "value": 4.543294782270004
+            },
+            {
+              "contribution": -0.3779629427,
+              "feature": "dmarc_record",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": false,
+            "https": true
+          }
+        }
+      ],
+      "feature_group": "signals",
+      "reproduction_matches": {
+        "fn": true,
+        "fp": true,
+        "tn": true,
+        "tp": true
+      },
+      "test_samples": 111,
+      "threshold": 0.68349
+    },
+    "url": {
+      "artifact": "models\\research\\logistic_url.json",
+      "categories_by_kind": {
+        "false_negative": {
+          "brand_claim_mismatch": 2,
+          "domain_age_unknown": 3,
+          "established_host_appearance": 3,
+          "feed_reported_url_on_established_host": 3,
+          "hidden_iframe_present": 1,
+          "no_email_configuration": 5,
+          "thin_capture_low_evidence": 2,
+          "third_party_or_tracker_surface": 2,
+          "tls_absent_or_invalid": 2,
+          "unreachable_at_capture": 2,
+          "unsafe_delivery_mechanics": 5
+        },
+        "false_positive": {
+          "brand_claim_mismatch": 1,
+          "credential_form_present": 2,
+          "cross_domain_redirect": 5,
+          "domain_age_unknown": 4,
+          "email_authentication_missing": 7,
+          "established_host_appearance": 21,
+          "hidden_iframe_present": 12,
+          "media_only_page": 1,
+          "no_email_configuration": 5,
+          "thin_capture_low_evidence": 7,
+          "third_party_or_tracker_surface": 12,
+          "tls_absent_or_invalid": 3,
+          "unreachable_at_capture": 5,
+          "unsafe_delivery_mechanics": 24,
+          "unverified_authority_claim": 2
+        }
+      },
+      "category_counts": {
+        "brand_claim_mismatch": 3,
+        "credential_form_present": 2,
+        "cross_domain_redirect": 5,
+        "domain_age_unknown": 7,
+        "email_authentication_missing": 7,
+        "established_host_appearance": 24,
+        "feed_reported_url_on_established_host": 3,
+        "hidden_iframe_present": 13,
+        "media_only_page": 1,
+        "no_email_configuration": 10,
+        "thin_capture_low_evidence": 9,
+        "third_party_or_tracker_surface": 14,
+        "tls_absent_or_invalid": 5,
+        "unreachable_at_capture": 7,
+        "unsafe_delivery_mechanics": 29,
+        "unverified_authority_claim": 2
+      },
+      "confusion_reported_by_artifact": {
+        "fn": 7,
+        "fp": 27,
+        "tn": 10,
+        "tp": 67
+      },
+      "confusion_reproduced": {
+        "fn": 7,
+        "fp": 27,
+        "n": 111,
+        "tn": 10,
+        "tp": 67
+      },
+      "error_count": 34,
+      "errors": [
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "gomlab.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.4897,
+          "raw_probability": 0.2584,
+          "rule_level": "low",
+          "rule_risk": 0.087,
+          "top_contributions": [
+            {
+              "contribution": 2.9693587787865,
+              "feature": "url_host_entropy",
+              "value": 3.0391
+            },
+            {
+              "contribution": 2.434979955437853,
+              "feature": "url_length_log",
+              "value": 3.1780538303479458
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.1514219020290068,
+              "feature": "url_host_length_log",
+              "value": 2.70805020110221
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "no_email_configuration",
+            "tls_absent_or_invalid",
+            "brand_claim_mismatch",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "tribot.co.uk",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.4782,
+          "raw_probability": 0.2429,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 3.014205466275,
+              "feature": "url_host_entropy",
+              "value": 3.085
+            },
+            {
+              "contribution": 2.368313067406697,
+              "feature": "url_length_log",
+              "value": 3.091042453358316
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.0905775921636889,
+              "feature": "url_host_length_log",
+              "value": 2.5649493574615367
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "no_email_configuration",
+            "established_host_appearance",
+            "thin_capture_low_evidence",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "cmcmcdn.com",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.4645,
+          "raw_probability": 0.2251,
+          "rule_level": "low",
+          "rule_risk": 0.001,
+          "top_contributions": [
+            {
+              "contribution": 2.3326700885131584,
+              "feature": "url_length_log",
+              "value": 3.044522437723423
+            },
+            {
+              "contribution": 2.2471219292985003,
+              "feature": "url_host_entropy",
+              "value": 2.2999
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.056544645996183,
+              "feature": "url_host_length_log",
+              "value": 2.4849066497880004
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "no_email_configuration",
+            "domain_age_unknown",
+            "tls_absent_or_invalid",
+            "brand_claim_mismatch",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "isiore.com.co",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.4586,
+          "raw_probability": 0.2178,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 2.8071681442965,
+              "feature": "url_host_entropy",
+              "value": 2.8731
+            },
+            {
+              "contribution": 2.4023713800162136,
+              "feature": "url_length_log",
+              "value": 3.1354942159291497
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.1220871787356146,
+              "feature": "url_host_length_log",
+              "value": 2.6390573296152584
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "domain_age_unknown",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "atw.hu",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.4426,
+          "raw_probability": 0.1986,
+          "rule_level": "low",
+          "rule_risk": 0.049,
+          "top_contributions": [
+            {
+              "contribution": 2.525679458775,
+              "feature": "url_host_entropy",
+              "value": 2.585
+            },
+            {
+              "contribution": 2.1243183167189366,
+              "feature": "url_length_log",
+              "value": 2.772588722239781
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 0.8273715029695091,
+              "feature": "url_host_length_log",
+              "value": 1.9459101490553132
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "no_email_configuration",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics",
+            "feed_reported_url_on_established_host"
+          ],
+          "domain": "jkoa.co.kr",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.4098,
+          "raw_probability": 0.163,
+          "rule_level": "low",
+          "rule_risk": 0.022000000000000002,
+          "top_contributions": [
+            {
+              "contribution": 2.6594378796285003,
+              "feature": "url_host_entropy",
+              "value": 2.7219
+            },
+            {
+              "contribution": 2.2952877538778504,
+              "feature": "url_length_log",
+              "value": 2.995732273553991
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.0195487272533232,
+              "feature": "url_host_length_log",
+              "value": 2.3978952727983707
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "no_email_configuration",
+            "domain_age_unknown",
+            "thin_capture_low_evidence"
+          ],
+          "domain": "bt.cn",
+          "domain_named": true,
+          "kind": "false_negative",
+          "label": "malicious",
+          "probability": 0.3922,
+          "raw_probability": 0.1459,
+          "rule_level": "low",
+          "rule_risk": 0.0,
+          "top_contributions": [
+            {
+              "contribution": 2.2686170736285,
+              "feature": "url_host_entropy",
+              "value": 2.3219
+            },
+            {
+              "contribution": 2.074869813417033,
+              "feature": "url_length_log",
+              "value": 2.70805020110221
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 0.7618289702300775,
+              "feature": "url_host_length_log",
+              "value": 1.791759469228055
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "no_email_configuration",
+            "domain_age_unknown",
+            "tls_absent_or_invalid",
+            "unsafe_delivery_mechanics",
+            "thin_capture_low_evidence",
+            "cross_domain_redirect"
+          ],
+          "domain": "benign-03c716902d",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.9815,
+          "raw_probability": 0.9979,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 3.0588567433605003,
+              "feature": "url_host_entropy",
+              "value": 3.1307
+            },
+            {
+              "contribution": 3.0419815845844154,
+              "feature": "url_length_log",
+              "value": 3.970291913552122
+            },
+            {
+              "contribution": 3.0051446696071857,
+              "feature": "url_digits_log",
+              "value": 2.5649493574615367
+            },
+            {
+              "contribution": 2.4849434064266447,
+              "feature": "url_path_length_log",
+              "value": 3.332204510175204
+            },
+            {
+              "contribution": -1.4753701612,
+              "feature": "url_host_labels",
+              "value": 4.0
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_dots",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.06293126160000001,
+              "feature": "url_path_depth",
+              "value": 3.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-fec6cae180",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.8341,
+          "raw_probability": 0.8723,
+          "rule_level": "low",
+          "rule_risk": 0.065,
+          "top_contributions": [
+            {
+              "contribution": 3.6154832763060005,
+              "feature": "url_host_entropy",
+              "value": 3.7004
+            },
+            {
+              "contribution": 2.701847624823765,
+              "feature": "url_length_log",
+              "value": 3.5263605246161616
+            },
+            {
+              "contribution": 1.9127739531530674,
+              "feature": "url_path_length_log",
+              "value": 2.5649493574615367
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            },
+            {
+              "contribution": -0.0419541744,
+              "feature": "url_path_depth",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "no_email_configuration",
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics",
+            "cross_domain_redirect"
+          ],
+          "domain": "benign-7d6eab88a8",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.7679,
+          "raw_probability": 0.7629,
+          "rule_level": "low",
+          "rule_risk": 0.055,
+          "top_contributions": [
+            {
+              "contribution": 3.4652126763990005,
+              "feature": "url_host_entropy",
+              "value": 3.5466
+            },
+            {
+              "contribution": 2.4023713800162136,
+              "feature": "url_length_log",
+              "value": 3.1354942159291497
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.1220871787356146,
+              "feature": "url_host_length_log",
+              "value": 2.6390573296152584
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            },
+            {
+              "contribution": -0.20511170274615387,
+              "feature": "url_host_digit_ratio",
+              "value": 0.07692307692307693
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "established_host_appearance",
+            "unsafe_delivery_mechanics",
+            "email_authentication_missing"
+          ],
+          "domain": "benign-0c3e1ff4ea",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.7205,
+          "raw_probability": 0.6727,
+          "rule_level": "low",
+          "rule_risk": 0.054000000000000006,
+          "top_contributions": [
+            {
+              "contribution": 3.7390803562035004,
+              "feature": "url_host_entropy",
+              "value": 3.8269
+            },
+            {
+              "contribution": 2.579974502555497,
+              "feature": "url_length_log",
+              "value": 3.367295829986474
+            },
+            {
+              "contribution": 1.2737399590972458,
+              "feature": "url_host_length_log",
+              "value": 2.995732273553991
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "unsafe_delivery_mechanics",
+            "email_authentication_missing"
+          ],
+          "domain": "benign-b25a8e7926",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.6987,
+          "raw_probability": 0.6296,
+          "rule_level": "low",
+          "rule_risk": 0.051,
+          "top_contributions": [
+            {
+              "contribution": 3.6488007500175,
+              "feature": "url_host_entropy",
+              "value": 3.7345
+            },
+            {
+              "contribution": 2.525223653695952,
+              "feature": "url_length_log",
+              "value": 3.295836866004329
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.2289422646940493,
+              "feature": "url_host_length_log",
+              "value": 2.8903717578961645
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-22bbead4eb",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.6987,
+          "raw_probability": 0.6296,
+          "rule_level": "low",
+          "rule_risk": 0.028999999999999998,
+          "top_contributions": [
+            {
+              "contribution": 3.6488007500175,
+              "feature": "url_host_entropy",
+              "value": 3.7345
+            },
+            {
+              "contribution": 2.525223653695952,
+              "feature": "url_length_log",
+              "value": 3.295836866004329
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.2289422646940493,
+              "feature": "url_host_length_log",
+              "value": 2.8903717578961645
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics",
+            "cross_domain_redirect"
+          ],
+          "domain": "benign-99d31cdae8",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.6767,
+          "raw_probability": 0.5857,
+          "rule_level": "low",
+          "rule_risk": 0.03,
+          "top_contributions": [
+            {
+              "contribution": 3.0831853385340002,
+              "feature": "url_host_entropy",
+              "value": 3.1556
+            },
+            {
+              "contribution": 2.6553978958986706,
+              "feature": "url_length_log",
+              "value": 3.4657359027997265
+            },
+            {
+              "contribution": 1.5507135088102002,
+              "feature": "url_path_length_log",
+              "value": 2.0794415416798357
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.0209770872,
+              "feature": "url_path_depth",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "brand_claim_mismatch",
+            "unsafe_delivery_mechanics",
+            "thin_capture_low_evidence"
+          ],
+          "domain": "benign-e9a3f32885",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.6316,
+          "raw_probability": 0.4969,
+          "rule_level": "low",
+          "rule_risk": 0.063,
+          "top_contributions": [
+            {
+              "contribution": 3.697360235163,
+              "feature": "url_host_entropy",
+              "value": 3.7842
+            },
+            {
+              "contribution": 2.605949392596767,
+              "feature": "url_length_log",
+              "value": 3.4011973816621555
+            },
+            {
+              "contribution": 1.294484797433481,
+              "feature": "url_host_length_log",
+              "value": 3.044522437723423
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "established_host_appearance",
+            "unsafe_delivery_mechanics",
+            "email_authentication_missing"
+          ],
+          "domain": "benign-f353c0a062",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.6289,
+          "raw_probability": 0.4917,
+          "rule_level": "low",
+          "rule_risk": 0.049,
+          "top_contributions": [
+            {
+              "contribution": 3.3148443712905,
+              "feature": "url_host_entropy",
+              "value": 3.3927
+            },
+            {
+              "contribution": 2.4023713800162136,
+              "feature": "url_length_log",
+              "value": 3.1354942159291497
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.1220871787356146,
+              "feature": "url_host_length_log",
+              "value": 2.6390573296152584
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "credential_form_present",
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-3ccbd6ceee",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.601,
+          "raw_probability": 0.4392,
+          "rule_level": "low",
+          "rule_risk": 0.09,
+          "top_contributions": [
+            {
+              "contribution": 3.4650172659960004,
+              "feature": "url_host_entropy",
+              "value": 3.5464
+            },
+            {
+              "contribution": 2.605949392596767,
+              "feature": "url_length_log",
+              "value": 3.4011973816621555
+            },
+            {
+              "contribution": 1.294484797433481,
+              "feature": "url_host_length_log",
+              "value": 3.044522437723423
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "no_email_configuration",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics",
+            "thin_capture_low_evidence"
+          ],
+          "domain": "benign-b639d79bee",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5954,
+          "raw_probability": 0.4288,
+          "rule_level": "low",
+          "rule_risk": 0.026000000000000002,
+          "top_contributions": [
+            {
+              "contribution": 3.3347762323965,
+              "feature": "url_host_entropy",
+              "value": 3.4131
+            },
+            {
+              "contribution": 2.6553978958986706,
+              "feature": "url_length_log",
+              "value": 3.4657359027997265
+            },
+            {
+              "contribution": 1.3331646187491883,
+              "feature": "url_host_length_log",
+              "value": 3.1354942159291497
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": false,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics",
+            "unverified_authority_claim",
+            "cross_domain_redirect"
+          ],
+          "domain": "benign-018be95a23",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.592,
+          "raw_probability": 0.4227,
+          "rule_level": "low",
+          "rule_risk": 0.084,
+          "top_contributions": [
+            {
+              "contribution": 3.2456690886285,
+              "feature": "url_host_entropy",
+              "value": 3.3219
+            },
+            {
+              "contribution": 2.2952877538778504,
+              "feature": "url_length_log",
+              "value": 2.995732273553991
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.0195487272533232,
+              "feature": "url_host_length_log",
+              "value": 2.3978952727983707
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "established_host_appearance",
+            "email_authentication_missing",
+            "thin_capture_low_evidence",
+            "cross_domain_redirect"
+          ],
+          "domain": "benign-86ada3fec7",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5848,
+          "raw_probability": 0.4097,
+          "rule_level": "low",
+          "rule_risk": 0.008,
+          "top_contributions": [
+            {
+              "contribution": 3.4905183235875,
+              "feature": "url_host_entropy",
+              "value": 3.5725
+            },
+            {
+              "contribution": 2.525223653695952,
+              "feature": "url_length_log",
+              "value": 3.295836866004329
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.2289422646940493,
+              "feature": "url_host_length_log",
+              "value": 2.8903717578961645
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics",
+            "unverified_authority_claim"
+          ],
+          "domain": "benign-9c4bb4354e",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5751,
+          "raw_probability": 0.3925,
+          "rule_level": "low",
+          "rule_risk": 0.078,
+          "top_contributions": [
+            {
+              "contribution": 3.4189004108880003,
+              "feature": "url_host_entropy",
+              "value": 3.4992
+            },
+            {
+              "contribution": 2.525223653695952,
+              "feature": "url_length_log",
+              "value": 3.295836866004329
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.2289422646940493,
+              "feature": "url_host_length_log",
+              "value": 2.8903717578961645
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "domain_age_unknown",
+            "tls_absent_or_invalid",
+            "third_party_or_tracker_surface",
+            "email_authentication_missing",
+            "thin_capture_low_evidence"
+          ],
+          "domain": "benign-716bb3d357",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.567,
+          "raw_probability": 0.3785,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 3.2456690886285,
+              "feature": "url_host_entropy",
+              "value": 3.3219
+            },
+            {
+              "contribution": 2.2559875562256337,
+              "feature": "url_length_log",
+              "value": 2.9444389791664403
+            },
+            {
+              "contribution": 1.0195487272533232,
+              "feature": "url_host_length_log",
+              "value": 2.3978952727983707
+            },
+            {
+              "contribution": 0.8121047493017434,
+              "feature": "url_digits_log",
+              "value": 0.6931471805599453
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            },
+            {
+              "contribution": -0.26664521357000004,
+              "feature": "url_host_digit_ratio",
+              "value": 0.1
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": false
+          }
+        },
+        {
+          "categories": [
+            "credential_form_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-fc346ab3c0",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.558,
+          "raw_probability": 0.3631,
+          "rule_level": "low",
+          "rule_risk": 0.040999999999999995,
+          "top_contributions": [
+            {
+              "contribution": 2.8513308953745002,
+              "feature": "url_host_entropy",
+              "value": 2.9183
+            },
+            {
+              "contribution": 2.368313067406697,
+              "feature": "url_length_log",
+              "value": 3.091042453358316
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.0905775921636889,
+              "feature": "url_host_length_log",
+              "value": 2.5649493574615367
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "domain_age_unknown",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics",
+            "thin_capture_low_evidence"
+          ],
+          "domain": "benign-bba367fab0",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5534,
+          "raw_probability": 0.3555,
+          "rule_level": "low",
+          "rule_risk": 0.047,
+          "top_contributions": [
+            {
+              "contribution": 3.6056150509545004,
+              "feature": "url_host_entropy",
+              "value": 3.6903
+            },
+            {
+              "contribution": 2.7456415941567696,
+              "feature": "url_length_log",
+              "value": 3.58351893845611
+            },
+            {
+              "contribution": 1.401339883391916,
+              "feature": "url_host_length_log",
+              "value": 3.295836866004329
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": -1.4753701612,
+              "feature": "url_host_labels",
+              "value": 4.0
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_dots",
+              "value": 3.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-377d25ee44",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5472,
+          "raw_probability": 0.3452,
+          "rule_level": "low",
+          "rule_risk": 0.055,
+          "top_contributions": [
+            {
+              "contribution": 3.1647691817865002,
+              "feature": "url_host_entropy",
+              "value": 3.2391
+            },
+            {
+              "contribution": 2.553088028973976,
+              "feature": "url_length_log",
+              "value": 3.332204510175204
+            },
+            {
+              "contribution": 1.2519308277299583,
+              "feature": "url_host_length_log",
+              "value": 2.9444389791664403
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "established_host_appearance",
+            "unsafe_delivery_mechanics",
+            "email_authentication_missing"
+          ],
+          "domain": "benign-d77dcf6b5a",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5448,
+          "raw_probability": 0.3413,
+          "rule_level": "low",
+          "rule_risk": 0.049,
+          "top_contributions": [
+            {
+              "contribution": 3.251433695517,
+              "feature": "url_host_entropy",
+              "value": 3.3278
+            },
+            {
+              "contribution": 2.4963075474700793,
+              "feature": "url_length_log",
+              "value": 3.258096538021482
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.2046393734279393,
+              "feature": "url_host_length_log",
+              "value": 2.833213344056216
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "unreachable_at_capture",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-a8f24dcb7b",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5375,
+          "raw_probability": 0.3296,
+          "rule_level": "low",
+          "rule_risk": 0.021,
+          "top_contributions": [
+            {
+              "contribution": 3.1456189622925,
+              "feature": "url_host_entropy",
+              "value": 3.2195
+            },
+            {
+              "contribution": 2.525223653695952,
+              "feature": "url_length_log",
+              "value": 3.295836866004329
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.2289422646940493,
+              "feature": "url_host_length_log",
+              "value": 2.8903717578961645
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "no_email_configuration",
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-436748379c",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5315,
+          "raw_probability": 0.32,
+          "rule_level": "low",
+          "rule_risk": 0.063,
+          "top_contributions": [
+            {
+              "contribution": 3.1022378528265,
+              "feature": "url_host_entropy",
+              "value": 3.1751
+            },
+            {
+              "contribution": 2.525223653695952,
+              "feature": "url_length_log",
+              "value": 3.295836866004329
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.2289422646940493,
+              "feature": "url_host_length_log",
+              "value": 2.8903717578961645
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics",
+            "media_only_page"
+          ],
+          "domain": "benign-0b2172e923",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5279,
+          "raw_probability": 0.3144,
+          "rule_level": "low",
+          "rule_risk": 0.059000000000000004,
+          "top_contributions": [
+            {
+              "contribution": 3.5794300569525004,
+              "feature": "url_host_entropy",
+              "value": 3.6635
+            },
+            {
+              "contribution": 2.6553978958986706,
+              "feature": "url_length_log",
+              "value": 3.4657359027997265
+            },
+            {
+              "contribution": 1.3331646187491883,
+              "feature": "url_host_length_log",
+              "value": 3.1354942159291497
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": -1.4753701612,
+              "feature": "url_host_labels",
+              "value": 4.0
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_dots",
+              "value": 3.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-6e91052ed0",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5261,
+          "raw_probability": 0.3117,
+          "rule_level": "low",
+          "rule_risk": 0.08,
+          "top_contributions": [
+            {
+              "contribution": 2.9311560450000003,
+              "feature": "url_host_entropy",
+              "value": 3.0
+            },
+            {
+              "contribution": 2.2145620149770355,
+              "feature": "url_length_log",
+              "value": 2.8903717578961645
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 0.934226588927944,
+              "feature": "url_host_length_log",
+              "value": 2.1972245773362196
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "third_party_or_tracker_surface",
+            "unsafe_delivery_mechanics",
+            "email_authentication_missing"
+          ],
+          "domain": "benign-68a66706b2",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5261,
+          "raw_probability": 0.3117,
+          "rule_level": "low",
+          "rule_risk": 0.079,
+          "top_contributions": [
+            {
+              "contribution": 2.9311560450000003,
+              "feature": "url_host_entropy",
+              "value": 3.0
+            },
+            {
+              "contribution": 2.2145620149770355,
+              "feature": "url_length_log",
+              "value": 2.8903717578961645
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 0.934226588927944,
+              "feature": "url_host_length_log",
+              "value": 2.1972245773362196
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "domain_age_unknown",
+            "unsafe_delivery_mechanics",
+            "thin_capture_low_evidence"
+          ],
+          "domain": "benign-b435089d55",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5216,
+          "raw_probability": 0.3047,
+          "rule_level": "low",
+          "rule_risk": 0.071,
+          "top_contributions": [
+            {
+              "contribution": 3.0307176453285,
+              "feature": "url_host_entropy",
+              "value": 3.1019
+            },
+            {
+              "contribution": 2.525223653695952,
+              "feature": "url_length_log",
+              "value": 3.295836866004329
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 1.2289422646940493,
+              "feature": "url_host_length_log",
+              "value": 2.8903717578961645
+            },
+            {
+              "contribution": -1.1065276209000001,
+              "feature": "url_host_labels",
+              "value": 3.0
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_dots",
+              "value": 2.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        },
+        {
+          "categories": [
+            "no_email_configuration",
+            "tls_absent_or_invalid",
+            "third_party_or_tracker_surface"
+          ],
+          "domain": "benign-8c4ed9c107",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5071,
+          "raw_probability": 0.2831,
+          "rule_level": "medium",
+          "rule_risk": 0.42,
+          "top_contributions": [
+            {
+              "contribution": 3.246939256248,
+              "feature": "url_host_entropy",
+              "value": 3.3232
+            },
+            {
+              "contribution": 2.434979955437853,
+              "feature": "url_length_log",
+              "value": 3.1780538303479458
+            },
+            {
+              "contribution": 1.1788627030644219,
+              "feature": "url_host_length_log",
+              "value": 2.772588722239781
+            },
+            {
+              "contribution": 0.5169045029367334,
+              "feature": "url_path_length_log",
+              "value": 0.6931471805599453
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": false
+          }
+        },
+        {
+          "categories": [
+            "hidden_iframe_present",
+            "established_host_appearance",
+            "unsafe_delivery_mechanics"
+          ],
+          "domain": "benign-e24e22f5aa",
+          "domain_named": false,
+          "kind": "false_positive",
+          "label": "benign",
+          "probability": 0.5008,
+          "raw_probability": 0.274,
+          "rule_level": "low",
+          "rule_risk": 0.055,
+          "top_contributions": [
+            {
+              "contribution": 2.6629552668825,
+              "feature": "url_host_entropy",
+              "value": 2.7255
+            },
+            {
+              "contribution": 2.2559875562256337,
+              "feature": "url_length_log",
+              "value": 2.9444389791664403
+            },
+            {
+              "contribution": 1.2332678687,
+              "feature": "url_https",
+              "value": 1.0
+            },
+            {
+              "contribution": 0.9790242833311403,
+              "feature": "url_host_length_log",
+              "value": 2.302585092994046
+            },
+            {
+              "contribution": -0.7376850806,
+              "feature": "url_host_labels",
+              "value": 2.0
+            },
+            {
+              "contribution": -0.3688425403,
+              "feature": "url_dots",
+              "value": 1.0
+            }
+          ],
+          "url_shape": {
+            "final_domain_matches": true,
+            "https": true
+          }
+        }
+      ],
+      "feature_group": "url",
+      "reproduction_matches": {
+        "fn": true,
+        "fp": true,
+        "tn": true,
+        "tp": true
+      },
+      "test_samples": 111,
+      "threshold": 0.5
+    }
+  },
+  "naming_rule": "Domains labelled malicious by feed membership are named; domains carrying the derived benign label are hashed to a neutral handle, because naming a small legitimate site that a false alarm flagged adds risk without adding evidence.",
+  "negatives": 37,
+  "positives": 74,
+  "reproduction_ok": true,
+  "rule_engine": {
+    "categories_by_kind": {
+      "false_alarm": {
+        "credential_form_present": 1,
+        "domain_age_unknown": 1,
+        "tls_absent_or_invalid": 1
+      },
+      "missed_positive": {
+        "brand_claim_mismatch": 17,
+        "credential_form_present": 3,
+        "domain_age_unknown": 15,
+        "email_authentication_missing": 14,
+        "established_host_appearance": 39,
+        "feed_reported_url_on_established_host": 39,
+        "file_host_or_payload_path": 1,
+        "hidden_iframe_present": 10,
+        "hidden_prompt_injection": 1,
+        "media_only_page": 2,
+        "no_email_configuration": 49,
+        "remote_access_or_credential_request": 1,
+        "shared_or_free_hosting": 1,
+        "thin_capture_low_evidence": 20,
+        "third_party_or_tracker_surface": 4,
+        "tls_absent_or_invalid": 36,
+        "unreachable_at_capture": 31,
+        "unsafe_delivery_mechanics": 46,
+        "unverified_authority_claim": 1
+      }
+    },
+    "error_count": 75,
+    "errors": [
+      {
+        "categories": [
+          "no_email_configuration"
+        ],
+        "domain": "22qq-client.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.0
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "domain_age_unknown",
+          "thin_capture_low_evidence"
+        ],
+        "domain": "bt.cn",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.0
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "established_host_appearance",
+          "thin_capture_low_evidence",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "cmcmcdn.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.0
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "domain_age_unknown",
+          "thin_capture_low_evidence",
+          "shared_or_free_hosting"
+        ],
+        "domain": "ctyun.cn",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.0
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "established_host_appearance",
+          "thin_capture_low_evidence",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "ilclock.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.0
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "established_host_appearance",
+          "thin_capture_low_evidence",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "pythonhosted.org",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.0
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "established_host_appearance",
+          "thin_capture_low_evidence",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "vs108.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.0
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "established_host_appearance",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "zongheng.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.0
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "established_host_appearance",
+          "thin_capture_low_evidence",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "zycdjz.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.0
+      },
+      {
+        "categories": [
+          "established_host_appearance",
+          "email_authentication_missing",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "cepde.org",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.01
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "thin_capture_low_evidence"
+        ],
+        "domain": "jumalputty.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.01
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "established_host_appearance",
+          "email_authentication_missing",
+          "thin_capture_low_evidence",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "kbcard.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.01
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "thin_capture_low_evidence",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "dzqzd.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.02
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "jkoa.co.kr",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.02
+      },
+      {
+        "categories": [
+          "domain_age_unknown",
+          "unsafe_delivery_mechanics",
+          "thin_capture_low_evidence"
+        ],
+        "domain": "krause-fahrzeuge.de",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.02
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "thin_capture_low_evidence"
+        ],
+        "domain": "msud148.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.02
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "hidden_iframe_present",
+          "media_only_page"
+        ],
+        "domain": "1-x-bet-india.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.03
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "hidden_iframe_present",
+          "hidden_prompt_injection",
+          "established_host_appearance",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "classera.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.03
+      },
+      {
+        "categories": [
+          "unsafe_delivery_mechanics",
+          "email_authentication_missing"
+        ],
+        "domain": "ifree.page",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.03
+      },
+      {
+        "categories": [
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "email_authentication_missing",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "kimyen.net",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.03
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "domain_age_unknown",
+          "unsafe_delivery_mechanics",
+          "email_authentication_missing",
+          "thin_capture_low_evidence"
+        ],
+        "domain": "livinginpurpose.co.za",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.03
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "screenconnect.pro",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.03
+      },
+      {
+        "categories": [
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "email_authentication_missing",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "taichuan.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.03
+      },
+      {
+        "categories": [
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "email_authentication_missing",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "trtmyanmar.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.03
+      },
+      {
+        "categories": [
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "email_authentication_missing",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "wixmp.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.03
+      },
+      {
+        "categories": [
+          "credential_form_present",
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "email_authentication_missing",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "backupso.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.04
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "fable-shine.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.04
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "quillchant14.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.04
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "credential_form_present",
+          "hidden_iframe_present",
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "top8onlinegame.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.04
+      },
+      {
+        "categories": [
+          "hidden_iframe_present",
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "media_only_page",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "tycons.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.04
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "vine-linen.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.04
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "hidden_iframe_present",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "anubisclient.co.uk",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.05
+      },
+      {
+        "categories": [
+          "domain_age_unknown",
+          "third_party_or_tracker_surface",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "atw.hu",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.05
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "tmcksa.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.05
+      },
+      {
+        "categories": [
+          "hidden_iframe_present",
+          "established_host_appearance",
+          "third_party_or_tracker_surface",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "rollingvideogames.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.06
+      },
+      {
+        "categories": [
+          "hidden_iframe_present",
+          "established_host_appearance",
+          "third_party_or_tracker_surface",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "gomlab.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.09
+      },
+      {
+        "categories": [
+          "hidden_iframe_present",
+          "established_host_appearance",
+          "third_party_or_tracker_surface",
+          "unsafe_delivery_mechanics",
+          "unverified_authority_claim",
+          "remote_access_or_credential_request",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "screenconnect.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "low",
+        "rule_risk": 0.17
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "domain_age_unknown",
+          "tls_absent_or_invalid",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics",
+          "thin_capture_low_evidence"
+        ],
+        "domain": "adobe-readers.ru",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "thin_capture_low_evidence",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "aftelecom.com.br",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "domain_age_unknown",
+          "tls_absent_or_invalid",
+          "email_authentication_missing",
+          "thin_capture_low_evidence"
+        ],
+        "domain": "alexion.rs",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "alie.kr",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "domain_age_unknown",
+          "tls_absent_or_invalid",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "atasapka.com.tr",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "audicontadores.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "auth.properties",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "celebratingseniors.net",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "email_authentication_missing",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "clz.kr",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "delta-canvas.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "hidden_iframe_present",
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "domainmob.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "domain_age_unknown",
+          "tls_absent_or_invalid",
+          "thin_capture_low_evidence"
+        ],
+        "domain": "farschid.de",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "gutando.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "hitstation.nl",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "email_authentication_missing",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "hotelhungry.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "icoffeecloud.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "igra123.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "credential_form_present",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "insurancewave.in",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "domain_age_unknown",
+          "tls_absent_or_invalid",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "isiore.com.co",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "londonairportstransfer.co.uk",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "tls_absent_or_invalid"
+        ],
+        "domain": "muledo.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "domain_age_unknown",
+          "tls_absent_or_invalid",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "mysura.it",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "hidden_iframe_present",
+          "established_host_appearance",
+          "thin_capture_low_evidence",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "ncxps.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "domain_age_unknown",
+          "tls_absent_or_invalid",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "prestigeclient.st",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "domain_age_unknown",
+          "tls_absent_or_invalid",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "ramirex.ro",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "brand_claim_mismatch"
+        ],
+        "domain": "reservphotoinstay.one",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "domain_age_unknown",
+          "tls_absent_or_invalid",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "scoala1gherla.ro",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "sharemyhtml.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "thin_capture_low_evidence",
+          "file_host_or_payload_path"
+        ],
+        "domain": "stanarcservice.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "email_authentication_missing",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "tartaklegnica.pl",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "theholidayroads.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "thementordirectory.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics"
+        ],
+        "domain": "tribot.co.uk",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "windomstatetheater.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "xinmei365.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "no_email_configuration",
+          "tls_absent_or_invalid",
+          "established_host_appearance",
+          "brand_claim_mismatch",
+          "unsafe_delivery_mechanics",
+          "feed_reported_url_on_established_host"
+        ],
+        "domain": "zamilgroups.com",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "unreachable_at_capture",
+          "domain_age_unknown",
+          "tls_absent_or_invalid",
+          "email_authentication_missing",
+          "thin_capture_low_evidence"
+        ],
+        "domain": "zol.com.cn",
+        "kind": "missed_positive",
+        "label": "malicious",
+        "rule_level": "medium",
+        "rule_risk": 0.42
+      },
+      {
+        "categories": [
+          "domain_age_unknown",
+          "tls_absent_or_invalid",
+          "credential_form_present"
+        ],
+        "domain": "benign-944c43935a",
+        "kind": "false_alarm",
+        "label": "benign",
+        "rule_level": "high",
+        "rule_risk": 0.68
+      }
+    ],
+    "escalation_threshold": "high or critical risk level (normalised score >= 0.50)",
+    "missed_positive": 74,
+    "positives": 74,
+    "recall_at_escalation": 0.0
+  },
+  "samples": 111,
+  "schema_version": 1,
+  "split": "test"
+}
