@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import math
 
-from trustlens.scoring.model import (
+from website_trust_assessment.scoring.model import (
     FEATURE_GROUPS,
     FEATURE_NAMES,
     FEATURE_SCHEMA_VERSION,
@@ -11,7 +11,7 @@ from trustlens.scoring.model import (
     leakage_reasons,
     url_features,
 )
-from trustlens.schemas import Dimension, Evidence, Severity
+from website_trust_assessment.schemas import Dimension, Evidence, Severity
 
 from .factories import make_assessment
 

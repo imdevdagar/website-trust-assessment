@@ -313,7 +313,7 @@
     dom.action.value = action;
     dom.force.checked = force;
     try {
-      localStorage.setItem("trustlens.action", action);
+      localStorage.setItem("wtas.action", action);
     } catch (error) {
       /* storage can be unavailable */
     }
@@ -786,7 +786,7 @@
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `trustlens-${data.domain || "assessment"}-${shortId(data.id)}.json`;
+    link.download = `wtas-${data.domain || "assessment"}-${shortId(data.id)}.json`;
     document.body.append(link);
     link.click();
     link.remove();
@@ -871,7 +871,7 @@
   dom.refreshSidebar.addEventListener("click", () => refreshSidebar());
 
   try {
-    const savedAction = localStorage.getItem("trustlens.action");
+    const savedAction = localStorage.getItem("wtas.action");
     if (savedAction && ACTION_LABELS[savedAction]) dom.action.value = savedAction;
   } catch (error) {
     /* storage can be unavailable */

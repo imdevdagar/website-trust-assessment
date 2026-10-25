@@ -3,12 +3,12 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from trustlens.config import settings
-from trustlens.crawler import CrawlData, FormInfo
-from trustlens.evidence import content
-from trustlens.evidence.base import ScanContext
-from trustlens.evidence.visual import OCR_SIGNALS
-from trustlens.security import url_parts
+from website_trust_assessment.config import settings
+from website_trust_assessment.crawler import CrawlData, FormInfo
+from website_trust_assessment.evidence import content
+from website_trust_assessment.evidence.base import ScanContext
+from website_trust_assessment.evidence.visual import OCR_SIGNALS
+from website_trust_assessment.security import url_parts
 
 
 def _context(

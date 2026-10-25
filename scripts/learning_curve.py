@@ -18,8 +18,8 @@ import hashlib
 import json
 from pathlib import Path
 
-from trustlens.research.dataset import load_dataset
-from trustlens.research.training import learning_curve
+from website_trust_assessment.research.dataset import load_dataset
+from website_trust_assessment.research.training import learning_curve
 
 FRACTIONS = (0.1, 0.25, 0.5, 0.75, 1.0)
 

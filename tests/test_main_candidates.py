@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from trustlens.research.candidates import (
+from website_trust_assessment.research.candidates import (
     GATED_COLLECTION,
     MAIN_BANDS,
     build_main_manifest,

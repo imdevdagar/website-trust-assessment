@@ -510,8 +510,8 @@ def figure_architecture() -> None:
 # --------------------------------------------------------------------- tables
 
 def table_action_weights() -> None:
-    from trustlens.schemas import Action, DIMENSION_LABELS
-    from trustlens.scoring.rules import ACTION_WEIGHTS, DIMENSIONS
+    from website_trust_assessment.schemas import Action, DIMENSION_LABELS
+    from website_trust_assessment.scoring.rules import ACTION_WEIGHTS, DIMENSIONS
 
     actions = [Action.BROWSE, Action.SIGNUP, Action.PURCHASE]
     headers = ["Dimension"] + [action.value.capitalize() for action in actions]
@@ -736,10 +736,10 @@ def table_learning_curve() -> None:
 
 
 def benchmark() -> dict:
-    from trustlens.config import settings
-    from trustlens.crawler import parse_html_page
-    from trustlens.pipeline import assess_captured_page
-    from trustlens.schemas import Action
+    from website_trust_assessment.config import settings
+    from website_trust_assessment.crawler import parse_html_page
+    from website_trust_assessment.pipeline import assess_captured_page
+    from website_trust_assessment.schemas import Action
 
     cfg = settings()
     cases = FIXTURES["cases"]

@@ -8,12 +8,12 @@ Research claims live in the model card and manuscript; do not improvise them dur
 Run these before the demo, not during it:
 
 ```bash
-trustlens doctor
+wtas doctor
 ```
 
 Expected: `READY` on a source checkout. A `WARN` for Tesseract means OCR evidence is
 unavailable; a `WARN` for the port means another server may already be running. A `FAIL` must be fixed.
-Use `trustlens doctor --json` if you need to log the result.
+Use `wtas doctor --json` if you need to log the result.
 
 Then confirm:
 
@@ -36,8 +36,8 @@ source .venv/Scripts/activate        # Git Bash on Windows
 python -m pip install --upgrade pip
 pip install -e ".[dev]"
 python -m playwright install chromium
-trustlens doctor
-trustlens init
+wtas doctor
+wtas init
 ```
 
 A wheel install exercises the packaged dashboard and knowledge files. Use a separate virtual
@@ -47,13 +47,13 @@ environment so the editable install is not replaced:
 python -m pip wheel . --no-deps --no-build-isolation -w dist
 python -m venv .venv-wheel
 source .venv-wheel/Scripts/activate
-python -m pip install dist/trustlens-0.1.1-py3-none-any.whl
-trustlens doctor
+python -m pip install dist/website_trust_assessment_system-0.1.1-py3-none-any.whl
+wtas doctor
 ```
 
 A non-editable install stores the database, screenshots, and models in the platform user-data
 directory (`%LOCALAPPDATA%\WebsiteTrustAssessment` on Windows, `~/Library/Application Support/WebsiteTrustAssessment` on macOS,
-`$XDG_DATA_HOME/website-trust-assessment` on Linux). Set `TRUSTLENS_HOME` to override it. The extension remains in the
+`$XDG_DATA_HOME/website-trust-assessment` on Linux). Set `WTAS_HOME` to override it. The extension remains in the
 source checkout's `extension/` directory.
 
 ## 3. Isolated demo state
@@ -61,14 +61,14 @@ source checkout's `extension/` directory.
 Avoid writing demo scans into the research database. Start the server with a throw-away home:
 
 ```bash
-TRUSTLENS_HOME=.demo-state trustlens serve
+WTAS_HOME=.demo-state wtas serve
 ```
 
 PowerShell:
 
 ```powershell
-$env:TRUSTLENS_HOME = ".demo-state"
-trustlens serve
+$env:WTAS_HOME = ".demo-state"
+wtas serve
 ```
 
 On first start the API creates the database and directories under `.demo-state/`. To reset after the
@@ -76,7 +76,7 @@ demo, stop the server and delete only that directory. Do not delete `data/`.
 
 ## 4. Five-minute walkthrough
 
-1. **Readiness (20 s).** Run `trustlens doctor` in a second terminal. Point out that it checks
+1. **Readiness (20 s).** Run `wtas doctor` in a second terminal. Point out that it checks
    dependencies, bundled assets, Chromium, database write access, OCR, and the port.
 2. **Dashboard (2 min).** Open `http://127.0.0.1:8000/dashboard` and scan `https://example.com` with
    action **browse**. Walk through the four dimensions, the evidence cards with source and
@@ -87,8 +87,8 @@ demo, stop the server and delete only that directory. Do not delete `data/`.
    page; the live page itself can change, so treat a second scan as a fresh observation.
 4. **CLI (30 s).** Run:
    ```bash
-   trustlens guard https://example.com
-   trustlens stats
+   wtas guard https://example.com
+   wtas stats
    ```
 5. **Extension (1 min).** Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**,
    and select `extension/`. Pin Website Trust Assessment Guard, open `https://example.com`, and open the popup. Show
@@ -113,13 +113,13 @@ demo, stop the server and delete only that directory. Do not delete `data/`.
 
 | Symptom | Check |
 | --- | --- |
-| `/dashboard` returns 503 | `trustlens doctor` dashboard check; use a source checkout or the built wheel. |
+| `/dashboard` returns 503 | `wtas doctor` dashboard check; use a source checkout or the built wheel. |
 | Scan fails immediately | Network access, Playwright install, and whether the URL is public HTTP(S). Loopback and private addresses are blocked by design. |
-| Scan times out | Retry once; some sites block headless browsers. Raise `TRUSTLENS_CRAWL_TIMEOUT_MS` for slow pages. |
-| Extension says the server is offline | Start `trustlens serve`; confirm the popup server address is `http://127.0.0.1:8000`; only localhost is accepted. |
+| Scan times out | Retry once; some sites block headless browsers. Raise `WTAS_CRAWL_TIMEOUT_MS` for slow pages. |
+| Extension says the server is offline | Start `wtas serve`; confirm the popup server address is `http://127.0.0.1:8000`; only localhost is accepted. |
 | Extension cannot read the page | Reload the tab after loading the extension; confirm permissions were accepted. |
-| OCR evidence missing | Install Tesseract and rerun `trustlens doctor`; this is optional. |
-| Port 8000 in use | `trustlens serve --port 8001`, then update the extension server address. |
+| OCR evidence missing | Install Tesseract and rerun `wtas doctor`; this is optional. |
+| Port 8000 in use | `wtas serve --port 8001`, then update the extension server address. |
 | Demo database polluted | Stop the server and remove the isolated `.demo-state/` directory. |
 | `pytest` temp-directory error on Windows | Use `PYTHONPATH=. python -m pytest -q --basetemp=.pytest-tmp`. |
 

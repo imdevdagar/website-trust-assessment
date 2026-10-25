@@ -113,15 +113,16 @@ Then:
 python -m pip install --upgrade pip
 pip install -e ".[dev]"
 python -m playwright install chromium
-trustlens doctor
+wtas doctor
 ```
 
-`trustlens doctor` checks the interpreter, required packages, bundled knowledge and dashboard assets,
+`wtas doctor` checks the interpreter, required packages, bundled knowledge and dashboard assets,
 the extension, the writable data directory, SQLite, Chromium, OCR, and the server port. It exits
-non-zero when a required check fails. A normal `pip install .` (without `-e`) is also supported: the
+non-zero when a required check fails. The install provides the `wtas` command and the `wtas-api`
+server entry point. A normal `pip install .` (without `-e`) is also supported: the
 API and dashboard are bundled in the wheel, while writable state goes to the platform user-data
 directory (`%LOCALAPPDATA%\WebsiteTrustAssessment` on Windows). Set
-`TRUSTLENS_HOME` to choose another runtime directory. The browser extension is loaded from the source checkout.
+`WTAS_HOME` to choose another runtime directory. The browser extension is loaded from the source checkout.
 
 Optional OCR:
 
@@ -132,10 +133,10 @@ Optional OCR:
 ### Run
 
 ```bash
-trustlens doctor
-trustlens init
-trustlens scan https://example.com --action purchase
-trustlens serve
+wtas doctor
+wtas init
+wtas scan https://example.com --action purchase
+wtas serve
 ```
 
 Open <http://127.0.0.1:8000/dashboard>. Interactive API documentation is at
@@ -147,7 +148,7 @@ assessments are served for one hour by default.
 
 ### Install the browser extension
 
-1. Start the local server with `trustlens serve`.
+1. Start the local server with `wtas serve`.
 2. Open `chrome://extensions` in Chrome or Edge.
 3. Enable **Developer mode**.
 4. Choose **Load unpacked** and select the `extension/` directory.
@@ -163,19 +164,19 @@ hosts are accepted.
 
 | Command | Purpose |
 | --- | --- |
-| `trustlens scan URL [--action browse\|signup\|purchase] [--json]` | Assess one URL and print the evidence summary. |
-| `trustlens guard URL [--action ...]` | Return a one-line allow/warn/block decision. |
-| `trustlens batch FILE --out FILE [--full] [--resume] [--allow-gated]` | Assess a text or CSV list; resume interrupted collections. Gated candidate rows are skipped unless explicitly allowed. |
-| `trustlens label DOMAIN --label malicious --source manual` | Add or update a local reputation label. |
-| `trustlens import-labels FILE [--label ...]` | Import CSV/JSON labels or plaintext hosts/adblock-style blocklists. |
-| `trustlens list` / `trustlens stats` | Inspect recent assessments and database totals. |
-| `trustlens doctor [--json]` | Check packages, bundled assets, Chromium, OCR, writability, and the server port. |
-| `trustlens research ...` | Build candidate manifests, queue annotation, compute agreement, merge consensus, build datasets, train, evaluate, build/evaluate the H4 injection corpus. |
+| `wtas scan URL [--action browse\|signup\|purchase] [--json]` | Assess one URL and print the evidence summary. |
+| `wtas guard URL [--action ...]` | Return a one-line allow/warn/block decision. |
+| `wtas batch FILE --out FILE [--full] [--resume] [--allow-gated]` | Assess a text or CSV list; resume interrupted collections. Gated candidate rows are skipped unless explicitly allowed. |
+| `wtas label DOMAIN --label malicious --source manual` | Add or update a local reputation label. |
+| `wtas import-labels FILE [--label ...]` | Import CSV/JSON labels or plaintext hosts/adblock-style blocklists. |
+| `wtas list` / `wtas stats` | Inspect recent assessments and database totals. |
+| `wtas doctor [--json]` | Check packages, bundled assets, Chromium, OCR, writability, and the server port. |
+| `wtas research ...` | Build candidate manifests, queue annotation, compute agreement, merge consensus, build datasets, train, evaluate, build/evaluate the H4 injection corpus. |
 
 Batch example:
 
 ```bash
-trustlens batch data/example_urls.csv --action browse --out data/exports/round1.jsonl --full --resume
+wtas batch data/example_urls.csv --action browse --out data/exports/round1.jsonl --full --resume
 ```
 
 Research commands are documented in [docs/annotation-protocol.md](docs/annotation-protocol.md) and
@@ -242,14 +243,14 @@ Action weights:
 
 ```bash
 # 1. Collect assessments. Full JSONL is required for queue/dataset reproducibility.
-trustlens batch data/example_urls.csv --action browse --out data/exports/round1.jsonl --full
+wtas batch data/example_urls.csv --action browse --out data/exports/round1.jsonl --full
 
 # 2. Build blinded annotator sheets. key.json is coordinator-only.
-trustlens research queue --out data/annotations/round1 \
+wtas research queue --out data/annotations/round1 \
   --assessments data/exports/round1.jsonl --overlap 0.2 --seed 42
 
 # 3. Fill annotator_a.csv and annotator_b.csv independently, then check agreement.
-trustlens research agreement \
+wtas research agreement \
   --a data/annotations/round1/annotator_a.csv \
   --b data/annotations/round1/annotator_b.csv \
   --key data/annotations/round1/key.json \
@@ -257,14 +258,14 @@ trustlens research agreement \
   --markdown data/annotations/round1/agreement.md
 
 # 4. Build consensus labels. This also writes consensus_disagreements.csv.
-trustlens research merge \
+wtas research merge \
   --a data/annotations/round1/annotator_a.csv \
   --b data/annotations/round1/annotator_b.csv \
   --key data/annotations/round1/key.json \
   --out data/annotations/consensus.csv
 
 # 5. Fill adjudicated_label (and confidence/notes) in the disagreement sheet, then rerun.
-trustlens research merge \
+wtas research merge \
   --a data/annotations/round1/annotator_a.csv \
   --b data/annotations/round1/annotator_b.csv \
   --key data/annotations/round1/key.json \
@@ -272,21 +273,21 @@ trustlens research merge \
   --out data/annotations/consensus.csv
 
 # 6. Build a leakage-checked, domain-grouped dataset.
-trustlens research dataset \
+wtas research dataset \
   --out data/datasets/v1 \
   --assessments data/exports/round1.jsonl \
   --labels data/annotations/consensus.csv \
   --ratios 0.7,0.15,0.15 --seed 42 --per-domain-limit 5
 
 # 7. Train, calibrate, and evaluate. The test split is touched once.
-trustlens research train \
+wtas research train \
   --dataset data/datasets/v1/dataset.jsonl \
   --out-dir data/research/runs --models-dir models/research \
   --groups url,signals,rule,hybrid --seed 42 --bootstrap 1000 --cv-folds 5 \
   --run-name v1
 
 # 8. Re-evaluate a saved artifact on a chosen split.
-trustlens research evaluate \
+wtas research evaluate \
   --model models/research/logistic_hybrid.json \
   --dataset data/datasets/v1/dataset.jsonl --split test --bootstrap 1000 \
   --out data/research/runs/v1/test_evaluation.json
@@ -312,7 +313,7 @@ candidates, 8 ambiguous sites, and 8 established controls. The manifest was buil
 only; no candidate page was opened. Rebuild it with:
 
 ```bash
-trustlens research candidates --out-dir data/candidates --seed 11
+wtas research candidates --out-dir data/candidates --seed 11
 ```
 
 A normal batch collects only the 16 safe strata and prints how many gated rows it skipped. The 20
@@ -328,31 +329,31 @@ one human annotator, no double annotation, and a delayed blind 15% intra-rater a
 manifest combines Tranco rank bands with public OpenPhish and URLhaus feed metadata:
 
 ```bash
-trustlens research main-candidates --out-dir data/candidates --seed 42
+wtas research main-candidates --out-dir data/candidates --seed 42
 ```
 
 This writes 500 selected domains and 160 reserve domains. Gated feed rows are never opened by the
 candidate builder. Collect and label one batch at a time so the assessment and label stay close:
 
 ```bash
-trustlens batch data/candidates/main_batch_01.csv \
+wtas batch data/candidates/main_batch_01.csv \
   --out data/exports/main/batch_01.jsonl --full --resume
 
-trustlens research queue --out data/annotations/main/batch_01 \
+wtas research queue --out data/annotations/main/batch_01 \
   --assessments data/exports/main/batch_01.jsonl --single-annotator --seed 42
 
-trustlens research label-ui --sheet data/annotations/main/batch_01/annotator_a.csv \
+wtas research label-ui --sheet data/annotations/main/batch_01/annotator_a.csv \
   --snapshots data/exports/main/batch_01.jsonl
 
 # Before freezing: transport-only triage of any "could not load" note, then the exclusion record.
 python scripts/reachability_triage.py
 python scripts/non_inspections.py
 
-trustlens research freeze \
+wtas research freeze \
   --sheet data/annotations/main/batch_01/annotator_a.csv \
   --key data/annotations/main/batch_01/key.json
 
-trustlens research main-status --markdown data/main_collection_status.md
+wtas research main-status --markdown data/main_collection_status.md
 ```
 
 `research main-status` rebuilds `data/main_collection_status.json` from the artefacts on disk: per-batch
@@ -364,7 +365,7 @@ to `non_inspections.csv` and dropped at dataset time, from the primary task and 
 sensitivity analysis:
 
 ```bash
-trustlens research dataset --out data/datasets/v1 \
+wtas research dataset --out data/datasets/v1 \
   --assessments data/exports/main/batch_01.jsonl \
   --labels data/annotations/main/consensus.csv \
   --exclude-uninspected data/annotations/main/batch_01/non_inspections.csv
@@ -373,13 +374,13 @@ trustlens research dataset --out data/datasets/v1 \
 After all batches are frozen, build and run the delayed audit:
 
 ```bash
-trustlens research audit-queue \
+wtas research audit-queue \
   --sheet data/annotations/main/batch_01/annotator_a.csv \
   --key data/annotations/main/batch_01/key.json \
   --out data/annotations/main/audit/batch_01 --fraction 0.15 --min-domains 40 --seed 123
 
 # Re-label annotator_a_audit.csv after the recorded not_before timestamp, then:
-trustlens research audit-report \
+wtas research audit-report \
   --reference data/annotations/main/audit/batch_01/audit_reference.json \
   --audit data/annotations/main/audit/batch_01/annotator_a_audit.csv
 ```
@@ -395,14 +396,14 @@ is abuse-feed membership, and the frozen human labels are a validity subset. Bui
 the live feeds (or from saved snapshots for an offline rebuild):
 
 ```bash
-trustlens research feed-labels \
+wtas research feed-labels \
   --out data/labels/feed/labels.csv \
   --exclude-domains data/candidates/main_batch_01.csv \
   --exclude-domains data/candidates/main_reserve.csv \
   --exclude-domains data/candidates/round2.csv
 
 # Rebuild from a saved copy instead of the network:
-trustlens research feed-labels --out data/labels/feed/labels.csv \
+wtas research feed-labels --out data/labels/feed/labels.csv \
   --openphish-file data/labels/feed/snapshots/openphish.txt \
   --urlhaus-file data/labels/feed/snapshots/urlhaus.csv
 ```
@@ -410,7 +411,7 @@ trustlens research feed-labels --out data/labels/feed/labels.csv \
 This writes one `malicious` row per registrable domain plus a provenance manifest holding the feed URL,
 the raw-body SHA-256, the retrieval timestamp, the accepted-entry count, and every rejection count. It
 refuses to run on a feed older than `--max-age-days` (7 by default) and warns when a local snapshot has
-no verifiable age. **Never** pass the result to `trustlens import-labels`: loading it into the runtime
+no verifiable age. **Never** pass the result to `wtas import-labels`: loading it into the runtime
 `domain_labels` store would let `known_malicious_label` evidence hand the model the verdict it is later
 scored against.
 
@@ -418,11 +419,11 @@ After collecting assessments, assert that no verdict leaked before building the 
 
 ```bash
 # Assemble the gated crawl plan. This reads label metadata only; no page is opened.
-trustlens research feed-candidates --labels data/labels/feed/labels.csv \
+wtas research feed-candidates --labels data/labels/feed/labels.csv \
   --out-dir data/candidates --seed 42
 
 # Collection itself still needs a fresh explicit approval, i.e. `batch --allow-gated`.
-trustlens research feed-check \
+wtas research feed-check \
   --labels data/labels/feed/labels.csv \
   --assessments data/exports/feed/batch_01.jsonl \
   --out data/labels/feed/leakage_check.json
@@ -436,7 +437,7 @@ To compare the two label sources on the domains they share (reports disagreement
 them):
 
 ```bash
-trustlens research feed-agreement --labels data/labels/feed/labels.csv \
+wtas research feed-agreement --labels data/labels/feed/labels.csv \
   --human-labels data/annotations/main/batch_01/labels.csv \
   --out data/labels/feed/human_vs_feed.json
 ```
@@ -444,7 +445,7 @@ trustlens research feed-agreement --labels data/labels/feed/labels.csv \
 At dataset time, join what was actually collected with feed membership to get the primary label file:
 
 ```bash
-trustlens research feed-eval-labels --labels data/labels/feed/labels.csv \
+wtas research feed-eval-labels --labels data/labels/feed/labels.csv \
   --assessments data/exports/feed/batch_01.jsonl data/exports/main/batch_01.jsonl \
   --human-labels data/annotations/pilot/annotator_a.csv \
     data/annotations/round2/labels_v2.csv data/annotations/main/batch_01/labels.csv \
@@ -471,7 +472,7 @@ primary set, re-fetch into a separate artifact and compare the two label files b
 
 ```bash
 # Metadata-only fetch — no page is opened, and labels.csv is never overwritten.
-trustlens research feed-labels \
+wtas research feed-labels \
   --out data/labels/feed/churn/labels_t2.csv \
   --manifest data/labels/feed/churn/labels_t2.json \
   --snapshot-dir data/labels/feed/churn/snapshots
@@ -511,10 +512,10 @@ never relaxed (loopback crawling is blocked by design, and it stays blocked):
 
 ```bash
 # 1. Render 42 paired fixtures from 6 shared body templates. Deterministic, offline.
-trustlens research injection-build --out data/injection_fixtures
+wtas research injection-build --out data/injection_fixtures
 
 # 2. Score them twice (with and without the injection evidence) and run the isolation gate.
-trustlens research injection-eval --corpus data/injection_fixtures \
+wtas research injection-eval --corpus data/injection_fixtures \
   --out data/research/injection_h4.json
 ```
 
@@ -533,7 +534,7 @@ into features. Suspicious labels are excluded from the primary binary task; use
 ## Repository layout
 
 ```text
-trustlens/
+website_trust_assessment/
   api.py            FastAPI routes, rate limiting, security headers
   cli.py            scan, guard, batch, labels, serve, research commands
   crawler.py        bounded Playwright/httpx collection with SSRF checks
@@ -554,7 +555,7 @@ docs/               protocol, dataset, threat model, model card, demo runbook, r
 ```
 
 Static knowledge (brand list, TLD risk, trackers, dark patterns, payment processors) is versioned in
-`trustlens/data/knowledge/*.json` and shipped inside the package. It is intentionally local and
+`website_trust_assessment/data/knowledge/*.json` and shipped inside the package. It is intentionally local and
 replaceable; no reputation API is queried at runtime.
 
 ---

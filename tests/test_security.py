@@ -4,7 +4,7 @@ import asyncio
 
 import pytest
 
-from trustlens.security import (
+from website_trust_assessment.security import (
     UnsafeURLError,
     check_request_url_sync,
     check_url_structure,

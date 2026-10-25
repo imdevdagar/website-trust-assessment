@@ -29,7 +29,7 @@ from .security import UnsafeURLError, registrable_domain
 
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="trustlens",
+        prog="wtas",
         description="Evidence-grounded website trust assessment (local research prototype)",
     )
     parser.add_argument("--version", action="version", version=f"Website Trust Assessment System {ENGINE_VERSION}")
@@ -342,7 +342,7 @@ def _parser() -> argparse.ArgumentParser:
     )
 
     dataset = research_sub.add_parser("dataset", help="build a leakage-checked dataset")
-    dataset.add_argument("--out", default="data/datasets/trustlens")
+    dataset.add_argument("--out", default="data/datasets/website_trust_assessment")
     dataset.add_argument("--assessments", nargs="*", default=[], help="full-assessment JSONL")
     dataset.add_argument("--labels", default="", help="CSV or JSON labels; default: database")
     dataset.add_argument("--ratios", default="0.7,0.15,0.15")
@@ -362,7 +362,7 @@ def _parser() -> argparse.ArgumentParser:
     dataset.add_argument("--force", action="store_true")
 
     train = research_sub.add_parser("train", help="train, calibrate, and evaluate models")
-    train.add_argument("--dataset", default="data/datasets/trustlens/dataset.jsonl")
+    train.add_argument("--dataset", default="data/datasets/website_trust_assessment/dataset.jsonl")
     train.add_argument("--out-dir", default="data/research/runs")
     train.add_argument("--models-dir", default="models/research")
     train.add_argument("--groups", default="all", help="comma-separated or all")
@@ -373,7 +373,7 @@ def _parser() -> argparse.ArgumentParser:
 
     evaluate = research_sub.add_parser("evaluate", help="evaluate a saved logistic artifact")
     evaluate.add_argument("--model", required=True)
-    evaluate.add_argument("--dataset", default="data/datasets/trustlens/dataset.jsonl")
+    evaluate.add_argument("--dataset", default="data/datasets/website_trust_assessment/dataset.jsonl")
     evaluate.add_argument("--split", choices=["train", "val", "test"], default="test")
     evaluate.add_argument("--bootstrap", type=int, default=1000)
     evaluate.add_argument("--seed", type=int, default=42)
@@ -1954,7 +1954,7 @@ def _doctor_database(config: Any) -> DoctorCheck:
 
 def _doctor_chromium(config: Any) -> DoctorCheck:
     if not config.enable_playwright:
-        return DoctorCheck("Chromium", "SKIP", "Playwright disabled by TRUSTLENS_ENABLE_PLAYWRIGHT")
+        return DoctorCheck("Chromium", "SKIP", "Playwright disabled by WTAS_ENABLE_PLAYWRIGHT")
     try:
         from playwright.sync_api import sync_playwright
 
@@ -2061,7 +2061,7 @@ def serve() -> None:
 
     config = settings()
     uvicorn.run(
-        "trustlens.api:app",
+        "website_trust_assessment.api:app",
         host=config.host,
         port=config.port,
         log_level="info",
@@ -2112,7 +2112,7 @@ def main(argv: list[str] | None = None) -> int:
 
         settings().ensure_dirs()
         uvicorn.run(
-            "trustlens.api:app",
+            "website_trust_assessment.api:app",
             host=args.host,
             port=args.port,
             reload=args.reload,

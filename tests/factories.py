@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import datetime, timedelta, timezone
 from typing import Any
 
-from trustlens.schemas import (
+from website_trust_assessment.schemas import (
     Action,
     Assessment,
     Dimension,

@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import pytest
 
-from trustlens.research.training import learning_curve
-from trustlens.scoring.model import FEATURE_GROUPS
+from website_trust_assessment.research.training import learning_curve
+from website_trust_assessment.scoring.model import FEATURE_GROUPS
 
 SIGNAL = FEATURE_GROUPS["url"][0]
 

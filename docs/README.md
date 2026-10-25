@@ -35,7 +35,7 @@ and the claims the project is allowed to make.
 - Runtime engine `0.1.1-rules` fixes payment-processor parsing that caused the content extractor to
   skip evidence on 11 of 1,249 stored assessments. The frozen `feed_v2` engine metrics were measured
   on `0.1.0-rules` and were not re-scored; see [model-card.md](model-card.md).
-- `trustlens doctor` verifies a fresh install, and [demo.md](demo.md) is the operator runbook.
+- `wtas doctor` verifies a fresh install, and [demo.md](demo.md) is the operator runbook.
 - Synthetic pipeline smoke test: passing.
 - `feed_v2` dataset: frozen at 830 samples / 826 domains (497 malicious, 333 benign), domain-grouped
   70/15/15 split, seed 42. The SHA-256 is recorded in `data/datasets/feed_v2/manifest.json`.

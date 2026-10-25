@@ -3,8 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from trustlens.research import dataset, training
-from trustlens.scoring.model import FEATURE_GROUPS, FEATURE_SCHEMA_VERSION, LinearModel
+from website_trust_assessment.research import dataset, training
+from website_trust_assessment.scoring.model import FEATURE_GROUPS, FEATURE_SCHEMA_VERSION, LinearModel
 
 from .factories import make_assessment
 

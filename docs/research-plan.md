@@ -205,7 +205,7 @@ score-invariance study in version 1.0.
 
 **As executed.** The corpus is 26 injection and 16 negative fixtures rendered from 6 shared body templates
 (5 of them adversarial negatives that stay in the precision denominator), scored offline through the
-production static parser by `trustlens research injection-build` / `injection-eval`. Results — precision
+production static parser by `wtas research injection-build` / `injection-eval`. Results — precision
 0.958, recall 0.885, and 40/40 paired cases reproducing the clean baseline exactly once injection and trace
 evidence is dropped — are in `data/research/injection_h4.json`, reproduced by `tests/test_injection_isolation.py`.
 The LLM attack-success comparison below was not run: v1.0 has no LLM.

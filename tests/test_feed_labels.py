@@ -8,8 +8,8 @@ from pathlib import Path
 import pytest
 
 from tests.factories import make_assessment
-from trustlens.research import candidates
-from trustlens.research import feed_labels as fl
+from website_trust_assessment.research import candidates
+from website_trust_assessment.research import feed_labels as fl
 
 NOW = datetime(2026, 10, 20, 12, 0, tzinfo=timezone.utc)
 

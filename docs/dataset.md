@@ -96,7 +96,7 @@ The mixed calibration pilot uses 36 new registrable domains from
 | `ambiguous` | 8 | 4 | Safe strata; standard annotation rules |
 | `benign_control` | 8 | 4 | Safe strata; standard annotation rules |
 
-The manifest is constructed by `trustlens research candidates`. It fetches only public feed metadata,
+The manifest is constructed by `wtas research candidates`. It fetches only public feed metadata,
 never a candidate page. Candidate URLs are stored without query strings or fragments; IP literals,
 credentials, non-standard ports, private hosts, paths containing email addresses, and Round 1 domains
 are rejected. Feed hits on free hosts, URL shorteners, CDNs, and major multi-tenant platforms are also
@@ -141,7 +141,7 @@ class is very small, the dataset is underpowered regardless of the total sample 
 ## 3. Collection process
 
 1. Build or import a candidate URL list. Store the source and collection date.
-2. Run `trustlens batch` with `--full --resume` to persist complete assessment JSONL. Use one action per
+2. Run `wtas batch` with `--full --resume` to persist complete assessment JSONL. Use one action per
    collection round; a second round may collect `signup` or `purchase` profiles for the same domains.
    For the Round 2 pilot, the default batch skips rows marked
    `malicious_page_requires_explicit_confirmation`; `--allow-gated` is required only after the team has
@@ -172,7 +172,7 @@ protocol does.
 - URL canonicalisation removes fragments, default ports, and userinfo; only HTTP/HTTPS on ports 80/443
   is accepted.
 - Domains are reduced to their registrable domain using the bundled Public Suffix List snapshot in
-  `trustlens/data/public_suffix_list.dat` (version in the file header, refreshed manually from
+  `website_trust_assessment/data/public_suffix_list.dat` (version in the file header, refreshed manually from
   publicsuffix.org). A stale or missing suffix can collapse distinct sites into one registrable domain,
   so the snapshot version is part of the dataset provenance.
 - Duplicate `(domain, action, normalized_url)` records are collapsed, keeping the newest assessment.
@@ -212,7 +212,7 @@ Report these as dataset biases and test sensitivity where feasible.
 
 Per [main-dataset-protocol.md](main-dataset-protocol.md) section 2.2, the primary `malicious` label is
 **membership of the OpenPhish or URLhaus public feed at a recorded retrieval time**, not a human
-judgement. `trustlens research feed-labels` writes it; `trustlens research feed-check` asserts before
+judgement. `wtas research feed-labels` writes it; `wtas research feed-check` asserts before
 every build that no feed verdict reached the assessments being scored.
 
 - The sampling unit is unchanged (registrable domain); feed entries are reduced to registrable domains

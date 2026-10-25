@@ -81,7 +81,7 @@ a machine-readable label source and the human set is demoted to a validity subse
 - A registrable domain is `malicious` if and only if it appears in the OpenPhish public feed or the
   URLhaus online-payload export at the recorded retrieval time. Everything else in the sample is
   `benign`.
-- Labels are produced by `trustlens research feed-labels`, which writes
+- Labels are produced by `wtas research feed-labels`, which writes
   `data/labels/feed/labels.csv` plus a provenance manifest containing, per source, the URL, the final
   URL, the SHA-256 of the raw feed body, the retrieval timestamp, the HTTP `Date` header, the accepted
   entry count, and every rejection reason with its count. Raw feed bodies are snapshotted so the label
@@ -113,7 +113,7 @@ a machine-readable label source and the human set is demoted to a validity subse
 1. The feed is never imported into the runtime `domain_labels` store. That store is the only path by
    which a stored verdict reaches scoring, via `known_malicious_label` evidence worth 55 risk points.
    The label CSV must never be passed to `import-labels`.
-2. `trustlens research feed-check` runs `assert_no_label_leakage` over the collected assessments and
+2. `wtas research feed-check` runs `assert_no_label_leakage` over the collected assessments and
    fails the build if any assessment carries a leakage reason (`evidence:*`, `floor:known_*`,
    `runtime_domain_label`, `labeled_infrastructure_neighbor`) or if any feed domain appears in the
    runtime store. The last verified run on 184 existing assessments reported
@@ -199,8 +199,8 @@ forms, does not download files, and does not execute page-provided instructions.
 Each batch follows the same sequence:
 
 1. Collect `browse` assessments for a batch of at most 100 safe-stratum candidates with
-   `trustlens batch --full --resume`.
-2. Build a single-annotator blinded queue for that batch with `trustlens research queue
+   `wtas batch --full --resume`.
+2. Build a single-annotator blinded queue for that batch with `wtas research queue
    --single-annotator`.
 3. Annotate the batch within the 48-hour assessment-to-annotation window wherever possible. Serve the
    form with `--snapshots data/exports/main/batch_XX.jsonl` so each site shows the page the crawler
@@ -210,10 +210,10 @@ Each batch follows the same sequence:
 4. Run `python scripts/reachability_triage.py` for any note that describes a failed load, re-attempt the
    domains that answer with content, and leave the rest untouched. See
    [annotation-protocol.md](annotation-protocol.md) section 3.3.
-5. Freeze the completed A sheet with `trustlens research freeze`.
+5. Freeze the completed A sheet with `wtas research freeze`.
 6. Record the not-inspectable rows with `python scripts/non_inspections.py`. Labels are never rewritten;
    the record only marks rows for exclusion at dataset time.
-7. Refresh the auditable progress file with `trustlens research main-status`. It is derived only from
+7. Refresh the auditable progress file with `wtas research main-status`. It is derived only from
    artefacts on disk and reports per-batch collection failures, cross-domain redirects, queue size,
    label counts, freeze state, the 48-hour window, the gated-collection status, and integrity checks.
 8. Count the usable domains left after collection failures and not-inspectable rows. If the projected
@@ -241,7 +241,7 @@ infrastructure from this machine, which is unchanged.
 
 ### 4.1 Feed crawl plan of record
 
-`trustlens research feed-candidates --labels data/labels/feed/labels.csv --out-dir
+`wtas research feed-candidates --labels data/labels/feed/labels.csv --out-dir
 data/candidates --seed 42` turns the label CSV into gated batches. It reads label metadata only and
 opens no page. The current plan (`data/candidates/feed_manifest.json`) is:
 
@@ -363,7 +363,7 @@ remains 4. On that overlap:
 
 ### 7.1 First run (2026-10-20, `data/labels/feed/human_vs_feed.json`)
 
-`trustlens research feed-agreement` compared the 146 frozen human labels with the 432 feed labels:
+`wtas research feed-agreement` compared the 146 frozen human labels with the 432 feed labels:
 
 | Human verdict | Domains | Still in a feed |
 | --- | ---: | ---: |

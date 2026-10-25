@@ -13,6 +13,8 @@ dist/
 # Runtime artifacts
 data/trustlens.db
 data/trustlens.db-*
+data/website_trust_assessment.db
+data/website_trust_assessment.db-*
 data/screenshots/*
 !data/screenshots/.gitkeep
 data/annotations/*.csv

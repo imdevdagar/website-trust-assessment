@@ -5,9 +5,9 @@ from pathlib import Path
 
 import pytest
 
-from trustlens.research import dataset
-from trustlens.scoring.model import FEATURE_SCHEMA_VERSION
-from trustlens.schemas import Dimension, Evidence, Severity
+from website_trust_assessment.research import dataset
+from website_trust_assessment.scoring.model import FEATURE_SCHEMA_VERSION
+from website_trust_assessment.schemas import Dimension, Evidence, Severity
 
 from .factories import make_assessment
 

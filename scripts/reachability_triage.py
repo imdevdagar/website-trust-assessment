@@ -14,8 +14,8 @@ from pathlib import Path
 
 import httpx
 
-from trustlens.research import annotations
-from trustlens.security import check_request_url_sync, registrable_domain, url_parts
+from website_trust_assessment.research import annotations
+from website_trust_assessment.security import check_request_url_sync, registrable_domain, url_parts
 
 SHEET = Path("data/annotations/main/batch_01/annotator_a.csv")
 OUT = Path("data/annotations/main/batch_01/reachability_triage.json")

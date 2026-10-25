@@ -149,7 +149,7 @@ form can show the page the crawler already captured for that exact URL. This is 
 recorded before batch 2 was labelled, not a change made after seeing results.
 
 ```bash
-trustlens research label-ui \
+wtas research label-ui \
   --sheet data/annotations/main/batch_02/annotator_a.csv \
   --snapshots data/exports/main/batch_02.jsonl
 ```
@@ -206,7 +206,7 @@ validate the malicious boundary.
 1.0 so every site is labelled by both annotators:
 
 ```bash
-trustlens research queue --out data/annotations/pilot \
+wtas research queue --out data/annotations/pilot \
   --assessments data/exports/pilot/round1.jsonl --overlap 1.0 --seed 7
 ```
 
@@ -229,7 +229,7 @@ the reserve is not shown to either annotator unless a replacement is approved be
 The manifest is built by:
 
 ```bash
-trustlens research candidates --out-dir data/candidates --seed 11
+wtas research candidates --out-dir data/candidates --seed 11
 ```
 
 The current manifest records:
@@ -257,12 +257,12 @@ balanced coverage of every family; Round 2 is a boundary-calibration slice, not 
 
 ### 5.2 Collection gate
 
-`trustlens batch` skips every row whose `collection_gate` is
+`wtas batch` skips every row whose `collection_gate` is
 `malicious_page_requires_explicit_confirmation` unless `--allow-gated` is passed. The default command
 therefore collects only the 16 ambiguous and benign-control domains:
 
 ```bash
-trustlens batch data/candidates/round2.csv \
+wtas batch data/candidates/round2.csv \
   --out data/exports/pilot/round2.jsonl --full --resume
 ```
 
@@ -270,7 +270,7 @@ The 20 feed candidates are collected only after the team explicitly confirms, us
 browser profile and safety rules in sections 3 and 10:
 
 ```bash
-trustlens batch data/candidates/round2.csv \
+wtas batch data/candidates/round2.csv \
   --out data/exports/pilot/round2.jsonl --full --resume --allow-gated
 ```
 
@@ -284,7 +284,7 @@ reserve after labels have been compared.
 The queue for Round 2 is built from the resulting assessments:
 
 ```bash
-trustlens research queue --out data/annotations/round2 \
+wtas research queue --out data/annotations/round2 \
   --assessments data/exports/pilot/round2.jsonl --overlap 1.0 --seed 11
 ```
 
@@ -334,7 +334,7 @@ sites between annotators. The exact counts are reported in `key.json`.
 The coordinator runs:
 
 ```bash
-trustlens research agreement \
+wtas research agreement \
   --a data/annotations/round1/annotator_a.csv \
   --b data/annotations/round1/annotator_b.csv \
   --key data/annotations/round1/key.json \
@@ -372,7 +372,7 @@ only quality metric.
 Initial merge:
 
 ```bash
-trustlens research merge \
+wtas research merge \
   --a data/annotations/round1/annotator_a.csv \
   --b data/annotations/round1/annotator_b.csv \
   --key data/annotations/round1/key.json \
@@ -398,7 +398,7 @@ Adjudication procedure for the two-person team:
 Rerun merge with the completed adjudication sheet:
 
 ```bash
-trustlens research merge \
+wtas research merge \
   --a data/annotations/round1/annotator_a.csv \
   --b data/annotations/round1/annotator_b.csv \
   --key data/annotations/round1/key.json \

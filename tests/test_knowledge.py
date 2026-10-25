@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from trustlens import knowledge
+from website_trust_assessment import knowledge
 
 
 def test_knowledge_files_load() -> None:

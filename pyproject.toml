@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "trustlens"
+name = "website-trust-assessment-system"
 version = "0.1.1"
 description = "Evidence-grounded, multi-dimensional website trust assessment (local-first research prototype)"
 readme = "README.md"
@@ -36,14 +36,14 @@ dev = ["pytest>=8", "ruff>=0.4"]
 llm = ["ollama>=0.3"]
 
 [project.scripts]
-trustlens = "trustlens.cli:main"
-trustlens-api = "trustlens.cli:serve"
+wtas = "website_trust_assessment.cli:main"
+wtas-api = "website_trust_assessment.cli:serve"
 
 [tool.setuptools.packages.find]
-include = ["trustlens*"]
+include = ["website_trust_assessment*"]
 
 [tool.setuptools.package-data]
-trustlens = [
+website_trust_assessment = [
   "data/*.dat",
   "data/knowledge/*.json",
   "web/*.html",

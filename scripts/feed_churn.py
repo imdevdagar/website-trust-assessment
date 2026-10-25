@@ -149,7 +149,7 @@ def main() -> int:
 
     report = {
         "schema_version": 1,
-        "name": "trustlens-feed-label-churn",
+        "name": "wtas-feed-label-churn",
         "measured_at": datetime.now(timezone.utc).isoformat(),
         "primary_labels": {
             "file": str(primary_path),

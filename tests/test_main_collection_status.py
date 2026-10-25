@@ -7,8 +7,8 @@ from pathlib import Path
 
 import pytest
 
-from trustlens.research import annotations, collection
-from trustlens.research.candidates import GATED_COLLECTION
+from website_trust_assessment.research import annotations, collection
+from website_trust_assessment.research.candidates import GATED_COLLECTION
 
 from .factories import make_assessment
 

@@ -9,7 +9,7 @@ three things that are easy to confuse:
 1. **The runtime rule engine** (`ENGINE_VERSION = 0.1.1-rules`) that serves the API and extension.
 2. **The optional runtime calibration file** (`models/calibration.json`) that maps the overall rule
    score to a probability if one has been fitted.
-3. **The research artifacts** produced by `trustlens research train` (logistic regression,
+3. **The research artifacts** produced by `wtas research train` (logistic regression,
    HistGradientBoosting, and a calibrated rule baseline). These are evaluation outputs; the API does not
    automatically load them as its decision policy.
 

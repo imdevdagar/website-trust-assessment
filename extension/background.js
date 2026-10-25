@@ -6,11 +6,11 @@ const DEFAULTS = {
   showOverlay: true,
 };
 
-const CACHE_KEY = "trustlens_guard_cache_v1";
+const CACHE_KEY = "wtas_guard_cache_v1";
 const CACHE_TTL_MS = 15 * 60 * 1000;
 const CACHE_LIMIT = 200;
 const SCAN_TIMEOUT_MS = 90 * 1000;
-const OVERLAY_MARK_PREFIX = "trustlens_overlay_";
+const OVERLAY_MARK_PREFIX = "wtas_overlay_";
 
 const tabStates = new Map();
 
@@ -199,7 +199,7 @@ async function callGuard(url, action, force) {
       if (error && error.name === "AbortError") {
         throw new Error("Assessment timed out. The site may be slow or blocking the crawler.");
       }
-      throw new Error("Could not reach the local assessment engine. Start it with: python -m trustlens.cli serve");
+      throw new Error("Could not reach the local assessment engine. Start it with: python -m website_trust_assessment.cli serve");
     }
     const text = await response.text();
     let payload = null;
@@ -312,7 +312,7 @@ async function maybeShowOverlay(tabId, pageUrl, result, settings) {
   try {
     await chrome.scripting.executeScript({
       target: { tabId },
-      func: trustLensOverlay,
+      func: guardOverlay,
       args: [
         {
           verdict: result.verdict,
@@ -538,12 +538,12 @@ chrome.runtime.onStartup.addListener(() => {
   scanActiveTab().catch(() => undefined);
 });
 
-function trustLensOverlay(payload) {
+function guardOverlay(payload) {
   if (window.top !== window) return;
-  if (document.getElementById("trustlens-guard-overlay")) return;
+  if (document.getElementById("wtas-guard-overlay")) return;
   const isBlock = payload && payload.verdict === "block";
   const host = document.createElement("div");
-  host.id = "trustlens-guard-overlay";
+  host.id = "wtas-guard-overlay";
   host.style.cssText =
     "all: initial; position: fixed; inset: 0; z-index: 2147483647; pointer-events: none;";
   const root = host.attachShadow({ mode: "closed" });

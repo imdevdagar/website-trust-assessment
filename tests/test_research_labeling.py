@@ -6,8 +6,8 @@ from pathlib import Path
 from fastapi.testclient import TestClient
 
 from tests.factories import make_assessment
-from trustlens.research import annotations
-from trustlens.research.labeling import create_app
+from website_trust_assessment.research import annotations
+from website_trust_assessment.research.labeling import create_app
 
 TOKEN = "test-annotation-token"
 HEADERS = {"X-Annotation-Token": TOKEN}

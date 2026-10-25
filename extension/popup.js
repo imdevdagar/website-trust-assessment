@@ -543,8 +543,8 @@ function openDashboard() {
 
 async function loadPreferredAction() {
   try {
-    const stored = await chrome.storage.local.get("trustlens_popup_action");
-    return safeAction(stored.trustlens_popup_action);
+    const stored = await chrome.storage.local.get("wtas_popup_action");
+    return safeAction(stored.wtas_popup_action);
   } catch (error) {
     return "browse";
   }
@@ -589,7 +589,7 @@ dom.actionSelect.addEventListener("change", () => {
   showActionError("");
   updateControls();
   try {
-    chrome.storage.local.set({ trustlens_popup_action: state.action });
+    chrome.storage.local.set({ wtas_popup_action: state.action });
   } catch (error) {
     /* preference persistence is optional */
   }

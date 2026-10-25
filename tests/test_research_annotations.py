@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 
-from trustlens.research import annotations
+from website_trust_assessment.research import annotations
 
 from .factories import make_assessment
 

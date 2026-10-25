@@ -917,7 +917,7 @@ def evaluate(root: Path, *, action: Action = Action.BROWSE, cfg: Settings | None
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "action": action.value,
         "scoring_path": {
-            "page_parse": "trustlens.crawler.parse_html_page (production static path)",
+            "page_parse": "website_trust_assessment.crawler.parse_html_page (production static path)",
             "extractors": [name for name, _ in SYNC_EXTRACTORS],
             "network_enrichment": False,
             "scope_note": (

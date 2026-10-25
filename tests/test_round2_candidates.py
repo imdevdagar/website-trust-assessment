@@ -9,9 +9,9 @@ from types import SimpleNamespace
 
 import pytest
 
-from trustlens.cli import _batch, _read_batch_items, _split_gated_batch_items
-from trustlens.research import candidates
-from trustlens.research.candidates import (
+from website_trust_assessment.cli import _batch, _read_batch_items, _split_gated_batch_items
+from website_trust_assessment.research import candidates
+from website_trust_assessment.research.candidates import (
     GATED_COLLECTION,
     Candidate,
     build_round2_manifest,
@@ -21,7 +21,7 @@ from trustlens.research.candidates import (
     sanitize_candidate_url,
     select_round2_candidates,
 )
-from trustlens.security import UnsafeURLError
+from website_trust_assessment.security import UnsafeURLError
 
 
 def _candidate(stratum: str, domain: str) -> Candidate:

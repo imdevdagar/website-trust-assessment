@@ -3,11 +3,11 @@ from __future__ import annotations
 import pytest
 
 from tests.factories import make_assessment
-from trustlens.pipeline import guard_decision
-from trustlens.schemas import Action, Dimension, Evidence, RiskLevel, Severity
-from trustlens.scoring.aggregate import aggregate, merge_evidence
-from trustlens.scoring.explanations import compose
-from trustlens.scoring.rules import COVERAGE_SOURCES, risk_level
+from website_trust_assessment.pipeline import guard_decision
+from website_trust_assessment.schemas import Action, Dimension, Evidence, RiskLevel, Severity
+from website_trust_assessment.scoring.aggregate import aggregate, merge_evidence
+from website_trust_assessment.scoring.explanations import compose
+from website_trust_assessment.scoring.rules import COVERAGE_SOURCES, risk_level
 
 
 def make_evidence(

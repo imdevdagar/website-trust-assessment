@@ -33,7 +33,7 @@ def runtime_root() -> Path:
     A source checkout keeps using its own `data/` directory so existing paths and research
     artifacts stay stable; an installed package uses the platform user-data directory.
     """
-    override = os.getenv("TRUSTLENS_HOME")
+    override = os.getenv("WTAS_HOME")
     if override:
         return Path(override).expanduser().resolve()
     return PROJECT_ROOT if _in_source_checkout() else _user_data_root()
@@ -70,37 +70,37 @@ def _resolve(path_value: str) -> Path:
 @dataclass(frozen=True)
 class Settings:
     root: Path = field(default_factory=runtime_root)
-    data_dir: Path = field(default_factory=lambda: _resolve(os.getenv("TRUSTLENS_DATA", "data")))
-    web_dir: Path = field(default_factory=lambda: _resolve(os.getenv("TRUSTLENS_WEB", str(WEB_DIR))))
-    db_path: Path = field(default_factory=lambda: _resolve(os.getenv("TRUSTLENS_DB", "data/trustlens.db")))
+    data_dir: Path = field(default_factory=lambda: _resolve(os.getenv("WTAS_DATA", "data")))
+    web_dir: Path = field(default_factory=lambda: _resolve(os.getenv("WTAS_WEB", str(WEB_DIR))))
+    db_path: Path = field(default_factory=lambda: _resolve(os.getenv("WTAS_DB", "data/website_trust_assessment.db")))
     screenshots_dir: Path = field(
-        default_factory=lambda: _resolve(os.getenv("TRUSTLENS_SCREENSHOTS", "data/screenshots"))
+        default_factory=lambda: _resolve(os.getenv("WTAS_SCREENSHOTS", "data/screenshots"))
     )
-    models_dir: Path = field(default_factory=lambda: _resolve(os.getenv("TRUSTLENS_MODELS", "models")))
+    models_dir: Path = field(default_factory=lambda: _resolve(os.getenv("WTAS_MODELS", "models")))
     annotations_dir: Path = field(
-        default_factory=lambda: _resolve(os.getenv("TRUSTLENS_ANNOTATIONS", "data/annotations"))
+        default_factory=lambda: _resolve(os.getenv("WTAS_ANNOTATIONS", "data/annotations"))
     )
-    host: str = os.getenv("TRUSTLENS_HOST", "127.0.0.1")
-    port: int = _env_int("TRUSTLENS_PORT", 8000)
-    cache_ttl_seconds: int = _env_int("TRUSTLENS_CACHE_TTL", 3600)
-    assess_timeout_seconds: float = _env_float("TRUSTLENS_ASSESS_TIMEOUT", 75.0)
-    crawl_timeout_ms: int = _env_int("TRUSTLENS_CRAWL_TIMEOUT_MS", 25_000)
-    page_settle_ms: int = _env_int("TRUSTLENS_PAGE_SETTLE_MS", 2_500)
-    max_response_bytes: int = _env_int("TRUSTLENS_MAX_RESPONSE_BYTES", 2_500_000)
+    host: str = os.getenv("WTAS_HOST", "127.0.0.1")
+    port: int = _env_int("WTAS_PORT", 8000)
+    cache_ttl_seconds: int = _env_int("WTAS_CACHE_TTL", 3600)
+    assess_timeout_seconds: float = _env_float("WTAS_ASSESS_TIMEOUT", 75.0)
+    crawl_timeout_ms: int = _env_int("WTAS_CRAWL_TIMEOUT_MS", 25_000)
+    page_settle_ms: int = _env_int("WTAS_PAGE_SETTLE_MS", 2_500)
+    max_response_bytes: int = _env_int("WTAS_MAX_RESPONSE_BYTES", 2_500_000)
     max_html_chars: int = 900_000
-    enable_playwright: bool = _env_bool("TRUSTLENS_ENABLE_PLAYWRIGHT", True)
+    enable_playwright: bool = _env_bool("WTAS_ENABLE_PLAYWRIGHT", True)
     max_links: int = 250
     max_policy_fetch: int = 2
-    llm_enabled: bool = _env_bool("TRUSTLENS_LLM_ENABLED", False)
-    llm_model: str = os.getenv("TRUSTLENS_LLM_MODEL", "qwen2.5:1.5b-instruct")
-    ollama_url: str = os.getenv("TRUSTLENS_OLLAMA_URL", "http://127.0.0.1:11434")
+    llm_enabled: bool = _env_bool("WTAS_LLM_ENABLED", False)
+    llm_model: str = os.getenv("WTAS_LLM_MODEL", "qwen2.5:1.5b-instruct")
+    ollama_url: str = os.getenv("WTAS_OLLAMA_URL", "http://127.0.0.1:11434")
     allowed_origins: tuple[str, ...] = tuple(
         origin.strip()
-        for origin in os.getenv("TRUSTLENS_ALLOWED_ORIGINS", "").split(",")
+        for origin in os.getenv("WTAS_ALLOWED_ORIGINS", "").split(",")
         if origin.strip()
     )
-    rate_limit_per_minute: int = _env_int("TRUSTLENS_RATE_LIMIT", 30)
-    assessment_concurrency: int = _env_int("TRUSTLENS_ASSESS_CONCURRENCY", 2)
+    rate_limit_per_minute: int = _env_int("WTAS_RATE_LIMIT", 30)
+    assessment_concurrency: int = _env_int("WTAS_ASSESS_CONCURRENCY", 2)
 
     def ensure_dirs(self) -> None:
         for path in (self.data_dir, self.screenshots_dir, self.db_path.parent, self.models_dir, self.annotations_dir):

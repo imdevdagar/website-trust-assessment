@@ -18,7 +18,7 @@ import json
 import random
 from collections import Counter
 from pathlib import Path
-from trustlens.research.metrics import roc_auc
+from website_trust_assessment.research.metrics import roc_auc
 from typing import Any
 
 # overall_rule_risk is stored normalised to 0-1, so the bands are fractions of that scale.

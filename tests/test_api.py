@@ -8,11 +8,11 @@ import pytest
 from fastapi.testclient import TestClient
 
 from tests.factories import make_assessment
-from trustlens import storage
-from trustlens.api import create_app
-from trustlens.config import PACKAGE_ROOT, Settings
-from trustlens.schemas import Action
-from trustlens.security import check_url_structure
+from website_trust_assessment import storage
+from website_trust_assessment.api import create_app
+from website_trust_assessment.config import PACKAGE_ROOT, Settings
+from website_trust_assessment.schemas import Action
+from website_trust_assessment.security import check_url_structure
 
 
 class FakeAssessor:
@@ -50,7 +50,7 @@ class FakeAssessor:
 def make_settings(tmp_path: Path, *, rate_limit: int = 100) -> Settings:
     return Settings(
         data_dir=tmp_path / "data",
-        db_path=tmp_path / "data" / "trustlens.db",
+        db_path=tmp_path / "data" / "website_trust_assessment.db",
         screenshots_dir=tmp_path / "data" / "screenshots",
         annotations_dir=tmp_path / "data" / "annotations",
         models_dir=tmp_path / "models",

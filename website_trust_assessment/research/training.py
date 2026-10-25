@@ -742,7 +742,7 @@ def _write_report(
         "- The test split is evaluated once and never used for fitting or selection.",
         "- All splits are grouped by registrable domain.",
         "- The rule engine is reported both as-is and after Platt calibration.",
-        "- Metrics below are computed by `trustlens.research.metrics`.",
+        "- Metrics below are computed by `website_trust_assessment.research.metrics`.",
         "",
         "## Dataset",
         "",

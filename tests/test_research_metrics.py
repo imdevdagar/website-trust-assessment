@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import math
 
-from trustlens.research import metrics
+from website_trust_assessment.research import metrics
 
 
 def test_ranking_metrics_handle_perfect_reversed_and_tied_scores() -> None:

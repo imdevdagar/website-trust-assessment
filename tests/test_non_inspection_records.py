@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from trustlens.cli import _load_uninspected_domains
+from website_trust_assessment.cli import _load_uninspected_domains
 
 ROOT = Path(__file__).resolve().parents[1]
 BATCH_DIR = ROOT / "data" / "annotations" / "main" / "batch_01"

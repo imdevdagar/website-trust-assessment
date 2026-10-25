@@ -13,10 +13,10 @@ from pathlib import Path
 
 import pytest
 
-from trustlens import crawler
-from trustlens.config import settings
-from trustlens.research import injection as corpus
-from trustlens.schemas import Action
+from website_trust_assessment import crawler
+from website_trust_assessment.config import settings
+from website_trust_assessment.research import injection as corpus
+from website_trust_assessment.schemas import Action
 
 CASES = {case.id: case for case in corpus.build_cases()}
 

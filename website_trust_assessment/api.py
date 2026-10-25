@@ -29,7 +29,7 @@ from .schemas import (
 )
 from .security import UnsafeURLError
 
-logger = logging.getLogger("trustlens.api")
+logger = logging.getLogger("website_trust_assessment.api")
 
 CSP = (
     "default-src 'self'; "

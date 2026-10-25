@@ -4,7 +4,7 @@
   const tokenMeta = document.querySelector('meta[name="annotation-token"]');
   const TOKEN = tokenMeta ? tokenMeta.content : "";
   const LABELS = ["benign", "suspicious", "malicious"];
-  const CONFIDENCE_KEY = "trustlens-labeling-confidence";
+  const CONFIDENCE_KEY = "wtas-labeling-confidence";
 
   const state = {
     meta: null,
@@ -78,7 +78,7 @@
   }
 
   function draftKey(site) {
-    return `trustlens-draft:${state.meta ? state.meta.sheet : "sheet"}:${site.sample_id}`;
+    return `wtas-draft:${state.meta ? state.meta.sheet : "sheet"}:${site.sample_id}`;
   }
 
   function readDraft(site) {

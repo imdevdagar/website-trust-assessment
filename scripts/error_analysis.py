@@ -32,7 +32,7 @@ RISK_BANDS = {"medium": 0.25, "high": 0.50, "critical": 0.75}
 
 
 def sigmoid(x: float) -> float:
-    """Mirror trustlens.research.training._sigmoid so scores reproduce the run exactly."""
+    """Mirror website_trust_assessment.research.training._sigmoid so scores reproduce the run exactly."""
     x = min(max(x, -60.0), 60.0)
     return 1.0 / (1.0 + math.exp(-x))
 

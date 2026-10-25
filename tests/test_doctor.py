@@ -4,14 +4,14 @@ import json
 from pathlib import Path
 from types import SimpleNamespace
 
-from trustlens.cli import _doctor, _doctor_checks
-from trustlens.config import PACKAGE_ROOT, Settings
+from website_trust_assessment.cli import _doctor, _doctor_checks
+from website_trust_assessment.config import PACKAGE_ROOT, Settings
 
 
 def make_settings(tmp_path: Path, *, web_dir: Path | None = None) -> Settings:
     return Settings(
         data_dir=tmp_path / "data",
-        db_path=tmp_path / "data" / "trustlens.db",
+        db_path=tmp_path / "data" / "website_trust_assessment.db",
         screenshots_dir=tmp_path / "data" / "screenshots",
         annotations_dir=tmp_path / "data" / "annotations",
         models_dir=tmp_path / "models",
@@ -36,7 +36,7 @@ def test_doctor_reports_no_failures(tmp_path: Path) -> None:
 
 def test_doctor_flags_missing_dashboard(tmp_path: Path, monkeypatch, capsys) -> None:
     monkeypatch.setattr(
-        "trustlens.cli.settings", lambda: make_settings(tmp_path, web_dir=tmp_path / "missing")
+        "website_trust_assessment.cli.settings", lambda: make_settings(tmp_path, web_dir=tmp_path / "missing")
     )
     assert _doctor(SimpleNamespace(json=True)) == 1
     payload = json.loads(capsys.readouterr().out)
