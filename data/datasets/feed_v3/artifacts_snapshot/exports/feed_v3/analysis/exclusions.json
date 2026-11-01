@@ -1,0 +1,3226 @@
+{
+  "counts": {
+    "negative_cross_domain_redirect": 245,
+    "negative_failed_crawl": 525,
+    "negative_kept": 2596,
+    "positive_cross_domain_redirect": 137,
+    "positive_failed_crawl": 5366,
+    "positive_kept": 2533
+  },
+  "created_at": "2026-11-01T08:14:58+00:00",
+  "exclusions": [
+    {
+      "candidate_domain": "fsdyt168.com",
+      "class": "positive",
+      "final_domain": "ixxgnn.asia",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_01.jsonl",
+      "url": "https://www.fsdyt168.com/"
+    },
+    {
+      "candidate_domain": "animegaroom.com",
+      "class": "positive",
+      "final_domain": "google.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_01.jsonl",
+      "url": "https://animegaroom.com/GSFtiAzu/"
+    },
+    {
+      "candidate_domain": "w-mt.co",
+      "class": "positive",
+      "final_domain": "walmart.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_02.jsonl",
+      "url": "https://w-mt.co/rptrcks/comm-smart-app/services/tracking/clickTracker"
+    },
+    {
+      "candidate_domain": "orson.website",
+      "class": "positive",
+      "final_domain": "orson.io",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_03.jsonl",
+      "url": "https://4484471d.orson.website/"
+    },
+    {
+      "candidate_domain": "eliteacademia.id",
+      "class": "positive",
+      "final_domain": "yahoo.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_03.jsonl",
+      "url": "https://iso-digital.eliteacademia.id/2/"
+    },
+    {
+      "candidate_domain": "nr-293-sn2-n34.sbs",
+      "class": "positive",
+      "final_domain": "allegrolokalnie.pl",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_03.jsonl",
+      "url": "https://allegrolokalnie.nr-293-sn2-n34.sbs/oferta/iphone-16-256gb-w-bialym-kolorze-i-dobrym-stanie/LQirHkHZ"
+    },
+    {
+      "candidate_domain": "awstrack.me",
+      "class": "positive",
+      "final_domain": "turboreturn.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_04.jsonl",
+      "url": "https://tkby3jr9.r.us-east-1.awstrack.me/L0/https:%2F%2Fwww.google.com%2Furl%3Fq=https:%2F%2Fwww.google.com%2Furl%3Fq%253Dhttps%25253A%25252F%25252Fturboreturn.com%25252Furg-view%25252Fdoc.html%2526sa%253DD%2526sntz%253D1%2526usg%253DAOvVaw24gVQ-wzua69kw7Q0NDHQz%26source=gmail%26ust=1742221575641000%26usg=AOvVaw0aoCJPelVbJP6OFFN2fxeU/1/01000195a4a8790e-d08444ac-0dfc-48b7-9a4f-bd076245187b-000000/oZqH4GtzknfUvmD-uBqo3SpTZJg=417"
+    },
+    {
+      "candidate_domain": "jtbtigers.com",
+      "class": "positive",
+      "final_domain": "youtube.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_04.jsonl",
+      "url": "https://jtbtigers.com/bbzp7"
+    },
+    {
+      "candidate_domain": "clck.ru",
+      "class": "positive",
+      "final_domain": "yandex.ru",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_05.jsonl",
+      "url": "https://clck.ru/gwg8w"
+    },
+    {
+      "candidate_domain": "opalooman.com",
+      "class": "positive",
+      "final_domain": "isoxpertsso.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_06.jsonl",
+      "url": "https://log-kdckqdcjqwranmcbaqaqmsmqlfvsyh.opalooman.com/1NiIsInR5cCI6IkpXVCJ9yJvcmlnaW5hbFVybCI6Imh0dHBzOi8vbWFpbGVyLWkxZHh4dGE3aWJvbHoweG5lbXVpZms3d2dieGI1YjN5bXQzZG5lbXVpZms3d2"
+    },
+    {
+      "candidate_domain": "stou.ac.th",
+      "class": "positive",
+      "final_domain": "uinsgd.ac.id",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_06.jsonl",
+      "url": "https://www.stou.ac.th/link/wwsNQ"
+    },
+    {
+      "candidate_domain": "ph-jljl2.com",
+      "class": "positive",
+      "final_domain": "youtube.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_07.jsonl",
+      "url": "https://ph-jljl2.com/54k4"
+    },
+    {
+      "candidate_domain": "vo.la",
+      "class": "positive",
+      "final_domain": "webhost4life.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_07.jsonl",
+      "url": "https://vo.la/uMdVDKb"
+    },
+    {
+      "candidate_domain": "smbcyberadvisor.com",
+      "class": "positive",
+      "final_domain": "dot-market.org",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_08.jsonl",
+      "url": "https://www.smbcyberadvisor.com/"
+    },
+    {
+      "candidate_domain": "agoth.com.au",
+      "class": "positive",
+      "final_domain": "agothlaw.com.au",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_08.jsonl",
+      "url": "https://agoth.com.au/vee/qbooks/auth/index.php"
+    },
+    {
+      "candidate_domain": "cmcsolucoes.com.br",
+      "class": "positive",
+      "final_domain": "cmctecnologia.com.br",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_08.jsonl",
+      "url": "https://cmcsolucoes.com.br/culture"
+    },
+    {
+      "candidate_domain": "casaleco.com",
+      "class": "positive",
+      "final_domain": "godaddy.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_08.jsonl",
+      "url": "https://casaleco.com/login-check.html"
+    },
+    {
+      "candidate_domain": "paleronix.com",
+      "class": "positive",
+      "final_domain": "google.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_09.jsonl",
+      "url": "https://www.paleronix.com/0vc0amatamjb.php"
+    },
+    {
+      "candidate_domain": "jesienne-oferty-87361.cfd",
+      "class": "positive",
+      "final_domain": "allegrolokalnie.pl",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_09.jsonl",
+      "url": "http://allegrolokalnie.jesienne-oferty-87361.cfd/"
+    },
+    {
+      "candidate_domain": "mydurable.com",
+      "class": "positive",
+      "final_domain": "durable.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_09.jsonl",
+      "url": "https://ifeednews.mydurable.com/new-page"
+    },
+    {
+      "candidate_domain": "ububao.com",
+      "class": "positive",
+      "final_domain": "zbljyv.asia",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_09.jsonl",
+      "url": "https://www.ububao.com/"
+    },
+    {
+      "candidate_domain": "l1nq.com",
+      "class": "positive",
+      "final_domain": "encurtador.dev",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_09.jsonl",
+      "url": "http://l1nq.com/XA8s3"
+    },
+    {
+      "candidate_domain": "masscpas.org",
+      "class": "positive",
+      "final_domain": "necpas.org",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_10.jsonl",
+      "url": "https://hub.masscpas.org/services/clicker.ashx"
+    },
+    {
+      "candidate_domain": "shorturl.asia",
+      "class": "positive",
+      "final_domain": "digitaldocumentreview.help",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_10.jsonl",
+      "url": "https://shorturl.asia/jnJph"
+    },
+    {
+      "candidate_domain": "creatopy.com",
+      "class": "positive",
+      "final_domain": "thebrief.ai",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_10.jsonl",
+      "url": "https://app.creatopy.com/share/d/0p6mxmvlprnv"
+    },
+    {
+      "candidate_domain": "cy5666.com",
+      "class": "positive",
+      "final_domain": "qyvir.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_11.jsonl",
+      "url": "https://cy5666.com/WFXfzW4Xim.social"
+    },
+    {
+      "candidate_domain": "m1386033.pro",
+      "class": "positive",
+      "final_domain": "mrl659884.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_11.jsonl",
+      "url": "https://shipment6836g.m1386033.pro/"
+    },
+    {
+      "candidate_domain": "whitepinesinn.com",
+      "class": "positive",
+      "final_domain": "visitwhitepines.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_11.jsonl",
+      "url": "http://whitepinesinn.com/"
+    },
+    {
+      "candidate_domain": "short.im",
+      "class": "positive",
+      "final_domain": "linkila.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_11.jsonl",
+      "url": "https://short.im/opdhfog"
+    },
+    {
+      "candidate_domain": "exlyapp.com",
+      "class": "positive",
+      "final_domain": "myclickfunnels.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_12.jsonl",
+      "url": "http://email.mg.exlyapp.com/c/eJwczEtyrCAUBuDV4NA6_M3LAYM7cR-Ax26qeViiN-ndp5IFfN_mIR0nN7GX1gEGD2Wnl1-sXGLSUTttdNCGtYxkNsOA2iTtU_YgGDJQRBqwM2DJkZRWR0R2m1BUnzN_l084jjn1OhX_uq5jiMc_gVVgHbkepd958Bna1VsezHFRy1w_qeT03u_WuIxfK7Be_U00nb6F_ez3V46t30LRs4Zc_vr_Hj8BAAD__0OVPxw"
+    },
+    {
+      "candidate_domain": "sso-regeneron.com",
+      "class": "positive",
+      "final_domain": "registrar-transfers.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_12.jsonl",
+      "url": "http://sso-regeneron.com/"
+    },
+    {
+      "candidate_domain": "officegest.com",
+      "class": "positive",
+      "final_domain": "officegest.pt",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_12.jsonl",
+      "url": "https://pt.officegest.com/online/"
+    },
+    {
+      "candidate_domain": "scan.page",
+      "class": "positive",
+      "final_domain": "mimosawedding.vn",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_13.jsonl",
+      "url": "https://scan.page/7fFZz8"
+    },
+    {
+      "candidate_domain": "kup-teraz-856056.pl",
+      "class": "positive",
+      "final_domain": "allegrolokalnie.pl",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_13.jsonl",
+      "url": "https://allegrolokalnie.kup-teraz-856056.pl/oferta/moza-r5-kierownica-plus-pedaly-gwaranacja/8CjUworf"
+    },
+    {
+      "candidate_domain": "shorten.ee",
+      "class": "positive",
+      "final_domain": "azcaycanh.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_13.jsonl",
+      "url": "https://shorten.ee/g1FSm"
+    },
+    {
+      "candidate_domain": "portaldasfinancas.gov.pt",
+      "class": "positive",
+      "final_domain": "acesso.gov.pt",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_13.jsonl",
+      "url": "https://www.portaldasfinancas.gov.pt/pt/consultaCertidao.action"
+    },
+    {
+      "candidate_domain": "epasacv.com",
+      "class": "positive",
+      "final_domain": "dolunaytekstil.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_13.jsonl",
+      "url": "https://epasacv.com/lindex.php"
+    },
+    {
+      "candidate_domain": "onelink.me",
+      "class": "positive",
+      "final_domain": "google.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_14.jsonl",
+      "url": "https://karaknetworks.onelink.me/GUUI"
+    },
+    {
+      "candidate_domain": "pl-oferta63929.shop",
+      "class": "positive",
+      "final_domain": "allegrolokalnie.pl",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_15.jsonl",
+      "url": "https://allegrolokalnie.pl-oferta63929.shop/playstation-5/73294"
+    },
+    {
+      "candidate_domain": "awuedu.org",
+      "class": "positive",
+      "final_domain": "damkarcilacap.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_15.jsonl",
+      "url": "https://awuedu.org/mu2.html"
+    },
+    {
+      "candidate_domain": "created.app",
+      "class": "positive",
+      "final_domain": "workers.dev",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_15.jsonl",
+      "url": "https://liveledger.created.app/"
+    },
+    {
+      "candidate_domain": "cachedview.com",
+      "class": "positive",
+      "final_domain": "google.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_16.jsonl",
+      "url": "https://cachedview.com/redirect.php"
+    },
+    {
+      "candidate_domain": "dellavillas.com",
+      "class": "positive",
+      "final_domain": "dellatownships.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_17.jsonl",
+      "url": "https://dellavillas.com/acceptt"
+    },
+    {
+      "candidate_domain": "login-drivers.com",
+      "class": "positive",
+      "final_domain": "tfoumax.fr",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_17.jsonl",
+      "url": "https://login-drivers.com/"
+    },
+    {
+      "candidate_domain": "chatbot.page",
+      "class": "positive",
+      "final_domain": "collect.chat",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_18.jsonl",
+      "url": "https://chatbot.page/6hzXKT"
+    },
+    {
+      "candidate_domain": "dcv.ms",
+      "class": "positive",
+      "final_domain": "microsoft.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_18.jsonl",
+      "url": "https://emea.dcv.ms/S5lrYtI3dl"
+    },
+    {
+      "candidate_domain": "beatmungspflege24.net",
+      "class": "positive",
+      "final_domain": "beatmungspflege24.de",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_18.jsonl",
+      "url": "https://beatmungspflege24.net/ausbildungausseneinsatz-zukunft-z-cr"
+    },
+    {
+      "candidate_domain": "neartail.com",
+      "class": "positive",
+      "final_domain": "near.tl",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_20.jsonl",
+      "url": "https://neartail.com/sm/OevC6KLsG"
+    },
+    {
+      "candidate_domain": "come.ac",
+      "class": "positive",
+      "final_domain": "azcaycanh.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_21.jsonl",
+      "url": "https://come.ac/dGxox"
+    },
+    {
+      "candidate_domain": "programmation-info.com",
+      "class": "positive",
+      "final_domain": "tfoumax.fr",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_21.jsonl",
+      "url": "https://programmation-info.com/"
+    },
+    {
+      "candidate_domain": "info-correoargentino.com.ar",
+      "class": "positive",
+      "final_domain": "emarsys.net",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_21.jsonl",
+      "url": "https://links.info-correoargentino.com.ar/"
+    },
+    {
+      "candidate_domain": "banktowne.com",
+      "class": "positive",
+      "final_domain": "dot-consulting.org",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_22.jsonl",
+      "url": "https://banktowne.com/"
+    },
+    {
+      "candidate_domain": "joylink.bio",
+      "class": "positive",
+      "final_domain": "joylink.io",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_22.jsonl",
+      "url": "https://joylink.bio/broadband"
+    },
+    {
+      "candidate_domain": "1xlite-78173.com",
+      "class": "positive",
+      "final_domain": "1xlite-12669.pro",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_22.jsonl",
+      "url": "https://1xlite-78173.com/"
+    },
+    {
+      "candidate_domain": "rhymeowe.com",
+      "class": "positive",
+      "final_domain": "toploadinglink.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_22.jsonl",
+      "url": "http://rhymeowe.com/4175878WX17722280tB673762510VX17367QJ24Xer251851AO"
+    },
+    {
+      "candidate_domain": "tiny.one",
+      "class": "positive",
+      "final_domain": "tinyurl.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_23.jsonl",
+      "url": "https://tiny.one/bdf4bpw9"
+    },
+    {
+      "candidate_domain": "google.fr",
+      "class": "positive",
+      "final_domain": "cudasvc.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_23.jsonl",
+      "url": "https://www.google.fr/amp/s/www.google.com%2Furl%3Fq%3Dhttps%3A%2F%2Fwww.google.com%2Furl%3Fq%253Dhttps%25253A%25252F%25252Flinkprotect.cudasvc.com%25252Furl%25253Fa%25253Dhttp%25253A%25252F%25252Fau.bestreviews.guide%25252Famp%25252Fredirect%25253Frf_dws_location%2525253D%25252526rf_item_id%2525253D284553988%25252526rf_list_id%2525253D4693819%25252526rf_partner_id%2525253DB017M5JDX0%25252526rf_source%2525253Damazon%25252526url%2525253DaHR0cHM6Ly93d3ctZXhhbXBsZS1jb20uY2RuLmFtcHByb2plY3Qub3JnL2Mvcy9zb2ZpYTA5MjExMS5naXRodWIuaW8vd2V3b3JsZHdpZGUtc2Vuc2VpaWlpaWlpaWlpaWlpaWlpaWlpLTY3Njc4NTU2NDU2ODU3NjU4Ni8%2525253D%252526amp%25253Btypo%25253D1%252526c%25253DE%25252C1%25252C_SXgdRSlRSBw52_i2u0HwoWrGOjH4ySMlGXvfGOQnELRA64b921O8b66KJMrlpcoQpmpZjKNJ635YxJ2uD8hUcOjRUL6RP9RZ5OCQXGwPcxQqAreLP94oaglug%25252C%25252C%2526sa%253DD%2526sntz%253D1%2526usg%253DAOvVaw2lJ6i9xsAdBiZq6R3z0ABr%26sa%3DD%26source%3Deditors%26ust%3D1721663475546431%26usg%3DAOvVaw3cqcWbFI4Nz02gJojvuNFW%23bXJvbWVuZXNrb0ByaHJpbnRlcm5hdGlvbmFsLmNvbQ=="
+    },
+    {
+      "candidate_domain": "unaux.com",
+      "class": "positive",
+      "final_domain": "suspended-domain.net",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_24.jsonl",
+      "url": "http://activar-cuenta-bhd-inicio.unaux.com/"
+    },
+    {
+      "candidate_domain": "home.pl",
+      "class": "positive",
+      "final_domain": "bing.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_24.jsonl",
+      "url": "http://anneberg.home.pl/majimoto/esd.php"
+    },
+    {
+      "candidate_domain": "multimobile.pt",
+      "class": "positive",
+      "final_domain": "ruicruz.pt",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_24.jsonl",
+      "url": "https://multimobile.pt/missiz/frizz/"
+    },
+    {
+      "candidate_domain": "ur0.jp",
+      "class": "positive",
+      "final_domain": "2ur.jp",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_24.jsonl",
+      "url": "https://ur0.jp/QQIdE"
+    },
+    {
+      "candidate_domain": "cba1188.com",
+      "class": "positive",
+      "final_domain": "zbljyv.asia",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_26.jsonl",
+      "url": "https://www.cba1188.com/"
+    },
+    {
+      "candidate_domain": "magic.ly",
+      "class": "positive",
+      "final_domain": "magicly.bio",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_26.jsonl",
+      "url": "https://magic.ly/attserversupportcommunications"
+    },
+    {
+      "candidate_domain": "districtchronicles.com",
+      "class": "positive",
+      "final_domain": "pixxiie928.org",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_27.jsonl",
+      "url": "https://districtchronicles.com/paymydoctor-at-www-paymydoctor-com/"
+    },
+    {
+      "candidate_domain": "linkup.top",
+      "class": "positive",
+      "final_domain": "linkup.store",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_27.jsonl",
+      "url": "https://linkup.top/infosever"
+    },
+    {
+      "candidate_domain": "mobility-pioneers.com",
+      "class": "positive",
+      "final_domain": "hs-esslingen.de",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_27.jsonl",
+      "url": "http://mobility-pioneers.com/wp-content/themes/astra/inc/builder/type/base/dynamic-css/button/service.php"
+    },
+    {
+      "candidate_domain": "cedis-online.de",
+      "class": "positive",
+      "final_domain": "google.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_28.jsonl",
+      "url": "https://cedis-online.de/idn.php"
+    },
+    {
+      "candidate_domain": "objectifhabitat.com",
+      "class": "positive",
+      "final_domain": "qyvir.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_28.jsonl",
+      "url": "https://objectifhabitat.com/wp-content/home_new/"
+    },
+    {
+      "candidate_domain": "hualinjy.com",
+      "class": "positive",
+      "final_domain": "zbljyv.asia",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_29.jsonl",
+      "url": "https://www.hualinjy.com/"
+    },
+    {
+      "candidate_domain": "weyouandtech.com",
+      "class": "positive",
+      "final_domain": "macanslot138hub.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_30.jsonl",
+      "url": "https://weyouandtech.com/"
+    },
+    {
+      "candidate_domain": "arcxray.com.au",
+      "class": "positive",
+      "final_domain": "tweedvalleyradiology.com.au",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_01.jsonl",
+      "url": "https://arcxray.com.au/"
+    },
+    {
+      "candidate_domain": "gbdyltf.com",
+      "class": "positive",
+      "final_domain": "zbljyv.asia",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_01.jsonl",
+      "url": "https://www.gbdyltf.com/"
+    },
+    {
+      "candidate_domain": "frappe.cloud",
+      "class": "positive",
+      "final_domain": "frappe.io",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_02.jsonl",
+      "url": "https://bhdenlinea.frappe.cloud/bhd2026"
+    },
+    {
+      "candidate_domain": "blogspot.ae",
+      "class": "positive",
+      "final_domain": "blogspot.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_02.jsonl",
+      "url": "https://google-square-fr.blogspot.ae/"
+    },
+    {
+      "candidate_domain": "blogspot.am",
+      "class": "positive",
+      "final_domain": "blogspot.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_02.jsonl",
+      "url": "http://dqskdlqskdqsodlksqdq.blogspot.am/"
+    },
+    {
+      "candidate_domain": "boto.kyiv.ua",
+      "class": "positive",
+      "final_domain": "r2.dev",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_03.jsonl",
+      "url": "https://base-bot.boto.kyiv.ua/storage/sunmex.html"
+    },
+    {
+      "candidate_domain": "emlnk9.com",
+      "class": "positive",
+      "final_domain": "activehosted.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_04.jsonl",
+      "url": "http://sabranos.emlnk9.com/"
+    },
+    {
+      "candidate_domain": "pl-lokalna-ofeta9xv17yj75v0.shop",
+      "class": "positive",
+      "final_domain": "allegrolokalnie.pl",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_06.jsonl",
+      "url": "https://allegrolokalnie.pl-lokalna-ofeta9xv17yj75v0.shop/"
+    },
+    {
+      "candidate_domain": "convertkit-mail2.com",
+      "class": "positive",
+      "final_domain": "kit.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_06.jsonl",
+      "url": "https://6844762e.click.convertkit-mail2.com/e5ul4n42w6f7hlmgwzpa8h8m3q022ilh0x68g/wnh2hghqmx4p3oh7/aHR0cHM6Ly90aW55dXJsLmNvbS9td24ybXNt"
+    },
+    {
+      "candidate_domain": "globallinknext.com",
+      "class": "positive",
+      "final_domain": "transperfectnext.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_06.jsonl",
+      "url": "https://globallinknext.com/Rogue_cu/"
+    },
+    {
+      "candidate_domain": "mikawaks.com",
+      "class": "positive",
+      "final_domain": "zbljyv.asia",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_06.jsonl",
+      "url": "https://www.mikawaks.com/"
+    },
+    {
+      "candidate_domain": "worldwipes.com",
+      "class": "positive",
+      "final_domain": "uwipes.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_06.jsonl",
+      "url": "https://worldwipes.com/rnnb.innb/junestmt.php"
+    },
+    {
+      "candidate_domain": "sparkpostmail.com",
+      "class": "positive",
+      "final_domain": "trendz-shop.be",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_07.jsonl",
+      "url": "https://go.sparkpostmail.com/f/a/QLEo2tpFArrPDbHBzYeJiQ~~/AAKhywA~/RgRpVSOlP0QdaHR0cHM6Ly90cmVuZHotc2hvcC5iZS87KWVhc3lXA3NwY0IKZ2WlnnJnupRGO1IaaXRncnVwcGVuQGJyZWRhbHNwYXJrZW4uZGtYBAAAAAA~"
+    },
+    {
+      "candidate_domain": "smb-serkvr19.shop",
+      "class": "positive",
+      "final_domain": "dns.google",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_07.jsonl",
+      "url": "https://smb-serkvr19.shop/smbse/"
+    },
+    {
+      "candidate_domain": "reurl.cc",
+      "class": "positive",
+      "final_domain": "desi-hatti.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_07.jsonl",
+      "url": "https://reurl.cc/adqv53"
+    },
+    {
+      "candidate_domain": "helpdesk-bmc.com",
+      "class": "positive",
+      "final_domain": "registrar-transfers.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_07.jsonl",
+      "url": "http://helpdesk-bmc.com/"
+    },
+    {
+      "candidate_domain": "urle.me",
+      "class": "positive",
+      "final_domain": "yahoo.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_07.jsonl",
+      "url": "https://urle.me/hvu"
+    },
+    {
+      "candidate_domain": "1drv.ms",
+      "class": "positive",
+      "final_domain": "live.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_07.jsonl",
+      "url": "https://1drv.ms/o/c/37d62ccb566bc661/EjMiiosn1j5DqhER8GILcnIBVlYL40KO51tXt9BLwWetRA"
+    },
+    {
+      "candidate_domain": "lihi2.me",
+      "class": "positive",
+      "final_domain": "lihi404.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_08.jsonl",
+      "url": "http://lihi2.me/KjHKn"
+    },
+    {
+      "candidate_domain": "citly.me",
+      "class": "positive",
+      "final_domain": "autobookbank.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_08.jsonl",
+      "url": "https://citly.me/noTfF"
+    },
+    {
+      "candidate_domain": "link.space",
+      "class": "positive",
+      "final_domain": "streamlabs.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_08.jsonl",
+      "url": "https://link.space/@service2"
+    },
+    {
+      "candidate_domain": "www-com.co.uk",
+      "class": "positive",
+      "final_domain": "encryptedconnection.net",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_08.jsonl",
+      "url": "https://gooqle.www-com.co.uk/XbkhVdkx1MzdhWWM1bjRPTDZsdUtsQ3YwUit3MHpITFVwdWFTRmp1T04zYWcvNUhhMVo5Vk93ZWhrcE5KdHV6ODFEcTkvdEJBZ0xKYldZeEI5ZytxOS9NZDd1Q1ZlWlBjSExsdEtqSHF3bzAydFVFSytIa2psbncvTDJ6NzVMbFgxV2JPN1paQXhLMG9VamNlckx4aHgxSEJoeUR0VEZWaXdwYkpodlBaQWo2Q3pGSW1KZzJLMEVNM0s4NkNOWUNOWEVWVWo1dz0tLWxpRit0alV0b2MrczdESUQtLTFiNElnLzBzdWJORVZFRGFnWWUraXc9PQ=="
+    },
+    {
+      "candidate_domain": "tvrepairannarbor.net",
+      "class": "positive",
+      "final_domain": "tvrepaircanton.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_10.jsonl",
+      "url": "https://www.tvrepairannarbor.net/log/"
+    },
+    {
+      "candidate_domain": "phplist.com",
+      "class": "positive",
+      "final_domain": "serv00.net",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_10.jsonl",
+      "url": "https://uaebillaccouae.hosted.phplist.com/lists/"
+    },
+    {
+      "candidate_domain": "paperform.co",
+      "class": "positive",
+      "final_domain": "paperform.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_11.jsonl",
+      "url": "https://zgi3258m.paperform.co/"
+    },
+    {
+      "candidate_domain": "tv2east.dk",
+      "class": "positive",
+      "final_domain": "unitedfamilymedicine.org",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_11.jsonl",
+      "url": "https://web.tv2east.dk/redirect/urv.html"
+    },
+    {
+      "candidate_domain": "cuty.io",
+      "class": "positive",
+      "final_domain": "wixsite.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_11.jsonl",
+      "url": "https://cuty.io/P1nTlpd"
+    },
+    {
+      "candidate_domain": "your-adventure.net",
+      "class": "positive",
+      "final_domain": "steamcommunity.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_11.jsonl",
+      "url": "https://www.your-adventure.net/groups/your-adventure"
+    },
+    {
+      "candidate_domain": "lihi3.com",
+      "class": "positive",
+      "final_domain": "lta.gov.sg",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_12.jsonl",
+      "url": "https://lihi3.com/UXHaX"
+    },
+    {
+      "candidate_domain": "wishforthefuture.com",
+      "class": "positive",
+      "final_domain": "hugedomains.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_13.jsonl",
+      "url": "https://lhv-auth.wishforthefuture.com/yL2LxQHS3/4ea04784092d779a9dcaef9086116a1b/login.php"
+    },
+    {
+      "candidate_domain": "streamlink.to",
+      "class": "positive",
+      "final_domain": "web.app",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_13.jsonl",
+      "url": "https://streamlink.to/u8trjdj"
+    },
+    {
+      "candidate_domain": "registre-euro.org",
+      "class": "positive",
+      "final_domain": "registre-societes.org",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_13.jsonl",
+      "url": "https://registre-euro.org/subscription/B52Z7F3Y"
+    },
+    {
+      "candidate_domain": "ck.page",
+      "class": "positive",
+      "final_domain": "kit.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_14.jsonl",
+      "url": "https://adept-producer-5628.ck.page/bd101ba8ae"
+    },
+    {
+      "candidate_domain": "ln.run",
+      "class": "positive",
+      "final_domain": "azcaycanh.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_14.jsonl",
+      "url": "https://ln.run/uzhub"
+    },
+    {
+      "candidate_domain": "nue.bio",
+      "class": "positive",
+      "final_domain": "nuelink.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_14.jsonl",
+      "url": "https://nue.bio/haatemyselfbio"
+    },
+    {
+      "candidate_domain": "customeriomail.com",
+      "class": "positive",
+      "final_domain": "google.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_15.jsonl",
+      "url": "https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVFVfd2tCQUx2WkpyclpKZ0daSU5zT2J4Rm5Lc0kzN09wNE9oND0iLCJocmVmIjoiaHR0cHM6Ly9wbGF5Lmdvb2dsZS5jb20vc3RvcmUvYXBwcy9kZXRhaWxzP2lkPWNvbS5kYXBwZXJsYWJzLk5GTEFsbERheVx1MDAyNnV0bV9jYW1wYWlnbj1OZXcrVXNlcitXZWxjb21lK0RyaXArUHJvZ3JhbVx1MDAyNnV0bV9jb250ZW50PUVtYWlsMSstK2ErJTNBK1dlbGNvbWUrRW1haWwrYW5kK0ZUVUVcdTAwMjZ1dG1fbWVkaXVtPWVtYWlsX2FjdGlvblx1MDAyNnV0bV9zb3VyY2U9Y3VzdG9tZXIuaW8iLCJpbnRlcm5hbCI6ImQ0ZmYwOTE1Y2ExZmJiZDkyNiIsImxpbmtfaWQiOjkyMH0/7a03362c9b23ccfdc29ddffcb076f1fd3fd494d812abe0cb59963068920a1c81"
+    },
+    {
+      "candidate_domain": "my-cloud-mail.com",
+      "class": "positive",
+      "final_domain": "secured-login.net",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_15.jsonl",
+      "url": "https://service.my-cloud-mail.com/XNGZkb1hsQ1RISmJkdGgwcmJXSU5DMmpsb0MwWUdDWkZwUnNNaXlIQTJUeitqcHNJY1laNS84NUZnTW43eXk0UWRwM2ZzL0hzVklWVlV0L01zTDdicldVbktvdTJEcTZUT1k0RllCL2VVZmEwdlZQVUl1c1QxampFYkFXUGhXRk5wbEI3TmR1YlRuU1cvMXpuL3BDTzJTR3VHSk51N2xYVXlxeGVTZ2NVRzBOZ2lQdDNORDFtSG8yWlRYUT0tLUpyNDltOFpKSXA2Z0daZDktLWZScVRIY1BXSXp0Z2JXWEdjYlFZZUE9PQ=="
+    },
+    {
+      "candidate_domain": "activehosted.com",
+      "class": "positive",
+      "final_domain": "activecampaign.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_15.jsonl",
+      "url": "https://peterrivers106719434.activehosted.com/f/1"
+    },
+    {
+      "candidate_domain": "from-ia.com",
+      "class": "positive",
+      "final_domain": "dyn.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_01.jsonl",
+      "url": "http://from-ia.com/"
+    },
+    {
+      "candidate_domain": "hubs.ly",
+      "class": "positive",
+      "final_domain": "hubspotdocuments.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_01.jsonl",
+      "url": "https://hubs.ly/Q03v7Bgk0"
+    },
+    {
+      "candidate_domain": "lc.chat",
+      "class": "positive",
+      "final_domain": "livechat.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_01.jsonl",
+      "url": "https://direct.lc.chat/14761719/"
+    },
+    {
+      "candidate_domain": "albertovalenza.it",
+      "class": "positive",
+      "final_domain": "albertovalenza.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_02.jsonl",
+      "url": "https://albertovalenza.it/"
+    },
+    {
+      "candidate_domain": "surfacesstrengthsarchives.org",
+      "class": "positive",
+      "final_domain": "abonnesclients-renouvellables.digital",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_02.jsonl",
+      "url": "https://urlsnippetsabout.surfacesstrengthsarchives.org/asm/unsubscribe/-50854-LXM93moPpYR4cOC91MfRHAOB8iMqCjy297taZwGTnnsyiwBt4---821116317556409-3758974282-B-mwU-Un7c506MQ8YwqyRQdWNQyePq0pDM-UZRZ3E0C-VH3Qh4-qpztxs5"
+    },
+    {
+      "candidate_domain": "neored.com",
+      "class": "positive",
+      "final_domain": "facebook.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_03.jsonl",
+      "url": "https://estadisticas.neored.com/t/43431940/1624857538/56733586/0/109770/"
+    },
+    {
+      "candidate_domain": "pi-ogioszenie943302.top",
+      "class": "positive",
+      "final_domain": "allegrolokalnie.pl",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_03.jsonl",
+      "url": "http://allegrolokalnie.pi-ogioszenie943302.top/oferta/telefon-poco-x8-pro-max-12-512gb-nowy-gn43e"
+    },
+    {
+      "candidate_domain": "blogspot.co.ke",
+      "class": "positive",
+      "final_domain": "blogspot.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_04.jsonl",
+      "url": "http://dqskdlqskdqsodlksqdq.blogspot.co.ke/"
+    },
+    {
+      "candidate_domain": "hotm.io",
+      "class": "positive",
+      "final_domain": "hotmart.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_04.jsonl",
+      "url": "https://hotm.io/bussan1"
+    },
+    {
+      "candidate_domain": "linksredirect.com",
+      "class": "positive",
+      "final_domain": "cuelinks.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_04.jsonl",
+      "url": "http://linksredirect.com/"
+    },
+    {
+      "candidate_domain": "brsms.com",
+      "class": "positive",
+      "final_domain": "web.app",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_04.jsonl",
+      "url": "https://brsms.com/jE7eL2"
+    },
+    {
+      "candidate_domain": "framework360.it",
+      "class": "positive",
+      "final_domain": "framework360.site",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_05.jsonl",
+      "url": "https://vitasporto2025.framework360.it/login-1/"
+    },
+    {
+      "candidate_domain": "oneartharcn-jp.com",
+      "class": "positive",
+      "final_domain": "nta.go.jp",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_05.jsonl",
+      "url": "https://oneartharcn-jp.com/"
+    },
+    {
+      "candidate_domain": "sso-tangem.com",
+      "class": "positive",
+      "final_domain": "registrar-transfers.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_05.jsonl",
+      "url": "http://sso-tangem.com/"
+    },
+    {
+      "candidate_domain": "blogspot.fr",
+      "class": "positive",
+      "final_domain": "blogspot.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_07.jsonl",
+      "url": "http://sbaysidhl5654.blogspot.fr/"
+    },
+    {
+      "candidate_domain": "share.google",
+      "class": "positive",
+      "final_domain": "usdpi.co",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_07.jsonl",
+      "url": "https://share.google/ZC449x4LcFOl5aYDP"
+    },
+    {
+      "candidate_domain": "genspark.ai",
+      "class": "positive",
+      "final_domain": "gensparkspace.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_08.jsonl",
+      "url": "https://www.genspark.ai/api/files/s/R6qWh9MT"
+    },
+    {
+      "candidate_domain": "keepo.io",
+      "class": "positive",
+      "final_domain": "keepo.bio",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_08.jsonl",
+      "url": "https://keepo.io/uw-klantenservice-online-safe/"
+    },
+    {
+      "candidate_domain": "shorten.is",
+      "class": "positive",
+      "final_domain": "azcaycanh.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_08.jsonl",
+      "url": "https://shorten.is/kTPXr"
+    },
+    {
+      "candidate_domain": "editorx.io",
+      "class": "positive",
+      "final_domain": "wixstudio.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_08.jsonl",
+      "url": "https://teled64765.editorx.io/my-site"
+    },
+    {
+      "candidate_domain": "groovepages.com",
+      "class": "positive",
+      "final_domain": "backblazeb2.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_topup_09.jsonl",
+      "url": "https://oi.groovepages.com/ia"
+    },
+    {
+      "candidate_domain": "target-db4ae3367c",
+      "class": "negative",
+      "final_domain": "target-c20e32334a",
+      "reason": "cross_domain_redirect",
+      "source": "neg_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-f1834f784e",
+      "class": "negative",
+      "final_domain": "target-79ac6b420f",
+      "reason": "cross_domain_redirect",
+      "source": "neg_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-7d470f02a5",
+      "class": "negative",
+      "final_domain": "target-c40d7ba1ac",
+      "reason": "cross_domain_redirect",
+      "source": "neg_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-b247cf3b25",
+      "class": "negative",
+      "final_domain": "target-c4ec778ed3",
+      "reason": "cross_domain_redirect",
+      "source": "neg_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-54ce516902",
+      "class": "negative",
+      "final_domain": "target-d0173bddc1",
+      "reason": "cross_domain_redirect",
+      "source": "neg_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-936b82d599",
+      "class": "negative",
+      "final_domain": "target-d0173bddc1",
+      "reason": "cross_domain_redirect",
+      "source": "neg_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-715c228aac",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-a669fd976e",
+      "class": "negative",
+      "final_domain": "target-a03e053067",
+      "reason": "cross_domain_redirect",
+      "source": "neg_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-caf75e5f97",
+      "class": "negative",
+      "final_domain": "target-1503e96628",
+      "reason": "cross_domain_redirect",
+      "source": "neg_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-d72bce097b",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-f446306c85",
+      "class": "negative",
+      "final_domain": "target-0c536a3b2d",
+      "reason": "cross_domain_redirect",
+      "source": "neg_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-cf9b81dbba",
+      "class": "negative",
+      "final_domain": "target-cbda575be3",
+      "reason": "cross_domain_redirect",
+      "source": "neg_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9c90a448b6",
+      "class": "negative",
+      "final_domain": "target-1716519afa",
+      "reason": "cross_domain_redirect",
+      "source": "neg_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-a305685196",
+      "class": "negative",
+      "final_domain": "target-2616410f7d",
+      "reason": "cross_domain_redirect",
+      "source": "neg_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-08f20885fb",
+      "class": "negative",
+      "final_domain": "target-3598e4908d",
+      "reason": "cross_domain_redirect",
+      "source": "neg_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9d39aa3cdb",
+      "class": "negative",
+      "final_domain": "target-24299f3991",
+      "reason": "cross_domain_redirect",
+      "source": "neg_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-98d18f88a3",
+      "class": "negative",
+      "final_domain": "target-0c9f99ea4d",
+      "reason": "cross_domain_redirect",
+      "source": "neg_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-da899fbf92",
+      "class": "negative",
+      "final_domain": "target-97f16ec834",
+      "reason": "cross_domain_redirect",
+      "source": "neg_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9ab42cde06",
+      "class": "negative",
+      "final_domain": "target-db611594d6",
+      "reason": "cross_domain_redirect",
+      "source": "neg_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-a0d9cc3a29",
+      "class": "negative",
+      "final_domain": "target-d056ffe2fa",
+      "reason": "cross_domain_redirect",
+      "source": "neg_03.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-f956421272",
+      "class": "negative",
+      "final_domain": "target-448624d9ee",
+      "reason": "cross_domain_redirect",
+      "source": "neg_03.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-50dc70ac3b",
+      "class": "negative",
+      "final_domain": "target-a312a817a0",
+      "reason": "cross_domain_redirect",
+      "source": "neg_03.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-d83a72bfe4",
+      "class": "negative",
+      "final_domain": "target-20614efeb8",
+      "reason": "cross_domain_redirect",
+      "source": "neg_03.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9cd91c2357",
+      "class": "negative",
+      "final_domain": "target-cd510c55e3",
+      "reason": "cross_domain_redirect",
+      "source": "neg_03.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-80e618f646",
+      "class": "negative",
+      "final_domain": "target-b93f7e0f06",
+      "reason": "cross_domain_redirect",
+      "source": "neg_03.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-e8a281bbf1",
+      "class": "negative",
+      "final_domain": "target-97538e792b",
+      "reason": "cross_domain_redirect",
+      "source": "neg_04.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-0c039db8e3",
+      "class": "negative",
+      "final_domain": "target-a54dd0a622",
+      "reason": "cross_domain_redirect",
+      "source": "neg_04.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-02e96c47f5",
+      "class": "negative",
+      "final_domain": "target-b21509270f",
+      "reason": "cross_domain_redirect",
+      "source": "neg_04.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-dfe4d87681",
+      "class": "negative",
+      "final_domain": "target-ef94817005",
+      "reason": "cross_domain_redirect",
+      "source": "neg_05.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-25b31f629f",
+      "class": "negative",
+      "final_domain": "target-c57f149c33",
+      "reason": "cross_domain_redirect",
+      "source": "neg_05.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-7ff87964cd",
+      "class": "negative",
+      "final_domain": "target-ceab1ef979",
+      "reason": "cross_domain_redirect",
+      "source": "neg_05.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-65115cb0d0",
+      "class": "negative",
+      "final_domain": "target-9732d890ca",
+      "reason": "cross_domain_redirect",
+      "source": "neg_05.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-154ea4ce00",
+      "class": "negative",
+      "final_domain": "target-227239fab3",
+      "reason": "cross_domain_redirect",
+      "source": "neg_05.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-b3656307e0",
+      "class": "negative",
+      "final_domain": "target-92558dffb4",
+      "reason": "cross_domain_redirect",
+      "source": "neg_05.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-d1b0a51281",
+      "class": "negative",
+      "final_domain": "target-01095a2a98",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-dbc5edf8da",
+      "class": "negative",
+      "final_domain": "target-2ae8350638",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-1c9e8bb073",
+      "class": "negative",
+      "final_domain": "target-4e96503299",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-06172fd84f",
+      "class": "negative",
+      "final_domain": "target-12348b6128",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-470b9a6008",
+      "class": "negative",
+      "final_domain": "target-a44a121f52",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-c42513eb0b",
+      "class": "negative",
+      "final_domain": "target-3e5778bf19",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-ceb0eeea94",
+      "class": "negative",
+      "final_domain": "target-d52a602a39",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-69e421beac",
+      "class": "negative",
+      "final_domain": "target-a2ac9d8fb8",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-01b89e9d1c",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-8831683f3b",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9cd533a37d",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-20732534ff",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-f540e22ae2",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-759333b635",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-d1f5c7d785",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-00350fdf6b",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-d64bbf079a",
+      "class": "negative",
+      "final_domain": "target-25cc1f1efa",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-4bc8efe96e",
+      "class": "negative",
+      "final_domain": "target-ef6fbaed41",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-f3e8b1a204",
+      "class": "negative",
+      "final_domain": "target-10255403ab",
+      "reason": "cross_domain_redirect",
+      "source": "neg_06.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-6183fcbb9b",
+      "class": "negative",
+      "final_domain": "target-1dd7879aec",
+      "reason": "cross_domain_redirect",
+      "source": "neg_07.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-8c00afc417",
+      "class": "negative",
+      "final_domain": "target-7763aa6edd",
+      "reason": "cross_domain_redirect",
+      "source": "neg_07.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-bd09baa19d",
+      "class": "negative",
+      "final_domain": "target-5836bb9691",
+      "reason": "cross_domain_redirect",
+      "source": "neg_07.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-27c44d5040",
+      "class": "negative",
+      "final_domain": "target-adb6e8751b",
+      "reason": "cross_domain_redirect",
+      "source": "neg_07.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-2784dc61cb",
+      "class": "negative",
+      "final_domain": "target-9fbcb05e5f",
+      "reason": "cross_domain_redirect",
+      "source": "neg_07.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-6094bbcc04",
+      "class": "negative",
+      "final_domain": "target-2d8906b0db",
+      "reason": "cross_domain_redirect",
+      "source": "neg_07.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-bc862aad9f",
+      "class": "negative",
+      "final_domain": "target-a795717392",
+      "reason": "cross_domain_redirect",
+      "source": "neg_07.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-55167bccb8",
+      "class": "negative",
+      "final_domain": "target-11cf415248",
+      "reason": "cross_domain_redirect",
+      "source": "neg_08.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-0bbe32a6a6",
+      "class": "negative",
+      "final_domain": "target-2f8370a2a8",
+      "reason": "cross_domain_redirect",
+      "source": "neg_08.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-2960e1e2a9",
+      "class": "negative",
+      "final_domain": "target-a0da12b45c",
+      "reason": "cross_domain_redirect",
+      "source": "neg_08.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-02efbee426",
+      "class": "negative",
+      "final_domain": "target-8bfb15e709",
+      "reason": "cross_domain_redirect",
+      "source": "neg_08.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9dc4860a82",
+      "class": "negative",
+      "final_domain": "target-b5be909037",
+      "reason": "cross_domain_redirect",
+      "source": "neg_09.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-726343233c",
+      "class": "negative",
+      "final_domain": "target-0e93eafb23",
+      "reason": "cross_domain_redirect",
+      "source": "neg_09.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-64f83d701a",
+      "class": "negative",
+      "final_domain": "target-09dd94c328",
+      "reason": "cross_domain_redirect",
+      "source": "neg_09.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-4b57d23b3d",
+      "class": "negative",
+      "final_domain": "target-2be5e15d09",
+      "reason": "cross_domain_redirect",
+      "source": "neg_09.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-48c041afba",
+      "class": "negative",
+      "final_domain": "target-b22c45e136",
+      "reason": "cross_domain_redirect",
+      "source": "neg_09.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-b4b39192d3",
+      "class": "negative",
+      "final_domain": "target-ef60964d0a",
+      "reason": "cross_domain_redirect",
+      "source": "neg_09.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-55df31838d",
+      "class": "negative",
+      "final_domain": "target-1cafc71651",
+      "reason": "cross_domain_redirect",
+      "source": "neg_09.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-8acada5e10",
+      "class": "negative",
+      "final_domain": "target-abb2c3a17a",
+      "reason": "cross_domain_redirect",
+      "source": "neg_09.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-b3bb95f957",
+      "class": "negative",
+      "final_domain": "target-6ecceff2e1",
+      "reason": "cross_domain_redirect",
+      "source": "neg_10.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-c66bb7b90a",
+      "class": "negative",
+      "final_domain": "target-d5c986f314",
+      "reason": "cross_domain_redirect",
+      "source": "neg_10.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-01c13f21a9",
+      "class": "negative",
+      "final_domain": "target-5fde5d156d",
+      "reason": "cross_domain_redirect",
+      "source": "neg_10.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-eb876a27a0",
+      "class": "negative",
+      "final_domain": "target-3c5c80e709",
+      "reason": "cross_domain_redirect",
+      "source": "neg_10.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-950ce66476",
+      "class": "negative",
+      "final_domain": "target-5eec567555",
+      "reason": "cross_domain_redirect",
+      "source": "neg_10.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-ce58147055",
+      "class": "negative",
+      "final_domain": "target-1b53e67f5c",
+      "reason": "cross_domain_redirect",
+      "source": "neg_10.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-c3f45425c3",
+      "class": "negative",
+      "final_domain": "target-13e9ff9eaa",
+      "reason": "cross_domain_redirect",
+      "source": "neg_10.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9bf16592d7",
+      "class": "negative",
+      "final_domain": "target-d076a5d979",
+      "reason": "cross_domain_redirect",
+      "source": "neg_11.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-b59a006f66",
+      "class": "negative",
+      "final_domain": "target-14b6734d6c",
+      "reason": "cross_domain_redirect",
+      "source": "neg_11.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-32de44b337",
+      "class": "negative",
+      "final_domain": "target-ad7989cccd",
+      "reason": "cross_domain_redirect",
+      "source": "neg_11.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-63a6e59c96",
+      "class": "negative",
+      "final_domain": "target-72418fe0e7",
+      "reason": "cross_domain_redirect",
+      "source": "neg_11.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-3c3026fa23",
+      "class": "negative",
+      "final_domain": "target-680148f76f",
+      "reason": "cross_domain_redirect",
+      "source": "neg_11.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-d80d143cc6",
+      "class": "negative",
+      "final_domain": "target-a3a4857296",
+      "reason": "cross_domain_redirect",
+      "source": "neg_11.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-b0f913d73f",
+      "class": "negative",
+      "final_domain": "target-664c97d0ae",
+      "reason": "cross_domain_redirect",
+      "source": "neg_11.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-0b85c6d36d",
+      "class": "negative",
+      "final_domain": "target-c36bbcada0",
+      "reason": "cross_domain_redirect",
+      "source": "neg_11.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-c8049bd831",
+      "class": "negative",
+      "final_domain": "target-0792c90cd4",
+      "reason": "cross_domain_redirect",
+      "source": "neg_11.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-4981856b76",
+      "class": "negative",
+      "final_domain": "target-8b783fd986",
+      "reason": "cross_domain_redirect",
+      "source": "neg_11.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-20ad69d24a",
+      "class": "negative",
+      "final_domain": "target-93f45594d8",
+      "reason": "cross_domain_redirect",
+      "source": "neg_11.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-af01bf99e2",
+      "class": "negative",
+      "final_domain": "target-401b457be7",
+      "reason": "cross_domain_redirect",
+      "source": "neg_12.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-07b3e514dc",
+      "class": "negative",
+      "final_domain": "target-9360296064",
+      "reason": "cross_domain_redirect",
+      "source": "neg_12.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-74fcb4c283",
+      "class": "negative",
+      "final_domain": "target-4cbf5d1a0d",
+      "reason": "cross_domain_redirect",
+      "source": "neg_12.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-ea42dbc685",
+      "class": "negative",
+      "final_domain": "target-82f723693d",
+      "reason": "cross_domain_redirect",
+      "source": "neg_12.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-2d03daf811",
+      "class": "negative",
+      "final_domain": "target-9535f8875f",
+      "reason": "cross_domain_redirect",
+      "source": "neg_12.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-257b44d4fd",
+      "class": "negative",
+      "final_domain": "target-01abcf6dbc",
+      "reason": "cross_domain_redirect",
+      "source": "neg_12.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-4785c8bebc",
+      "class": "negative",
+      "final_domain": "target-0cf9c3d4f5",
+      "reason": "cross_domain_redirect",
+      "source": "neg_12.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-b00091bac3",
+      "class": "negative",
+      "final_domain": "target-096cd44d56",
+      "reason": "cross_domain_redirect",
+      "source": "neg_12.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-f6026a709c",
+      "class": "negative",
+      "final_domain": "target-f202e57a0e",
+      "reason": "cross_domain_redirect",
+      "source": "neg_12.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-2faa3e67e0",
+      "class": "negative",
+      "final_domain": "target-28e3cd0078",
+      "reason": "cross_domain_redirect",
+      "source": "neg_13.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-e6af45fae6",
+      "class": "negative",
+      "final_domain": "target-79d1166f2c",
+      "reason": "cross_domain_redirect",
+      "source": "neg_13.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-4ae40021c0",
+      "class": "negative",
+      "final_domain": "target-124d6207aa",
+      "reason": "cross_domain_redirect",
+      "source": "neg_13.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-7cad98488e",
+      "class": "negative",
+      "final_domain": "target-eeb27cd523",
+      "reason": "cross_domain_redirect",
+      "source": "neg_13.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-57f78c03c6",
+      "class": "negative",
+      "final_domain": "target-2bda15243b",
+      "reason": "cross_domain_redirect",
+      "source": "neg_13.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-2ae0190f5c",
+      "class": "negative",
+      "final_domain": "target-58f00f0e59",
+      "reason": "cross_domain_redirect",
+      "source": "neg_13.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-304c4a7bad",
+      "class": "negative",
+      "final_domain": "target-621485fe76",
+      "reason": "cross_domain_redirect",
+      "source": "neg_13.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-cc8c10abb9",
+      "class": "negative",
+      "final_domain": "target-c25f9db4e4",
+      "reason": "cross_domain_redirect",
+      "source": "neg_14.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-c9af2e037f",
+      "class": "negative",
+      "final_domain": "target-d6ff5a34e1",
+      "reason": "cross_domain_redirect",
+      "source": "neg_14.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-45e0a5dd69",
+      "class": "negative",
+      "final_domain": "target-0c4bcbcfb6",
+      "reason": "cross_domain_redirect",
+      "source": "neg_14.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-021bea2bc6",
+      "class": "negative",
+      "final_domain": "target-8782b41da7",
+      "reason": "cross_domain_redirect",
+      "source": "neg_14.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-1da6e442c6",
+      "class": "negative",
+      "final_domain": "target-2265cbcc3e",
+      "reason": "cross_domain_redirect",
+      "source": "neg_14.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9d54e83474",
+      "class": "negative",
+      "final_domain": "target-2b8a08e459",
+      "reason": "cross_domain_redirect",
+      "source": "neg_14.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-5731acb0b1",
+      "class": "negative",
+      "final_domain": "target-035e9be733",
+      "reason": "cross_domain_redirect",
+      "source": "neg_14.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-13d75a5777",
+      "class": "negative",
+      "final_domain": "target-60e006925f",
+      "reason": "cross_domain_redirect",
+      "source": "neg_14.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-777a10fe53",
+      "class": "negative",
+      "final_domain": "target-9cecd4ec19",
+      "reason": "cross_domain_redirect",
+      "source": "neg_14.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-05835e0756",
+      "class": "negative",
+      "final_domain": "target-7ef0cccdf2",
+      "reason": "cross_domain_redirect",
+      "source": "neg_15.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-7b24cc4be6",
+      "class": "negative",
+      "final_domain": "target-e876c767f6",
+      "reason": "cross_domain_redirect",
+      "source": "neg_15.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-6ad63ee0d2",
+      "class": "negative",
+      "final_domain": "target-de5769fbb7",
+      "reason": "cross_domain_redirect",
+      "source": "neg_15.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9c559b3392",
+      "class": "negative",
+      "final_domain": "target-e656fad8e3",
+      "reason": "cross_domain_redirect",
+      "source": "neg_15.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-83879b1831",
+      "class": "negative",
+      "final_domain": "target-a5adca41ab",
+      "reason": "cross_domain_redirect",
+      "source": "neg_15.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-8f3a7387e0",
+      "class": "negative",
+      "final_domain": "target-17605e6e29",
+      "reason": "cross_domain_redirect",
+      "source": "neg_16.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-6dd7e20ea0",
+      "class": "negative",
+      "final_domain": "target-a500df1b85",
+      "reason": "cross_domain_redirect",
+      "source": "neg_16.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-980f285e12",
+      "class": "negative",
+      "final_domain": "target-88ab289ef3",
+      "reason": "cross_domain_redirect",
+      "source": "neg_16.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-5b47fdaa5f",
+      "class": "negative",
+      "final_domain": "target-93f45594d8",
+      "reason": "cross_domain_redirect",
+      "source": "neg_16.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-1950c58f1d",
+      "class": "negative",
+      "final_domain": "target-93f45594d8",
+      "reason": "cross_domain_redirect",
+      "source": "neg_16.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9139877dfd",
+      "class": "negative",
+      "final_domain": "target-b48169c3a6",
+      "reason": "cross_domain_redirect",
+      "source": "neg_16.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-b6e6047b1a",
+      "class": "negative",
+      "final_domain": "target-7c4e7828de",
+      "reason": "cross_domain_redirect",
+      "source": "neg_16.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-30a2f6c736",
+      "class": "negative",
+      "final_domain": "target-e0394533fb",
+      "reason": "cross_domain_redirect",
+      "source": "neg_16.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-22aafa0925",
+      "class": "negative",
+      "final_domain": "target-1411e994b7",
+      "reason": "cross_domain_redirect",
+      "source": "neg_17.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-0ae2dfd2e1",
+      "class": "negative",
+      "final_domain": "target-367eae6ed1",
+      "reason": "cross_domain_redirect",
+      "source": "neg_17.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-b1105df388",
+      "class": "negative",
+      "final_domain": "target-3309f6fa9d",
+      "reason": "cross_domain_redirect",
+      "source": "neg_17.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-a811785e3e",
+      "class": "negative",
+      "final_domain": "target-b330af7b81",
+      "reason": "cross_domain_redirect",
+      "source": "neg_17.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-ebab9b209a",
+      "class": "negative",
+      "final_domain": "target-5fe90d2b6f",
+      "reason": "cross_domain_redirect",
+      "source": "neg_18.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-8b6892dc73",
+      "class": "negative",
+      "final_domain": "target-4f546dc427",
+      "reason": "cross_domain_redirect",
+      "source": "neg_18.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-a674973559",
+      "class": "negative",
+      "final_domain": "target-d55da6c9ea",
+      "reason": "cross_domain_redirect",
+      "source": "neg_18.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-72c2b33633",
+      "class": "negative",
+      "final_domain": "target-3ce092525b",
+      "reason": "cross_domain_redirect",
+      "source": "neg_18.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-e0dc221ae5",
+      "class": "negative",
+      "final_domain": "target-7ba6f14b19",
+      "reason": "cross_domain_redirect",
+      "source": "neg_18.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-62f3ea9d0b",
+      "class": "negative",
+      "final_domain": "target-ef778980b1",
+      "reason": "cross_domain_redirect",
+      "source": "neg_18.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-a9e266e810",
+      "class": "negative",
+      "final_domain": "target-aec0060ec3",
+      "reason": "cross_domain_redirect",
+      "source": "neg_18.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-df30a5e689",
+      "class": "negative",
+      "final_domain": "target-4609d127e3",
+      "reason": "cross_domain_redirect",
+      "source": "neg_18.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-5909c2f1c4",
+      "class": "negative",
+      "final_domain": "target-1454215685",
+      "reason": "cross_domain_redirect",
+      "source": "neg_18.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-a0b801fd8c",
+      "class": "negative",
+      "final_domain": "target-db8e734176",
+      "reason": "cross_domain_redirect",
+      "source": "neg_18.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-4eb62b9818",
+      "class": "negative",
+      "final_domain": "target-1cad1838f4",
+      "reason": "cross_domain_redirect",
+      "source": "neg_19.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-3458047132",
+      "class": "negative",
+      "final_domain": "target-0912d4f996",
+      "reason": "cross_domain_redirect",
+      "source": "neg_19.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-cb6d399d26",
+      "class": "negative",
+      "final_domain": "target-cb8bb76b2f",
+      "reason": "cross_domain_redirect",
+      "source": "neg_19.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-e868f7d2c2",
+      "class": "negative",
+      "final_domain": "target-9bc9241528",
+      "reason": "cross_domain_redirect",
+      "source": "neg_19.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-ed517a5929",
+      "class": "negative",
+      "final_domain": "target-80c272ca48",
+      "reason": "cross_domain_redirect",
+      "source": "neg_19.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-6c53b0a2db",
+      "class": "negative",
+      "final_domain": "target-b0ccf7ddf5",
+      "reason": "cross_domain_redirect",
+      "source": "neg_19.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-8e7026cced",
+      "class": "negative",
+      "final_domain": "target-cabb954c22",
+      "reason": "cross_domain_redirect",
+      "source": "neg_19.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-5910885a05",
+      "class": "negative",
+      "final_domain": "target-746453ccd5",
+      "reason": "cross_domain_redirect",
+      "source": "neg_20.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-ea2846690e",
+      "class": "negative",
+      "final_domain": "target-f08972732c",
+      "reason": "cross_domain_redirect",
+      "source": "neg_20.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-ac1355c152",
+      "class": "negative",
+      "final_domain": "target-ad1775317c",
+      "reason": "cross_domain_redirect",
+      "source": "neg_20.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-c99d6126dc",
+      "class": "negative",
+      "final_domain": "target-b87ac0aa2c",
+      "reason": "cross_domain_redirect",
+      "source": "neg_21.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-4f936ef5cd",
+      "class": "negative",
+      "final_domain": "target-5134c8842c",
+      "reason": "cross_domain_redirect",
+      "source": "neg_21.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-ca546687de",
+      "class": "negative",
+      "final_domain": "target-92558dffb4",
+      "reason": "cross_domain_redirect",
+      "source": "neg_21.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-be06673375",
+      "class": "negative",
+      "final_domain": "target-4b4509083a",
+      "reason": "cross_domain_redirect",
+      "source": "neg_21.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-065deb10d2",
+      "class": "negative",
+      "final_domain": "target-754e590e26",
+      "reason": "cross_domain_redirect",
+      "source": "neg_21.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9e0ad46f04",
+      "class": "negative",
+      "final_domain": "target-4045506a51",
+      "reason": "cross_domain_redirect",
+      "source": "neg_21.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-31d313ec47",
+      "class": "negative",
+      "final_domain": "target-1e168cb331",
+      "reason": "cross_domain_redirect",
+      "source": "neg_21.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-562f00e4e2",
+      "class": "negative",
+      "final_domain": "target-8eaa5706ab",
+      "reason": "cross_domain_redirect",
+      "source": "neg_21.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-aff9af8327",
+      "class": "negative",
+      "final_domain": "target-de08823eef",
+      "reason": "cross_domain_redirect",
+      "source": "neg_22.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9ec551bdf3",
+      "class": "negative",
+      "final_domain": "target-4b9a1c2c9e",
+      "reason": "cross_domain_redirect",
+      "source": "neg_22.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-a63d588d92",
+      "class": "negative",
+      "final_domain": "target-7f7ed12dfe",
+      "reason": "cross_domain_redirect",
+      "source": "neg_22.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-66ff8b1b69",
+      "class": "negative",
+      "final_domain": "target-266595d1c7",
+      "reason": "cross_domain_redirect",
+      "source": "neg_22.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-94f6f3797b",
+      "class": "negative",
+      "final_domain": "target-76d827b570",
+      "reason": "cross_domain_redirect",
+      "source": "neg_22.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-326295c41b",
+      "class": "negative",
+      "final_domain": "target-e5cd027fb6",
+      "reason": "cross_domain_redirect",
+      "source": "neg_22.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-e0e9a8a6eb",
+      "class": "negative",
+      "final_domain": "target-c5153e45e3",
+      "reason": "cross_domain_redirect",
+      "source": "neg_22.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-64a834f959",
+      "class": "negative",
+      "final_domain": "target-e3b5da7a1e",
+      "reason": "cross_domain_redirect",
+      "source": "neg_23.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-146f9ba0f7",
+      "class": "negative",
+      "final_domain": "target-cf065d221e",
+      "reason": "cross_domain_redirect",
+      "source": "neg_23.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-ad3e0539be",
+      "class": "negative",
+      "final_domain": "target-40abed19e2",
+      "reason": "cross_domain_redirect",
+      "source": "neg_23.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9a0b05c774",
+      "class": "negative",
+      "final_domain": "target-3d54e7c291",
+      "reason": "cross_domain_redirect",
+      "source": "neg_23.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-b8f6b579d6",
+      "class": "negative",
+      "final_domain": "target-1144acbe05",
+      "reason": "cross_domain_redirect",
+      "source": "neg_23.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-a4ef7670bd",
+      "class": "negative",
+      "final_domain": "target-0eab930d46",
+      "reason": "cross_domain_redirect",
+      "source": "neg_24.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-75c81a1353",
+      "class": "negative",
+      "final_domain": "target-5b01b46195",
+      "reason": "cross_domain_redirect",
+      "source": "neg_24.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-745f62dc3d",
+      "class": "negative",
+      "final_domain": "target-bc04592ed5",
+      "reason": "cross_domain_redirect",
+      "source": "neg_24.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-58c59eda19",
+      "class": "negative",
+      "final_domain": "target-ab01b60287",
+      "reason": "cross_domain_redirect",
+      "source": "neg_24.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-33d1932b5c",
+      "class": "negative",
+      "final_domain": "target-8e037e0f53",
+      "reason": "cross_domain_redirect",
+      "source": "neg_24.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-500f01d12f",
+      "class": "negative",
+      "final_domain": "target-4c5b4e08d1",
+      "reason": "cross_domain_redirect",
+      "source": "neg_24.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9933190c2d",
+      "class": "negative",
+      "final_domain": "target-30054fe2e3",
+      "reason": "cross_domain_redirect",
+      "source": "neg_24.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-0848e352c1",
+      "class": "negative",
+      "final_domain": "target-5e79f76190",
+      "reason": "cross_domain_redirect",
+      "source": "neg_25.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-cfc0dda504",
+      "class": "negative",
+      "final_domain": "target-5e587f798b",
+      "reason": "cross_domain_redirect",
+      "source": "neg_25.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-d000d3b67b",
+      "class": "negative",
+      "final_domain": "target-ee2a21b93a",
+      "reason": "cross_domain_redirect",
+      "source": "neg_25.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-e7aff0f6ef",
+      "class": "negative",
+      "final_domain": "target-7f3a734993",
+      "reason": "cross_domain_redirect",
+      "source": "neg_25.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-1efcddfe12",
+      "class": "negative",
+      "final_domain": "target-307a587bed",
+      "reason": "cross_domain_redirect",
+      "source": "neg_25.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-2afa37069c",
+      "class": "negative",
+      "final_domain": "target-5e3e6f2daa",
+      "reason": "cross_domain_redirect",
+      "source": "neg_25.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-ac9edfa1ad",
+      "class": "negative",
+      "final_domain": "target-06d9cd5faa",
+      "reason": "cross_domain_redirect",
+      "source": "neg_25.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-f44ec9af91",
+      "class": "negative",
+      "final_domain": "target-cf6e510663",
+      "reason": "cross_domain_redirect",
+      "source": "neg_25.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-369ee798c2",
+      "class": "negative",
+      "final_domain": "target-55bb6e2e2a",
+      "reason": "cross_domain_redirect",
+      "source": "neg_25.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-da94f4671a",
+      "class": "negative",
+      "final_domain": "target-038ff8192b",
+      "reason": "cross_domain_redirect",
+      "source": "neg_25.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-2def51424b",
+      "class": "negative",
+      "final_domain": "target-b3c7ba42cc",
+      "reason": "cross_domain_redirect",
+      "source": "neg_26.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-3ec5f3b04a",
+      "class": "negative",
+      "final_domain": "target-cce70b9731",
+      "reason": "cross_domain_redirect",
+      "source": "neg_26.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-416d46bfcf",
+      "class": "negative",
+      "final_domain": "target-179054c1d4",
+      "reason": "cross_domain_redirect",
+      "source": "neg_26.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-1dd4710b63",
+      "class": "negative",
+      "final_domain": "target-e06d5857e9",
+      "reason": "cross_domain_redirect",
+      "source": "neg_26.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9d4567e052",
+      "class": "negative",
+      "final_domain": "target-4f1d3df3c6",
+      "reason": "cross_domain_redirect",
+      "source": "neg_26.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-9949665a24",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_26.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-1d9ec5bf64",
+      "class": "negative",
+      "final_domain": "target-ab69b75431",
+      "reason": "cross_domain_redirect",
+      "source": "neg_26.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-63fbbf7753",
+      "class": "negative",
+      "final_domain": "target-b02a37fa49",
+      "reason": "cross_domain_redirect",
+      "source": "neg_26.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-2301cf428f",
+      "class": "negative",
+      "final_domain": "target-39e5025378",
+      "reason": "cross_domain_redirect",
+      "source": "neg_27.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-1ab8fd9dbe",
+      "class": "negative",
+      "final_domain": "target-72ec48b55d",
+      "reason": "cross_domain_redirect",
+      "source": "neg_27.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-f44c33b357",
+      "class": "negative",
+      "final_domain": "target-d1d1a22616",
+      "reason": "cross_domain_redirect",
+      "source": "neg_27.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-7ea97ad549",
+      "class": "negative",
+      "final_domain": "target-7b582b5770",
+      "reason": "cross_domain_redirect",
+      "source": "neg_27.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-8d141a08ad",
+      "class": "negative",
+      "final_domain": "target-caa80afdef",
+      "reason": "cross_domain_redirect",
+      "source": "neg_27.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-e2cee8fb8e",
+      "class": "negative",
+      "final_domain": "target-d77c5d9527",
+      "reason": "cross_domain_redirect",
+      "source": "neg_27.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-c9100a7ebc",
+      "class": "negative",
+      "final_domain": "target-9b805f1f9a",
+      "reason": "cross_domain_redirect",
+      "source": "neg_27.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-b8b4569322",
+      "class": "negative",
+      "final_domain": "target-f9f39ae4e8",
+      "reason": "cross_domain_redirect",
+      "source": "neg_27.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-68cce9712c",
+      "class": "negative",
+      "final_domain": "target-0c15d7415d",
+      "reason": "cross_domain_redirect",
+      "source": "neg_27.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-1e20a3db4d",
+      "class": "negative",
+      "final_domain": "target-68c47d6a04",
+      "reason": "cross_domain_redirect",
+      "source": "neg_27.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-d97b87ef81",
+      "class": "negative",
+      "final_domain": "target-20f7c5c854",
+      "reason": "cross_domain_redirect",
+      "source": "neg_28.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-89f7d92a0b",
+      "class": "negative",
+      "final_domain": "target-1ee94c9af3",
+      "reason": "cross_domain_redirect",
+      "source": "neg_28.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-45cfb5366b",
+      "class": "negative",
+      "final_domain": "target-bd4f8acb47",
+      "reason": "cross_domain_redirect",
+      "source": "neg_29.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-941c54a90b",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_29.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-6ed6a1c974",
+      "class": "negative",
+      "final_domain": "target-ea8ebe03b3",
+      "reason": "cross_domain_redirect",
+      "source": "neg_29.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-e5b1633189",
+      "class": "negative",
+      "final_domain": "target-312e52655f",
+      "reason": "cross_domain_redirect",
+      "source": "neg_29.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-d85b75da10",
+      "class": "negative",
+      "final_domain": "target-831041266c",
+      "reason": "cross_domain_redirect",
+      "source": "neg_29.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-0695efca10",
+      "class": "negative",
+      "final_domain": "target-53d4a623d2",
+      "reason": "cross_domain_redirect",
+      "source": "neg_29.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-7c60c06608",
+      "class": "negative",
+      "final_domain": "target-fbbf539706",
+      "reason": "cross_domain_redirect",
+      "source": "neg_30.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-d21624a3ae",
+      "class": "negative",
+      "final_domain": "target-2d24479f8b",
+      "reason": "cross_domain_redirect",
+      "source": "neg_30.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-3f5b117feb",
+      "class": "negative",
+      "final_domain": "target-db69bbaf76",
+      "reason": "cross_domain_redirect",
+      "source": "neg_30.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-ded45499fd",
+      "class": "negative",
+      "final_domain": "target-babb370285",
+      "reason": "cross_domain_redirect",
+      "source": "neg_30.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-c8bb05851d",
+      "class": "negative",
+      "final_domain": "target-c3bb6dac35",
+      "reason": "cross_domain_redirect",
+      "source": "neg_30.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-84238538fc",
+      "class": "negative",
+      "final_domain": "target-8bd97587c0",
+      "reason": "cross_domain_redirect",
+      "source": "neg_30.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-c013cb9f09",
+      "class": "negative",
+      "final_domain": "target-152484ae22",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-cad91fbcb8",
+      "class": "negative",
+      "final_domain": "target-07e727c72b",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-ba2927e1a2",
+      "class": "negative",
+      "final_domain": "target-76f206d070",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-5517fdd069",
+      "class": "negative",
+      "final_domain": "target-15acc7b4e9",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-7b6e108cdf",
+      "class": "negative",
+      "final_domain": "target-4d8592c75f",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-a6a523be1b",
+      "class": "negative",
+      "final_domain": "target-3eb28d58f2",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-e8bac4343c",
+      "class": "negative",
+      "final_domain": "target-5f27dc5aa2",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-a9f5644d55",
+      "class": "negative",
+      "final_domain": "target-1cd38267e7",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-de2350e351",
+      "class": "negative",
+      "final_domain": "target-15f1713751",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-c8bc383870",
+      "class": "negative",
+      "final_domain": "target-14b8a48c8e",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_01.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-b499454c9b",
+      "class": "negative",
+      "final_domain": "target-0cea1c9260",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-1fc76c092a",
+      "class": "negative",
+      "final_domain": "target-04420db7d1",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-76167bc362",
+      "class": "negative",
+      "final_domain": "target-2fcafbc84e",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-f4271f5527",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-73eaf5a183",
+      "class": "negative",
+      "final_domain": "target-d4c9d90273",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-85f8d5c3d9",
+      "class": "negative",
+      "final_domain": "target-62b94b9880",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-6677d53575",
+      "class": "negative",
+      "final_domain": "target-cecc357593",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-93fbb5065c",
+      "class": "negative",
+      "final_domain": "target-d1931cf8cd",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-0b8d2f40b0",
+      "class": "negative",
+      "final_domain": "target-a9a7a5f2ee",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_02.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-3cbe1ef124",
+      "class": "negative",
+      "final_domain": "target-9535f8875f",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_03.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-944a2fc054",
+      "class": "negative",
+      "final_domain": "target-fcab04b8e1",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_03.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-1750cc8204",
+      "class": "negative",
+      "final_domain": "target-4cb0896e6c",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_03.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-1bcd68f1d1",
+      "class": "negative",
+      "final_domain": "target-17c8d7b190",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_03.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "target-624757b363",
+      "class": "negative",
+      "final_domain": "target-406ac612e5",
+      "reason": "cross_domain_redirect",
+      "source": "neg_reserve_03.jsonl",
+      "url": ""
+    },
+    {
+      "candidate_domain": "alwaysdata.net",
+      "class": "positive",
+      "final_domain": "alwaysdata.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_14_retry.jsonl",
+      "url": "https://alwaysdata.net/"
+    },
+    {
+      "candidate_domain": "fuesser-immobilien.de",
+      "class": "positive",
+      "final_domain": "fuesser-immobilien.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_15_retry.jsonl",
+      "url": "https://fuesser-immobilien.de/"
+    },
+    {
+      "candidate_domain": "bluefield.eu",
+      "class": "positive",
+      "final_domain": "bluefieldagency.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_17_retry.jsonl",
+      "url": "https://bluefield.eu/"
+    },
+    {
+      "candidate_domain": "servicelloyds.com",
+      "class": "positive",
+      "final_domain": "serviceinsurance.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_22_retry.jsonl",
+      "url": "https://servicelloyds.com/"
+    },
+    {
+      "candidate_domain": "kinsta.cloud",
+      "class": "positive",
+      "final_domain": "kinsta.com",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_28_retry.jsonl",
+      "url": "https://kinsta.cloud/"
+    },
+    {
+      "candidate_domain": "cloud-ip.cc",
+      "class": "positive",
+      "final_domain": "cloudns.net",
+      "reason": "cross_domain_redirect",
+      "source": "feed_batch_28_retry.jsonl",
+      "url": "https://cloud-ip.cc/"
+    },
+    {
+      "candidate_domain": "axel-rosemeier.de",
+      "class": "positive",
+      "final_domain": "ar4.de",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_10_retry.jsonl",
+      "url": "https://axel-rosemeier.de/"
+    },
+    {
+      "candidate_domain": "abrdns.com",
+      "class": "positive",
+      "final_domain": "cloudns.net",
+      "reason": "cross_domain_redirect",
+      "source": "feed_reserve_15_retry.jsonl",
+      "url": "https://abrdns.com/"
+    }
+  ],
+  "negative_targets_are_hashed": true,
+  "outputs": {
+    "negative": {
+      "path": "data/exports/feed_v3/analysis/negative.jsonl",
+      "rows": 2596,
+      "sha256": "b4b3cb7ca8a52cf6f3daba455fcc533501ce71f46138e5c1ddae479a3f0f3aa9"
+    },
+    "positive": {
+      "path": "data/exports/feed_v3/analysis/positive.jsonl",
+      "rows": 2533,
+      "sha256": "714c16839c2160d9dd59466d38b82daa34b8637c7aa1e739ed9a5c94526a2cea"
+    }
+  },
+  "rule": "A row is kept only when the final registrable domain equals the candidate's registrable domain. Cross-domain redirects describe a different site and are excluded from the primary dataset; they are never relabelled.",
+  "sources_sha256": {
+    "data/exports/feed_v3/feed_batch_01.jsonl": "fde970366e8e44d104e45958355e9f4cc551f2c587acc0247a75bbf5da5eb630",
+    "data/exports/feed_v3/feed_batch_02.jsonl": "bd829a00a19f9f0d66767679824eda29d253313c71bb80c56020975c57319561",
+    "data/exports/feed_v3/feed_batch_03.jsonl": "2b053fdd518c77fd4f22dd8f815a45705e7d39c120c691c99fd3922bc4c80752",
+    "data/exports/feed_v3/feed_batch_04.jsonl": "afffc5bce57d51592865acdd571eaac9776d8042c903e93c4add8c11c47abad7",
+    "data/exports/feed_v3/feed_batch_05.jsonl": "16f0ee59a22ca2ba866ab64c60be5422b8c491339af2be89b27adb4f730b25ba",
+    "data/exports/feed_v3/feed_batch_06.jsonl": "fb0d38714b68df2a48cb873be08c175fdcd97586ca55ab0c49ec8763d3356cca",
+    "data/exports/feed_v3/feed_batch_07.jsonl": "d4d3053af6bf2d641ce3d7bacefb80c91bb1fa4f2f7a8d5d98aa03ead9fb9d89",
+    "data/exports/feed_v3/feed_batch_08.jsonl": "11dab88933eb7f40733755be2452705d5e2e13087318824676b4bc35472c7721",
+    "data/exports/feed_v3/feed_batch_09.jsonl": "47bfd5109a66fbfaea428f31dfd2eb15606ee529b12bce7cd9150d42e40816de",
+    "data/exports/feed_v3/feed_batch_10.jsonl": "a3348d496a48bd6868ccf123d8b374769f6642ba0e806519df60bbd7c74da28b",
+    "data/exports/feed_v3/feed_batch_11.jsonl": "75dea23e66fcabf8a513a774b4f5777612c401d016cd1287e13524d3561269cd",
+    "data/exports/feed_v3/feed_batch_12.jsonl": "f8ecf4483214d11da08f996256f6342776cbf9bbfaba2ff2b134b96ba847fedb",
+    "data/exports/feed_v3/feed_batch_13.jsonl": "472d47a08ca9dfd8a3bf806b74b3a3b3f4e04558df5ed68fd10d1681893135e1",
+    "data/exports/feed_v3/feed_batch_14.jsonl": "57e2a713d77e30da1dc949653866a5c17a087557626b31dc69d5c81ee965f4e1",
+    "data/exports/feed_v3/feed_batch_15.jsonl": "b4f997ca8e130d18b06f9c55db02415f210e06a1cca1005db2c55cbf4eecb593",
+    "data/exports/feed_v3/feed_batch_16.jsonl": "ed0248d6944ce07e399271d31acbc7abc5bb69970b784815aa8e94e30ab10dea",
+    "data/exports/feed_v3/feed_batch_17.jsonl": "7038379dbaccea3fd310acbe2cc4236b228c16809723aef23d39c886cb559871",
+    "data/exports/feed_v3/feed_batch_18.jsonl": "9be0463ca087b494fd957a2bc0909a08f5f8f80a9afe6f7aed69f236ef1cebf1",
+    "data/exports/feed_v3/feed_batch_19.jsonl": "d10976b4400d2f2e15faf6c46a540814967fda300ea6023bd647e02bd9f8e9b9",
+    "data/exports/feed_v3/feed_batch_20.jsonl": "a0fc8cbf05ffa6d4eed9ec2b9f37a5bdf2b95aaeeae6bc13cc419bea2a0d5905",
+    "data/exports/feed_v3/feed_batch_21.jsonl": "264c4eb15be6bd80dbe75c4c39ad9d7e26d947a3daaa0d4806e4f79ac8b347aa",
+    "data/exports/feed_v3/feed_batch_22.jsonl": "0275961ca41723882d75a5a20befe1168b20b22c600e681ddc495458def369d9",
+    "data/exports/feed_v3/feed_batch_23.jsonl": "49b7783e91936c9febea7dd5d9ec87304ff67c0aae7e6674d4a49fe1deb98dcf",
+    "data/exports/feed_v3/feed_batch_24.jsonl": "5d89957b0cdc89c888cf0c7a8c6121b071a569d9bff8adeba887fc46c1bfb85e",
+    "data/exports/feed_v3/feed_batch_25.jsonl": "0e38c4516e82ee4cbfb6665d9725563ab66a101960e74c5e6f7f6e5786216377",
+    "data/exports/feed_v3/feed_batch_26.jsonl": "ce5548e946048662ef0c22b7b03857b0d7033789d369f42212e0e171920ee1fa",
+    "data/exports/feed_v3/feed_batch_27.jsonl": "2f6249373a62e1d19248f3d13d4b0230c32c9738e12f68a979ea1e055efa1822",
+    "data/exports/feed_v3/feed_batch_28.jsonl": "5e65d902ea903f3101ae756eee74135f32141fb43939fb3e7b03ba6737ac927f",
+    "data/exports/feed_v3/feed_batch_29.jsonl": "21952cef79d10f2f280e8d3737434b289398ea6b3c2552eb0d301b76354e1428",
+    "data/exports/feed_v3/feed_batch_30.jsonl": "365b049fa183952745ffc6828333141206b30f0e58ad38db987ed34c7ce7daab",
+    "data/exports/feed_v3/feed_reserve_01.jsonl": "4a5d915ef9de778487b7c4f6d42b5c9feca6d13a053f083204fcf06de5427692",
+    "data/exports/feed_v3/feed_reserve_02.jsonl": "3de5ad226763962355fd2c2301c471fafa809f7ffe5e51ee3fe467fc44e9d0ca",
+    "data/exports/feed_v3/feed_reserve_03.jsonl": "2d7a3aa253da9bdeaa9e137ef500b49cbc0be3b1f82c0e080f4d097cbb33929c",
+    "data/exports/feed_v3/feed_reserve_04.jsonl": "eab17573510995b5664d40a4ad5c21e98ff6411fcb86c9ca93f85252fb97ae14",
+    "data/exports/feed_v3/feed_reserve_05.jsonl": "7295c0bb2b701045288c5664bb3f5a9e704810410cbf5b59d925463b62477bac",
+    "data/exports/feed_v3/feed_reserve_06.jsonl": "f51210663fcba589e99ceb58862390d7321620e860d338b036e50d448132b3e3",
+    "data/exports/feed_v3/feed_reserve_07.jsonl": "3ed726258358be90c894f8946e644b23bb727fb45ba469caac980f543e28445e",
+    "data/exports/feed_v3/feed_reserve_08.jsonl": "45fd01fe021362d55127b1835c690aaa76dcdad51ee89dbb2daee69f3e00de43",
+    "data/exports/feed_v3/feed_reserve_09.jsonl": "33e4010d658f57e684a860fcd57fc3acb9848b400fb8b2b9edd16fd2d3e408e5",
+    "data/exports/feed_v3/feed_reserve_10.jsonl": "26e8aeedabf8dc0027ee6a5b64cb1d2baa7066243b22f8be8260770bcc1ae4b9",
+    "data/exports/feed_v3/feed_reserve_11.jsonl": "4e0c66b5e21d723c776e0d0ac354552a9dcffc8b307b73544e94e535e7ec4b61",
+    "data/exports/feed_v3/feed_reserve_12.jsonl": "66ed646969e85148dc4d401812f82102d235b17a6d8214d65e9456e2162341c3",
+    "data/exports/feed_v3/feed_reserve_13.jsonl": "d9057aa71435b5a44b8b03f89f3d5d9260c3816f21e6b7439fdf3763460b430f",
+    "data/exports/feed_v3/feed_reserve_14.jsonl": "695df37a9364af115d5ab1fba33dd4df250c6a09aa3f8ffb8596dbd4792ff0a0",
+    "data/exports/feed_v3/feed_reserve_15.jsonl": "303690ddc89fd832b7e9ec4b379131b2aab503e3e9361b7638428fa6b73eb5a3",
+    "data/exports/feed_v3/feed_topup_01.jsonl": "3d385ca516903a51d8e072dfdf83360f464be293adbedaaa59339ad483c5d2ae",
+    "data/exports/feed_v3/feed_topup_02.jsonl": "093042fa585551f943e0e9ed98d6f306acc74afbe987d90cbfc8d7d01b7e76a0",
+    "data/exports/feed_v3/feed_topup_03.jsonl": "e3407f35d4b8c3e99daa3df68d4c0608acf908962d1fceba8f68648f0ec4516a",
+    "data/exports/feed_v3/feed_topup_04.jsonl": "b87887391d86e487bca48d5caca3274036b2addab7de578d499a0df74c82eefb",
+    "data/exports/feed_v3/feed_topup_05.jsonl": "aa43af230feff52cb48d372e20043637adf47711c469e9e372d612fd832dc038",
+    "data/exports/feed_v3/feed_topup_06.jsonl": "d990f40039a18a05827aba9f82a79d3590218e8d0bff479c32f5e7ba92ddb056",
+    "data/exports/feed_v3/feed_topup_07.jsonl": "604f3d9cd678092cc476e0b582f146d726092af79dfb462f20c2177c7d7775c2",
+    "data/exports/feed_v3/feed_topup_08.jsonl": "d8811ae2b2df5bcc32abe2120e8433033e8b30bfa04061cc1c150af8ce413260",
+    "data/exports/feed_v3/feed_topup_09.jsonl": "353fe144fa28a85e69d016091bdb64168004da7a09b81164a6a8d3a7ca58c5af",
+    "data/exports/feed_v3/neg_01.jsonl": "f3e3df279262d0dd29758481fbaf667a5ea4e377d5ae23b9afe290fe66c39222",
+    "data/exports/feed_v3/neg_02.jsonl": "1fe24edf96092b81a67155c237c3c1028fae9e5020ccb6626c9c83380c5611e7",
+    "data/exports/feed_v3/neg_03.jsonl": "59dcf0d1e0b329e2d081f664ea54c4b45773f9f10a2eca37842c1a7a638d4641",
+    "data/exports/feed_v3/neg_04.jsonl": "8f3e503c568832affd34f7eeb8ab24bb57a283088841606c9a6c705993267be2",
+    "data/exports/feed_v3/neg_05.jsonl": "cecffa5dde02c4bee60b0e1a464b1a54e55e9b5aa774bb7d2588334684e0be2b",
+    "data/exports/feed_v3/neg_06.jsonl": "b839a1a92e69f12b54a02636e187140a5f92b16adedc80cde95d787866abbde0",
+    "data/exports/feed_v3/neg_07.jsonl": "0eed473c16dfe5e442877834013d7dc93ed4a01f482f38df0def87236f6f692d",
+    "data/exports/feed_v3/neg_08.jsonl": "36954405e1a551219ac3325c20476e86dab3d480d2585b17aed641ce50d901ff",
+    "data/exports/feed_v3/neg_09.jsonl": "19b0614a8620998f7f8ccc1a45c6ac3cbce9ab3eea77a2c171d86449be8be04e",
+    "data/exports/feed_v3/neg_10.jsonl": "1042708c92d4cb9c2bfa2140e034bcf4006b9e99298e9e0b5dc5ce1d69ace8ce",
+    "data/exports/feed_v3/neg_11.jsonl": "1c94bddf23fd63bde8c4523f7c8a3f443ed95a4d7dc4e9dcafde13b223361013",
+    "data/exports/feed_v3/neg_12.jsonl": "92f47a93b93e6602e1f311c405e6d8c2c11354d0efbd9c6266e5fd78083873ae",
+    "data/exports/feed_v3/neg_13.jsonl": "9973fef8ec5427f7df6c9236f1f104a2f07985bd866f31eda7112473c5e367dd",
+    "data/exports/feed_v3/neg_14.jsonl": "9915f3254562ea5fe7ee6ea17466bd4396302d000a77a40f0249674c093f674d",
+    "data/exports/feed_v3/neg_15.jsonl": "ad3f12510a3acbf139f966a89bfad42e40d6b5d746ce5e07399370435e76af5e",
+    "data/exports/feed_v3/neg_16.jsonl": "b0a82424c1318f8e603f72f29a8b6f5ad59cb3132630b7637d0f9201bd33a9de",
+    "data/exports/feed_v3/neg_17.jsonl": "01598f3ee5aee2f9347fa9a464fba38c2e59b742e14a65fc436e7770183b9da6",
+    "data/exports/feed_v3/neg_18.jsonl": "ee424b314245052112678702233b05350ea6e7e09b61fb567630dbdc8a51fd59",
+    "data/exports/feed_v3/neg_19.jsonl": "20e164bed23865e7781b15b648839af01f2c7ebe1de4247e04bb1dc9a77d81d3",
+    "data/exports/feed_v3/neg_20.jsonl": "77c816f3fe182610ff57309e01b0852fbdeb487f4f0be6ae64494b63477c7b36",
+    "data/exports/feed_v3/neg_21.jsonl": "6d68e48610cead17d443e8d42fdb87ef0d42053ce99f73ec49c694d2e7f4ff0e",
+    "data/exports/feed_v3/neg_22.jsonl": "c242afcfcdf234ce327709c912325450254cda6709f035016be7265cfe9c4521",
+    "data/exports/feed_v3/neg_23.jsonl": "7b88a681d3a6ed3dfce949e9664435da54f30a083f8d911989b8a649f63ddcb5",
+    "data/exports/feed_v3/neg_24.jsonl": "61de26b73bdaf9f849ff42c2c0da6a380bb15f7446ce6da4b948561f2da95c66",
+    "data/exports/feed_v3/neg_25.jsonl": "a1a5886dc597800542da4e85380c5b8ea5e415c739915dd8e27ae1a08878d56c",
+    "data/exports/feed_v3/neg_26.jsonl": "44d10250cd47ff0d8a711ab43c8dbd36477eed7776d3ef93644b77bff7d9ab76",
+    "data/exports/feed_v3/neg_27.jsonl": "ed955e2e00b14ca569d14ed2b7d9c7ef869f33e43dd712e91f66df46e6360347",
+    "data/exports/feed_v3/neg_28.jsonl": "7098401a7f533a33e91189f01fe3e6774edca86e507c11de456102874b7bd9c3",
+    "data/exports/feed_v3/neg_29.jsonl": "073dcedf2c5fde96a6e74864a52073c90c248e4400bfe33ef85e5b5ba31bd931",
+    "data/exports/feed_v3/neg_30.jsonl": "c338429af8c40cb6676a2f3f25be5278d69f73b608e43d04970c3e6730e80b9f",
+    "data/exports/feed_v3/neg_reserve_01.jsonl": "abf526b806f4c4c3590a1c88a3b8e5f47f89f7f1227f9469b8a1c999deac763d",
+    "data/exports/feed_v3/neg_reserve_02.jsonl": "652de57e178f43a63773192600ce65b50d15f19d4dc2497646066c303795f375",
+    "data/exports/feed_v3/neg_reserve_03.jsonl": "d208f3da5d538a16ab4db9284f8e6e79f8eebadb9904716d83517689dafcf978",
+    "data/exports/feed_v3/retry/feed_batch_01_retry.jsonl": "f50e0ed43522619fc05023a778cc49d2813a86617ea9343336aedadec0ce77b8",
+    "data/exports/feed_v3/retry/feed_batch_02_retry.jsonl": "f09d548d32e512909994d2bb9ebc4a248d6970dead87a7f08efee176ddab8bd7",
+    "data/exports/feed_v3/retry/feed_batch_03_retry.jsonl": "44535569a3ad1c606cb2cab0e0027ec4c894e5c77413617badbc3f90a8a86439",
+    "data/exports/feed_v3/retry/feed_batch_04_retry.jsonl": "061e64a221090c189de6282ded170d96bc80eb58215309ded876a75a170190b9",
+    "data/exports/feed_v3/retry/feed_batch_05_retry.jsonl": "c826a8eca8bc601d8304253e311c3d08e774e40135232df667557a6f606e4d96",
+    "data/exports/feed_v3/retry/feed_batch_06_retry.jsonl": "4537e36770e8cdb3825ea4ea0e7225173200acde33465bb2867701c03cc053ec",
+    "data/exports/feed_v3/retry/feed_batch_07_retry.jsonl": "c1d9f8aa78884801d05ca5e31cd5c16cf323f66273227e87c480f0a99ceaeb58",
+    "data/exports/feed_v3/retry/feed_batch_08_retry.jsonl": "b2d2884aaf668860141a19fb700588c83a3e632fba16e5014e357d786a6f61b0",
+    "data/exports/feed_v3/retry/feed_batch_09_retry.jsonl": "a357ff78691495c3879772c1cc3996ced8e987c87a3466d671a040a5679843d0",
+    "data/exports/feed_v3/retry/feed_batch_10_retry.jsonl": "280c3856558382c606d199b9628824922a22dc53a9f7e2ea31bb1874819ebe56",
+    "data/exports/feed_v3/retry/feed_batch_11_retry.jsonl": "13ea71337d01b34c19220384b38fee2e5d941e906a58299a630a205edcd0ad63",
+    "data/exports/feed_v3/retry/feed_batch_12_retry.jsonl": "8412c5d46d31bd3b917e0350adbe7721c53cbda46be737940093116379248965",
+    "data/exports/feed_v3/retry/feed_batch_13_retry.jsonl": "47a43169d73ca76dc8b68e4ff79a7481e1064072891db02967843b123045fe30",
+    "data/exports/feed_v3/retry/feed_batch_14_retry.jsonl": "cdaa726bd1fc2659f67428e10ebf340c87c2e39149f2c0acc443d18bc489ef8d",
+    "data/exports/feed_v3/retry/feed_batch_15_retry.jsonl": "7194cebcf6f35cd98c94c7b23c07dcc5df0188dea584b5a753e8d62ac92acc29",
+    "data/exports/feed_v3/retry/feed_batch_16_retry.jsonl": "00d402a03718db82e389319cf3369e8169466d77cdf41544d9ca3019c24b6a6f",
+    "data/exports/feed_v3/retry/feed_batch_17_retry.jsonl": "3ff9d3eb0b8f150b2f96669faac7d51ee7f8f7760af48639863e5d741aae52bd",
+    "data/exports/feed_v3/retry/feed_batch_18_retry.jsonl": "768d4fde4c84ab3466afdf85d7560e3094eb48a27fbef7e3650d83994f4143b2",
+    "data/exports/feed_v3/retry/feed_batch_19_retry.jsonl": "da4a75ac0bdff3ffbece1ff39fe21bee316f4d8aae29cbbddad5fffd9de3df48",
+    "data/exports/feed_v3/retry/feed_batch_20_retry.jsonl": "b3b00cf39c4672e07697666f10a532656a914ff721796124fcf0393f99d311b7",
+    "data/exports/feed_v3/retry/feed_batch_21_retry.jsonl": "7efce75c9af508c6ea62ee60493c98e6998e37d1efbf42416ddb314f57b4bd08",
+    "data/exports/feed_v3/retry/feed_batch_22_retry.jsonl": "71c52b9050b54fecfffeb6997c05a8a7160823fccc4ef095b046e78b9a8ddfe0",
+    "data/exports/feed_v3/retry/feed_batch_23_retry.jsonl": "5fd0100641c7f2abe88dfd432b00b08de217aacaed4c0657297eb3a46bc9544f",
+    "data/exports/feed_v3/retry/feed_batch_24_retry.jsonl": "43262f7c84c929916e3708d859acf18560c6f0c743caba8c0937227f21c40829",
+    "data/exports/feed_v3/retry/feed_batch_25_retry.jsonl": "5ccd138b3980d3e32a0f824b109ca1ed837aad4436e24948dd212b026743285a",
+    "data/exports/feed_v3/retry/feed_batch_26_retry.jsonl": "e6dc4db84da62b83d0e52849505c078917ca53b9211f939b831c5b5120181ac7",
+    "data/exports/feed_v3/retry/feed_batch_27_retry.jsonl": "b4894d2d5fbb64dee5ca33be44a91b852c70d01699e2125624ecfea8ed1ae8cf",
+    "data/exports/feed_v3/retry/feed_batch_28_retry.jsonl": "92c88b899e014ac2c2b7ba72124ea660e5e137a809194291e7454fac134a6a77",
+    "data/exports/feed_v3/retry/feed_batch_29_retry.jsonl": "17d8e3002c814463fe2ab6fd9826ee26be978963b7287c1fab30be497cd91a9c",
+    "data/exports/feed_v3/retry/feed_batch_30_retry.jsonl": "011aab0da121a873614c5ee418018a468a54bd3f6fb14d1d619772370033db18",
+    "data/exports/feed_v3/retry/feed_reserve_01_retry.jsonl": "35909b4046d1fd124ed9351eb953e2f944eecb1691ae6a2919f0a68996ffc7a5",
+    "data/exports/feed_v3/retry/feed_reserve_02_retry.jsonl": "41e85196e6b0382a996b897f1eb85b635e2f322810ec1b9aa4f3c46614484a74",
+    "data/exports/feed_v3/retry/feed_reserve_03_retry.jsonl": "1991fad32d45d39238554f2879df0ee082014e31289980bc546423a056715b1d",
+    "data/exports/feed_v3/retry/feed_reserve_04_retry.jsonl": "971446f3e82acb50dce81924e23660b21c392a6627ee473024d79346a2760ffb",
+    "data/exports/feed_v3/retry/feed_reserve_05_retry.jsonl": "2cf07a0dc017b0940e85c09a09cd117ca7432e5c0d7b9fe1c79a15fefb35afbb",
+    "data/exports/feed_v3/retry/feed_reserve_06_retry.jsonl": "183a881ce3373e07f92e48b5f5a820c04966870714971e0e38173aabcac6b4f1",
+    "data/exports/feed_v3/retry/feed_reserve_07_retry.jsonl": "abc59bd246a1a3f9bb67c90e9192c944f7e6397f60ee544d6bf2e7b81679432d",
+    "data/exports/feed_v3/retry/feed_reserve_08_retry.jsonl": "4f0b31d752e697f2acf542e8370bc96054910730bc383d17742cf0b9c102e388",
+    "data/exports/feed_v3/retry/feed_reserve_09_retry.jsonl": "153620260c494ef43e92fb44a41888def48c4e534737e09a0960f18394639307",
+    "data/exports/feed_v3/retry/feed_reserve_10_retry.jsonl": "a10544a3f2c02d05e7024d9fdcc04aa0194cd1976dffd59bcadca72f01476c6a",
+    "data/exports/feed_v3/retry/feed_reserve_11_retry.jsonl": "b28d8655fc8a6f29248b4bed1e6fe8814fe35ed306eea673a41ddcfada3152ff",
+    "data/exports/feed_v3/retry/feed_reserve_12_retry.jsonl": "0040017a2ee5d1eace95ed48806aef4a3dfa13226c3bab99d2ea9fe281005317",
+    "data/exports/feed_v3/retry/feed_reserve_13_retry.jsonl": "eb4739019c89f6d4c7a761b77d916a80e10e6d417edd9d068fd658798b613293",
+    "data/exports/feed_v3/retry/feed_reserve_14_retry.jsonl": "3d64330d84931460d8008296b53379d8d3cddd123ccc4914bb6750a0324c9a12",
+    "data/exports/feed_v3/retry/feed_reserve_15_retry.jsonl": "0e59cf3700470149b8d38eafdfadaa70ae2da282954ac5639a2413465d71ad88",
+    "data/exports/feed_v3/retry/feed_topup_01_retry.jsonl": "88f38913f7094aa3ff2d299287a373cd61f39326746e8506818d6072d8e1d301",
+    "data/exports/feed_v3/retry/feed_topup_02_retry.jsonl": "de3f687d9ebd09e17fe6081904ce32974b94b10d74e945583b1f8831dfe7ef45",
+    "data/exports/feed_v3/retry/feed_topup_03_retry.jsonl": "0dccc336ae5f40230d596ad74574ea246a59e5ea5cb6fbb7cfc153a26dfc74b7",
+    "data/exports/feed_v3/retry/feed_topup_04_retry.jsonl": "883cc8aa488fd77f78fa5f4a0d11e74a2c8f18972a23f52c806c7e2b6fa2468f",
+    "data/exports/feed_v3/retry/feed_topup_05_retry.jsonl": "7b363adbfa684d5089f300413a6d893b34b067320ee3a3afeba3371163e66dbd",
+    "data/exports/feed_v3/retry/feed_topup_06_retry.jsonl": "8c2f6012da68f227aa8cedb4b78a5dc62760132361d845c7aafcc55fbcc558d8",
+    "data/exports/feed_v3/retry/feed_topup_07_retry.jsonl": "95a447167b95a19c4b05e6ab1d4df83d4dcdbd5e30a32a9d2f0c22967c9dbc88",
+    "data/exports/feed_v3/retry/feed_topup_08_retry.jsonl": "d1dbed8b23ab0d87b36cfeab445c9c80916abe6419c6e3f57e7f6a97374cdb1b",
+    "data/exports/feed_v3/retry/feed_topup_09_retry.jsonl": "529021c5d8f823c011ea852d72088a144496aaefb21acaf91925cdffffbfb86e"
+  }
+}

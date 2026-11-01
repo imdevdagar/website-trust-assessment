@@ -1,0 +1,15 @@
+{
+  "amendment": "feed_v3_topup_01",
+  "created_at": "2026-10-26T17:01:37+00:00",
+  "labels_file": "data/labels/feed_v3/topup_labels.csv",
+  "labels_sha256": "5b244fe9be590a91a1d2414ae863b0f9b2c4b4a8b3409465f70e55586156bd2d",
+  "manifest": "data/candidates/feed_v3/topup/feed_topup_manifest.json",
+  "manifest_sha256": "a28c6451ce93170f1da51e90412d54a2f7cab1d88d8a04a22347c181981d77fb",
+  "pool_domains": 9764,
+  "ranking": "sha256('feed_v3-positive:42:' + domain) ascending",
+  "remaining_pool": 5264,
+  "seed": 42,
+  "topup_batches": 53,
+  "topup_selected": 5264,
+  "used_before_topup": 4500
+}

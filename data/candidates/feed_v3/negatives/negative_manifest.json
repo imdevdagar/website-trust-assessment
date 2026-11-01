@@ -1,0 +1,305 @@
+{
+  "batches": [
+    {
+      "batch": "neg_01",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_01.csv",
+      "sha256": "658d3707ef0cb6203e0815a266fa20f09294b0afbda2ebde83bc21b6235d2434"
+    },
+    {
+      "batch": "neg_02",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_02.csv",
+      "sha256": "8c8e5f451da400777e0d243a19d88a7c89073de76e0f475f39694842235a751e"
+    },
+    {
+      "batch": "neg_03",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_03.csv",
+      "sha256": "cb05502bf1f5d5536902c5dafff3a3f166eb5d505ddfb59dc0fd22b2332ce7ca"
+    },
+    {
+      "batch": "neg_04",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_04.csv",
+      "sha256": "46ae47233dba7cc490d7a27b11ab6d84b22dcfcb45ac8d8a216de0b29765b5a8"
+    },
+    {
+      "batch": "neg_05",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_05.csv",
+      "sha256": "42179029a1c73bc1748f6e9d107a571de7897bc3cc80aaa9a19abfb7f805b83f"
+    },
+    {
+      "batch": "neg_06",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_06.csv",
+      "sha256": "e529f6d6b5fa93ab4082648afabbdd51c138b1bad39af1d124084cb49d9479f0"
+    },
+    {
+      "batch": "neg_07",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_07.csv",
+      "sha256": "79657dc0744df5fb9f7ffa26ee801d1f5bb6acf065749255bc86df24ded1af95"
+    },
+    {
+      "batch": "neg_08",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_08.csv",
+      "sha256": "53a73223a0046f7a4ae56114ee7aa9b3ffa1d69c625fae937b17f7665e5c3683"
+    },
+    {
+      "batch": "neg_09",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_09.csv",
+      "sha256": "320f9fe81b774a7ae8c377c392bff161e3c9460e118f5e378e4ae509dbfdfb08"
+    },
+    {
+      "batch": "neg_10",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_10.csv",
+      "sha256": "10232a3bbb0347c20b5331530d4ff36f4d8399e0dfb12ce1300b2a7d866bd182"
+    },
+    {
+      "batch": "neg_11",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_11.csv",
+      "sha256": "44fd44eedb752c2d2f1f7c205060902083d96413ce438d5f2244770bcd22c15b"
+    },
+    {
+      "batch": "neg_12",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_12.csv",
+      "sha256": "890ef4ddc636e6e2f1a7aa88b882cd4aa0141901621eecea1c342cfc727e2b31"
+    },
+    {
+      "batch": "neg_13",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_13.csv",
+      "sha256": "e819dbd61aa8d9d75e89332bab5061b91e18256aea8ec867e50c01bb428c73d2"
+    },
+    {
+      "batch": "neg_14",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_14.csv",
+      "sha256": "a26c7602afca46f9b4b34e7f0d75eccdae46aaf7b07485436419b51f58b01737"
+    },
+    {
+      "batch": "neg_15",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_15.csv",
+      "sha256": "8f00df7bc3cccf7e5c5d0c4c18637fac33281dc19bfeff8c5e92b41ca63f0f1d"
+    },
+    {
+      "batch": "neg_16",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_16.csv",
+      "sha256": "c4653cafb9ef869d7a02ee99438fcbd7c414a345edaa743be036b58ee33bb73c"
+    },
+    {
+      "batch": "neg_17",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_17.csv",
+      "sha256": "8a56235a6785fb11ec69f0a03864dfcd22772d2bfcd7e521f36d96f1bbc98475"
+    },
+    {
+      "batch": "neg_18",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_18.csv",
+      "sha256": "682616733397c32f977f015fd7be17973bcbfa2bd5b37cbea8077ad772837f8d"
+    },
+    {
+      "batch": "neg_19",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_19.csv",
+      "sha256": "9947058b83b0c8dfd8d0d1aad9602d138fd07f90d9bff790af9b71f6e56eb65b"
+    },
+    {
+      "batch": "neg_20",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_20.csv",
+      "sha256": "7061d81fd9cca99e42546b16d9236e1f4ed828f2cb648dd4726facf56eada6a4"
+    },
+    {
+      "batch": "neg_21",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_21.csv",
+      "sha256": "f2ab4f1c9f8d82cd562bdf69b61f5166ce3a5b90e05ffa8e4052f5b863d4c46e"
+    },
+    {
+      "batch": "neg_22",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_22.csv",
+      "sha256": "ae15482dc65a585c8f8a6841ae76cbc3be315cf880c97b4c7823af33e088baa0"
+    },
+    {
+      "batch": "neg_23",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_23.csv",
+      "sha256": "93694212ca8e8e0cf55033c6927857ec6db2536ebfc7cfc92be0f2f3fe55beda"
+    },
+    {
+      "batch": "neg_24",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_24.csv",
+      "sha256": "4620f820dcc522256be9b8699c2ba0c930ed68e8d93157e981308560e1eb0efb"
+    },
+    {
+      "batch": "neg_25",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_25.csv",
+      "sha256": "f5dc049e9e6ccb333254db820928acd4741b792e84fd9d089dac55cbea763136"
+    },
+    {
+      "batch": "neg_26",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_26.csv",
+      "sha256": "2621044b7c42652f0c5aab1d0940bffc2c5a9916b9bb3b163228ad422b112368"
+    },
+    {
+      "batch": "neg_27",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_27.csv",
+      "sha256": "b77ba81568e8c02b06ae16a0fbdd82498bd2dcccf2afaf3e264c1f67bba408fd"
+    },
+    {
+      "batch": "neg_28",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_28.csv",
+      "sha256": "9838a4856bf133cb0bfa28da9ffca731f82923fb466abce8ded31fd703e420c9"
+    },
+    {
+      "batch": "neg_29",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_29.csv",
+      "sha256": "13888c458c1ec5e65b29da1636f6744aba7c7a21afe51edf8796d64384393676"
+    },
+    {
+      "batch": "neg_30",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_30.csv",
+      "sha256": "7e2dbe5a879b91cbc4fa3eb7d7a4ae64f01814c7b2b397ba5f6106ce63951093"
+    }
+  ],
+  "created_at": "2026-10-25T18:50:15+00:00",
+  "dataset": "feed_v3",
+  "files": {
+    "reserve": "data/candidates/feed_v3/negatives/negatives_reserve.csv",
+    "reserve_sha256": "b76c017c67275adf536f01860be1cfe270a01d1151401619fdb8a7c4b5e1cd05",
+    "selected": "data/candidates/feed_v3/negatives/negatives.csv",
+    "selected_sha256": "84c7b82ec9a686e9f7c2208f779ecccd63b5a44aa8457c6b869b15870d5100fb"
+  },
+  "negative_meaning": "absent from PhishTank online-valid and OpenPhish at retrieval, sampled from the Tranco top-1M sampling frame; not verified clean",
+  "reserve_batches": [
+    {
+      "batch": "neg_reserve_01",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_reserve_01.csv",
+      "sha256": "a7618a35772983e966dfc07c2e55d486c667c2f0ab6acaa90ef6e0b3ec52f252"
+    },
+    {
+      "batch": "neg_reserve_02",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_reserve_02.csv",
+      "sha256": "7d05d36343315f558a28afb05dbe60dd5a9edd41f7f68ea8115f1cbad69d6f49"
+    },
+    {
+      "batch": "neg_reserve_03",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_reserve_03.csv",
+      "sha256": "c46dfe4e34b1cab9e09bef7181f84cfa128865a485ab9c0f4939ef78a68d6431"
+    },
+    {
+      "batch": "neg_reserve_04",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_reserve_04.csv",
+      "sha256": "66a05b8011956ab683b0bd88973bb2c96cc61ceedbbce2e86805cc0fd40fa56d"
+    },
+    {
+      "batch": "neg_reserve_05",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_reserve_05.csv",
+      "sha256": "9e2ba4be2b04ce958ee6e8dc7ba2b6aca639d03fe5f31deff4a7e1697e3e8182"
+    },
+    {
+      "batch": "neg_reserve_06",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_reserve_06.csv",
+      "sha256": "6c631daf3143b95b1f41a96e8b2fd25ecbe2971aa533865b07fc025f36b88e2e"
+    },
+    {
+      "batch": "neg_reserve_07",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_reserve_07.csv",
+      "sha256": "68019cf227e04bd51d8a9b26f95c8fdeac4248f5ea19c31ca29b995d05e74c61"
+    },
+    {
+      "batch": "neg_reserve_08",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_reserve_08.csv",
+      "sha256": "3f9db50ef4b0e3bb1ae156e6e271cb82cd3ee5937039fb703d8a129ca28ace9b"
+    },
+    {
+      "batch": "neg_reserve_09",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_reserve_09.csv",
+      "sha256": "03415e9a6e5540c5e6bc6a63f6c13eee98a26588448173559745e6a612b07620"
+    },
+    {
+      "batch": "neg_reserve_10",
+      "domains": 100,
+      "path": "data/candidates/feed_v3/negatives/neg_reserve_10.csv",
+      "sha256": "741fe324e7d5877bf96d1db40f02be7f8a5626e66bb433e8b68c20bf90112c25"
+    }
+  ],
+  "schema_version": 1,
+  "seed": 42,
+  "selection": {
+    "counts": {
+      "established": 1600,
+      "tail": 1400
+    },
+    "reserve": {
+      "established": 400,
+      "tail": 600
+    },
+    "stats": {
+      "feed_domains_matching_tranco": 0,
+      "reserve": {
+        "established": 400,
+        "scam_feed": 0,
+        "tail": 600
+      },
+      "selected": {
+        "established": 1600,
+        "scam_feed": 0,
+        "tail": 1400
+      }
+    }
+  },
+  "tranco": {
+    "bytes": 9731511,
+    "excluded_domains": 10952,
+    "fetch_mode": "snapshot",
+    "final_url": "https://tranco-list.eu/download/daily/top-1m.csv.zip",
+    "http_date": "Sun, 25 Oct 2026 18:47:36 GMT",
+    "member": "top-1m.csv",
+    "parse_stats": {
+      "lines": 1000000,
+      "rank_max": 1000000,
+      "rank_min": 1,
+      "rejected": {
+        "duplicate_domain": 1
+      },
+      "unique_domains": 999999
+    },
+    "retrieved_at": "2026-10-25T18:47:38+00:00",
+    "rows_after_exclusion": 998505,
+    "rows_parsed": 999999,
+    "sha256": "68f9b0fda011cacbc2fe6aec7cadf0028434aa23116d05ca2fec85d0f7fd890c",
+    "snapshot_file": "data/labels/feed_v3/snapshots/tranco_top-1m.csv_68f9b0fda011.zip",
+    "source": "tranco_top-1m.csv.zip",
+    "source_date": "2026-10-25",
+    "url": "https://tranco-list.eu/top-1m.csv.zip"
+  }
+}

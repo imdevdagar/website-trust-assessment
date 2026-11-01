@@ -1,0 +1,130 @@
+{
+  "checked_at": "2026-10-25T18:50:18+00:00",
+  "failures": [],
+  "ok": true,
+  "overlaps": {
+    "negative_positive_pool": 0,
+    "negative_reserve": 0,
+    "positive_negative": 0,
+    "positive_positive_reserve": 0,
+    "positive_reserve": 0,
+    "positive_reserve_negative": 0,
+    "positive_reserve_reserve": 0,
+    "reserve_positive_pool": 0
+  },
+  "prior_work_sources": [
+    {
+      "domains": 826,
+      "path": "data/datasets/feed_v2/dataset.jsonl"
+    },
+    {
+      "domains": 549,
+      "path": "data/labels/feed/labels.csv"
+    },
+    {
+      "domains": 77,
+      "path": "data/annotations/main/batch_01/frozen/annotator_a_20261020T133255Z.csv"
+    },
+    {
+      "domains": 36,
+      "path": "data/annotations/pilot/frozen/annotator_a_20261020T101448Z.csv"
+    },
+    {
+      "domains": 36,
+      "path": "data/annotations/pilot/frozen/annotator_b_20261020T102324Z.csv"
+    },
+    {
+      "domains": 33,
+      "path": "data/annotations/round2/frozen/annotator_a_v2_20261020T111826Z.csv"
+    },
+    {
+      "domains": 33,
+      "path": "data/annotations/round2/frozen/annotator_a_20261020T104418Z.csv"
+    },
+    {
+      "domains": 100,
+      "path": "data/candidates/feed_batch_01.csv"
+    },
+    {
+      "domains": 100,
+      "path": "data/candidates/feed_batch_02.csv"
+    },
+    {
+      "domains": 100,
+      "path": "data/candidates/feed_batch_03.csv"
+    },
+    {
+      "domains": 100,
+      "path": "data/candidates/feed_batch_04.csv"
+    },
+    {
+      "domains": 32,
+      "path": "data/candidates/feed_batch_05.csv"
+    },
+    {
+      "domains": 100,
+      "path": "data/candidates/feed_remaining/feed_batch_01.csv"
+    },
+    {
+      "domains": 17,
+      "path": "data/candidates/feed_remaining/feed_batch_02.csv"
+    },
+    {
+      "domains": 500,
+      "path": "data/candidates/main.csv"
+    },
+    {
+      "domains": 90,
+      "path": "data/candidates/main_batch_01.csv"
+    },
+    {
+      "domains": 90,
+      "path": "data/candidates/main_batch_02.csv"
+    },
+    {
+      "domains": 90,
+      "path": "data/candidates/main_batch_03.csv"
+    },
+    {
+      "domains": 90,
+      "path": "data/candidates/main_batch_04.csv"
+    },
+    {
+      "domains": 160,
+      "path": "data/candidates/main_reserve.csv"
+    },
+    {
+      "domains": 36,
+      "path": "data/candidates/pilot.csv"
+    },
+    {
+      "domains": 36,
+      "path": "data/candidates/round2.csv"
+    },
+    {
+      "domains": 24,
+      "path": "data/candidates/round2_curated.csv"
+    },
+    {
+      "domains": 28,
+      "path": "data/candidates/round2_reserve.csv"
+    }
+  ],
+  "stats": {
+    "heavy_domains_excluded": 41,
+    "label_rows": 9764,
+    "negative_batches": 30,
+    "negative_candidates": 3000,
+    "negative_domains": 3000,
+    "positive_batches": 30,
+    "positive_candidates": 3000,
+    "positive_domains": 3000,
+    "positive_reserve_batches": 15,
+    "positive_reserve_candidates": 1500,
+    "positive_reserve_domains": 1500,
+    "prior_work_domains": 1188,
+    "reserve_batches": 10,
+    "reserve_candidates": 1000,
+    "reserve_domains": 1000
+  }
+}

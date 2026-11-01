@@ -33,19 +33,29 @@ and the claims the project is allowed to make.
 
 - Engine, API, dashboard, extension, research tooling: implemented.
 - Runtime engine `0.1.1-rules` fixes payment-processor parsing that caused the content extractor to
-  skip evidence on 11 of 1,249 stored assessments. The frozen `feed_v2` engine metrics were measured
-  on `0.1.0-rules` and were not re-scored; see [model-card.md](model-card.md).
+  skip evidence on 11 of 1,249 stored assessments. Every `feed_v3` assessment was collected under
+  `0.1.1-rules`; the retained `feed_v2` and `feed_v1` metrics were measured on `0.1.0-rules` and were
+  not re-scored, see [model-card.md](model-card.md).
 - `wtas doctor` verifies a fresh install, and [demo.md](demo.md) is the operator runbook.
 - Synthetic pipeline smoke test: passing.
-- `feed_v2` dataset: frozen at 830 samples / 826 domains (497 malicious, 333 benign), domain-grouped
-  70/15/15 split, seed 42. The SHA-256 is recorded in `data/datasets/feed_v2/manifest.json`.
+- `feed_v3` dataset: frozen at 5,129 samples / 5,129 domains (2,533 malicious, 2,596 benign),
+  domain-grouped 70/15/15 split (3,590 / 770 / 769), seed 42. The SHA-256 is recorded in
+  `data/datasets/feed_v3/manifest.json`, and `scripts/feed_v3_freeze.py` snapshots the 21 cited artifacts
+  beside it (11 more are recorded by digest only). The earlier `feed_v2` build (830 samples / 826 domains) and `feed_v1` build are retained as
+  lower-scale predecessors.
 - Human labels: 146 frozen labels from one annotator, used only as a validity subset; no inter-rater
-  reliability is claimed.
+  reliability is claimed. `feed_v3` candidates are disjoint from them by construction.
 - Model comparison and results: run once on the untouched test split; artifacts are in
-  `data/research/runs/feed_v2/` and `paper/tables/`. The H3 user study was not run.
-- Train-only learning curve: `data/research/learning_curve.json`, rebuilt by
-  `scripts/learning_curve.py`. The models saturate at this dataset size (50% to 100% of training
-  domains buys +0.009 logistic and +0.005 HistGB AUROC); the validation and test splits are not scored.
+  `data/research/runs/feed_v3/` and `paper/tables/`. The H3 user study was not run.
+- Train-only learning curve: `data/research/learning_curve_feed_v3.json`, rebuilt by
+  `scripts/learning_curve.py` (`--dataset data/datasets/feed_v3/dataset.jsonl --anchor-run
+  data/research/runs/feed_v3/run.json`). Re-drawing domain-grouped CV inside the 3,590-row training split,
+  the hybrid logistic goes 0.975 (287 domains) → 0.985 (1,436) → 0.987 (2,872) and HistGB
+  0.985 → 0.991 → 0.993, so doubling the training domains again buys only **+0.002 logistic / +0.002
+  HistGB AUROC**: the curve is flat at 6.2× the predecessor's size, and the predecessor's 462 training
+  domains already sat on that flat part (its 50%→100% gain was +0.009 / +0.005). The full-data point
+  reproduces the run's grouped-CV estimate to within 0.00013 AUROC. The validation and test splits are
+  never scored.
 
 The manuscript must not claim population-level phishing prevalence or generalisation beyond the
 sampling frame described in [dataset.md](dataset.md).

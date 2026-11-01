@@ -1,0 +1,41 @@
+{
+  "copied_artifacts": {
+    "data/candidates/feed_v3/collection_amendment_01.json": "e8d87fc1b87db804391c9d6104673c6e8266f778426d09aa6cdd46926b857751",
+    "data/candidates/feed_v3/collection_approval.json": "1124b0c1ebf61a21813f41971ddeb23ccbcada7a2b5ee698c3bf83fb61f99b3e",
+    "data/candidates/feed_v3/collection_checkpoint_complete.json": "301eb38000af3bcf317a401df30e778118bcdd6b5c63e758123059100d601112",
+    "data/candidates/feed_v3/collection_outcome.json": "daec9ca4efd55804b9d5b5c09f63772b65fac23b29b3a980404ccb8805c63226",
+    "data/exports/feed_v3/analysis/exclusions.json": "dde82308feef24fc47b436085fb21964471bae636272cc9e74eebec877f82686",
+    "data/labels/feed_v3/eval_labels.csv": "5d15383dc634cc9b461ead649115fee9d1336bfe03d1a7965fa9b382b7cfdf2b",
+    "data/labels/feed_v3/eval_labels.json": "fa3b10f6214841b9ec629180358a524ab0024035328131768b7682baf19f1a9e",
+    "data/labels/feed_v3/leakage_check.json": "d65bfe30f531bb4a0fbc963bdfc5091415a083faf6e1d435e80e25068ce06c11",
+    "data/labels/feed_v3/provenance.json": "4af0ced5eda49af11518f59e17f4d282d7f3b381db029fa6256c5a04da1cfbda",
+    "data/labels/feed_v3/topup_selection.json": "d4ff40a059678ce1d176238eb6f0be7a04a294a27526fb8f399335eedb2b2e72",
+    "data/labels/feed_v3/validation.json": "d3de2843474fe892594a99e8652ee2f506bc24d7a67eaff6756580fbfa7a0679",
+    "data/research/error_analysis_feed_v3.json": "080e18870e403fdef9b9b1585e471ec9ca0ca08a5c860115188b18cd0336c117",
+    "data/research/feed_v3_comparison.json": "12d5592982737db3d3f4feaac7550a712ea8ef5c7e3ec448d69527da89290469",
+    "data/research/gate_compliance_feed_v3.json": "1bf43bf2d12c5297a9833c1ca8f851ea15599957fa69e3810a2015c0ee5af049",
+    "data/research/learning_curve_feed_v3.json": "7846931865cc81e0568fa193bea6638510301ef92656eb8b475fe2bdfbc43435",
+    "data/research/profile_feed_v3.json": "b75c11b06262283754156b72f2bb19603aa114aeac6e351ff0525e34d95495aa",
+    "data/research/profile_feed_v3_s43.json": "5aace282e7c651ce3b2651dd3b1ad00b9684d302562b30ff67d89e4b47bfb58b",
+    "data/research/runs/feed_v3/report.md": "1511a87e710d9e9bc317ec08f37ec21769bf2a28d32ba3cd21001ed51b5845bb",
+    "data/research/runs/feed_v3/run.json": "e9237fc2559435237a67b2473bca7736dd36e92306cb9ca114f5121ca0ff5d51",
+    "data/research/runs/feed_v3_s43/report.md": "c660a333a00b6a63e5713bda108dd0d2d09baf95febf5af3d891f076685526a3",
+    "data/research/runs/feed_v3_s43/run.json": "c3d4aa0b1d4d19bcd78bb7aef3934a4a317130e3ccfa39b2c5916381988ff74a"
+  },
+  "dataset": "feed_v3",
+  "digest_only": {
+    "data/datasets/feed_v3/dataset.jsonl": "a1628d24887d9a329b7c7b2ea142cf35566e99e8db7d4468b611d2dd6c3bfd64",
+    "data/datasets/feed_v3/manifest.json": "4d4c1bda8c22327251badd23b4a38d3e91cf4cf203f6ca551e6e74ee12a82ac3",
+    "data/datasets/feed_v3_s43/dataset.jsonl": "b8a8fd84adc69ae23ed45ac45400a5e26be34d1d9b021d178c034f8625b42c2a",
+    "data/research/runs/feed_v3/report.md": "1511a87e710d9e9bc317ec08f37ec21769bf2a28d32ba3cd21001ed51b5845bb",
+    "data/research/runs/feed_v3/run.json": "e9237fc2559435237a67b2473bca7736dd36e92306cb9ca114f5121ca0ff5d51",
+    "data/research/runs/feed_v3_s43/report.md": "c660a333a00b6a63e5713bda108dd0d2d09baf95febf5af3d891f076685526a3",
+    "data/research/runs/feed_v3_s43/run.json": "c3d4aa0b1d4d19bcd78bb7aef3934a4a317130e3ccfa39b2c5916381988ff74a",
+    "models/research/feed_v3/logistic_hybrid.json": "734e0b334b36fad65dec8b34c46b6ed193c06b522b54ad5e25ecf75c3fc1949b",
+    "models/research/feed_v3/logistic_rule.json": "08031649777b49c95a3542d0586d98a13257fed57c0f076907b6d65e693f0b99",
+    "models/research/feed_v3/logistic_signals.json": "49dc91a2233a895bc56d8d10ae3d76ea74a830dcbe107abb03dcb29aad0b473f",
+    "models/research/feed_v3/logistic_url.json": "c9e05ff5a4bda14104f1cd2ad1d55df75b5fa5d2049459bdbd3050f4dae321ad"
+  },
+  "frozen_at": "2026-11-01T09:11:57+00:00",
+  "missing": []
+}

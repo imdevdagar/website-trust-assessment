@@ -1,7 +1,10 @@
 # Website Trust Assessment System dataset datasheet
 
-Version 1.1 — 2026-10-21. Describes the frozen `feed_v2` dataset. Composition numbers come from
-`data/datasets/feed_v2/manifest.json`; the dataset SHA-256 is recorded there and in the run artifacts.
+Version 1.2 — 2026-11-01. Describes the frozen `feed_v3` dataset, the primary evaluation set. Composition
+numbers come from `data/datasets/feed_v3/manifest.json`; the dataset SHA-256 is recorded in
+`data/datasets/feed_v3/artifacts_snapshot/manifest.json`. The earlier `feed_v2` build (830 samples /
+826 domains) and `feed_v1` build are retained as lower-scale predecessors; they are described in
+[feed-v3-protocol.md](feed-v3-protocol.md) and agree with `feed_v3` on every headline direction.
 
 This document follows the Datasheets for Datasets structure (Gebru et al., 2021) and records the
 choices that affect what the dataset can and cannot support. The dataset is a **convenience sample of
@@ -48,25 +51,37 @@ population prevalence estimate, a privacy audit, or a legal compliance benchmark
 
 ### 2.2 Target size
 
-| Quantity | Target | Achieved (`data/datasets/feed_v2`) |
+| Quantity | Target | Achieved (`data/datasets/feed_v3`) |
 | --- | --- | --- |
-| Domains with primary labels | 400–500 | 826 (496 malicious / 330 benign) |
+| Domains with primary labels | 5,000 usable | 5,129 (2,533 malicious / 2,596 benign) |
 | Double-annotated domains | 20% | not met — single annotator, see section 9 |
-| Usable assessments after exclusions | — | 830 samples; 912 assessments passed `research feed-check` |
-| Domains per split (train/val/test) | approximately 70/15/15% | 578 / 125 / 123, grouped by registrable domain, seed 42 |
+| Usable assessments after exclusions | — | 5,129 samples from 11,402 collected rows; 5,511 assessments passed `research feed-check` |
+| Domains per split (train/val/test) | approximately 70/15/15% | 3,590 / 770 / 769, grouped by registrable domain, seed 42 |
 
-The 549 planned feed domains yielded assessments for all but 50, which never resolved and were dropped
-rather than labelled benign. The benign pool comes from the safe main strata, is absent from both feeds at
-retrieval time (protocol section 4.3), and was enlarged after the first build by re-attempting failed
-domains and collecting the pre-registered reserve; the gated rows in that reserve were skipped, which
-`data/research/gate_compliance.json` verifies for all 12 candidate/export pairs. Composition, HTTPS
-prevalence and the shipped engine's escalation behaviour over every labelled row are recomputed by
-`PYTHONPATH=. python scripts/dataset_profile.py` into `data/research/profile_feed_v2.json`, and the cited
-artifacts are frozen in `data/datasets/feed_v2/artifacts_snapshot/`. The pre-growth build
-`data/datasets/feed_v1` (743 samples / 742 domains, 495 malicious / 248 benign) is retained; both builds
-give the same reading on every headline. A test set of 123 domains is adequate for descriptive comparison
-and bootstrap intervals but is not sufficient for narrow subgroup claims. Subgroup analyses are treated as
-exploratory and are reported with intervals and sample counts.
+The positive pool is PhishTank `online-valid` plus OpenPhish, sampled from 9,764 labelled domains
+retrieved 2026-10-25T18:47Z; the negative pool is Tranco top-1M. Of 3,000 selected positive candidates,
+1,389 yielded a usable assessment; the registered reserve added 724 and the pre-registered fixed-ranking
+top-up added 420, and the root-URL retry recovered 111 domains whose recorded path no longer resolved.
+5,868 positive candidates were NXDOMAIN at crawl time — takedown, not local filtering — and are recorded
+as drops, never relabelled benign. 382 assessments landed on a different registrable domain than the
+candidate (open redirects and parked hosts) and are excluded by `scripts/feed_v3_filter_exports.py`,
+which writes the analysis files every downstream step consumes; exclusions and their SHA-256s are in
+`data/exports/feed_v3/analysis/exclusions.json`. The benign class means *absent from both feeds at
+retrieval time*, never verified clean (protocol section 4.3).
+
+Gate compliance for all 85 candidate/export pairs and the label-leakage check are verified by
+`scripts/feed_v3_gate_compliance.py` and `research feed-check`
+(`data/research/gate_compliance_feed_v3.json`, `data/labels/feed_v3/leakage_check.json`: 5,511
+assessments, `leaked_assessments: 0`, runtime label store empty). Composition, HTTPS and TLS-trusted
+prevalence, the shipped engine's escalation behaviour over every labelled row and the padlock baselines
+are recomputed by `PYTHONPATH=. python scripts/dataset_profile.py` into
+`data/research/profile_feed_v3.json`; cited artifacts are frozen in
+`data/datasets/feed_v3/artifacts_snapshot/` by `scripts/feed_v3_freeze.py`. The sensitivity build
+`data/datasets/feed_v3_s43` re-splits and retrains at seed 43. The predecessors `data/datasets/feed_v2`
+(830 samples / 826 domains, 497 malicious / 333 benign) and `data/datasets/feed_v1` (743 / 742,
+495 / 248) are retained; all three builds give the same reading on every headline direction. A
+769-domain test split supports subgroup and tail analysis at widths the 123-domain split did not;
+subgroup results are still reported with intervals and sample counts.
 
 ### 2.3 Sampling frame
 
@@ -210,10 +225,13 @@ Report these as dataset biases and test sensitivity where feasible.
 
 ### 4.2 Primary label source
 
-Per [main-dataset-protocol.md](main-dataset-protocol.md) section 2.2, the primary `malicious` label is
-**membership of the OpenPhish or URLhaus public feed at a recorded retrieval time**, not a human
-judgement. `wtas research feed-labels` writes it; `wtas research feed-check` asserts before
-every build that no feed verdict reached the assessments being scored.
+Per [main-dataset-protocol.md](main-dataset-protocol.md) section 2.2 and
+[feed-v3-protocol.md](feed-v3-protocol.md), the primary `malicious` label for `feed_v3` is
+**membership of the PhishTank `online-valid` list or the OpenPhish feed at a recorded retrieval time**
+(2026-10-25T18:47Z), not a human judgement. URLhaus is no longer a label source for this build — its
+export endpoint returned HTTP 410 during the label-design pass — and remains a source only in the
+`feed_v2` predecessor. `wtas research feed-labels` writes the label set; `wtas research feed-check`
+asserts before every build that no feed verdict reached the assessments being scored.
 
 - The sampling unit is unchanged (registrable domain); feed entries are reduced to registrable domains
   and deduplicated, so one domain is one label regardless of how many feed URLs report it.
@@ -224,14 +242,23 @@ every build that no feed verdict reached the assessments being scored.
 - A feed domain that cannot be crawled is dropped, never labelled `benign`.
 - Feed labels carry a timestamp; the crawl must fall inside the recorded freshness window (7 days by
   default) and the window is reported alongside the results.
-- The `benign` pool is not drawn from feeds at all. It is the safe main strata (protocol section 4.3)
-  scored against the same feed query: domains selected from the pre-registered manifest before any
-  verdict existed, that the feeds do not list. A domain carrying a frozen human label receives no
-  derived label either way.
+- The `benign` pool is not drawn from feeds at all. For `feed_v3` it is a fixed-seed sample of the Tranco
+  top-1M list (3,000 selected + 1,000 reserve), verified pairwise disjoint from the positive pool, from
+  `feed_v2`, and from the human subset before any crawl started (`data/labels/feed_v3/validation.json`).
+  A domain carrying a frozen human label receives no derived label either way.
+- An assessment that lands on a different registrable domain than its candidate — open redirect, parked
+  host, or an error page served by an unrelated domain — is excluded rather than used, because a
+  domain-level label cannot describe the page actually captured. `scripts/feed_v3_filter_exports.py`
+  removed 137 positive and 245 negative such rows.
 - Because a feed label is only true at its retrieval time, transience is measured rather than assumed
-  (protocol section 7.2): a second retrieval 4.43 h later into `data/labels/feed/churn/` keeps 98.4% of the
-  primary label set (488 of the 496 evaluation positives still listed), all of the churn from URLhaus, and
-  turns no derived negative listed (0 of 330). `labels.csv` is never rewritten by this check.
+  (protocol section 7.2). On the `feed_v2` label set, a second retrieval 4.43 h later keeps 98.4% of the
+  primary labels (488 of 496 evaluation positives still listed), all of the churn came from URLhaus, and
+  no derived negative became listed (0 of 330). That interval is hourly-resolution only; no second
+  retrieval has been measured against the `feed_v3` label set, and `labels.csv` is never rewritten by
+  this check. One attempt was made, on 2026-11-01: PhishTank answered HTTP 429 on all five backoff
+  attempts of `scripts/feed_v3_churn.py`, and that script aborts rather than recording a partial fetch —
+  a truncated feed would otherwise be read as mass delisting. `feed_v3` label durability is therefore
+  unmeasured, not assumed to be high.
 
 ---
 
@@ -368,10 +395,18 @@ pages. Review the license and privacy posture before any public release.
 7. Feed candidates and manual browsing can introduce selection bias.
 8. Derived features depend on the crawler, Chromium version, OCR availability, and the local knowledge
    files. The manifest and engine version must accompany results.
-9. A 123-domain test split limits subgroup and tail-performance claims.
-10. There is no temporal split in version 1.0; temporal generalisation is future work.
-11. Only English-language pages were included in the primary collection; multilingual generalisation is
-   not claimed.
+9. The corpus is a sample of *survivors*: 5,868 selected positive candidates were already unresolvable
+   when crawled and only 2,113 of 4,500 selected-and-reserve positives yielded a page. Any accuracy figure
+   therefore describes infrastructure that was still live at capture, which over-represents young or
+   persistent campaigns relative to the feed as published.
+10. The 769-domain test split supports subgroup and tail analysis, but subgroup cells are still small and
+    are reported with intervals and counts.
+11. Collection ran across several days after a single label retrieval, so the negative class carries drift
+    risk (a domain listed after retrieval would sit in the corpus as a silent false negative). This is
+    measured, not assumed — see the churn artifact in section 4.2.
+12. There is no temporal split in version 1.x; temporal generalisation is future work.
+13. Only English-language pages were included in the primary collection; multilingual generalisation is
+    not claimed.
 
 ---
 

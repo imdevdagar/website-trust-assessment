@@ -6,6 +6,7 @@ __pycache__/
 venv/
 .pytest_cache/
 .pytest-tmp/
+.pytest-tmp*/
 .ruff_cache/
 build/
 dist/
@@ -32,6 +33,7 @@ key.json
 # Raw third-party feed snapshots (redistribution restricted)
 data/labels/feed/snapshots/
 data/labels/feed/churn/snapshots/
+data/labels/feed_v3/snapshots/
 
 # Unfinalized academic drafts (placeholders not yet filled)
 report/

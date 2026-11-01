@@ -15,36 +15,51 @@ observation time, tags, and the provenance disclosure. Item risk points are weig
 dimension rather than added directly to the overall score. Screenshot of the running prototype, not an
 artifact-backed plot.
 
-**Fig. 3.** Dataset composition by split. Domain-grouped 70/15/15 split of 830 samples over 826 domains
-(seed 42, primary build `feed_v2`). Labels are feed membership at retrieval time (2026-10-20); *benign*
-means absent from both feeds, not verified clean. Four domains contribute two assessments each, which is
-why samples exceed domains. Source: `data/datasets/feed_v2/manifest.json` (dataset SHA-256 `ca6777520f43`).
+**Fig. 3.** Dataset composition by split. Domain-grouped 70/15/15 split of 5,129 samples
+over 5,129 domains, one assessment per domain (seed 42, primary build `feed_v3`). Labels
+are abuse-feed membership at retrieval time (2026-10-25, PhishTank online-valid plus OpenPhish); *benign*
+means absent from both feeds, not verified clean. Source:
+`data/datasets/feed_v3/manifest.json` (dataset SHA-256 `a1628d24887d`).
 
-**Fig. 4.** Label sources. (a) The 146 frozen human labels by feed membership; only 4 domains overlap the
-feeds (1 human-malicious, 3 human-suspicious), which is why source agreement is reported as a confusion
-table and not as kappa. (b) Retention of feed labels at a second retrieval 4.43 h after the primary one:
-540 of 549 labels retained, 488 of the 496 evaluation positives still listed, and 0 of the 330 derived
-negatives newly listed. This is hourly-resolution stability, not a durable property. Sources:
-`data/labels/feed/human_vs_feed_final.json`, `data/labels/feed/churn/churn_report.json`.
+**Fig. 4.** Label sources, measured on the predecessor `feed_v2` label set. (a) The 146 frozen human
+labels by feed membership; only 4 domains overlap the feeds
+(1 human-malicious,
+3 human-suspicious), which is why source
+agreement is reported as a confusion table and not as kappa. (b) Retention of feed labels at a second
+retrieval 4.43 h after the primary one: 540 of
+549 labels retained,
+488 of the
+496 evaluation positives still listed, and
+0 of the
+330 derived negatives newly listed. This is
+hourly-resolution stability, not a durable property: no second retrieval has been measured against the
+`feed_v3` label set. Sources: `data/labels/feed/human_vs_feed_final.json`,
+`data/labels/feed/churn/churn_report.json`.
 
-**Fig. 5.** Reliability on the untouched test split (n = 123; 74 malicious, 49 benign). (a) Shipped rule
-engine, raw score: Platt calibration was refused because validation scores were not positively associated
-with labels, so raw and calibrated ECE are both 0.402. (b) Hybrid logistic regression after Platt scaling,
-ECE 0.026. Marker area is proportional to the number of test samples in the bin; the diagonal is perfect
-calibration. Grouped 95% intervals (1000 domain-grouped bootstrap resamples) are in Table 4.
+**Fig. 5.** Reliability on the untouched test split (n = 769; 380 malicious, 389
+benign). (a) Shipped rule engine, raw score: Platt calibration was refused because validation scores were
+not positively associated with labels, so raw and calibrated ECE are both 0.319. (b) Hybrid
+logistic regression after Platt scaling, ECE 0.018. Marker area is proportional to the number
+of test samples in the bin; the diagonal is perfect calibration. Grouped 95% intervals (1000
+domain-grouped bootstrap resamples) are in Table 4.
 
-**Fig. 6.** Risk-coverage on the untouched test split (n = 123). Accuracy within the covered subset as
-coverage is restricted to the most confident predictions; the dashed line is the positive-class prior
-(74/123 = 0.602). Every model predicts with a fixed 0.5 score threshold at each coverage level (selective
-prediction is never given a tuned per-model threshold), so the full-coverage point need not equal the
-validation-thresholded accuracy in Table 4. The shipped engine is below the prior at every coverage level,
-i.e. its most confident half is its worst half.
+**Fig. 6.** Risk-coverage on the untouched test split (n = 769). Accuracy within the covered subset
+as coverage is restricted to the most confident predictions; the dashed line is the positive-class prior
+(380/769 = 0.494). Every model predicts with a fixed 0.5 score threshold at each
+coverage level (selective prediction is never given a tuned per-model threshold), so the full-coverage
+point need not equal the validation-thresholded accuracy in Table 4. The shipped engine never separates
+the classes: its accuracy stays between 0.471 and 0.546
+across coverage levels, and on the 50% of predictions it is most confident
+in it scores 0.471 — below the 0.494 class prior — so confidence in its own
+score buys no reliability. The learned models hold at least
+0.966
+throughout.
 
-**Fig. 7.** Feature-group ablation on the untouched test split (n = 123, 74 positive). Points are test
-AUROC (a) and AUPRC (b); bars are percentile 95% intervals from 1000 domain-grouped bootstrap resamples.
-The dashed line and shaded band show the shipped rule engine, which produces the same score in every group.
-`hybrid` includes rule outputs and is therefore a superset comparison; `signals` is the independent
-page-evidence comparison.
+**Fig. 7.** Feature-group ablation on the untouched test split (n = 769, 380 positive). Points
+are test AUROC (a) and AUPRC (b); bars are percentile 95% intervals from 1000 domain-grouped bootstrap
+resamples. The dashed line and shaded band show the shipped rule engine, which produces the same score in
+every group. `hybrid` includes rule outputs and is therefore a superset comparison; `signals` is the
+independent page-evidence comparison.
 
 **Fig. 8.** H4 controlled injection corpus (42 pages: 26 injections, 16 negatives; five negatives are
 adversarial), scored offline through the production static parser. (a) Overall risk before and after the
@@ -53,11 +68,17 @@ hidden instruction; negative fixtures lie on the diagonal. (b) Risk change for t
 for all 40 hidden-channel pairs once injection and trace evidence is dropped (maximum residual 0.0).
 Source: `data/research/injection_h4.json`, gate `passed: true`.
 
-**Fig. 9.** Train-only learning curve for the hybrid models. Five-fold domain-grouped cross-validation
-is re-drawn 20 times for logistic regression and 10 times for HistGB; within each fold, whole domains
-are subsampled per class. Points are pooled out-of-fold AUROC and bands are the 2.5–97.5 percentile
-range across repeats. The validation and test splits are never scored, so the single-use test claim is
-unaffected. At full size (462 training domains per fold) the pooled estimate is 0.973 for logistic and
-0.990 for HistGB, and the logistic point reproduces the run's grouped-CV estimate of 0.965 within 0.008.
-From 50% to 100% of the available training domains, AUROC gains 0.009 (logistic) and 0.005 (HistGB),
-so the curve has saturated for this label population. Source: `data/research/learning_curve.json`.
+**Fig. 9.** Train-only learning curve for the hybrid models, computed inside the
+3,590-sample training split of the primary build. Five-fold domain-grouped
+cross-validation is re-drawn 20 times for logistic regression and
+10 times for HistGB; within each fold, whole domains are subsampled
+per class. Points are pooled out-of-fold AUROC and bands are the 2.5–97.5 percentile range across repeats.
+The validation and test splits are never scored, so the single-use test claim is unaffected. At full size
+(2,872 training domains per fold) the pooled estimate is
+0.987 for logistic and 0.993
+for HistGB, and the logistic point reproduces the run's grouped-CV estimate of
+0.987 within 0.0001. From 50% to 100% of the available
+training domains AUROC gains 0.002 (logistic) and 0.002 (HistGB), so
+the curve is flat at this scale: one tenth of the training domains already reaches
+0.975. Source:
+`data/research/learning_curve_feed_v3.json`.

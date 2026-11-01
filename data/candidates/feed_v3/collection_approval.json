@@ -1,0 +1,25 @@
+{
+  "approved_at": "2026-10-26",
+  "approved_by": "project owner (explicit user approval)",
+  "constraints": [
+    "bounded assessments only; no file downloads",
+    "existing SSRF/public-IP validation stays enabled",
+    "positive batches remain gated and require --allow-gated",
+    "no new candidates may be added without fresh approval"
+  ],
+  "expires_when": "the approved candidate batches and their reserves are exhausted",
+  "label_provenance_sha256": "4af0ced5eda49af11518f59e17f4d282d7f3b381db029fa6256c5a04da1cfbda",
+  "negative_batches": 30,
+  "negative_manifest_sha256": "89ed6acce48c898c838c3ec41cdc241fdbff53a326e3922e04a21f79cddce2fd",
+  "negative_reserve_batches": 10,
+  "positive_batches": 30,
+  "positive_manifest_sha256": "dc8a4a2e201bb7fecf3b35a0795170f5f849bac6af18393129a54929d6708623",
+  "positive_reserve_batches": 15,
+  "positive_reserve_manifest_sha256": "efc09deb2418e6845f24dc34786c36cfc79df23869938dba04d8229eaac9856c",
+  "record_id": "feed_v3_gated_collection",
+  "scope": "5,000 usable domains: about 2,500 PhishTank/OpenPhish positives and 2,500 Tranco negatives, plus positive and negative reserves; batches of at most 100",
+  "source_retrieval": {
+    "openphish_public_feed": "2026-10-25T18:47:31+00:00",
+    "phishtank_online_valid": "2026-10-25T18:47:30+00:00"
+  }
+}

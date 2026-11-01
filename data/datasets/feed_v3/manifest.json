@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "feature_schema_version": 3,
+  "created_at": "2026-11-01T08:15:17.546464+00:00",
+  "seed": 42,
+  "ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "include_suspicious": false,
+  "allow_leakage": false,
+  "per_domain_limit": 5,
+  "actions": "all",
+  "samples": 5129,
+  "domains": 5129,
+  "labels": {
+    "malicious": 2533,
+    "benign": 2596
+  },
+  "targets": {
+    "1": 2533,
+    "0": 2596
+  },
+  "splits": {
+    "train": {
+      "samples": 3590,
+      "domains": 3590,
+      "labels": {
+        "malicious": 1773,
+        "benign": 1817
+      },
+      "targets": {
+        "1": 1773,
+        "0": 1817
+      }
+    },
+    "val": {
+      "samples": 770,
+      "domains": 770,
+      "labels": {
+        "malicious": 380,
+        "benign": 390
+      },
+      "targets": {
+        "1": 380,
+        "0": 390
+      }
+    },
+    "test": {
+      "samples": 769,
+      "domains": 769,
+      "labels": {
+        "benign": 389,
+        "malicious": 380
+      },
+      "targets": {
+        "0": 389,
+        "1": 380
+      }
+    }
+  },
+  "exclusions": {},
+  "exclusion_examples": {},
+  "duplicates_removed": 0,
+  "warnings": [],
+  "assessment_source": "jsonl:data/exports/feed_v3/analysis/positive.jsonl,data/exports/feed_v3/analysis/negative.jsonl",
+  "label_source": {
+    "path": "data\\labels\\feed_v3\\eval_labels.csv",
+    "sha256": "5d15383dc634cc9b461ead649115fee9d1336bfe03d1a7965fa9b382b7cfdf2b",
+    "rows": 5129,
+    "imported_domains": 5129,
+    "skipped": 0,
+    "conflicts": [],
+    "conflict_count": 0,
+    "labels": {
+      "malicious": 2533,
+      "benign": 2596
+    }
+  },
+  "feature_names": [
+    "url_https",
+    "url_length_log",
+    "url_host_length_log",
+    "url_path_length_log",
+    "url_query_length_log",
+    "url_path_depth",
+    "url_query_params",
+    "url_host_labels",
+    "url_hyphens",
+    "url_dots",
+    "url_digits_log",
+    "url_digit_ratio",
+    "url_host_digit_ratio",
+    "url_special_log",
+    "url_host_entropy",
+    "url_has_port",
+    "url_has_at",
+    "url_has_punycode",
+    "url_is_ip",
+    "url_risky_tokens",
+    "url_encoded_redirect",
+    "page_available",
+    "http_ok",
+    "redirected",
+    "has_login_form",
+    "has_payment_form",
+    "page_forms_log",
+    "page_password_fields",
+    "page_links_log",
+    "page_scripts_log",
+    "page_iframes",
+    "page_images_log",
+    "page_network_log",
+    "page_cookies_log",
+    "page_hidden_elements_log",
+    "domain_age_log",
+    "domain_age_unknown",
+    "tls_trusted",
+    "tls_days_remaining_log",
+    "has_mx",
+    "spf_record",
+    "dmarc_record",
+    "tracker_total_log",
+    "tracker_third_party_log",
+    "trust_link_privacy",
+    "trust_link_terms",
+    "trust_link_contact",
+    "official_domain",
+    "prompt_injection_detected",
+    "text_zero_width_log",
+    "ocr_image_heavy",
+    "screenshot_available",
+    "overall_rule_risk",
+    "overall_confidence",
+    "evidence_count_log",
+    "missing_evidence_count",
+    "security_score",
+    "security_confidence",
+    "security_coverage",
+    "security_abstained",
+    "security_evidence_count",
+    "security_risk_points",
+    "security_trust_points",
+    "identity_score",
+    "identity_confidence",
+    "identity_coverage",
+    "identity_abstained",
+    "identity_evidence_count",
+    "identity_risk_points",
+    "identity_trust_points",
+    "privacy_score",
+    "privacy_confidence",
+    "privacy_coverage",
+    "privacy_abstained",
+    "privacy_evidence_count",
+    "privacy_risk_points",
+    "privacy_trust_points",
+    "manipulation_score",
+    "manipulation_confidence",
+    "manipulation_coverage",
+    "manipulation_abstained",
+    "manipulation_evidence_count",
+    "manipulation_risk_points",
+    "manipulation_trust_points",
+    "risk_low_count",
+    "risk_medium_count",
+    "risk_high_count",
+    "risk_critical_count",
+    "flag_unencrypted_http",
+    "flag_ip_literal_host",
+    "flag_punycode_host",
+    "flag_suspicious_tld",
+    "flag_brand_subdomain_impersonation",
+    "flag_brand_action_domain",
+    "flag_typosquatting_domain",
+    "flag_password_form_http",
+    "flag_cross_origin_login",
+    "flag_tls_certificate_invalid",
+    "flag_hidden_prompt_injection",
+    "flag_executable_download",
+    "flag_remote_access_request",
+    "flag_gift_card_payment",
+    "flag_seed_phrase_request",
+    "flag_no_consent_controls",
+    "flag_tracker_session_replay",
+    "flag_privacy_policy_missing",
+    "flag_free_subdomain_host",
+    "flag_file_host_destination",
+    "flag_cross_domain_redirect",
+    "flag_guaranteed_return_lure",
+    "flag_advance_fee_lure",
+    "flag_direct_upi_payment",
+    "flag_direct_bank_transfer",
+    "flag_messaging_only_contact",
+    "flag_ocr_guaranteed_return",
+    "flag_ocr_upi_payment"
+  ],
+  "feature_groups": {
+    "url": 21,
+    "signals": 80,
+    "rule": 36,
+    "hybrid": 116
+  },
+  "files": {
+    "dataset_jsonl": {
+      "path": "dataset.jsonl",
+      "sha256": "a1628d24887d9a329b7c7b2ea142cf35566e99e8db7d4468b611d2dd6c3bfd64",
+      "bytes": 19860354
+    },
+    "dataset_csv": {
+      "path": "dataset.csv",
+      "sha256": "5a3f5fe489c819fa00a19b8e27463dd527128029bebb8b0e9dc6f9a5744d5f72",
+      "bytes": 4675802
+    }
+  }
+}

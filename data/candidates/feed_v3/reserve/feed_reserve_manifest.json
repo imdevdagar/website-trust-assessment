@@ -1,0 +1,121 @@
+{
+  "approval": "scoped approval recorded 2026-10-26 in collection_approval.json; every batch is gated and the batch command still requires --allow-gated",
+  "approval_record": "data/candidates/feed_v3/collection_approval.json",
+  "batch_size": 100,
+  "batches": [
+    {
+      "batch": 1,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_01.csv",
+      "sha256": "2de7e78304531408a33cbf90d324b9e27037e0eef92158e8408dd154d5087f74"
+    },
+    {
+      "batch": 2,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_02.csv",
+      "sha256": "9ea7c7f7fc91a56345ccdd9a1c5ee8ab89f162b13f576aa051f404f8d814cb29"
+    },
+    {
+      "batch": 3,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_03.csv",
+      "sha256": "cf0bb4096beb706b3c119fa9e5cb292b028b5ed8d61817da50bf850159fe974e"
+    },
+    {
+      "batch": 4,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_04.csv",
+      "sha256": "9a4984ee3aaa8f380b41f3e85e6feb02365071b9da649b088df842e6a885bf7f"
+    },
+    {
+      "batch": 5,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_05.csv",
+      "sha256": "f5a8257399921db1a14a1fd09847a3446541607ba3088071c5cc66b79cbdb6b8"
+    },
+    {
+      "batch": 6,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_06.csv",
+      "sha256": "91b94d0167f051e0150335f40d742083d16f4f59038d9d4d9dfa3c21d55b25d8"
+    },
+    {
+      "batch": 7,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_07.csv",
+      "sha256": "8303fb6da9335428c0e3a78613beb0861df6e448b3cba6a800b2713a4f2834b5"
+    },
+    {
+      "batch": 8,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_08.csv",
+      "sha256": "77c1f861a78f60680165b0fc7dd36aa581861d491df32c94acb8cc5fe6ec3e03"
+    },
+    {
+      "batch": 9,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_09.csv",
+      "sha256": "c05729591e9827d31bd90a6df96fce2d40ff1f1d16f7e7ab386ee016a1a73681"
+    },
+    {
+      "batch": 10,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_10.csv",
+      "sha256": "76cae5ebf3569e46ced483e885bdc28b80d3257cf6018bb53da1653cd6aeacbd"
+    },
+    {
+      "batch": 11,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_11.csv",
+      "sha256": "0fcce67c3e4cc11dfadc984f386da7006e9ab168c05b6d376ecbe28aa4023932"
+    },
+    {
+      "batch": 12,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_12.csv",
+      "sha256": "d3ca12136be43b3e2de037fa96fa28c637df638a2fc43d7ee7e8e5ff35f23360"
+    },
+    {
+      "batch": 13,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_13.csv",
+      "sha256": "2ee1d0afae00a8b4ce4c573609bc152e1fa3e37d9d2618586f777b9f1725f617"
+    },
+    {
+      "batch": 14,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_14.csv",
+      "sha256": "64b2d9162f719a5a62ff3daaad81e339af47dedcfd42e3ad1e591542b391cad6"
+    },
+    {
+      "batch": 15,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/reserve/feed_reserve_15.csv",
+      "sha256": "0e203d86d6e4b361f319999fedbd3467c0b8421b9e88fa9df655dbd30e4d2a2d"
+    }
+  ],
+  "candidates": 1500,
+  "collection_gate": "malicious_page_requires_explicit_confirmation",
+  "created_at": "2026-10-25T18:50:17.424989+00:00",
+  "domains": 1500,
+  "labels_file": "data/labels/feed_v3/positives_reserve.csv",
+  "labels_sha256": "8df25f9dc8b0180d64b766de383d5f72453537f195252e50fc170760b768bb50",
+  "payload_urls_replaced_by_domain_root": 1,
+  "schema_version": 1,
+  "seed": 42
+}

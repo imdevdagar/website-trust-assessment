@@ -1,0 +1,264 @@
+{
+  "created_at": "2026-10-25T18:49:31+00:00",
+  "dataset": "feed_v3",
+  "feed_label_stats": {
+    "created_at": "2026-10-25T18:49:31+00:00",
+    "label": "malicious",
+    "labeled_domains": 9764,
+    "multi_feed_domains": 9,
+    "policy": {
+      "feed_never_imported_to_runtime": "the feed must not be loaded into the local domain_labels store",
+      "label_meaning": "membership of a public abuse feed at retrieval time, not a human trust judgement",
+      "leakage_check": "assert_no_label_leakage must pass on every assessment used as a sample",
+      "positive_class_mix": "PhishTank online-valid lists URLs PhishTank marks verified and online; OpenPhish lists phishing URLs. URLhaus is retired for feed_v3.",
+      "unreachable_pages": "a feed domain that cannot be assessed is dropped, never labelled benign"
+    },
+    "rejection_total": 232,
+    "rejections": {
+      "openphish_public_feed: excluded_overlap": 37,
+      "openphish_public_feed: shared_or_multitenant_domain": 155,
+      "phishtank_online_valid: excluded_overlap": 40
+    },
+    "schema_version": 1,
+    "sources": {
+      "openphish_public_feed": {
+        "accepted_entries": 108,
+        "age_hours": 0.03,
+        "age_state": "fresh",
+        "lines": 300,
+        "max_age_days": 7,
+        "retrieved_at": "2026-10-25T18:47:31+00:00",
+        "sha256": "cac0b89f7e7c93683630aa9304a32edb273ada1ab7b67142fbeea3244f527030",
+        "snapshot_file": "data/labels/feed_v3/snapshots/openphish_feed_cac0b89f7e7c.txt",
+        "source_date": "2026-10-25",
+        "url": "https://openphish.com/feed.txt"
+      },
+      "phishtank_online_valid": {
+        "accepted_entries": 9684,
+        "age_hours": 0.03,
+        "age_state": "fresh",
+        "lines": 9724,
+        "max_age_days": 7,
+        "retrieved_at": "2026-10-25T18:47:30+00:00",
+        "sha256": "9957e00f74843ccb0757cb3e0ceb8e44604c78c96c9c1825f309fda86dd1fdde",
+        "snapshot_file": "data/labels/feed_v3/snapshots/phishtank_online_valid_9957e00f7484.csv",
+        "source_date": "2026-10-25",
+        "url": "https://data.phishtank.com/data/online-valid.csv"
+      }
+    },
+    "stale_sources": []
+  },
+  "filters": {
+    "excluded_domain_sources": [
+      {
+        "domains": 826,
+        "path": "data/datasets/feed_v2/dataset.jsonl"
+      },
+      {
+        "domains": 549,
+        "path": "data/labels/feed/labels.csv"
+      },
+      {
+        "domains": 77,
+        "path": "data/annotations/main/batch_01/frozen/annotator_a_20261020T133255Z.csv"
+      },
+      {
+        "domains": 36,
+        "path": "data/annotations/pilot/frozen/annotator_a_20261020T101448Z.csv"
+      },
+      {
+        "domains": 36,
+        "path": "data/annotations/pilot/frozen/annotator_b_20261020T102324Z.csv"
+      },
+      {
+        "domains": 33,
+        "path": "data/annotations/round2/frozen/annotator_a_v2_20261020T111826Z.csv"
+      },
+      {
+        "domains": 33,
+        "path": "data/annotations/round2/frozen/annotator_a_20261020T104418Z.csv"
+      },
+      {
+        "domains": 100,
+        "path": "data/candidates/feed_batch_01.csv"
+      },
+      {
+        "domains": 100,
+        "path": "data/candidates/feed_batch_02.csv"
+      },
+      {
+        "domains": 100,
+        "path": "data/candidates/feed_batch_03.csv"
+      },
+      {
+        "domains": 100,
+        "path": "data/candidates/feed_batch_04.csv"
+      },
+      {
+        "domains": 32,
+        "path": "data/candidates/feed_batch_05.csv"
+      },
+      {
+        "domains": 100,
+        "path": "data/candidates/feed_remaining/feed_batch_01.csv"
+      },
+      {
+        "domains": 17,
+        "path": "data/candidates/feed_remaining/feed_batch_02.csv"
+      },
+      {
+        "domains": 500,
+        "path": "data/candidates/main.csv"
+      },
+      {
+        "domains": 90,
+        "path": "data/candidates/main_batch_01.csv"
+      },
+      {
+        "domains": 90,
+        "path": "data/candidates/main_batch_02.csv"
+      },
+      {
+        "domains": 90,
+        "path": "data/candidates/main_batch_03.csv"
+      },
+      {
+        "domains": 90,
+        "path": "data/candidates/main_batch_04.csv"
+      },
+      {
+        "domains": 160,
+        "path": "data/candidates/main_reserve.csv"
+      },
+      {
+        "domains": 36,
+        "path": "data/candidates/pilot.csv"
+      },
+      {
+        "domains": 36,
+        "path": "data/candidates/round2.csv"
+      },
+      {
+        "domains": 24,
+        "path": "data/candidates/round2_curated.csv"
+      },
+      {
+        "domains": 28,
+        "path": "data/candidates/round2_reserve.csv"
+      }
+    ],
+    "excluded_domains_from_prior_work": 1188,
+    "heavy_domains_excluded": [
+      "adobe.com",
+      "best-practice.se",
+      "boxmode.io",
+      "campaign-archive.com",
+      "campsite.bio",
+      "did.li",
+      "dweb.link",
+      "ead.me",
+      "eu.cc",
+      "flow.page",
+      "flowcode.com",
+      "gitbook.io",
+      "hsforms.com",
+      "ipfs.io",
+      "jotform.com",
+      "linkin.bio",
+      "linqapp.com",
+      "m-pages.com",
+      "mockplus.com",
+      "myportfolio.com",
+      "nnfems.com",
+      "powr.io",
+      "q-r.to",
+      "qr-codes.io",
+      "qrco.de",
+      "scanned.page",
+      "start.page",
+      "surl.li",
+      "teemill.com",
+      "translate.goog",
+      "ukit.me",
+      "vk.com",
+      "w3spaces.com",
+      "webcindario.com",
+      "webwave.dev",
+      "windows.net",
+      "wixstudio.com",
+      "wl.co",
+      "zapier.app",
+      "zoom.us",
+      "zpr.io"
+    ],
+    "label_rows": 9764,
+    "shared_host_library_size": 130
+  },
+  "gated_crawl_approval": "2026-10-26 user approval for this candidate set; batches remain marked gated and need --allow-gated",
+  "label_policy": {
+    "feed_never_imported_to_runtime": "the feed must not be loaded into the local domain_labels store",
+    "heavy_multi_url_rule": "domains with at least 50 distinct reported URLs are treated as platforms and excluded",
+    "label_meaning": "membership of a public abuse feed at retrieval time, not a human trust judgement",
+    "leakage_check": "assert_no_label_leakage must pass on every assessment used as a sample",
+    "positive_class_mix": "OpenPhish reports phishing; URLhaus reports malware distribution",
+    "positive_meaning": "verified and online in PhishTank's public online-valid export, or listed by OpenPhish, at the recorded retrieval time; never a human verdict",
+    "shared_hosts": "multi-tenant, free-hosting and shortener domains are excluded because a domain-level malicious label would otherwise describe the platform",
+    "unreachable_pages": "a feed domain that cannot be assessed is dropped, never labelled benign"
+  },
+  "labels_sha256": "94b49010af031a45f84c6a75de47dd33606d03fb19280abf37313c8b993f721a",
+  "negative_pool": "sampled separately from Tranco top-1M, excluding every domain in the full positive pool and prior work; see negatives/negative_manifest.json",
+  "positives_reserve_sha256": "8df25f9dc8b0180d64b766de383d5f72453537f195252e50fc170760b768bb50",
+  "positives_sha256": "66b2b78fc92d9c6451eb98442aaadc491468426d110cfb96256a66e04aac3c85",
+  "purpose": "large-scale evaluation of the shipped rule engine and learned models; independent of the feed_v2 domains and the frozen human-label subset",
+  "sampling": {
+    "positive_pool": 9764,
+    "positive_reserve": 1500,
+    "positive_sample": 3000,
+    "positive_target_usable": 2500,
+    "reserve_selection": "ranks 3001-4500 of the same ranking; crawled only if the selected batches fall short of the usable target",
+    "seed": 42,
+    "selection": "sha256(namespace:seed:domain) ascending"
+  },
+  "seed": 42,
+  "sources": {
+    "openphish_public_feed": {
+      "accepted_entries": 108,
+      "bytes": 16100,
+      "fetch_mode": "snapshot",
+      "final_url": "https://raw.githubusercontent.com/openphish/public_feed/refs/heads/main/feed.txt",
+      "http_date": "Sun, 25 Oct 2026 18:47:31 GMT",
+      "lines": 300,
+      "retrieved_at": "2026-10-25T18:47:31+00:00",
+      "sha256": "cac0b89f7e7c93683630aa9304a32edb273ada1ab7b67142fbeea3244f527030",
+      "snapshot_file": "data/labels/feed_v3/snapshots/openphish_feed_cac0b89f7e7c.txt",
+      "source": "openphish_feed.txt",
+      "source_date": "2026-10-25",
+      "url": "https://openphish.com/feed.txt"
+    },
+    "phishtank_online_valid": {
+      "bytes": 10794390,
+      "fetch_mode": "snapshot",
+      "final_url": "https://cdn.phishtank.com/datadumps/verified_online.csv",
+      "heavy_multi_url_domains_excluded": 41,
+      "heavy_url_threshold": 50,
+      "http_date": "Sun, 25 Oct 2026 18:47:29 GMT",
+      "raw_rows": 56210,
+      "rejections": {
+        "IP-literal candidates are outside the domain sample": 77,
+        "Non-standard ports are not crawled": 9,
+        "URL contains whitespace or control characters": 2,
+        "URLs with embedded credentials are not allowed": 8,
+        "path appears to contain an email address": 2,
+        "shared_or_multitenant_domain": 21661
+      },
+      "retrieved_at": "2026-10-25T18:47:30+00:00",
+      "sha256": "9957e00f74843ccb0757cb3e0ceb8e44604c78c96c9c1825f309fda86dd1fdde",
+      "snapshot_file": "data/labels/feed_v3/snapshots/phishtank_online_valid_9957e00f7484.csv",
+      "source": "phishtank_online_valid.csv",
+      "source_date": "2026-10-25",
+      "unique_domains_after_sanitising": 9765,
+      "url": "https://data.phishtank.com/data/online-valid.csv",
+      "verified_online_rows": 56207
+    }
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "approval": "not approved; each batch needs fresh explicit confirmation before collection",
+  "batch_size": 100,
+  "batches": [
+    {
+      "batch": 1,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_01.csv",
+      "sha256": "f7685fee85897766175463da63fbc425b9b391c0b2b30bddf77d7b465502d54a"
+    },
+    {
+      "batch": 2,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_02.csv",
+      "sha256": "7cf385e8dc883988920bc21294de0ffd63316ab9492d68c8bbdf7396ee7c9ea4"
+    },
+    {
+      "batch": 3,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_03.csv",
+      "sha256": "fe7057b02cf09809856fdbb0a37fef93250699b4bb2920c5315be6fa9e867ec4"
+    },
+    {
+      "batch": 4,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_04.csv",
+      "sha256": "23ed6ad07c3576933eaad9f8684501e35c72c7f215266bb599e35df992d0f97a"
+    },
+    {
+      "batch": 5,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_05.csv",
+      "sha256": "1718c1b6597548d0604b8f82720ebc8910a16bc329228bb151dedcad140529b8"
+    },
+    {
+      "batch": 6,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_06.csv",
+      "sha256": "05963f8fe08fd755cc5d761b586e7e2dc1ec7a89d91b98578b48adec2d3c0e91"
+    },
+    {
+      "batch": 7,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_07.csv",
+      "sha256": "fd0d63262bbde880b660f46866ba6e1808b6d2ab4e7b1a83cf5793f55ddf4d49"
+    },
+    {
+      "batch": 8,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_08.csv",
+      "sha256": "36be96b9d01b3adb194fac75d69dfd91b12995a6f746606ac9a34026ed462e6f"
+    },
+    {
+      "batch": 9,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_09.csv",
+      "sha256": "d66b4448544ee31cdd84925b690dd82aec7e32d2368a019f0e8e0f359553d42a"
+    },
+    {
+      "batch": 10,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_10.csv",
+      "sha256": "8964e812632c9521995a613705f1f4c6699eaeb3f4704cc0be1f5b316004babd"
+    },
+    {
+      "batch": 11,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_11.csv",
+      "sha256": "d876fba68bdcd9d35da285807c69d2dc3098620cd90a2795e88d8e22ce089e2a"
+    },
+    {
+      "batch": 12,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_12.csv",
+      "sha256": "bea515c0574545b08e00a168ce882b7bbdf711ff3d0c91e7e2d985a80eb267a5"
+    },
+    {
+      "batch": 13,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_13.csv",
+      "sha256": "dc70644e57c60b200d5755f85a27f88e8bfc92396db82b23a5ee52fcb603ec7e"
+    },
+    {
+      "batch": 14,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_14.csv",
+      "sha256": "d7587f71545fdaca73d4b1d7dcd1f037889f0cc42646a9b9581e614982f9585f"
+    },
+    {
+      "batch": 15,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_15.csv",
+      "sha256": "a88c73657fdbf8c9f9f98bc641937f89278b25b06c20dca51bd79183aac7bfd9"
+    },
+    {
+      "batch": 16,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_16.csv",
+      "sha256": "7406058e4ea98b42945303e74f109ecd67b3e7370c4d90692c45f57f7c696b3d"
+    },
+    {
+      "batch": 17,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_17.csv",
+      "sha256": "c16c9f65947fc7282af4e18ebbc99f11dc4a10128a5f6b1eb856dec9f4384eb1"
+    },
+    {
+      "batch": 18,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_18.csv",
+      "sha256": "504b1e48799e326dd54dca03f328c024059ac4573489844b3cbd5f0d373cba6d"
+    },
+    {
+      "batch": 19,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_19.csv",
+      "sha256": "d3ecd07301a6c6500751bfd9982b70e416106324f1113a3e5daf4b9da54eb76e"
+    },
+    {
+      "batch": 20,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_20.csv",
+      "sha256": "6265527db8985f11fc75bf55462ca125946d2807f9b9a7c1d7f0924b1db90bc7"
+    },
+    {
+      "batch": 21,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_21.csv",
+      "sha256": "c8a4af98a18498a8138ecc77d75528f63c3664d0e671184acc022bb6d81f6d2f"
+    },
+    {
+      "batch": 22,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_22.csv",
+      "sha256": "57a2fd6f29f0ce3d907dd72aaf60ffcc00e1332fe776bb7dcc84d64a6520192d"
+    },
+    {
+      "batch": 23,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_23.csv",
+      "sha256": "02b6c9fd4fac39dc64981aa1b86b31d1fdca8804ee44ed37e056bf1f95ce0650"
+    },
+    {
+      "batch": 24,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_24.csv",
+      "sha256": "b7f1085d1b73dce0e4632107e304bbc63196a4d9d20347042c67381f1a58eb8f"
+    },
+    {
+      "batch": 25,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_25.csv",
+      "sha256": "1f93e68c73475fe5c7421c5d7e05161f623f58f1db1a4add21d89df16cec2589"
+    },
+    {
+      "batch": 26,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_26.csv",
+      "sha256": "8f00a02081f36cfe3c9dfcf6536480e00cabfee0393439f53b586fd639dcdc9d"
+    },
+    {
+      "batch": 27,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_27.csv",
+      "sha256": "9a2bc21f73b938431cd177221ca1d2fb59f3fe40b80bae59a0dc621b24924813"
+    },
+    {
+      "batch": 28,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_28.csv",
+      "sha256": "66f710ea294e76b04d70ee37050187f410906ee2916b90dda2e5c634d028fb84"
+    },
+    {
+      "batch": 29,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_29.csv",
+      "sha256": "8fe17c593419dd830309625463effda7a36f09bbeb372ffe393b133f15b48cf5"
+    },
+    {
+      "batch": 30,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_30.csv",
+      "sha256": "27d9280cb0fa84d4a7d16f44fec45c6f5b1d74fc47b8d155a3d50a31bb68063e"
+    },
+    {
+      "batch": 31,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_31.csv",
+      "sha256": "4e2aed680e07d1429b5f4b8085ba6597f35fd57efb3a3408d746a48be8122ff4"
+    },
+    {
+      "batch": 32,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_32.csv",
+      "sha256": "75f7a7101124e23d07623cea852a99bb796c2777f45538117aeacd75cd07d2a6"
+    },
+    {
+      "batch": 33,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_33.csv",
+      "sha256": "9dbbc393444ca7e09d8b521f9271b34ea4d51ccf3dd943d1742deafa272797bf"
+    },
+    {
+      "batch": 34,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_34.csv",
+      "sha256": "e72365bd4967786808a936aeb5b8a80a8eee70455afb0deb5a34b8086c1d7ff3"
+    },
+    {
+      "batch": 35,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_35.csv",
+      "sha256": "1529242e57a412f06ec95e0b3f695ebbdcd713dc33323d64ee6bf0760e878435"
+    },
+    {
+      "batch": 36,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_36.csv",
+      "sha256": "275c94f5336b06a96dd43bd42eb0d2b088e4497b26eca0454a73ccbbf73c33ee"
+    },
+    {
+      "batch": 37,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_37.csv",
+      "sha256": "c65ba213d1b61b9e913a8ffcfdd2569a3e6b48cef8fbaff76f6c970324a38148"
+    },
+    {
+      "batch": 38,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_38.csv",
+      "sha256": "b04fd647871ffb1729cd71c6b809bd503aaff02a1526de3b344aea6e10af9b14"
+    },
+    {
+      "batch": 39,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_39.csv",
+      "sha256": "3c80cc4c5700172812bb145aee72061d935d0be8bf34d96f32e7210f823d488d"
+    },
+    {
+      "batch": 40,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_40.csv",
+      "sha256": "219ede72327e7a57475a4f0a487b86f75988aa26f4f0a52caa8ad0f6d9846682"
+    },
+    {
+      "batch": 41,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_41.csv",
+      "sha256": "f5f5a2739ddd03b6e57bdb1c2ecda7b6cb6f629ed41399d934cb4e13a3514703"
+    },
+    {
+      "batch": 42,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_42.csv",
+      "sha256": "cd92b388ff96d9981331ecc08a16ad710f64ced2cf5f45ef1a87deeebdb8abaf"
+    },
+    {
+      "batch": 43,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_43.csv",
+      "sha256": "d9af4fdfdf3422394c4a2b90a30e99e1d1185bb46e19b2c62c408e9b97c694eb"
+    },
+    {
+      "batch": 44,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_44.csv",
+      "sha256": "86ddcc1ea829919ba66fd460a90bfee61b063333481d112fb27cc741f3873691"
+    },
+    {
+      "batch": 45,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_45.csv",
+      "sha256": "7e3d05c1e6fba49da6c5ba9bbb7880a80ea37fd345d170c31aa3a3c7d3fcf983"
+    },
+    {
+      "batch": 46,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_46.csv",
+      "sha256": "11a23e70ba69b920c4b311ae884a5f0e7e49d21521cdd5b52b8f08bae14d1011"
+    },
+    {
+      "batch": 47,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_47.csv",
+      "sha256": "6bf70c513e328bf5aac58334ceeb0365a4952a54668fa7b3f9c0f30618160b42"
+    },
+    {
+      "batch": 48,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_48.csv",
+      "sha256": "e2a082c30125832e8cad8253e21d3c882173433848f63cfe63cf87d83bc7c5b1"
+    },
+    {
+      "batch": 49,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_49.csv",
+      "sha256": "596d66aeed56caeb179fb18e3b6817b0ea0eac4378f5f62b90ab54023f5ea5f6"
+    },
+    {
+      "batch": 50,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_50.csv",
+      "sha256": "f893b8a8bd9034a51071895801e5b5926c65964b7f39b4d33f17fbd7e472c3bf"
+    },
+    {
+      "batch": 51,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_51.csv",
+      "sha256": "69ee69c0b5bb312978420c0c0118eaf36dddd3b6f0d79fd5a4f9f790afc4a1f7"
+    },
+    {
+      "batch": 52,
+      "candidates": 100,
+      "domains": 100,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_52.csv",
+      "sha256": "50951a2e29d972c2cedf6d58b640600755ffeba80915ed0a2b3848cc835090e5"
+    },
+    {
+      "batch": 53,
+      "candidates": 64,
+      "domains": 64,
+      "file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_53.csv",
+      "sha256": "c51588a9387674bb97e3da02d58c80dc68dff7c710cec150b5495fb927e1b711"
+    }
+  ],
+  "candidates": 5264,
+  "collection_gate": "malicious_page_requires_explicit_confirmation",
+  "created_at": "2026-10-26T17:01:37.798284+00:00",
+  "domains": 5264,
+  "labels_file": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\labels\\feed_v3\\topup_labels.csv",
+  "labels_sha256": "5b244fe9be590a91a1d2414ae863b0f9b2c4b4a8b3409465f70e55586156bd2d",
+  "payload_urls_replaced_by_domain_root": 3,
+  "schema_version": 1,
+  "seed": 42
+}

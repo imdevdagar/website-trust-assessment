@@ -49,6 +49,16 @@ URLHAUS_FIELDS = (
     "urlhaus_link",
     "reporter",
 )
+PHISHTANK_FIELDS = (
+    "phish_id",
+    "url",
+    "phish_detail_url",
+    "submission_time",
+    "verified",
+    "verification_time",
+    "online",
+    "target",
+)
 POLICY = {
     "label_meaning": "membership of a public abuse feed at retrieval time, not a human trust judgement",
     "feed_never_imported_to_runtime": "the feed must not be loaded into the local domain_labels store",
@@ -138,6 +148,35 @@ def urlhaus_urls(text: str) -> list[str]:
         for row in csv.DictReader(io.StringIO("\n".join(rows)), fieldnames=URLHAUS_FIELDS)
         if (value := str(row.get("url") or "").strip())
     ]
+
+
+def phishtank_urls(text: str) -> list[str]:
+    """Pull only verified, online URLs out of a PhishTank ``online-valid`` CSV export.
+
+    PhishTank's public feed ships a header, unlike URLhaus. Accepting unverified or
+    offline rows would turn a submission queue into a label source, so both flags
+    must say ``yes`` when present.
+    """
+    rows = [
+        line
+        for line in str(text or "").splitlines()
+        if line.strip() and not line.strip().startswith("#")
+    ]
+    if not rows:
+        return []
+    reader = csv.DictReader(io.StringIO("\n".join(rows)))
+    if not reader.fieldnames or reader.fieldnames[0].lstrip("\ufeff") != "phish_id":
+        reader = csv.DictReader(io.StringIO("\n".join(rows)), fieldnames=PHISHTANK_FIELDS)
+    urls: list[str] = []
+    for row in reader:
+        if str(row.get("online") or "").strip().lower() != "yes":
+            continue
+        if str(row.get("verified") or "").strip().lower() != "yes":
+            continue
+        url = str(row.get("url") or "").strip()
+        if url:
+            urls.append(url)
+    return urls
 
 
 @dataclass(frozen=True)

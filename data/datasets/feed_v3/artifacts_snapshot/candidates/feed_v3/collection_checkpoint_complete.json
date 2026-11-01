@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "data/candidates/feed_v3/collection_outcome.json": "6d33fc6a1d52681a7087ca19b6f5800a11e22cfbdbc58fd5845f0df4763d2d4f",
+    "data/exports/feed_v3/analysis/exclusions.json": "90cf924537ae57d84ab206b836936622f66e0a858f1b4c0cad05fa36f31a1c39",
+    "data/exports/feed_v3/analysis/negative.jsonl": "d2c4e05e21c211185ce26be5368bc126fcb683e319bc6eb87d66ddd575fb4e74",
+    "data/exports/feed_v3/analysis/positive.jsonl": "714c16839c2160d9dd59466d38b82daa34b8637c7aa1e739ed9a5c94526a2cea"
+  },
+  "domains_with_usable_retry_assessment": 111,
+  "failure_reasons": {
+    "Could not resolve hostname": 5817,
+    "Hostname resolves to a non-public address": 22,
+    "cross_domain_redirect_excluded": 358
+  },
+  "filter_counts": {
+    "negative_cross_domain_redirect": 221,
+    "negative_failed_crawl": 473,
+    "negative_kept": 2372,
+    "positive_cross_domain_redirect": 137,
+    "positive_failed_crawl": 5366,
+    "positive_kept": 2533
+  },
+  "negative_shortfall": 128,
+  "paused_at": "2026-10-26T19:50:37+00:00",
+  "remaining_registered_headroom": {
+    "negative_reserve_batches": 10,
+    "positive_reserve_batches_unused": 0,
+    "positive_topup_batches_unused": 0
+  },
+  "rows_read": 11102,
+  "state": "collection complete; two negative reserve batches still needed for 2500 same-domain negatives",
+  "usable_domains_by_group": {
+    "negative": 2372,
+    "negative_reserve": 0,
+    "reserve": 724,
+    "selected": 1389,
+    "topup": 420
+  },
+  "usable_negatives_same_domain": 2372,
+  "usable_positives_before_topup": 2113,
+  "usable_positives_same_domain": 2533,
+  "usable_total_same_domain": 4905
+}

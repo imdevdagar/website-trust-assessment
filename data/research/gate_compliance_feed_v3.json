@@ -1,0 +1,3384 @@
+{
+  "batches_checked": 141,
+  "meaning": "Every scored positive row must map to a candidate marked gated, which the batch command opens only with --allow-gated. Retry exports are checked against the union of the original batch and its retry rows. A scored gated row in an ungated pair, or an export row outside its candidate file, fails the check.",
+  "pairs": [
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_01.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 226
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_01.jsonl",
+        "gated_rows_scored": 45,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 45
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 144
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_01_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 123
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_01_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_02.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 126
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_02.jsonl",
+        "gated_rows_scored": 46,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 46
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 142
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_02_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 80
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_02_retry.jsonl",
+        "gated_rows_scored": 4,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 4
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_03.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_03.jsonl",
+        "gated_rows_scored": 50,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 144
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_03_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 84
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_03_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_04.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 63
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_04.jsonl",
+        "gated_rows_scored": 50,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 143
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_04_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 40
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_04_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_05.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 61
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_05.jsonl",
+        "gated_rows_scored": 47,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 47
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 145
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_05_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 44
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_05_retry.jsonl",
+        "gated_rows_scored": 1,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 1
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_06.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 58
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_06.jsonl",
+        "gated_rows_scored": 49,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 49
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 141
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_06_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 38
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_06_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_07.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 46
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_07.jsonl",
+        "gated_rows_scored": 54,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 54
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 137
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_07_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 35
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_07_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_08.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 46
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_08.jsonl",
+        "gated_rows_scored": 54,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 54
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 140
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_08_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 38
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_08_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_09.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 49
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_09.jsonl",
+        "gated_rows_scored": 51,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 51
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 144
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_09_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 44
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_09_retry.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {}
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_10.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_10.jsonl",
+        "gated_rows_scored": 50,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 136
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_10_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 34
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_10_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_11.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 61
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_11.jsonl",
+        "gated_rows_scored": 39,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 39
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 154
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_11_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 53
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_11_retry.jsonl",
+        "gated_rows_scored": 1,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 1
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_12.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 44
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_12.jsonl",
+        "gated_rows_scored": 56,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 56
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 140
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_12_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 38
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_12_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_13.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 41
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_13.jsonl",
+        "gated_rows_scored": 59,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 59
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 133
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_13_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 31
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_13_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_14.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 55
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_14.jsonl",
+        "gated_rows_scored": 45,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 45
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 147
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_14_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 44
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_14_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_15.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 48
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_15.jsonl",
+        "gated_rows_scored": 52,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 52
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 141
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_15_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 39
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_15_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_16.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 59
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_16.jsonl",
+        "gated_rows_scored": 41,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 41
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 151
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_16_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 49
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_16_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_17.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 51
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_17.jsonl",
+        "gated_rows_scored": 49,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 49
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 146
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_17_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 44
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_17_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_18.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 48
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_18.jsonl",
+        "gated_rows_scored": 52,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 52
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 140
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_18_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 38
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_18_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_19.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 54
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_19.jsonl",
+        "gated_rows_scored": 46,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 46
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 147
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_19_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 44
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_19_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_20.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_20.jsonl",
+        "gated_rows_scored": 50,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 144
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_20_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 42
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_20_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_21.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 62
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_21.jsonl",
+        "gated_rows_scored": 38,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 38
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 150
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_21_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 48
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_21_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_22.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 53
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_22.jsonl",
+        "gated_rows_scored": 47,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 47
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 149
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_22_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 46
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_22_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_23.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 46
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_23.jsonl",
+        "gated_rows_scored": 54,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 54
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 142
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_23_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 41
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_23_retry.jsonl",
+        "gated_rows_scored": 1,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 1
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_24.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 42
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_24.jsonl",
+        "gated_rows_scored": 58,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 58
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 136
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_24_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 32
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_24_retry.jsonl",
+        "gated_rows_scored": 4,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 4
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_25.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_25.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 102
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_25_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_25_retry.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {}
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_26.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 21
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_26.jsonl",
+        "gated_rows_scored": 22,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 22
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 116
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_26_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 16
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_26_retry.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {}
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_27.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_27.jsonl",
+        "gated_rows_scored": 50,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 147
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_27_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 44
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_27_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_28.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 49
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_28.jsonl",
+        "gated_rows_scored": 51,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 51
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 144
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_28_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 41
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_28_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_29.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_29.jsonl",
+        "gated_rows_scored": 50,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 140
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_29_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 39
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_29_retry.jsonl",
+        "gated_rows_scored": 1,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 1
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\feed_batch_30.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 56
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_batch_30.jsonl",
+        "gated_rows_scored": 44,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 44
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "selected",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 149
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_batch_30_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 46
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_batch_30_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_01.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_01.jsonl",
+        "gated_rows_scored": 50,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 143
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_01_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 40
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_01_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_02.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 56
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_02.jsonl",
+        "gated_rows_scored": 44,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 44
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 152
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_02_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 51
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_02_retry.jsonl",
+        "gated_rows_scored": 1,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 1
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_03.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 59
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_03.jsonl",
+        "gated_rows_scored": 41,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 41
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 152
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_03_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 49
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_03_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_04.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 52
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_04.jsonl",
+        "gated_rows_scored": 48,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 48
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 139
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_04_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 37
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_04_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_05.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 51
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_05.jsonl",
+        "gated_rows_scored": 49,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 49
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 147
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_05_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 43
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_05_retry.jsonl",
+        "gated_rows_scored": 4,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 4
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_06.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 51
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_06.jsonl",
+        "gated_rows_scored": 49,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 49
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 139
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_06_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 37
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_06_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_07.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 53
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_07.jsonl",
+        "gated_rows_scored": 47,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 47
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 147
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_07_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 44
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_07_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_08.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 45
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_08.jsonl",
+        "gated_rows_scored": 55,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 55
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 138
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_08_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 35
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_08_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_09.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 53
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_09.jsonl",
+        "gated_rows_scored": 47,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 47
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 144
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_09_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 39
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_09_retry.jsonl",
+        "gated_rows_scored": 5,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 5
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_10.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 52
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_10.jsonl",
+        "gated_rows_scored": 48,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 48
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 144
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_10_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 42
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_10_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_11.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 49
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_11.jsonl",
+        "gated_rows_scored": 51,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 51
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 144
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_11_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 43
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_11_retry.jsonl",
+        "gated_rows_scored": 1,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 1
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_12.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 58
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_12.jsonl",
+        "gated_rows_scored": 42,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 42
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 152
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_12_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_12_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_13.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 45
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_13.jsonl",
+        "gated_rows_scored": 55,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 55
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 140
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_13_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 36
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_13_retry.jsonl",
+        "gated_rows_scored": 4,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 4
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_14.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 54
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_14.jsonl",
+        "gated_rows_scored": 46,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 46
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 145
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_14_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 45
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_14_retry.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {}
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\reserve\\feed_reserve_15.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 46
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_reserve_15.jsonl",
+        "gated_rows_scored": 54,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 54
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 141
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_reserve_15_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 38
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_reserve_15_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_01.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 52
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_topup_01.jsonl",
+        "gated_rows_scored": 48,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 48
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 147
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_topup_01_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 45
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_topup_01_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_02.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 59
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_topup_02.jsonl",
+        "gated_rows_scored": 41,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 41
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 153
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_topup_02_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 51
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_topup_02_retry.jsonl",
+        "gated_rows_scored": 2,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 2
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_03.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 54
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_topup_03.jsonl",
+        "gated_rows_scored": 46,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 46
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 143
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_topup_03_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 42
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_topup_03_retry.jsonl",
+        "gated_rows_scored": 1,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 1
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_04.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_topup_04.jsonl",
+        "gated_rows_scored": 50,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 50
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 143
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_topup_04_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 40
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_topup_04_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_05.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 54
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_topup_05.jsonl",
+        "gated_rows_scored": 46,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 46
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 147
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_topup_05_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 43
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_topup_05_retry.jsonl",
+        "gated_rows_scored": 4,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 4
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_06.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 59
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_topup_06.jsonl",
+        "gated_rows_scored": 41,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 41
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 149
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_topup_06_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 46
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_topup_06_retry.jsonl",
+        "gated_rows_scored": 3,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 3
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_07.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 49
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_topup_07.jsonl",
+        "gated_rows_scored": 51,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 51
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 135
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_topup_07_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 34
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_topup_07_retry.jsonl",
+        "gated_rows_scored": 1,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 1
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_08.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 52
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_topup_08.jsonl",
+        "gated_rows_scored": 48,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 48
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 144
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_topup_08_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 43
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_topup_08_retry.jsonl",
+        "gated_rows_scored": 1,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 1
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval (positive set)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\topup\\feed_topup_09.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 48
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\feed_topup_09.jsonl",
+        "gated_rows_scored": 52,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 52
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "2026-10-26 gated approval and amendment 01 (root retry)",
+      "group": "topup",
+      "item": {
+        "candidate_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 139
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\.tmp-ptest\\feed_v3_gate_compliance\\feed_topup_09_union.csv",
+        "error_rows_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 38
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\retry\\feed_topup_09_retry.jsonl",
+        "gated_rows_scored": 1,
+        "launched_without_allow_gated": false,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "malicious_page_requires_explicit_confirmation": 1
+        }
+      },
+      "kind": "retry"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_01.csv",
+        "error_rows_by_gate": {
+          "standard": 25
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_01.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 89
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_02.csv",
+        "error_rows_by_gate": {
+          "standard": 60
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_02.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 70
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_03.csv",
+        "error_rows_by_gate": {
+          "standard": 44
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_03.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 78
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_04.csv",
+        "error_rows_by_gate": {
+          "standard": 14
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_04.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 86
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_05.csv",
+        "error_rows_by_gate": {
+          "standard": 11
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_05.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 89
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_06.csv",
+        "error_rows_by_gate": {
+          "standard": 14
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_06.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 86
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_07.csv",
+        "error_rows_by_gate": {
+          "standard": 24
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_07.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 76
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_08.csv",
+        "error_rows_by_gate": {
+          "standard": 10
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_08.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 90
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_09.csv",
+        "error_rows_by_gate": {
+          "standard": 13
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_09.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 87
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_10.csv",
+        "error_rows_by_gate": {
+          "standard": 15
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_10.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 85
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_11.csv",
+        "error_rows_by_gate": {
+          "standard": 13
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_11.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 87
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_12.csv",
+        "error_rows_by_gate": {
+          "standard": 14
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_12.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 86
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_13.csv",
+        "error_rows_by_gate": {
+          "standard": 17
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_13.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 83
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_14.csv",
+        "error_rows_by_gate": {
+          "standard": 11
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_14.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 89
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_15.csv",
+        "error_rows_by_gate": {
+          "standard": 14
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_15.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 86
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_16.csv",
+        "error_rows_by_gate": {
+          "standard": 21
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_16.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 79
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_17.csv",
+        "error_rows_by_gate": {
+          "standard": 13
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_17.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 87
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_18.csv",
+        "error_rows_by_gate": {
+          "standard": 11
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_18.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 89
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_19.csv",
+        "error_rows_by_gate": {
+          "standard": 10
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_19.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 90
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_20.csv",
+        "error_rows_by_gate": {
+          "standard": 10
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_20.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 90
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_21.csv",
+        "error_rows_by_gate": {
+          "standard": 9
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_21.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 91
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_22.csv",
+        "error_rows_by_gate": {
+          "standard": 10
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_22.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 90
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_23.csv",
+        "error_rows_by_gate": {
+          "standard": 14
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_23.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 86
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_24.csv",
+        "error_rows_by_gate": {
+          "standard": 10
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_24.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 90
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_25.csv",
+        "error_rows_by_gate": {
+          "standard": 13
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_25.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 87
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_26.csv",
+        "error_rows_by_gate": {
+          "standard": 6
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_26.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 94
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_27.csv",
+        "error_rows_by_gate": {
+          "standard": 13
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_27.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 87
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_28.csv",
+        "error_rows_by_gate": {
+          "standard": 13
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_28.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 87
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_29.csv",
+        "error_rows_by_gate": {
+          "standard": 5
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_29.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 95
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_30.csv",
+        "error_rows_by_gate": {
+          "standard": 16
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_30.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 84
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative_reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_reserve_01.csv",
+        "error_rows_by_gate": {
+          "standard": 21
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_reserve_01.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 79
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative_reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_reserve_02.csv",
+        "error_rows_by_gate": {
+          "standard": 11
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_reserve_02.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 89
+        }
+      },
+      "kind": "batch"
+    },
+    {
+      "approval_scope": "standard collection; no gated row permitted",
+      "group": "negative_reserve",
+      "item": {
+        "candidate_rows_by_gate": {
+          "standard": 100
+        },
+        "candidates": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\candidates\\feed_v3\\negatives\\neg_reserve_03.csv",
+        "error_rows_by_gate": {
+          "standard": 20
+        },
+        "exports": "C:\\Users\\Dev\\Documents\\Qoder\\2026-10-20\\7b21ff45\\data\\exports\\feed_v3\\neg_reserve_03.jsonl",
+        "gated_rows_scored": 0,
+        "launched_without_allow_gated": true,
+        "passed": true,
+        "rows_not_in_this_candidate_file": 0,
+        "scope_ok": true,
+        "scope_violations": [],
+        "scored_by_gate": {
+          "standard": 80
+        }
+      },
+      "kind": "batch"
+    }
+  ],
+  "passed": true,
+  "schema_version": 1
+}

@@ -93,15 +93,16 @@ demo, stop the server and delete only that directory. Do not delete `data/`.
 5. **Extension (1 min).** Open `chrome://extensions`, enable Developer mode, choose **Load unpacked**,
    and select `extension/`. Pin Website Trust Assessment Guard, open `https://example.com`, and open the popup. Show
    the verdict, the evidence summary, and the localhost-only server setting.
-6. **Evaluation evidence (30 s, optional).** Open `data/research/runs/feed_v2/report.md` and state one
-   result only: the shipped rule engine is at chance against feed membership (AUROC 0.519 on the test
-   split), while the research hybrid models reach 0.986–0.991. Explain that the learned models are not
-   shipped and the rule engine remains the decision policy.
+6. **Evaluation evidence (30 s, optional).** Open `data/research/runs/feed_v3/report.md` and state one
+   result only: over 5,129 feed-labelled domains the shipped rule engine is at chance against feed
+   membership (AUROC 0.455 on the test split, 0.475 over all labelled rows), while the research hybrid
+   models reach 0.987–0.993. Explain that the learned models are not shipped and the rule engine remains
+   the decision policy.
 
 ## 5. Claims to keep straight
 
 - The system is an advisory research prototype, not a commercial safety product.
-- The evaluation sample is 830 feed-labelled samples over 826 domains; percentages are not web-wide
+- The evaluation sample is 5,129 feed-labelled samples over 5,129 domains; percentages are not web-wide
   prevalence.
 - The benign class is *not reported by the feeds*, not verified clean.
 - The 146 human labels are a one-annotator validity subset; no inter-rater reliability is claimed.

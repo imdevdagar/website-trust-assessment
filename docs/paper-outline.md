@@ -21,20 +21,21 @@ a frozen dataset manifest and a run artifact. Placeholders use angle brackets.
 > It combines bounded page collection, transport and domain intelligence, form and content analysis,
 > tracker and dark-pattern signals, OCR, and injection detection. Dimension scores are weighted by the
 > user's intended action; confidence and source coverage determine when the system abstains. We evaluate
-> 830 samples over 826 domains whose primary labels are OpenPhish or URLhaus feed membership at a
+> 5,129 samples over 5,129 domains whose primary labels are PhishTank or OpenPhish feed membership at a
 > recorded retrieval time, and report 146 frozen human labels from a blinded single-annotator protocol
 > as a separate validity subset. All splits are grouped by registrable domain, and reputation-label
-> leakage is asserted absent before every build. On the untouched test split (n = 123), a hybrid logistic
-> model reaches AUROC 0.986 (95% CI 0.961–0.999) and AUPRC 0.993 (0.979–0.999), against 0.805 for a
-> URL-only model and 0.513 for the shipped rule engine across all 830 labelled rows. We report
-> calibration, risk–coverage, the padlock paradox (84.9% of feed-listed positives serve HTTPS, but only
-> 48.3% present a trusted chain), and a controlled 42-pair injection study in which all 40
+> leakage is asserted absent before every build. On the untouched test split (n = 769), a hybrid logistic
+> model reaches AUROC 0.987 (95% CI 0.979–0.994) and AUPRC 0.986 (0.974–0.994), against 0.857 for a
+> URL-only model and 0.475 for the shipped rule engine across all 5,129 labelled rows. We report
+> calibration, risk–coverage, the padlock paradox (87.2% of feed-listed positives serve HTTPS, but only
+> 46.3% present a trusted chain), and a controlled 42-pair injection study in which all 40
 > hidden-channel pairs reproduce their clean baseline exactly once injection evidence is removed.
 > The system is a CPU-only, no-paid-API prototype for advisory use, not a guarantee of safety.
 
-The numbers above are artifact-backed: dataset `feed_v2` (SHA-256 `ca677752…`), runs in
-`data/research/runs/feed_v2`, H4 in `data/research/injection_h4.json`. If any artifact is rebuilt, rerun
-`scripts/paper_artifacts.py` and update the abstract from the regenerated table, never by hand.
+The numbers above are artifact-backed: dataset `feed_v3` (SHA-256 `a1628d24…`), runs in
+`data/research/runs/feed_v3`, H4 in `data/research/injection_h4.json`. If any artifact is rebuilt, rerun
+`scripts/paper_artifacts.py` and update the abstract from the regenerated table, never by hand. The
+earlier `feed_v2` build (830 samples) is a predecessor and is cited only as such.
 
 Do not add a claim for a hypothesis that was not supported. Label-source wording is fixed by
 [main-dataset-protocol.md](main-dataset-protocol.md) section 2.2. The positive class is *feed membership*,
@@ -54,7 +55,7 @@ Frame the paper around four defensible contributions:
 2. **A leakage-controlled evaluation protocol** for website trust: domain-grouped splits, label-evidence
    exclusion, validation-only calibration/threshold selection, an untouched test set, and grouped
    bootstrap intervals.
-3. **An empirical study** on `<N>` labelled domains comparing rule, URL-only, signal, and hybrid models,
+3. **An empirical study** on 5,129 labelled domains comparing rule, URL-only, signal, and hybrid models,
    including calibration, risk–coverage, and the padlock paradox.
 4. **A safety analysis** of crawling hostile pages, plus hidden-instruction detection and an isolation
    design; optionally, a small user study of evidence cards versus a single score.
@@ -168,8 +169,10 @@ End with a short gap table:
 - Sampling frame and sources; enrichment for malicious/ambiguous sites.
 - Unit of annotation (registrable domain), representative assessment, action profiles.
 - Codebook: benign/suspicious/malicious, decision order, confidence anchors.
-- **Primary label source: public abuse-feed membership** (OpenPhish, URLhaus) at a recorded retrieval
-  time, with feed URLs, SHA-256 digests, a 7-day freshness window, and per-source rejection counts.
+- **Primary label source: public abuse-feed membership** (PhishTank `online-valid` + OpenPhish; URLhaus
+  retired from the pipeline after HTTP 410) at a recorded retrieval time, with feed URLs, SHA-256 digests,
+  a 7-day freshness window, and per-source rejection counts. Benign comparisons are drawn from the Tranco
+  top-1M pool and are *feed-absent*, never verified clean.
 - Human subset: single-annotator blinded workflow, pilot double annotation, delayed intra-rater audit.
   No inter-rater agreement exists and none may be claimed.
 - Agreement between the two label sources on their overlap, and what disagreement says about feed
@@ -202,115 +205,130 @@ Order results by hypothesis, not by table order.
 
 #### 7.1 Dataset and agreement
 
-Primary artifact: `data/datasets/feed_v2` (`manifest.json`), labels `data/labels/feed/eval_labels.csv`,
-provenance `data/labels/feed/eval_labels.json`, leakage gate
-`data/labels/feed/leakage_check.json` (`passed: true`, 912 assessments, 0 leaked, runtime store empty),
-composition profile `data/research/profile_feed_v2.json`. Every number quoted below is snapshotted in
-`data/datasets/feed_v2/artifacts_snapshot/` so a later crawl cannot silently move it. The earlier build
-`data/datasets/feed_v1` (743 samples / 742 domains, 495 malicious / 248 benign) is kept and reported as
-the pre-growth stage; the two agree on every headline, which is itself a stability result.
+Primary artifact: `data/datasets/feed_v3` (`manifest.json`), labels `data/labels/feed_v3/eval_labels.csv`,
+provenance `data/labels/feed_v3/provenance.json`, leakage gate
+`data/labels/feed_v3/leakage_check.json` (`passed: true`, 5,511 assessments checked, 0 leaked, runtime
+store empty), composition profile `data/research/profile_feed_v3.json`. Every number quoted below is
+snapshotted in `data/datasets/feed_v3/artifacts_snapshot/` by `scripts/feed_v3_freeze.py` so a later
+crawl cannot silently move it. The predecessor builds `data/datasets/feed_v2` (830 samples / 826 domains)
+and `data/datasets/feed_v1` (743 / 742) are retained as lower-scale stages and are cited only as such.
 
-- Primary labels are feed membership at retrieval time (2026-10-20), not human verdicts. 549 feed
-  domains were planned; 50 could not be reached and were dropped rather than called benign. The benign
-  pool is safe-stratum domains absent from both feeds (protocol section 4.3), enlarged in this build by
-  re-attempting failed domains and by collecting the pre-registered reserve without opening its gated
-  rows (`data/research/gate_compliance.json`: 12 candidate/export pairs, 0 gated rows scored in any
-  ungated run).
-- 830 samples over 826 domains: 497 malicious, 333 benign (496 / 330 distinct domains; four domains
-  contribute more than one assessment). Domain-grouped 70/15/15 with seed 42 gives train 581 samples /
-  578 domains (348/233), val 126 / 125 (75/51), test 123 / 123 (74/49). 82 collected domains carrying a
-  frozen human label were excluded from the primary task by design, and 107 crawl rows that carry only
-  `{url, error}` were skipped as assessments that never existed.
-- Class imbalance is 1.5:1 positive, and `benign` means *not reported*, never *verified clean*; state
-  both.
-- Agreement is between two label **sources**, not two raters: on the 4-domain overlap of the 549 feed
-  labels with the 146 frozen human labels, observed agreement is 0.25 and Cohen kappa 0.0, which is not
-  interpretable because the feed marginal is constant. Report the confusion table
+- Primary labels are feed membership at retrieval time (2026-10-25, PhishTank `online-valid` plus
+  OpenPhish; URLhaus was retired from the pipeline after returning HTTP 410), not human verdicts.
+- **Attrition is a headline fact, not a footnote.** 11,402 crawl rows were read. 5,891 never produced an
+  assessment (5,868 unresolvable hostname, 23 hostname resolving to a non-public address) and 382 landed
+  on a different registrable domain than their candidate; all were excluded, never relabelled benign.
+  5,129 same-domain assessments were kept, one per domain. Of the feed-listed domains, 7,231 yielded no
+  usable assessment. The corpus is therefore the *survivors* of the labelled pool, and the paper must say
+  so (`data/exports/feed_v3/analysis/exclusions.json`, `paper/tables/table3_dataset_summary.md`).
+- 5,129 samples over 5,129 domains: 2,533 malicious, 2,596 benign, one assessment per domain, so samples
+  and domains coincide exactly. Domain-grouped 70/15/15 with seed 42 gives train 3,590 (1,773/1,817), val
+  770 (380/390), test 769 (380/389). `feed_v3` candidates were drawn disjoint from the 146 frozen human
+  labels by construction, so the human-label exclusion rule had nothing to exclude in this build.
+- Positives came from 1,389 selected plus 724 reserve and 420 fixed-ranking top-up candidates, and 111 of
+  them were recovered by the pre-registered root-URL retry. Gate compliance was re-checked over all 141
+  candidate/export pairs (`data/research/gate_compliance_feed_v3.json`, `passed: true`): every scored
+  positive maps to a gated candidate, and no reserve row was scored in an ungated run.
+- Class balance is near 1:1 (2,533 / 2,596), and `benign` means *absent from both feeds at retrieval
+  time*, never *verified clean*; state both.
+- Agreement is between two label **sources**, not two raters: on the 4-domain overlap of the frozen human
+  labels with the predecessor `feed_v2` feed labels, observed agreement is 0.25 and Cohen kappa 0.0, which
+  is not interpretable because the feed marginal is constant. Report the confusion table
   (`data/labels/feed/human_vs_feed_final.json`) and the transience finding instead: only 1 of the 13
   human-malicious domains is still listed in either feed.
 - The delayed 15% intra-rater audit on the human subset, if run, is reported separately and never
   described as inter-rater reliability.
-- **Label transience, measured.** A second retrieval 4.43 h after the primary one
-  (`data/labels/feed/churn/churn_report.json`, labels `data/labels/feed/churn/labels_t2.csv`) still lists
-  540 of the 549 labelled domains (98.4% retained; 9 delisted, 11 newly listed). Of the 496 domains the
-  primary evaluation scored positive, 488 (98.4%) remain listed, and none of the 330 derived negatives
-  became listed in that window — measured on the label file the published dataset actually uses.
-  OpenPhish bytes were unchanged between retrievals (identical SHA-256), so all
-  churn came from URLhaus. Human-vs-feed overlap did not move either (still 1 of 13,
-  `data/labels/feed/churn/human_vs_feed_t2.json`). The churn check wrote only under
-  `data/labels/feed/churn/` and never re-labelled the primary set, so both dataset builds share one
-  retrieval. Report the retention figure as a stability property of the *label source at hourly, not
-  weekly, resolution* — a longer interval would decay further and was not measured here.
+- **Label transience is measured only on the predecessor.** A second retrieval 4.43 h after the primary
+  one (`data/labels/feed/churn/churn_report.json`, labels `data/labels/feed/churn/labels_t2.csv`) still
+  listed 540 of the 549 `feed_v2` labelled domains (98.4% retained; 9 delisted, 11 newly listed). Of the
+  496 domains that evaluation scored positive, 488 (98.4%) remained listed, and none of its 330 derived
+  negatives became listed in that window. OpenPhish bytes were unchanged between retrievals (identical
+  SHA-256), so all churn came from URLhaus. That artifact measures `feed_v2`, not the primary set.
+- **`feed_v3` label durability is unmeasured, not assumed high.** One second retrieval was attempted on
+  2026-11-01 with `scripts/feed_v3_churn.py`; PhishTank answered HTTP 429 on all five backoff attempts and
+  the script aborts rather than recording a partial fetch, because a truncated feed would otherwise be
+  read as mass delisting. Report the predecessor figure as a stability property of the *label source at
+  hourly, not weekly, resolution* and state that the primary set has one retrieval timestamp.
 
 #### 7.2 H1: Padlock paradox
 
-- **84.9% of the 497 feed-labelled malicious samples were served over HTTPS** (85.1% in the pre-growth
-  build; `data/research/profile_feed_v2.json`, `malicious.https_share`). The padlock is present on most
-  live phishing and malware-distribution infrastructure, so transport security alone is not a usable
-  trust signal. Trusted-chain rate is far lower than HTTPS presence (48.3% of the same positives), which
-  separates "has a certificate" from "the certificate verifies" — do not conflate them.
-- **Padlock-only baseline (test, n = 123):** a rule that flags a site when HTTPS is absent reaches
-  AUROC **0.432 [0.357, 0.503]**, precision 0.400, recall 0.108, F1 0.170 — no better than chance.
-  Requiring a trusted chain lifts the same rule to AUROC **0.668 [0.586, 0.750]**, precision 0.782,
-  recall 0.581, still far below page signals (0.972). The `url_https` coefficient in the URL-only model is
-  *positive* toward malicious in this set. Intervals: 1000 domain-grouped bootstrap resamples;
-  `data/research/profile_feed_v2.json` → `transport_rule_baselines`.
+- **87.2% of the 2,533 feed-labelled malicious samples were served over HTTPS**
+  (`data/research/profile_feed_v3.json`, `malicious.https_share`;
+  `paper/tables/table6_https_prevalence.md`). The padlock is present on most live phishing and
+  malware-distribution infrastructure, so transport security alone is not a usable trust signal. The
+  trusted-chain rate is far lower (46.3% of the same positives) than for the feed-absent class (85.7%),
+  which separates "has a certificate" from "the certificate verifies" — do not conflate them. Note the
+  direction: malicious sites present HTTPS *more* often than the benign comparison class (87.2% vs 74.0%),
+  which is exactly why the padlock misleads.
+- **Padlock-only baseline (test, n = 769):** a rule that flags a site when HTTPS is absent reaches
+  AUROC **0.416 [0.389, 0.445]**, precision 0.271, recall 0.103, F1 0.149 — worse than chance.
+  Requiring a trusted chain lifts the same rule to AUROC **0.635 [0.604, 0.668]**, precision 0.656,
+  recall 0.553, still far below page signals (0.979). The HTTPS-only rule is the pre-registered padlock
+  baseline; the trusted-chain rule is descriptive and was not pre-registered. Intervals: 1000
+  domain-grouped bootstrap resamples; `data/research/profile_feed_v3.json` →
+  `transport_rule_baselines`.
+- The `url_https` coefficient in the URL-only logistic model is *positive* toward malicious in this set
+  (+0.371, standardised), consistent with the padlock-paradox direction above: on feed membership,
+  "uses HTTPS" is not a protective feature.
 - Do not claim causation about user behaviour without the user study.
 
 #### 7.3 H2: URL-only vs signals vs hybrid
 
-Artifact: `data/research/runs/feed_v2/report.md` (test split, 1000 bootstrap resamples,
-domain-grouped; snapshotted in `data/datasets/feed_v2/artifacts_snapshot/runs/`).
+Artifact: `data/research/runs/feed_v3/report.md` (test split, 1000 bootstrap resamples,
+domain-grouped; snapshotted in `data/datasets/feed_v3/artifacts_snapshot/runs/`).
 
 | Feature group | Rule engine AUROC | Logistic AUROC [95% CI] | HistGB AUROC | Logistic AUPRC |
 | --- | ---: | ---: | ---: | ---: |
-| `url` (21) | 0.519 | 0.805 [0.723, 0.878] | 0.819 | 0.867 |
-| `signals` (80) | 0.519 | 0.972 [0.940, 0.995] | 0.981 | 0.984 |
-| `rule` (36) | 0.519 | 0.959 [0.924, 0.986] | 0.971 | 0.977 |
-| `hybrid` (116) | 0.519 | **0.986** [0.961, 0.999] | **0.991** [0.975, 0.999] | 0.993 |
+| `url` (21) | 0.455 | 0.857 [0.829, 0.883] | 0.881 | 0.840 |
+| `signals` (80) | 0.455 | 0.979 [0.967, 0.989] | 0.991 | 0.977 |
+| `rule` (36) | 0.455 | 0.964 [0.950, 0.977] | 0.983 | 0.956 |
+| `hybrid` (116) | 0.455 | **0.987** [0.979, 0.994] | **0.993** [0.988, 0.997] | 0.986 |
 
-- The headline is the baseline: the shipped rule engine is at chance against feed membership. Across the
-  497 labelled positives it placed 244 in low, 248 in medium, 5 in high and 0 in critical
-  (**1.0% recall at high-or-critical**, 50.9% at medium-or-above, mean risk 0.229 on the stored 0-1
-  scale, max 0.68) while escalating 2 of 333 benign domains. Its AUROC is **0.513 over all 830 labelled
-  rows** and 0.519 on the test split. A learned model on the same features reaches 0.986/0.991 AUROC.
-  Report recall, precision and F1 at the calibrated threshold, not AUROC alone: hybrid logistic
-  F1 0.959 (P 0.959, R 0.959), HistGB F1 0.950 at precision 1.000.
-- **The engine's own threshold degenerates.** Validation selects raw threshold 0.001 for the engine, i.e.
-  "escalate almost everything" (test recall 0.986 at precision 0.598) — the F1-optimal operating point for
-  a score that cannot rank. Say this explicitly: it is a statement about the shipped policy, not a
-  misconfiguration in the experiment.
-- Calibration table: hybrid logistic ECE 0.036 → 0.026, HistGB 0.039 → 0.052. For the engine the pipeline
-  **refuses to calibrate**: on this build Platt is skipped and recorded
-  (`fitted: false`, "validation scores were not positively associated with labels"), so its raw and
-  calibrated ECE are both 0.402. Where the association test does pass (seed 43), the fitted slope
-  collapses to 0.067 — it maps the score to an almost constant probability (ECE 0.408 → 0.116). Report
-  this as the mechanism-level statement of "calibration cannot rescue a chance-level ranking": the code
-  now enforces it instead of merely asserting it.
-- Risk–coverage: at 50% coverage hybrid logistic accuracy 0.984 and HistGB 0.984, versus the rule engine
-  at **0.452** — below the class prior, i.e. the engine's most confident half of predictions is its worst
-  half. That is a stronger and more concrete version of the AUROC claim; lead with it.
-- **Robustness (two pre-registered sensitivity runs).** Re-drawing the domain-grouped split with seed 43
-  (`data/research/runs/feed_v2_s43`) and dropping the main batch 02 negative stratum entirely, which
-  removes 73 derived negatives (`data/research/runs/feed_v2_no_batch_02`), leave the conclusion intact:
-  hybrid logistic AUROC 0.982 / 0.978 and HistGB 0.997 / 0.978, while the engine stays at
-  0.513 / 0.517 over all labelled rows. The engine's *test-split* AUROC does move (0.519 / 0.575 / 0.676),
-  which is split noise at n≈120 and the reason the full-labelled-set figure is the one to quote; state both
-  and do not present the largest one as the engine's capability.
-- **Data sufficiency (train-only learning curve).** The dataset is small, so answer the reviewer's first
-  question with evidence: `data/research/learning_curve.json` (rebuilt by
-  `scripts/learning_curve.py`) re-draws five-fold domain-grouped CV inside the training split, subsamples
-  whole domains per class, and pools out-of-fold predictions; the validation and test splits are never
-  scored. Logistic AUROC is 0.907 at 46 training domains, 0.964 at 231 and **0.973 at 462**; HistGB is
-  0.922, 0.985 and **0.990**. Doubling from 50% to 100% buys +0.009 (logistic) and +0.005 (HistGB), and
-  the full-size pooled logistic estimate reproduces the run's grouped-CV 0.965 within 0.007. Quote this
-  as saturation: more training domains narrow intervals but do not change the ordering; the 123-row test
-  split is the binding constraint on precision.
+- The headline is the baseline: the shipped rule engine does not separate the classes at all. Across the
+  2,533 labelled positives it placed 1,321 in low, 1,183 in medium, 29 in high and 0 in critical
+  (**1.1% recall at high-or-critical**, 47.9% at medium-or-above, mean risk 0.218 on the stored 0-1
+  scale) while raising 27 of 2,596 benign domains (1.0%). Its AUROC is **0.475 over all 5,129 labelled
+  rows** and 0.455 [0.410, 0.494] on the test split — an interval that excludes chance. A learned model
+  on the same features reaches 0.987/0.993 AUROC. Report recall, precision and F1 at the calibrated
+  threshold, not AUROC alone: hybrid logistic F1 0.966 (P 0.973, R 0.958), HistGB F1 0.967
+  (P 0.976, R 0.958).
+- **The engine's own threshold degenerates.** Validation selects raw threshold 0.0 for the engine, i.e.
+  "escalate almost everything" (test recall 1.000 at precision 0.494, which is exactly the class prior,
+  accuracy 0.494) — the F1-optimal operating point for a score that cannot rank. Say this explicitly: it
+  is a statement about the shipped policy, not a misconfiguration in the experiment.
+- Calibration: hybrid logistic test ECE 0.018 (Platt slope 1.027 — the raw probability was already close
+  to calibrated), HistGB 0.014 (slope 0.748). For the engine the pipeline **refuses to calibrate**: Platt
+  is skipped and recorded on *both* seeds (`fitted: false`, "validation scores were not positively
+  associated with labels"), so its raw and calibrated test ECE are both 0.319. Report this as the
+  mechanism-level statement of "calibration cannot rescue a ranking that does not separate the classes":
+  the code enforces it instead of merely asserting it.
+- Risk–coverage: at 50% coverage hybrid logistic accuracy is 0.995 and HistGB 1.000, versus the rule
+  engine at **0.471** — below the 0.494 class prior, i.e. the engine's most confident half of predictions
+  is its worst half. Its accuracy never leaves the 0.471–0.546 band at any coverage level. That is a
+  stronger and more concrete version of the AUROC claim; lead with it.
+- **Robustness (pre-registered sensitivity run).** Re-drawing the domain-grouped split with seed 43
+  (`data/research/runs/feed_v3_s43`) leaves the conclusion intact: hybrid logistic AUROC 0.988 and HistGB
+  0.993, while the engine stays at 0.475 over all labelled rows and 0.473 on that run's test split — still
+  below chance. The predecessor `feed_v2` build additionally ablated its negative stratum (dropping the
+  main batch 02 assessments reused as negatives, 73 derived negatives,
+  `data/research/runs/feed_v2_no_batch_02`); that ablation has **no `feed_v3` counterpart**, because this
+  build's benign class is drawn from the Tranco top-1M pool under the recorded protocol rather than from a
+  reused stratum. Quote the all-labelled engine figure as the stable one and report the test-split figure
+  alongside it; do not present whichever number suits the argument.
+- **Data sufficiency (train-only learning curve).** Answer the reviewer's first question with evidence:
+  `data/research/learning_curve_feed_v3.json` (rebuilt by `scripts/learning_curve.py`) re-draws five-fold
+  domain-grouped CV inside the training split, subsamples whole domains per class, and pools out-of-fold
+  predictions; the validation and test splits are never scored. Logistic AUROC is 0.975 at 287 training
+  domains per fold, 0.985 at 1,436 and **0.987 at 2,872**; HistGB is 0.985, 0.991 and **0.993**. Doubling
+  from 50% to 100% buys +0.002 for both, and the full-size pooled logistic estimate reproduces the run's
+  grouped-CV 0.987 within 0.00013. Quote this as saturation: at this scale data volume is no longer the
+  binding constraint on these models, so the remaining gap is a property of the label population, not of
+  sample size.
 - Ablation reads url → signals → hybrid; state clearly that hybrid includes rule outputs as features, so
   it is a superset comparison, not an independent model family.
-- Circularity control: the feed verdict never enters these features (`research feed-check` passes on 912
-  assessments, runtime label store empty, `--allow-leakage` never used). The models are scored on page and
-  URL evidence only.
+- Circularity control: the feed verdict never enters these features (`research feed-check` passes on the
+  5,511 readable assessments, runtime label store empty, `--allow-leakage` never used). The models are
+  scored on page and URL evidence only.
 
 
 #### 7.4 H3: Evidence cards (if the study was run)
@@ -371,68 +389,61 @@ otherwise influence the score or the verdict.
 
 #### 7.6 Error analysis
 
-Artifact: `data/research/error_analysis_feed_v2.json` (`scripts/error_analysis.py`, snapshotted in
-`data/datasets/feed_v2/artifacts_snapshot/`). The script re-derives per-sample probabilities from the
+Artifact: `data/research/error_analysis_feed_v3.json` (`scripts/error_analysis.py`, snapshotted in
+`data/datasets/feed_v3/artifacts_snapshot/`). The script re-derives per-sample probabilities from the
 stored logistic artifacts and reproduces the reported test confusion exactly for all four feature groups
 (`tp/fp/fn/tn` matched, `reproduction_ok: true`) before extracting errors, so the examples below are the
 same predictions the metrics were computed from; the script exits non-zero if they ever diverge.
 Categories are computed from recorded evidence codes and feature values, never assigned by hand. Domains
 carrying the derived `benign` label are hashed to neutral handles (`benign-<10 hex>`); feed-listed
 positives are named, because they are already public in the feed and naming a small legitimate site would
-add risk without adding evidence. The pre-growth build (`error_analysis_feed_v1.json`) produced the same
-reading on a smaller negative pool, so the pattern is not an artifact of this split.
+add risk without adding evidence. The predecessor builds (`error_analysis_feed_v2.json`,
+`error_analysis_feed_v1.json`) produced the same reading at lower scale.
 
-Test split: 123 samples (74 malicious / 49 benign).
+Test split: 769 samples (380 malicious / 389 benign).
 
 | Model, at its selected threshold | Errors | FP | FN | What the errors are made of |
 | --- | ---: | ---: | ---: | --- |
-| shipped rule engine, escalation at high-or-critical | 74 | 0 | 74 | recall at escalation 0.0 on this split (1.0% over all 497 positives, §7.3) |
-| logistic, `url` only | 32 | 27 | 5 | `unsafe_delivery_mechanics` 24, `established_host_appearance` 21, `no_email_configuration` 10 |
-| logistic, `signals` | 8 | 3 | 5 | `established_host_appearance` 3, `unsafe_delivery_mechanics` 2 |
-| logistic, `rule` features | 11 | 5 | 6 | `tls_absent_or_invalid` 4, `established_host_appearance` 3, `no_email_configuration` 3 |
-| logistic, `hybrid` | 6 | 3 | 3 | three different shapes, one per error — see below |
+| shipped rule engine, escalation at high-or-critical | 381 | 5 | 376 | recall at escalation 0.011 on this split (1.1% over all 2,533 positives, §7.3) |
+| logistic, `url` only | 161 | 79 | 82 | FN `unsafe_delivery_mechanics` 55, `no_email_configuration` 50, `established_host_appearance` 46; FP `unsafe_delivery_mechanics` 67, `established_host_appearance` 57, `hidden_iframe_present` 35 |
+| logistic, `signals` | 36 | 20 | 16 | FN `established_host_appearance` 13, `feed_reported_url_on_established_host` 13, `unsafe_delivery_mechanics` 10 |
+| logistic, `rule` features | 71 | 42 | 29 | FN `established_host_appearance` 24, `feed_reported_url_on_established_host` 24, `tls_absent_or_invalid` 15 |
+| logistic, `hybrid` | 26 | 10 | 16 | FN `established_host_appearance` 13, `feed_reported_url_on_established_host` 13, `unsafe_delivery_mechanics` 13 |
 
-- **The hybrid misses are three distinct failure shapes, and naming them is more honest than one
-  story.** `amyuni.com` is an established host (engine risk 0.056, band `low`, model probability 0.227)
-  that carries a feed-reported URL: `established_domain`, `privacy_policy_accessible`, a full set of
-  privacy disclosures, advertising trackers and cookies. `nlink.at` is the opposite shape — the reported
-  URL is `http://nlink.at/NVBN`, a path on a plain-HTTP host that answered with a non-OK status, publishes
-  no MX records, has no resolvable registration age and no verified chain (risk 0.420, probability 0.049):
-  the feed reported a payload URL on a domain whose registrable root is nearly empty. `150.co.il` is a
-  payload host — an executable download behind six iframes with hidden elements, no privacy policy and no
-  registration age (probability 0.000). The first is a **label-granularity error, not a perception
-  error**: URLhaus reports a URL, the sampling unit is the registrable domain, and a domain that hosts a
-  reported payload can look entirely ordinary at its root. That mechanism is not rare — 46 of the 74
-  positives the engine missed carry `feed_reported_url_on_established_host`, the single largest
-  contributor to its recall collapse, and it also accounts for 3 of 5 `url`-model and 3 of 5
-  `signals`-model misses. Report the granularity limit as a property of the *label source*, and note that
-  a URL-level evaluation would change these specific counts.
-- **The false positives are label noise by construction, and there are only three of them now.** The
-  negative class was sampled from the safe strata before any verdict existed, and `benign` means *not
-  reported*. `benign-1ce7c9c06d` (probability 0.916) is served over plain HTTP on a `suspicious_tld`,
-  publishes no MX records and no verified chain, yet its own assessment records `established_domain`.
-  `benign-ba7f1fcab2` (0.422, i.e. barely over the selected threshold) answered a non-OK status over HTTP
-  with no MX records, no verified chain and almost no recorded evidence — the profile of a campaign host
-  that has already been taken down. `benign-0bdddc9c68` (0.625) is HTTPS with a valid certificate but ships
-  `mixed_content`, `weak_security_headers`, tracking cookies and no email authentication, while also
-  carrying `established_domain`. Two of the three already escalate to `medium` in the shipped engine, so
-  this is not a learned-model quirk. The protocol's rule that an unreachable *feed* domain is dropped
-  rather than called benign is the correct handling of the same ambiguity from the other side; say so, and
-  report these errors as a property of feed-absence negatives rather than purely as model failure.
-- **What the engine sees but does not escalate.** Across the 74 missed positives the mechanisms it
-  recorded are `unsafe_delivery_mechanics` 54, `no_email_configuration` 53,
-  `established_host_appearance` 46, `feed_reported_url_on_established_host` 46,
-  `tls_absent_or_invalid` 38, `unreachable_at_capture` 23, `brand_claim_mismatch` 23,
-  `thin_capture_low_evidence` 17, `domain_age_unknown` 11, `email_authentication_missing` 9. The engine is
-  not blind to these pages; its scoring policy does not convert them into a warning. That is the gap the
-  learned models close on identical features, and it is a statement about the shipped policy.
-- **Injection surface in the wild set.** None of the 74 missed test positives carries
-  `hidden_prompt_injection`. Across all 830 dataset-scope assessments the code appears on 7 domains, of
-  which 5 are feed-labelled positives — **1.0% of the positives** — while `hidden_iframe` appears on 163
-  domains (41 positives, 8.3%) and is present on 5 of the missed positives
-  (`data/research/profile_feed_v2.json`, `injection_surface`). Report the injection detection results from
-  the controlled set in §7.5 and use these counts only to state the natural prevalence of the surface —
-  do not infer attack success from them.
+- **The hybrid misses are dominated by one mechanism: label granularity, not perception failure.** 13 of
+  the 16 missed positives carry `feed_reported_url_on_established_host`. `pinterest.com` is the starkest
+  case — engine risk 0.009, band `low`, model probability 0.421 just under the selected 0.554 threshold,
+  and its only two recorded categories are `established_host_appearance` and
+  `feed_reported_url_on_established_host`. The feeds report a *URL*; the sampling unit is the registrable
+  *domain*; a domain that hosts a reported payload can look entirely ordinary at its root. Other misses
+  show the same shape on quieter hosts (`bondevision.com` probability 0.324, `rbfcu.org` 0.317,
+  `tunnelsnakes.com` 0.021), and a few are near-misses the model scored above 0.4 but below the threshold
+  (`angelnidoresort.com` 0.524). Report the granularity limit as a property of the *label source*, and
+  note that a URL-level evaluation would change these specific counts.
+- **The false positives are label noise by construction, and there are only ten of them.** The negative
+  class was sampled from the safe strata before any verdict existed, and `benign` means *not reported*.
+  `benign-ca2fe1f6e2` (probability 1.000) is a shared/free host with a brand claim, no email
+  authentication, an invalid chain and a payload path — and it already escalates to `high` in the shipped
+  engine. `benign-6e71583950` (1.000) and `benign-bee90ccbfe` (0.993) are credential-form and
+  unsafe-delivery profiles with almost nothing else recorded, the shape of a campaign host that has
+  already been taken down. `benign-fda59dd4b2` (0.650) also already escalates to `medium`. Two of the ten
+  are escalated by the engine itself, so this is not a learned-model quirk. The protocol's rule that an
+  unreachable *feed* domain is dropped rather than called benign is the correct handling of the same
+  ambiguity from the other side; say so, and report these errors as a property of feed-absence negatives
+  rather than purely as model failure.
+- **What the engine sees but does not escalate.** Across the 376 missed positives the mechanisms it
+  recorded are `unsafe_delivery_mechanics` 268, `no_email_configuration` 245, `unreachable_at_capture`
+  193, `established_host_appearance` 185, `feed_reported_url_on_established_host` 185,
+  `tls_absent_or_invalid` 166, `thin_capture_low_evidence` 135, `brand_claim_mismatch` 106,
+  `domain_age_unknown` 73, `email_authentication_missing` 63. The engine is not blind to these pages; its
+  scoring policy does not convert them into a warning. That is the gap the learned models close on
+  identical features, and it is a statement about the shipped policy.
+- **Injection surface in the wild set.** Across all 5,129 dataset-scope assessments `hidden_prompt_injection`
+  appears on 20 domains, of which 1 is a feed-labelled positive — **0.04% of the positives** — while
+  `hidden_iframe` appears on 1,192 domains (232 positives, 9.2% of them) and is among the categories of 27
+  of the engine's missed positives (`data/research/profile_feed_v3.json`, `injection_surface`). Report the
+  injection detection results from the controlled set in §7.5 and use these counts only to state the
+  natural prevalence of the surface — do not infer attack success from them.
 - Limitations to state with this section: the taxonomy is derived from the engine's own evidence codes, so
   a mechanism the engine cannot observe is invisible to the analysis; errors are per registrable domain, so
   a host that serves both legitimate and reported payloads is counted once; and the benign-side examples
@@ -449,35 +460,44 @@ Test split: 123 samples (74 malicious / 49 benign).
 - What would be needed for a production system: larger representative data, temporal validation,
   multi-vantage crawling, independent adjudication, authentication and sandboxing.
 
-#### 8.1 Why the shipped policy is the rule engine, not the 0.986 model
+#### 8.1 Why the shipped policy is the rule engine, not the 0.987 model
 
 A reviewer will ask this first, so answer it with artifacts rather than preference. Five reasons, in
 descending order of force:
 
 1. **The learned model is measured on a proxy label, and the proxy has a known unit error.** The label is
-   feed membership at one retrieval time. URLhaus reports a URL; the evaluation unit is the registrable
-   domain. 46 of the 74 positives the engine missed carry `feed_reported_url_on_established_host` — a
-   reported payload on a domain whose root looks ordinary. A classifier trained on this label learns that
-   error as signal. The rule engine does not claim to resolve it either; that is why its verdicts are
-   advisory and expose evidence.
+   feed membership at one retrieval time. PhishTank and OpenPhish report a URL; the evaluation unit is the
+   registrable domain. 185 of the 376 positives the engine missed on the test split carry
+   `feed_reported_url_on_established_host`, and 13 of the 16 hybrid false negatives carry it — a reported
+   payload on a domain whose root looks ordinary (`pinterest.com` is the extreme case, §7.6). A
+   classifier trained on this label learns that error as signal. The rule engine does not claim to resolve
+   it either; that is why its verdicts are advisory and expose evidence.
 2. **The label decays faster than a model can be validated.** Only 1 of the 13 human-malicious domains was
-   still listed at retrieval time, and 8 of the 496 evaluation positives were delisted 4.43 h later
-   (`churn_report.json`). A frozen classifier cannot express "this label may be stale"; an evidence card
-   can show the observation date of every signal and abstain when coverage is thin.
-3. **The headline AUROC rests on one split.** Test n = 123, no temporal split, no external validation.
-   Sensitivity runs move the hybrid logistic AUROC between 0.978 and 0.986 and the engine's test AUROC
-   between 0.519 and 0.676; the stable engine number is 0.513 over all 830 labelled rows. A 0.986 test
-   estimate is a promising result, not a deployment case. The paper reports it as the former.
+   still listed at retrieval time, and in the predecessor's measured window 8 of its 496 evaluation
+   positives were delisted 4.43 h later (`data/labels/feed/churn/churn_report.json`). No second retrieval
+   has been measured against `feed_v3`: the one attempt aborted when PhishTank returned HTTP 429, so its
+   durability is unmeasured, not assumed high. A frozen classifier cannot express "this label may be
+   stale"; an evidence card can show the observation date of every signal and abstain when coverage is thin.
+3. **The headline AUROC rests on two splits of one retrieval.** Test n = 769, no temporal split, no
+   external validation, no independent label source. The seed-43 re-split moves the hybrid logistic AUROC
+   from 0.987 to 0.988 and the engine's test AUROC from 0.455 to 0.473, while its all-labelled figure
+   stays at 0.475 over all 5,129 rows — so the ordering is robust and the engine's failure is not a split
+   artifact. What is *not* robust is the construct: the train-only learning curve is saturated (+0.002
+   from 50% to 100% of the training domains), which means more data of this kind will not close the
+   remaining gap. A 0.987 test estimate under a proxy label is a promising result, not a deployment case.
+   The paper reports it as the former.
 4. **Auditability is a product requirement here, not a preference.** The runtime emits typed evidence with
    provenance, merges by `(dimension, code)`, and can point to the observation behind every risk point.
    The API does not load the research artifacts as its decision policy (model card §1). Shipping a
-   learned score would replace an auditable chain with a coefficient vector whose single largest
-   standardised coefficient is `risk_medium_count`, a rule output, and in which `url_https` enters
-   *positively* toward malicious (+1.27) — a real pattern in this label population, but one the interface
-   would have to explain rather than assert. That does not make the model wrong; it makes it a different
-   claim than the one the interface makes.
-5. **The engine's chance-level ranking is reported, not hidden.** Its AUROC is 0.513, 1.0% recall at
-   high-or-critical, and at 50% coverage its accuracy is 0.452 — below the prior. That is the empirical
+   learned score would replace an auditable chain with a coefficient vector whose largest standardised
+   weights are dimension aggregates the engine itself produced (`security_confidence` −2.689,
+   `risk_medium_count` −2.126, `security_coverage` +1.655, `overall_rule_risk` −1.466) and in which
+   `url_https` enters *positively* toward malicious (+1.127) — a real pattern in this label population,
+   but one the interface would have to explain rather than assert. That does not make the model wrong; it
+   makes it a different claim than the one the interface makes.
+5. **The engine's chance-level ranking is reported, not hidden.** Its AUROC is 0.475 over all 5,129
+   labelled rows (0.455 on the test split, interval excluding chance), its recall at high-or-critical is
+   1.1%, and at 50% coverage its accuracy is 0.471 — below the 0.494 prior. That is the empirical
    case for a second-stage learned model, and the paper says so. The defensible next step is an optional,
    calibrated second opinion shown behind the evidence and evaluated with a URL-level, temporally split
    protocol, not a silent replacement of the verdict.
@@ -488,11 +508,14 @@ does not yet license shipping it as the sole decision policy.
 ### 9. Limitations and threats to validity (≈1 page)
 
 - Construct, internal, external, statistical, and conclusion validity from the research plan.
-- Dataset size and convenience sampling.
-- Two-author labels.
-- Snapshot and cloaking.
-- No temporal split.
-- No claim of population prevalence.
+- **Survivorship, not size.** The corpus is 5,129 domains, but it is the survivors of 11,402 crawl rows:
+  5,891 never produced an assessment and 382 redirected off-domain, and 7,231 feed-listed domains yielded
+  nothing usable. Whatever is unassessable is systematically absent from the evaluation.
+- Convenience sampling from two feeds plus the Tranco top-1M; no claim of population prevalence.
+- One label source and one retrieval timestamp; `feed_v3` durability unmeasured (the retry aborted on
+  HTTP 429). 146 human labels from a single annotator are a validity subset, not an independent label.
+- Snapshot and cloaking; a single crawl vantage point.
+- No temporal split and no external validation set.
 - Synthetic smoke tests are not results.
 
 ### 10. Ethics statement (≈0.4 page)
@@ -535,12 +558,12 @@ in `paper/figure-captions.md`; every empirical caption states the split, sample 
 | Fig. 1 | System architecture and trust boundaries | `paper/figures/fig1_architecture.pdf` from `docs/threat-model.md` (diagram, no data). |
 | Fig. 2 | Dashboard verdict and evidence card | `paper/figures/fig2_dashboard.png` (3x local demo capture of example.com; no participant data). |
 | Fig. 3 | Dataset composition and split counts | `paper/figures/fig3_dataset_composition.pdf` from `manifest.json`. |
-| Fig. 4 | Human-label/feed overlap and feed-label retention | `paper/figures/fig4_label_sources.pdf` from `human_vs_feed_final.json`, `churn_report.json`. |
+| Fig. 4 | Human-label/feed overlap and feed-label retention, **both measured on the predecessor `feed_v2` label set** | `paper/figures/fig4_label_sources.pdf` from `human_vs_feed_final.json`, `churn_report.json`. |
 | Fig. 5 | Reliability diagram (raw engine vs calibrated hybrid) | `paper/figures/fig5_reliability.pdf` from `run.json`. |
 | Fig. 6 | Risk–coverage curves | `paper/figures/fig6_risk_coverage.pdf` from `run.json`. |
 | Fig. 7 | Ablation AUROC/AUPRC with intervals | `paper/figures/fig7_ablation.pdf` from `run.json`. |
 | Fig. 8 | H4 paired risk and bounded escalation | `paper/figures/fig8_injection.pdf` from `injection_h4.json`. |
-| Fig. 9 | Train-only learning curve (hybrid logistic and HistGB) | `paper/figures/fig9_learning_curve.pdf` from `learning_curve.json`. |
+| Fig. 9 | Train-only learning curve (hybrid logistic and HistGB) | `paper/figures/fig9_learning_curve.pdf` from `learning_curve_feed_v3.json`. |
 | Table 1 | Dimensions and representative evidence | Code/knowledge files; author table, not auto-generated. |
 | Table 2 | Action weights | `paper/tables/table2_action_weights.md` from `scoring/rules.py`. |
 | Table 3 | Dataset and collection summary | `paper/tables/table3_dataset_summary.md` from the manifest. |
@@ -550,11 +573,11 @@ in `paper/figure-captions.md`; every empirical caption states the split, sample 
 | Table 7 | Error categories and reproduction check | `paper/tables/table7_errors.md`. |
 | Table 8 | Runtime and resource use | `paper/tables/table8_runtime.md` + `.json`. |
 | Table 9 | Pre-registered sensitivity runs | `paper/tables/table9_sensitivity.md`. |
-| Table 10 | Learning curve points, train-only grouped CV | `paper/tables/table10_learning_curve.md` from `learning_curve.json`. |
+| Table 10 | Learning curve points, train-only grouped CV | `paper/tables/table10_learning_curve.md` from `learning_curve_feed_v3.json`. |
 
 Regenerate with `PYTHONPATH=. python scripts/paper_artifacts.py`. Do not paste a number from a notebook
 into the manuscript; add it to an artifact and let the script render it. The script refuses to run if
-`data/datasets/feed_v2/dataset.jsonl` no longer hashes to the value recorded in the run, if any split
+`data/datasets/feed_v3/dataset.jsonl` no longer hashes to the value recorded in the run, if any split
 count disagrees with the manifest, if the error analysis no longer reproduces the confusion, if any H4
 gate check fails, or if the learning curve no longer reproduces the run's grouped-CV estimate.
 
@@ -576,9 +599,10 @@ Use this table as a submission checklist. If a claim has no artifact, remove it.
 | No label leakage | Leakage exclusion, manifest | Implemented; audit in paper. |
 | Domain-grouped evaluation | Dataset manifest, training checks | Implemented. |
 | CPU-only, no paid API | Runtime log, dependency list | Implemented; report. |
-| Padlock paradox | H1 analysis (§7.2) | Measured: 84.9% of 497 feed positives serve HTTPS, 48.3% with a trusted chain; HTTPS-only rule AUROC 0.432 [0.357, 0.503]. |
-| Signals beat URL-only | H2 test (§7.3) | Measured: url-only 0.805 vs page signals 0.972 vs hybrid 0.986 test AUROC. |
-| Training set is large enough | Learning curve (§7.3, Table 10) | Measured: 50%→100% of training domains buys +0.009 logistic and +0.005 HistGB AUROC; curve saturated. |
+| Padlock paradox | H1 analysis (§7.2) | Measured: 87.2% of 2,533 feed positives serve HTTPS, only 46.3% with a trusted chain; HTTPS-only rule AUROC 0.416 [0.389, 0.445]. |
+| Signals beat URL-only | H2 test (§7.3) | Measured: url-only 0.857 vs page signals 0.979 vs hybrid 0.987 test AUROC. |
+| Shipped engine ranks the classes | §7.3, Table 4 | Measured, and it does not: AUROC 0.455 [0.410, 0.494] on test, 0.475 over all labelled rows, 1.1% recall at escalation. |
+| Training set is large enough | Learning curve (§7.3, Table 10) | Measured: 50%→100% of training domains buys only +0.002 for both hybrids; curve saturated. |
 | Evidence cards help users | H3 study | Optional; do not claim without data. |
 | Injection isolation | H4 detection/invariance (§7.5) | Measured on a controlled 42-pair corpus; isolation gate enforced in code. |
 | Safe crawling | Threat model, tests | Implemented; report residual risk. |
@@ -587,8 +611,9 @@ Use this table as a submission checklist. If a claim has no artifact, remove it.
 
 ## 6. Venue strategy
 
-Choose a venue that matches the evidence, not the ambition. An 826-domain convenience sample with
-feed-derived labels and a single-annotator validity subset is not a USENIX Security-scale evaluation.
+Choose a venue that matches the evidence, not the ambition. A 5,129-domain convenience sample with
+feed-derived labels, heavy collection attrition, and a single-annotator validity subset is not a
+USENIX Security-scale evaluation.
 Realistic options:
 
 - **Primary journal:** *Computers & Security* (Elsevier) or *Journal of Cybersecurity* (Oxford).
@@ -676,11 +701,19 @@ Writing rules:
 12. **"Why not use a large language model?"**
     - The current path is deterministic and CPU-only for reproducibility and prompt-injection
       isolation. An LLM narration experiment is future work with a separate threat model.
-13. **"If the learned model reaches 0.986, why ship the 0.513 rule engine?"**
+13. **"If the learned model reaches 0.987, why ship the 0.475 rule engine?"**
     - See §8.1. The label is a decaying proxy with a URL-to-domain unit error, the headline is one
-      123-sample split, and the runtime's contract is an auditable evidence chain. The learned model is
-      an evaluation artifact; the path to shipping it is a URL-level, temporally split evaluation and a
-      calibrated second opinion behind the evidence, not a silent replacement.
+      retrieval split into two seeds, and the runtime's contract is an auditable evidence chain. The
+      learned model is an evaluation artifact; the path to shipping it is a URL-level, temporally split
+      evaluation and a calibrated second opinion behind the evidence, not a silent replacement.
+14. **"Then the dataset is 6× bigger and your engine still ranks at chance — is the engine broken?"**
+    - Yes, against this label, and the report says so rather than hiding it: 0.455 [0.410, 0.494] on the
+      test split, an interval that excludes chance, and 0.475 over all 5,129 labelled rows on both seeds.
+      Growing the set sharpened the negative result instead of rescuing the engine. The engine's own
+      F1-optimal validation threshold is 0.0 — "escalate everything" — which is the signature of a score
+      that cannot rank. What the engine *does* provide is the evidence chain the learned model consumes:
+      on identical features the learned model reaches 0.987, so the information was observed and the
+      policy did not act on it (§7.3, §7.6).
 
 ---
 

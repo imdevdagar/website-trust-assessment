@@ -921,6 +921,7 @@ def build_feed_candidates(
     out_dir: Path,
     seed: int,
     batch_size: int = MAX_FEED_BATCH,
+    batch_prefix: str = "feed_batch",
 ) -> dict[str, Any]:
     """Write gated crawl batches for feed-labeled domains from the label CSV alone.
 
@@ -973,7 +974,7 @@ def build_feed_candidates(
     out_dir.mkdir(parents=True, exist_ok=True)
     batch_files: list[dict[str, Any]] = []
     for number, batch in enumerate(batches, start=1):
-        path = out_dir / f"feed_batch_{number:02d}.csv"
+        path = out_dir / f"{batch_prefix}_{number:02d}.csv"
         digest = _write_candidates(path, batch)
         batch_files.append(
             {

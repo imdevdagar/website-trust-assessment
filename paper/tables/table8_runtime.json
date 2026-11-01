@@ -6,21 +6,21 @@
   },
   "offline_scoring": {
     "pages": 210,
-    "median_ms": 22.07,
-    "p95_ms": 25.95,
-    "throughput_pages_per_second": 44.4,
+    "median_ms": 32.4,
+    "p95_ms": 38.57,
+    "throughput_pages_per_second": 32.0,
     "peak_traced_mb": 0.9,
     "scope": "static parse and synchronous extractors only; no network, no OCR, no persistence"
   },
   "dataset": {
-    "samples": 830,
-    "bytes": 3207437,
-    "sha256": "ca6777520f435271b756079308b7526638c339f3571881f4574cb29928ff1ae2"
+    "samples": 5129,
+    "bytes": 19860354,
+    "sha256": "a1628d24887d9a329b7c7b2ea142cf35566e99e8db7d4468b611d2dd6c3bfd64"
   },
   "model_artifacts": {
-    "logistic_hybrid.json": 11146,
-    "logistic_rule.json": 4443,
-    "logistic_signals.json": 8002,
-    "logistic_url.json": 2897
+    "logistic_hybrid.json": 11182,
+    "logistic_rule.json": 4459,
+    "logistic_signals.json": 8046,
+    "logistic_url.json": 2906
   }
 }

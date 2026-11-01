@@ -1,0 +1,226 @@
+{
+  "approval": "scoped approval recorded 2026-10-26 in collection_approval.json; every batch is gated and the batch command still requires --allow-gated",
+  "approval_record": "data/candidates/feed_v3/collection_approval.json",
+  "batch_size": 100,
+  "batches": [
+    {
+      "batch": 1,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_01.csv",
+      "sha256": "bc8b1ad1ef642fc6e7c0ffcb67d0d0689ab26da352b2200825bd04240ec0ae25"
+    },
+    {
+      "batch": 2,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_02.csv",
+      "sha256": "54b4d58a9b2301a9afcbf4606a5d34a9a900af12fd85efa04f74bb9a079b85e0"
+    },
+    {
+      "batch": 3,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_03.csv",
+      "sha256": "cd62a1fc8ec76e0d2c824474086ed7bb2c49d4c00fa84737ecc5139e6f2a2e5e"
+    },
+    {
+      "batch": 4,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_04.csv",
+      "sha256": "dbfe4c1b089afcf826ba549fc4b2889351b461ceb2f721b03d7f922b01bd04a6"
+    },
+    {
+      "batch": 5,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_05.csv",
+      "sha256": "5e9e9f15e3f184a123de51473eb087502e5b64f75bf9675684a3bb445c802256"
+    },
+    {
+      "batch": 6,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_06.csv",
+      "sha256": "56ce5a672906d44e22e3a122872c1a285af05db77a921d9ebe2b611fe8b89f7f"
+    },
+    {
+      "batch": 7,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_07.csv",
+      "sha256": "91ed6744913c38acd116799b0109cd6a652bb87ffd3f7ee01d1882fc24a0f125"
+    },
+    {
+      "batch": 8,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_08.csv",
+      "sha256": "5c72cdc2136e7c9645ac955e967d26e51689592ddf9027ef6309012c8cfb7f5d"
+    },
+    {
+      "batch": 9,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_09.csv",
+      "sha256": "c51f38e1e6c420860569f20fa42ecc13c6f535814ecdb248af45ee6bd1b44ff3"
+    },
+    {
+      "batch": 10,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_10.csv",
+      "sha256": "d1f37e29bd8838834efcb59f8d02417279e3c24e98d2c0678830e65207d00231"
+    },
+    {
+      "batch": 11,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_11.csv",
+      "sha256": "8f50a390753aa47ee37d54fbb08d20deb33e3b045476b264adddc5ca43ead2b9"
+    },
+    {
+      "batch": 12,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_12.csv",
+      "sha256": "ab34558bafc237b8e70b8ea2f8a49be88a050137c0ab7e7748bd17ad7db0d433"
+    },
+    {
+      "batch": 13,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_13.csv",
+      "sha256": "23695857533a9aa9a9abc1e69d74c5d1368ff70bc2de23c58c18f76d44308ec8"
+    },
+    {
+      "batch": 14,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_14.csv",
+      "sha256": "48d8a60b8fed8d5fff47638a868fd3e6b70a5ce3206aecae345a212b9248f152"
+    },
+    {
+      "batch": 15,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_15.csv",
+      "sha256": "c77069e91b5b86b55b03b1398cadf67161210eea9c832903aaf4dfc5a466b07d"
+    },
+    {
+      "batch": 16,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_16.csv",
+      "sha256": "d7198269dff2152ece681ddd555f8a898bcaa13f47684a79c961899b6518da3a"
+    },
+    {
+      "batch": 17,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_17.csv",
+      "sha256": "4ac5e3c530ccc29f1b606fdcfeb5b0738521d63b5ab7bc745e9d5f80788048dc"
+    },
+    {
+      "batch": 18,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_18.csv",
+      "sha256": "046b9673273524cba0b9574c74e1bf228bb992fb9c6792fbe4c3a7f07ca3db4e"
+    },
+    {
+      "batch": 19,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_19.csv",
+      "sha256": "84c8099b76be710329cafe131ad74812b8e544489adba9da8d627b6e2ce57dcc"
+    },
+    {
+      "batch": 20,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_20.csv",
+      "sha256": "abb706da262230410e6ec9e232bda48bffca8ed7e2c8a33f74ce6894da1451f1"
+    },
+    {
+      "batch": 21,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_21.csv",
+      "sha256": "d53f26e450092f5e16b8f922f192709c1bc0e5e208077ed115faad84a7aeac59"
+    },
+    {
+      "batch": 22,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_22.csv",
+      "sha256": "4b655f904c72a828e799c8278bee7df5708a0b3ba452ce2f8c1d8ed583416b8e"
+    },
+    {
+      "batch": 23,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_23.csv",
+      "sha256": "50016134fd87915abe5eaf3b5dd05f5b05008d22b3597f09ef41f9c2d71f7b87"
+    },
+    {
+      "batch": 24,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_24.csv",
+      "sha256": "56330279d08347932a24b1f09d0f1cfb537020463e82e7ac54d5dc860cc4b1dc"
+    },
+    {
+      "batch": 25,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_25.csv",
+      "sha256": "2881f16fea6c7c0aeb384d5858ad3961fd79bc49b4df79ea0ba43670ab790317"
+    },
+    {
+      "batch": 26,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_26.csv",
+      "sha256": "a9f278bf28c6f0032ff2479e17fa8a0faa8b373f590b0e914d46fd113db043d3"
+    },
+    {
+      "batch": 27,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_27.csv",
+      "sha256": "22fcbbd1de06e9d4374a59f1cb215440a1d44059da626fcea945786fa9f2ef46"
+    },
+    {
+      "batch": 28,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_28.csv",
+      "sha256": "cd6afeb0ede6dc33b54dd21c03c557ae46e6c0b24667fcabfd71c2caa6c4ade5"
+    },
+    {
+      "batch": 29,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_29.csv",
+      "sha256": "fd4821660f321fb31abe8d950478c6bdfc7a45fc66c3b903d25425d9e89a7d70"
+    },
+    {
+      "batch": 30,
+      "candidates": 100,
+      "domains": 100,
+      "file": "data/candidates/feed_v3/feed_batch_30.csv",
+      "sha256": "87757a737d82f274641fe4a647de73bb80809a4e70da3e82369d98b7579d6c2a"
+    }
+  ],
+  "candidates": 3000,
+  "collection_gate": "malicious_page_requires_explicit_confirmation",
+  "created_at": "2026-10-25T18:50:16.944881+00:00",
+  "domains": 3000,
+  "labels_file": "data/labels/feed_v3/positives.csv",
+  "labels_sha256": "66b2b78fc92d9c6451eb98442aaadc491468426d110cfb96256a66e04aac3c85",
+  "payload_urls_replaced_by_domain_root": 2,
+  "schema_version": 1,
+  "seed": 42
+}

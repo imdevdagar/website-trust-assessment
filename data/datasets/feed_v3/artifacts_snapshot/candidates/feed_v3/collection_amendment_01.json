@@ -1,0 +1,67 @@
+{
+  "record_id": "feed_v3_collection_amendment_01",
+  "created_at": "2026-10-26T00:40:00Z",
+  "status": "pre-registered before the main run; executed under the 2026-10-26 approval",
+  "approval_reference": {
+    "record_id": "feed_v3_gated_collection",
+    "file": "data/candidates/feed_v3/collection_approval.json",
+    "sha256": "1124b0c1ebf61a21813f41971ddeb23ccbcada7a2b5ee698c3bf83fb61f99b3e",
+    "approved_at": "2026-10-26",
+    "approved_by": "project owner (explicit user approval)",
+    "scope": "5,000 usable domains: about 2,500 PhishTank/OpenPhish positives and 2,500 Tranco negatives, plus positive and negative reserves; batches of at most 100"
+  },
+  "authorization_basis": [
+    "The project owner approved the gated feed_v3 crawl on 2026-10-26 and chose a target of 5,000 usable domains.",
+    "Rule A retries an already-approved domain at its registrable root; it adds no candidate domain and no new source.",
+    "Rule B draws only from the same already-retrieved 9,764-domain PhishTank/OpenPhish pool, in the pre-registered sha256 order, in batches of at most 100, and remains gated.",
+    "Neither rule relaxes URL validation, file-download exclusion, the per-batch gate, or any label."
+  ],
+  "rule_a_root_url_retry": {
+    "trigger": "a positive candidate's recorded URL fails collection",
+    "action": "one retry against scheme://registrable-domain/, preserving the original scheme",
+    "unchanged": ["registrable domain", "feed label", "stratum", "collection_gate"],
+    "implementation": "scripts/feed_v3_root_retry.py",
+    "output": "data/exports/feed_v3/retry/<batch>_retry.jsonl",
+    "applies_to": "positive selected and reserve batches only; negatives already target the registrable root"
+  },
+  "rule_b_fixed_ranking_topup": {
+    "trigger": "selected positive batches plus registered positive reserves yield fewer than 2,500 usable domains",
+    "action": "crawl the next candidates from the same 9,764-domain pool in the order fixed by sha256('feed_v3-positive:42:' + domain), batches of at most 100, until 2,500 usable positives or the pool is exhausted",
+    "implementation": "scripts/feed_v3_topup.py",
+    "selection_record": "data/labels/feed_v3/topup_selection.json",
+    "batch_prefix": "data/candidates/feed_v3/topup/feed_topup_",
+    "approval_note": "This is the yield contingency pre-registered in docs/feed-v3-protocol.md section 5.2. It adds no new source, no new domain class, and no new collection behaviour. Every top-up batch carries the gated marker and is collected with --allow-gated under the same 2026-10-26 approval.",
+    "reported_as": "top-up candidates are identified by batch prefix and are enumerated in topup_selection.json, so the paper can report how many usable positives came from the selected set, the reserves, and the top-up"
+  },
+  "pilot_evidence": {
+    "positive_batch": "data/candidates/feed_v3/feed_batch_01.csv",
+    "positive_export": "data/exports/feed_v3/feed_batch_01.jsonl",
+    "positive_export_sha256": "d6d14128900e179a07000e49ca57e4e7393cd240dd080671a9503a4fa583095b",
+    "positive_rows": 106,
+    "positive_usable_domains": 45,
+    "positive_resolution_rate": 0.425,
+    "positive_failures": 61,
+    "positive_failure_reasons": {"Could not resolve hostname": 61},
+    "positive_log": "data/exports/feed_v3/pilot_batch01.log",
+    "positive_log_sha256": "8bf18555ced9b6fb1cc46d04f9ab7a6017c344dade6eb1a4d2768b62706f741c",
+    "negative_export": "data/exports/feed_v3/neg_01.jsonl",
+    "negative_export_sha256": "654d0c4863dacc61289201251b4400ffee32cb036a45d6ece19e4adf3f96bfbc",
+    "negative_rows": 10,
+    "negative_usable_domains": 9,
+    "resolution_check": "public resolvers 1.1.1.1 and 8.8.8.8 returned NXDOMAIN for the failed positive hosts, so the failures are takedown, not local DNS filtering",
+    "implication": "At the pilot resolution rate the selected positives plus reserves yield about 2,000 usable domains, below the 2,500 target, so rule B is expected to be exercised"
+  },
+  "integrity_constraints": [
+    "the label unit stays the registrable domain and no label changes",
+    "no feed label enters the runtime domain_labels store",
+    "no file downloads, no form submission, no page-provided instruction execution",
+    "public-IP and SSRF validation stays enabled",
+    "each batch stays at or below 100 candidates"
+  ],
+  "artifacts_hashed_at_registration": {
+    "positive_manifest_sha256": "dc8a4a2e201bb7fecf3b35a0795170f5f849bac6af18393129a54929d6708623",
+    "positive_reserve_manifest_sha256": "efc09deb2418e6845f24dc34786c36cfc79df23869938dba04d8229eaac9856c",
+    "negative_manifest_sha256": "89ed6acce48c898c838c3ec41cdc241fdbff53a326e3922e04a21f79cddce2fd",
+    "label_provenance_sha256": "4af0ced5eda49af11518f59e17f4d282d7f3b381db029fa6256c5a04da1cfbda"
+  }
+}

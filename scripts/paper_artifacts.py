@@ -112,19 +112,24 @@ def ci_text(block: dict) -> str:
 
 # ---------------------------------------------------------------- load + audit
 
-MANIFEST = load("data/datasets/feed_v2/manifest.json")
-RUN = load("data/research/runs/feed_v2/run.json")
-RUN_S43 = load("data/research/runs/feed_v2_s43/run.json")
-RUN_NO_B02 = load("data/research/runs/feed_v2_no_batch_02/run.json")
-PROFILE = load("data/research/profile_feed_v2.json")
-ERROR = load("data/research/error_analysis_feed_v2.json")
+MANIFEST = load("data/datasets/feed_v3/manifest.json")
+RUN = load("data/research/runs/feed_v3/run.json")
+RUN_S43 = load("data/research/runs/feed_v3_s43/run.json")
+PROFILE = load("data/research/profile_feed_v3.json")
+ERROR = load("data/research/error_analysis_feed_v3.json")
 H4 = load("data/research/injection_h4.json")
+FIXTURES = load("data/injection_fixtures/manifest.json")
+LEARNING = load("data/research/learning_curve_feed_v3.json")
+
+# The human/feed comparison and the label-churn measurement exist only for the predecessor `feed_v2`
+# label set: `feed_v3` candidates are disjoint from the 146 human labels by construction, so no such
+# table can be computed for it, and its second feed retrieval aborted on an upstream HTTP 429. They are
+# rendered here as the predecessor measurements they are, never as `feed_v3` results.
 HUMAN = load("data/labels/feed/human_vs_feed_final.json")
 CHURN = load("data/labels/feed/churn/churn_report.json")
-FIXTURES = load("data/injection_fixtures/manifest.json")
-LEARNING = load("data/research/learning_curve.json")
+CHURN_INTERVAL_H = CHURN["provenance"]["interval_hours"]
 
-DATASET_SHA = sha256_file(ROOT / "data/datasets/feed_v2/dataset.jsonl")
+DATASET_SHA = sha256_file(ROOT / "data/datasets/feed_v3/dataset.jsonl")
 assert DATASET_SHA == RUN["dataset"]["sha256"], "dataset no longer matches the published run"
 assert MANIFEST["files"]["dataset_jsonl"]["sha256"] == DATASET_SHA
 GROUP = RUN["groups"]["hybrid"]
@@ -135,6 +140,11 @@ for split in ("train", "val", "test"):
 assert MANIFEST["samples"] == PROFILE["samples"]
 assert MANIFEST["targets"]["1"] == PROFILE["malicious"]["n"]
 assert MANIFEST["targets"]["0"] == PROFILE["benign"]["n"]
+
+TEST_N = SPLITS["test"]["samples"]
+TEST_POS = SPLITS["test"]["positives"]
+TEST_NEG = TEST_N - TEST_POS
+TRAIN_DOMAINS = SPLITS["train"]["domains"]
 
 rows = H4["rows"]
 tp = sum(1 for row in rows if row["truth"] == "injection" and row["predicted_injection"])
@@ -160,6 +170,7 @@ def figure_dataset() -> None:
     malicious = [MANIFEST["splits"][s]["labels"]["malicious"] for s in order]
     benign = [MANIFEST["splits"][s]["labels"]["benign"] for s in order]
     domains = [MANIFEST["splits"][s]["domains"] for s in order]
+    tallest = max(top + bottom for top, bottom in zip(malicious, benign))
 
     fig, ax = plt.subplots(figsize=(3.4, 2.7))
     x = range(len(order))
@@ -168,11 +179,11 @@ def figure_dataset() -> None:
     for idx, (top, bottom) in enumerate(zip(malicious, benign)):
         ax.text(idx, top / 2, str(top), ha="center", va="center", color="white", fontsize=7)
         ax.text(idx, top + bottom / 2, str(bottom), ha="center", va="center", color="white", fontsize=7)
-        ax.text(idx, top + bottom + 12, f"n={top + bottom}\n{domains[idx]} domains",
+        ax.text(idx, top + bottom + 0.03 * tallest, f"n={top + bottom}\n{domains[idx]} domains",
                 ha="center", va="bottom", fontsize=6.5)
     ax.set_xticks(list(x), [s.capitalize() for s in order])
     ax.set_ylabel("Samples")
-    ax.set_ylim(0, 680)
+    ax.set_ylim(0, 1.22 * tallest)
     ax.legend(loc="upper right", frameon=False)
     save(fig, "fig3_dataset_composition")
 
@@ -196,7 +207,7 @@ def figure_label_sources() -> None:
     left.set_xticks([0, 1], ["in feed", "not in feed"])
     left.set_yticks(range(3), [s.capitalize() for s in labels])
     left.set_xlabel("Feed membership")
-    left.set_title("(a) Human labels by feed (n=146)")
+    left.set_title(f"(a) Human labels vs feed_v2 feeds (n={HUMAN['human_domains']})")
     left.tick_params(length=0)
     for spine in left.spines.values():
         spine.set_visible(False)
@@ -204,10 +215,12 @@ def figure_label_sources() -> None:
     overall = CHURN["overall"]
     collected = CHURN["collected_assessments"]
     groups = [
-        ("Feed labels\n(n=549)", overall["retained"], overall["dropped"], "retained", "delisted"),
-        ("Eval. positives\n(n=496)", collected["still_listed"], collected["no_longer_listed"],
+        (f"Feed labels\n(n={overall['primary_domains']})", overall["retained"], overall["dropped"],
          "retained", "delisted"),
-        ("Eval. negatives\n(n=330)", collected["derived_benign_domains"] - collected["derived_benign_now_listed"],
+        (f"Eval. positives\n(n={collected['assessed_feed_positive_domains']})",
+         collected["still_listed"], collected["no_longer_listed"], "retained", "delisted"),
+        (f"Eval. negatives\n(n={collected['derived_benign_domains']})",
+         collected["derived_benign_domains"] - collected["derived_benign_now_listed"],
          collected["derived_benign_now_listed"], "not newly listed", "newly listed"),
     ]
     y = range(len(groups))
@@ -225,8 +238,8 @@ def figure_label_sources() -> None:
     right.invert_yaxis()
     right.set_xlim(0, 1.22)
     right.set_xticks([0, 0.5, 1.0], ["0%", "50%", "100%"])
-    right.set_xlabel("Share at second retrieval 4.43 h later")
-    right.set_title("(b) Feed-label retention")
+    right.set_xlabel(f"Share at second retrieval {CHURN_INTERVAL_H} h later")
+    right.set_title("(b) feed_v2 label retention")
     right.legend(
         handles=[Line2D([0], [0], color=BLUE, lw=6, label="retained / not listed"),
                  Line2D([0], [0], color=VERMILION, lw=6, label="delisted / newly listed")],
@@ -241,14 +254,22 @@ def reliability_panel(ax, bins: list[dict], title: str, ece: float) -> None:
     ys = [b["accuracy"] for b in bins]
     sizes = [14 + 2.0 * b["count"] for b in bins]
     ax.scatter(xs, ys, s=sizes, color=BLUE, edgecolor="white", linewidth=0.6, zorder=3)
+    low_rank = 0
     for x, y, b in zip(xs, ys, bins):
-        if b["count"] >= 20:
-            offset = (10, 6) if x < 0.2 else ((-14, -12) if x > 0.9 else (8, -10))
-            ax.annotate(f"n={b['count']}", (x, y), textcoords="offset points",
-                        xytext=offset, fontsize=6, color=GREY,
-                        ha="right" if x > 0.9 else "left")
-    ax.set_xlim(-0.02, 1.05)
-    ax.set_ylim(-0.02, 1.02)
+        if b["count"] < 20:
+            continue
+        if x < 0.2:
+            # low-probability bins sit close together; stack their labels upward
+            offset, align = (2, 14 + 13 * low_rank), "left"
+            low_rank += 1
+        elif x > 0.9:
+            offset, align = (-14, -12), "right"
+        else:
+            offset, align = (8, -10), "left"
+        ax.annotate(f"n={b['count']}", (x, y), textcoords="offset points",
+                    xytext=offset, fontsize=6, color=GREY, ha=align)
+    ax.set_xlim(-0.10, 1.14)
+    ax.set_ylim(-0.10, 1.14)
     ax.set_xlabel("Mean predicted probability")
     ax.set_ylabel("Observed malicious fraction")
     ax.set_title(title)
@@ -286,7 +307,8 @@ def figure_risk_coverage() -> None:
         ax.plot(xs, ys, color=colour, marker=marker, lw=1.2, ms=4, label=label)
     prior = SPLITS["test"]["positives"] / SPLITS["test"]["samples"]
     ax.axhline(prior, color=GREY, lw=0.8, ls="--")
-    ax.text(0.505, prior + 0.012, f"class prior {prior:.3f}", color=GREY, fontsize=6.5)
+    ax.text(1.02, prior - 0.032, f"class prior {prior:.3f}", color=GREY, fontsize=6.5,
+            ha="right", va="top")
     ax.set_xlim(0.42, 1.03)
     ax.set_ylim(0.35, 1.01)
     ax.set_xlabel("Coverage (most confident first)")
@@ -325,7 +347,7 @@ def figure_ablation() -> None:
         if metric == "roc_auc":
             ax.set_ylim(0.35, 1.01)
         else:
-            ax.set_ylim(0.50, 1.01)
+            ax.set_ylim(0.44, 1.01)
     fig.legend(handles=[Line2D([0], [0], marker="o", color=BLUE, ls="-", lw=1.0, ms=4, label="Logistic"),
                         Line2D([0], [0], marker="^", color=GREEN, ls="-", lw=1.0, ms=4, label="HistGB"),
                         Line2D([0], [0], color=VERMILION, ls="--", lw=0.9, label="Rule engine (95% band)")],
@@ -397,8 +419,8 @@ def figure_learning_curve() -> None:
         [point["n_train_domains_mean"] for point in reference],
         [f"{point['n_train_domains_mean']:.0f}\n{point['fraction']:.0%}" for point in reference],
     )
-    ax.set_xlim(0, 500)
-    ax.set_ylim(0.86, 1.005)
+    ax.set_xlim(0, 1.06 * max(point["n_train_domains_mean"] for point in reference))
+    ax.set_ylim(0.965, 1.0)
     ax.set_xlabel("Training domains per fold (share of full)")
     ax.set_ylabel("Out-of-fold AUROC")
     ax.legend(loc="lower right", frameon=False)
@@ -532,19 +554,27 @@ def table_dataset() -> None:
     body_rows = []
     for split in ("train", "val", "test"):
         counts = MANIFEST["splits"][split]
-        body_rows.append([split.capitalize(), str(counts["samples"]), str(counts["domains"]),
-                          str(counts["labels"]["malicious"]), str(counts["labels"]["benign"])])
-    body_rows.append(["**Total**", f"**{MANIFEST['samples']}**", f"**{MANIFEST['domains']}**",
-                      f"**{MANIFEST['targets']['1']}**", f"**{MANIFEST['targets']['0']}**"])
+        body_rows.append([split.capitalize(), f"{counts['samples']:,}", f"{counts['domains']:,}",
+                          f"{counts['labels']['malicious']:,}", f"{counts['labels']['benign']:,}"])
+    body_rows.append(["**Total**", f"**{MANIFEST['samples']:,}**", f"**{MANIFEST['domains']:,}**",
+                      f"**{MANIFEST['targets']['1']:,}**", f"**{MANIFEST['targets']['0']:,}**"])
     ratios = MANIFEST["ratios"]
     ratio_text = f"{ratios['train']:.0%} / {ratios['val']:.0%} / {ratios['test']:.0%}"
     collection = (
-        "\nCollection and exclusion facts (primary build `feed_v2`):\n\n"
-        "- 549 feed-listed domains were planned; 50 could not be collected and were dropped, never called benign.\n"
-        "- 912 scored assessments passed the leakage check (`leaked_assessments: 0`, runtime label store empty).\n"
-        "- 107 crawl rows carry only `{url, error}` and were skipped as assessments that never existed.\n"
-        "- 82 collected domains carry a frozen human label and no feed label, so they were excluded from the 830; the 146 frozen human labels form the separate validity subset.\n"
-        "- 496 distinct malicious and 330 distinct benign domains; four domains contribute two assessments each.\n"
+        "\nCollection and exclusion facts (primary build `feed_v3`):\n\n"
+        "- 11,402 crawl rows were read. 5,891 never produced an assessment (5,868 unresolvable hostname, "
+        "23 hostname resolving to a non-public address) and 382 landed on a different registrable domain "
+        "than their candidate; all were excluded, never relabelled benign.\n"
+        "- 5,129 same-domain assessments were kept, one per domain: 2,533 malicious and 2,596 benign.\n"
+        "- Positives came from 1,389 selected + 724 reserve + 420 fixed-ranking top-up candidates, and 111 "
+        "of them were recovered by the pre-registered root-URL retry.\n"
+        "- 7,231 feed-listed domains yielded no usable assessment and were dropped; a domain that cannot be "
+        "assessed is not evidence of anything.\n"
+        "- 5,511 readable assessments passed the leakage check (`leaked_assessments: 0`, runtime label store "
+        "empty). The feed CSV is never imported into the runtime store.\n"
+        "- No candidate carried a frozen human label, so the exclusion rule had nothing to exclude "
+        "(`excluded_human_labelled_domains: 0`): the 146-label validity subset is disjoint from this build "
+        "by construction, verified before any crawl started.\n"
         f"- Dataset SHA-256 `{DATASET_SHA}`; seed {MANIFEST['seed']}; domain-grouped split ratios {ratio_text}.\n"
     )
     write_md("table3_dataset_summary.md",
@@ -567,7 +597,7 @@ def table_main_results() -> None:
             f3(test["precision"]), f3(test["recall"]),
         ])
     note = (
-        "\nTest split: 123 samples / 123 domains (74 malicious / 49 benign). "
+        f"\nTest split: {TEST_N} samples / {TEST_N} domains ({TEST_POS} malicious / {TEST_NEG} benign). "
         "Thresholds and Platt calibration were selected on validation only; the test set was evaluated once. "
         "Intervals are percentile 95% bounds from 1000 domain-grouped bootstrap resamples. "
         "The rule engine's Platt fit was refused (non-positive association), so raw and calibrated scores are identical. "
@@ -597,7 +627,7 @@ def table_ablation() -> None:
                       ci_text(engine["bootstrap"]["average_precision"]),
                       f3(engine["test"]["brier"]), f3(engine["test"]["ece"]), f3(engine["test"]["f1"])])
     note = (
-        "\nAll rows use the same domain-grouped test split (123 samples, 74 positive) and the same bootstrap "
+        f"\nAll rows use the same domain-grouped test split ({TEST_N} samples, {TEST_POS} positive) and the same bootstrap "
         "resamples (1000, domain-grouped). `hybrid` includes the rule outputs, so it is a superset comparison, "
         "not an independent model family; `signals` is the independent page-evidence comparison.\n"
     )
@@ -644,7 +674,7 @@ def table_https() -> None:
             f"{rule['f1']:.3f} [{rule['f1_ci'][0]:.3f}, {rule['f1_ci'][1]:.3f}]",
         ])
     baseline_note = (
-        "\n**Test rule baselines (n = 123, 74 malicious).** Each rule predicts malicious when the "
+        f"\n**Test rule baselines (n = {TEST_N}, {TEST_POS} malicious).** Each rule predicts malicious when the "
         "condition in its label holds; scores are binary, so AUC ties count as half.\n\n"
     )
     baseline_footer = (
@@ -681,28 +711,35 @@ def table_errors() -> None:
 
 
 def table_sensitivity() -> None:
-    headers = ["Run", "Hybrid logistic AUROC", "Hybrid HistGB AUROC", "Engine AUROC (all labelled)"]
+    headers = ["Run", "Hybrid logistic AUROC", "Hybrid HistGB AUROC", "Engine AUROC (all labelled)",
+               "Engine AUROC (test)"]
     body_rows = []
     profiles = {
-        "feed_v2": "data/research/profile_feed_v2.json",
-        "feed_v2_s43": "data/research/profile_feed_v2_s43.json",
-        "feed_v2_no_batch_02": "data/research/profile_feed_v2_no_batch_02.json",
+        "feed_v3": "data/research/profile_feed_v3.json",
+        "feed_v3_s43": "data/research/profile_feed_v3_s43.json",
     }
-    for label, artifact in (("Primary, seed 42", RUN), ("Re-split, seed 43", RUN_S43),
-                            ("Without batch-02 negatives", RUN_NO_B02)):
+    for label, artifact in (("Primary, seed 42", RUN), ("Re-split, seed 43", RUN_S43)):
         hybrid = artifact["groups"]["hybrid"]["models"]
         profile = load(profiles[artifact["run_id"]])
         assert profile["dataset"] == artifact["dataset"]["path"], (
             f"sensitivity profile for {artifact['run_id']} describes a different dataset"
+        )
+        assert profile["samples"] == MANIFEST["samples"], (
+            f"sensitivity profile for {artifact['run_id']} is not the same label population"
         )
         body_rows.append([
             label,
             f3(hybrid["logistic_regression"]["test"]["roc_auc"]),
             f3(hybrid["hist_gradient_boosting"]["test"]["roc_auc"]),
             f3(profile["rule_engine_auc"]["all_labelled"]),
+            f3(profile["rule_engine_auc"]["test"]),
         ])
-    note = ("\nThe engine's all-labelled AUROC is the stable comparison; its test-split AUROC moves with the "
-            "split at n=123 and is not a capability estimate.\n")
+    note = ("\nThe engine's all-labelled AUROC is the stable comparison: it is computed over every labelled "
+            f"assessment and so does not move with the split at all, while its test-split AUROC ({TEST_N} "
+            "samples) shifts slightly. The predecessor `feed_v2` build also carried a negative-stratum "
+            "ablation (dropping the main batch-02 assessments reused as negatives); that ablation has no "
+            "`feed_v3` counterpart because this build's benign class is drawn from the Tranco top-1M pool "
+            "under the recorded protocol, not from a reused stratum.\n")
     write_md("table9_sensitivity.md",
              "# Table 9. Pre-registered sensitivity runs\n\n" + md_table(headers, body_rows) + note)
 
@@ -787,7 +824,7 @@ def benchmark() -> dict:
         },
         "model_artifacts": {},
     }
-    model_dir = ROOT / "models/research/feed_v2"
+    model_dir = ROOT / "models/research/feed_v3"
     for path in sorted(model_dir.glob("*.json")):
         result["model_artifacts"][path.name] = path.stat().st_size
     return result
@@ -820,7 +857,25 @@ def table_runtime(timings: dict) -> None:
                                                encoding="utf-8", newline="\n")
 
 
-CAPTIONS = """# Figure captions (artifact-backed)
+def _curve_point(model: str, fraction: float) -> dict:
+    return next(point for point in LEARNING["curves"][model]["points"]
+                if abs(point["fraction"] - fraction) < 1e-9)
+
+
+LC = {model: {step: _curve_point(model, share)
+              for step, share in (("tenth", 0.1), ("half", 0.5), ("full", 1.0))}
+      for model in ("logistic", "hgb")}
+LC_GAIN = {model: LC[model]["full"]["auroc"]["mean"] - LC[model]["half"]["auroc"]["mean"]
+           for model in ("logistic", "hgb")}
+ENGINE_ECE = GROUP["models"]["rule_engine"]["test"]["ece"]
+HYBRID_ECE = GROUP["models"]["logistic_regression"]["test"]["ece"]
+PRIOR = TEST_POS / TEST_N
+ANCHOR = LEARNING["anchor"]
+ENGINE_RC = GROUP["models"]["rule_engine"]["risk_coverage"]
+ENGINE_LOW = min(ENGINE_RC, key=lambda block: block["accuracy"])
+ENGINE_HIGH = max(ENGINE_RC, key=lambda block: block["accuracy"])
+
+CAPTIONS = f"""# Figure captions (artifact-backed)
 
 Every empirical caption states the split, sample size, and interval method.
 
@@ -837,36 +892,51 @@ observation time, tags, and the provenance disclosure. Item risk points are weig
 dimension rather than added directly to the overall score. Screenshot of the running prototype, not an
 artifact-backed plot.
 
-**Fig. 3.** Dataset composition by split. Domain-grouped 70/15/15 split of 830 samples over 826 domains
-(seed 42, primary build `feed_v2`). Labels are feed membership at retrieval time (2026-10-20); *benign*
-means absent from both feeds, not verified clean. Four domains contribute two assessments each, which is
-why samples exceed domains. Source: `data/datasets/feed_v2/manifest.json` (dataset SHA-256 `{sha}`).
+**Fig. 3.** Dataset composition by split. Domain-grouped 70/15/15 split of {MANIFEST['samples']:,} samples
+over {MANIFEST['domains']:,} domains, one assessment per domain (seed 42, primary build `feed_v3`). Labels
+are abuse-feed membership at retrieval time (2026-10-25, PhishTank online-valid plus OpenPhish); *benign*
+means absent from both feeds, not verified clean. Source:
+`data/datasets/feed_v3/manifest.json` (dataset SHA-256 `{DATASET_SHA[:12]}`).
 
-**Fig. 4.** Label sources. (a) The 146 frozen human labels by feed membership; only 4 domains overlap the
-feeds (1 human-malicious, 3 human-suspicious), which is why source agreement is reported as a confusion
-table and not as kappa. (b) Retention of feed labels at a second retrieval 4.43 h after the primary one:
-540 of 549 labels retained, 488 of the 496 evaluation positives still listed, and 0 of the 330 derived
-negatives newly listed. This is hourly-resolution stability, not a durable property. Sources:
-`data/labels/feed/human_vs_feed_final.json`, `data/labels/feed/churn/churn_report.json`.
+**Fig. 4.** Label sources, measured on the predecessor `feed_v2` label set. (a) The 146 frozen human
+labels by feed membership; only {HUMAN['overlap']} domains overlap the feeds
+({HUMAN['human_label_by_feed_membership']['malicious']['in_feed']} human-malicious,
+{HUMAN['human_label_by_feed_membership']['suspicious']['in_feed']} human-suspicious), which is why source
+agreement is reported as a confusion table and not as kappa. (b) Retention of feed labels at a second
+retrieval {CHURN_INTERVAL_H} h after the primary one: {CHURN['overall']['retained']} of
+{CHURN['overall']['primary_domains']} labels retained,
+{CHURN['collected_assessments']['still_listed']} of the
+{CHURN['collected_assessments']['assessed_feed_positive_domains']} evaluation positives still listed, and
+{CHURN['collected_assessments']['derived_benign_now_listed']} of the
+{CHURN['collected_assessments']['derived_benign_domains']} derived negatives newly listed. This is
+hourly-resolution stability, not a durable property: no second retrieval has been measured against the
+`feed_v3` label set. Sources: `data/labels/feed/human_vs_feed_final.json`,
+`data/labels/feed/churn/churn_report.json`.
 
-**Fig. 5.** Reliability on the untouched test split (n = 123; 74 malicious, 49 benign). (a) Shipped rule
-engine, raw score: Platt calibration was refused because validation scores were not positively associated
-with labels, so raw and calibrated ECE are both 0.402. (b) Hybrid logistic regression after Platt scaling,
-ECE 0.026. Marker area is proportional to the number of test samples in the bin; the diagonal is perfect
-calibration. Grouped 95% intervals (1000 domain-grouped bootstrap resamples) are in Table 4.
+**Fig. 5.** Reliability on the untouched test split (n = {TEST_N}; {TEST_POS} malicious, {TEST_NEG}
+benign). (a) Shipped rule engine, raw score: Platt calibration was refused because validation scores were
+not positively associated with labels, so raw and calibrated ECE are both {ENGINE_ECE:.3f}. (b) Hybrid
+logistic regression after Platt scaling, ECE {HYBRID_ECE:.3f}. Marker area is proportional to the number
+of test samples in the bin; the diagonal is perfect calibration. Grouped 95% intervals (1000
+domain-grouped bootstrap resamples) are in Table 4.
 
-**Fig. 6.** Risk-coverage on the untouched test split (n = 123). Accuracy within the covered subset as
-coverage is restricted to the most confident predictions; the dashed line is the positive-class prior
-(74/123 = 0.602). Every model predicts with a fixed 0.5 score threshold at each coverage level (selective
-prediction is never given a tuned per-model threshold), so the full-coverage point need not equal the
-validation-thresholded accuracy in Table 4. The shipped engine is below the prior at every coverage level,
-i.e. its most confident half is its worst half.
+**Fig. 6.** Risk-coverage on the untouched test split (n = {TEST_N}). Accuracy within the covered subset
+as coverage is restricted to the most confident predictions; the dashed line is the positive-class prior
+({TEST_POS}/{TEST_N} = {PRIOR:.3f}). Every model predicts with a fixed 0.5 score threshold at each
+coverage level (selective prediction is never given a tuned per-model threshold), so the full-coverage
+point need not equal the validation-thresholded accuracy in Table 4. The shipped engine never separates
+the classes: its accuracy stays between {ENGINE_LOW['accuracy']:.3f} and {ENGINE_HIGH['accuracy']:.3f}
+across coverage levels, and on the {ENGINE_LOW['coverage_actual']:.0%} of predictions it is most confident
+in it scores {ENGINE_LOW['accuracy']:.3f} — below the {PRIOR:.3f} class prior — so confidence in its own
+score buys no reliability. The learned models hold at least
+{min(block['accuracy'] for block in GROUP['models']['logistic_regression']['risk_coverage']):.3f}
+throughout.
 
-**Fig. 7.** Feature-group ablation on the untouched test split (n = 123, 74 positive). Points are test
-AUROC (a) and AUPRC (b); bars are percentile 95% intervals from 1000 domain-grouped bootstrap resamples.
-The dashed line and shaded band show the shipped rule engine, which produces the same score in every group.
-`hybrid` includes rule outputs and is therefore a superset comparison; `signals` is the independent
-page-evidence comparison.
+**Fig. 7.** Feature-group ablation on the untouched test split (n = {TEST_N}, {TEST_POS} positive). Points
+are test AUROC (a) and AUPRC (b); bars are percentile 95% intervals from 1000 domain-grouped bootstrap
+resamples. The dashed line and shaded band show the shipped rule engine, which produces the same score in
+every group. `hybrid` includes rule outputs and is therefore a superset comparison; `signals` is the
+independent page-evidence comparison.
 
 **Fig. 8.** H4 controlled injection corpus (42 pages: 26 injections, 16 negatives; five negatives are
 adversarial), scored offline through the production static parser. (a) Overall risk before and after the
@@ -875,15 +945,21 @@ hidden instruction; negative fixtures lie on the diagonal. (b) Risk change for t
 for all 40 hidden-channel pairs once injection and trace evidence is dropped (maximum residual 0.0).
 Source: `data/research/injection_h4.json`, gate `passed: true`.
 
-**Fig. 9.** Train-only learning curve for the hybrid models. Five-fold domain-grouped cross-validation
-is re-drawn 20 times for logistic regression and 10 times for HistGB; within each fold, whole domains
-are subsampled per class. Points are pooled out-of-fold AUROC and bands are the 2.5–97.5 percentile
-range across repeats. The validation and test splits are never scored, so the single-use test claim is
-unaffected. At full size (462 training domains per fold) the pooled estimate is 0.973 for logistic and
-0.990 for HistGB, and the logistic point reproduces the run's grouped-CV estimate of 0.965 within 0.008.
-From 50% to 100% of the available training domains, AUROC gains 0.009 (logistic) and 0.005 (HistGB),
-so the curve has saturated for this label population. Source: `data/research/learning_curve.json`.
-""".format(sha=DATASET_SHA[:12])
+**Fig. 9.** Train-only learning curve for the hybrid models, computed inside the
+{SPLITS['train']['samples']:,}-sample training split of the primary build. Five-fold domain-grouped
+cross-validation is re-drawn {LEARNING['curves']['logistic']['repeats']} times for logistic regression and
+{LEARNING['curves']['hgb']['repeats']} times for HistGB; within each fold, whole domains are subsampled
+per class. Points are pooled out-of-fold AUROC and bands are the 2.5–97.5 percentile range across repeats.
+The validation and test splits are never scored, so the single-use test claim is unaffected. At full size
+({LC['logistic']['full']['n_train_domains_mean']:,.0f} training domains per fold) the pooled estimate is
+{LC['logistic']['full']['auroc']['mean']:.3f} for logistic and {LC['hgb']['full']['auroc']['mean']:.3f}
+for HistGB, and the logistic point reproduces the run's grouped-CV estimate of
+{ANCHOR['cv_mean_roc_auc']:.3f} within {abs(ANCHOR['difference']):.4f}. From 50% to 100% of the available
+training domains AUROC gains {LC_GAIN['logistic']:.3f} (logistic) and {LC_GAIN['hgb']:.3f} (HistGB), so
+the curve is flat at this scale: one tenth of the training domains already reaches
+{LC['logistic']['tenth']['auroc']['mean']:.3f}. Source:
+`data/research/learning_curve_feed_v3.json`.
+"""
 
 
 def main() -> int:
@@ -909,10 +985,8 @@ def main() -> int:
     print("benchmarking offline scoring")
     timings = benchmark()
     table_runtime(timings)
-    (PAPER / "figure-captions.md").write_text(
-        CAPTIONS.format(sha=DATASET_SHA[:12]), encoding="utf-8", newline="\n"
-    )
-    print(f"  captions paper/figure-captions.md")
+    (PAPER / "figure-captions.md").write_text(CAPTIONS, encoding="utf-8", newline="\n")
+    print("  captions paper/figure-captions.md")
     print("paper artifacts written to paper/")
     return 0
 

@@ -338,3 +338,17 @@ def test_eval_labels_never_override_a_frozen_human_label(tmp_path: Path) -> None
     )
     assert [row["domain"] for row in rows] == ["human-labelled.org"]
     assert stats["excluded_human_labelled_domains"] == 1
+
+
+def test_phishtank_parser_requires_verified_online_rows() -> None:
+    text = (
+        "phish_id,url,phish_detail_url,submission_time,verified,verification_time,online,target\n"
+        "1,https://one-phish.top/login,https://phishtank.example/1,2026-10-25T00:00:00Z,"
+        "yes,2026-10-25T01:00:00Z,yes,Example\n"
+        "2,https://unverified-phish.top/login,https://phishtank.example/2,2026-10-25T00:00:00Z,"
+        "no,2026-10-25T01:00:00Z,yes,Example\n"
+        "3,https://offline-phish.top/login,https://phishtank.example/3,2026-10-25T00:00:00Z,"
+        "yes,2026-10-25T01:00:00Z,no,Example\n"
+    )
+    assert fl.phishtank_urls(text) == ["https://one-phish.top/login"]
+    assert fl.phishtank_urls("") == []
